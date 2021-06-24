@@ -1,0 +1,302 @@
+<?xml version="1.0" ?>
+<parameters>
+
+	<parameter
+		label = "Depth map"
+		name = "depth_map"
+		type = "texture2D"
+		hlsl = "depth_texture"
+		default_value = "data/images/common/black.tga">
+	</parameter>
+	<parameter
+		label = "Normal map"
+		name = "normal_map"
+		type = "texture2D"
+		hlsl = "normal_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>   
+	<parameter
+		label = "Random Normals map"
+		name = "random_normal_map"
+		type = "texture2D"
+		hlsl = "random_normal_texture"
+		default_value = "data/images/common/normal.tga">
+	</parameter>
+    <parameter
+		label = "Sample radius"
+		name = "occ_sample_radius"
+		type = "float"
+		hlsl = "occ_sample_radius"
+		default_value = "0.66">
+	</parameter>
+    <parameter
+		label = "Occlusion Scale"
+		name = "occ_scale"
+		type = "float"
+		hlsl = "occ_scale"
+		default_value = "0.5">
+	</parameter>
+    <parameter
+		label = "Occlusion Strength"
+		name = "occ_strength"
+		type = "float"
+		hlsl = "occ_strength"
+		default_value = "2.0">
+	</parameter>
+    <parameter
+		label = "Occlusion Bias"
+		name = "occ_bias"
+		type = "float"
+		hlsl = "occ_bias"
+		default_value = "0.1">
+	</parameter>     
+    <parameter
+		label = "Self occlusion"
+		name = "self_occlusion"
+		type = "float"
+		hlsl = "self_occlusion"
+		default_value = "0.0">
+	</parameter>
+    <parameter
+		label = "Occlusion value inverted"
+		name = "occ_inverted"
+		type = "float"
+		hlsl = "occ_inverted"
+		default_value = "0.0">
+	</parameter> 	
+</parameters>
+
+<sampler_states>
+
+	<sampler
+		name = "depth_sampler"
+		texture = "depth_texture"
+		address_u = "CLAMP"
+		address_v = "CLAMP"
+		address_w = "CLAMP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+	<sampler
+		name = "normal_sampler"
+		texture = "normal_texture"
+		address_u = "CLAMP"
+		address_v = "CLAMP"
+		address_w = "CLAMP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+	<sampler
+		name = "random_normal_sampler"
+		texture = "random_normal_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "POINT"
+		mag_filter = "POINT"
+		mip_filter = "POINT"
+		>
+	</sampler>
+
+</sampler_states>
+
+<streams>
+	<stream0
+		position = 0
+		texcoord = 0>
+	</stream0>
+</streams>
+
+<vertex_shader
+	stream = "stream0"
+	hlsl = "
+	struct input_vertex
+	{
+		float4 position : POSITION;
+		float2 texcoord : TEXCOORD0;
+	};
+
+	struct output_vertex
+	{
+		float4 position : POSITION;
+		float2 texcoord : TEXCOORD0;
+	};
+
+	void main_vs(in input_vertex input, out output_vertex output)
+	{
+		output = input;
+        //float4 pos       = float4(sign(input.position.xy), 0.0f, 1.0f);
+        //output.texcoord = pos.xy * float2(0.5f, -0.5f) + 0.5f;
+	}
+	">
+</vertex_shader>
+<pixel_shader
+	hlsl = "
+	#pragma warning( disable : 3206 )
+    
+	float time_x;
+	float time_y;
+    
+    texture2D depth_texture;
+	sampler2D depth_sampler;
+
+    texture2D normal_texture;
+	sampler2D normal_sampler;
+    
+    texture2D random_normal_texture;
+	sampler2D random_normal_sampler;
+    
+    //Parameters
+    float occ_sample_radius;
+    float occ_scale;
+    float occ_strength;
+    float occ_bias;
+	float self_occlusion;
+	float occ_inverted;
+    
+    //Random unit vector samples from unit sphere
+	
+    float4x4 projection;
+	float4x4 world_to_view_clip;
+	float4x4 world_to_view;
+	float4x4 view_to_world;
+	
+	float3 view_in_world;
+    
+    static const float2 samples[8] =
+    {
+        float2(1,0), 
+        float2(-1,0), 
+        float2(0,1), 
+        float2(0,-1), 
+        float2(1,1), 
+        float2(1,-1), 
+        float2(-1,1), 
+        float2(-1,-1)        
+    };
+    
+    float4 getPosition(float2 uv) {
+        float4 pos = float4(tex2D(depth_sampler,uv).xyz,1);
+        //pos.xyz *= 2.0f;
+        //pos.xyz -= 1.0f;
+        return  pos;
+    }
+    
+    float3 getNormal(float2 uv) {
+        float3 normal = normalize(tex2D(normal_sampler,uv).xyz * 2.0f - 1.0f);
+        
+        /*float3 pos = getPosition(uv).xyz;
+        float3 b = normalize(ddx(pos));
+        float3 t = normalize(ddy(pos));
+        float3 normal = normalize(cross(b,t));
+        */
+        return normal;
+    }
+    
+    float calcOcclusion(float2 texcoord, float2 uv, float3 pos, float3 normal) {
+         //Calculate vector in 3d between the two points
+         float3 diff = getPosition(texcoord+uv).xyz - pos;
+         const float3 v = normalize(diff);
+         
+         //Calculate the distance between the two points
+         const float d = length(diff)*occ_scale;
+         
+         //Calculate linear attenuation
+         float att = (1.0/(1.0+d));
+         //Quadratic
+         //float att = 1.0f / (1.0f + (d*d));
+         
+         float dotNV = dot(normal,v);
+         
+         //Calculate final occlusion amount
+         return max(0.0,dotNV-occ_bias)*att*occ_strength;            
+            
+    }
+    
+     float rand(float2 co){
+
+           // return 0.5+(frac(sin(dot(co.xy ,float2(12.9898,78.233))) * 43758.5453))*0.5;
+		   return ((frac(co.x * (512/2.0))*0.25)+(frac(co.y*(512/2.0))*0.5));
+
+
+    }
+	
+	/*
+	float4x4 transpose(float4x4 m)
+	{
+		float4 row0 = (m._m00_m10_m20_m30);
+		float4 row1 = (m._m01_m11_m21_m31);
+		float4 row2 = (m._m02_m12_m22_m32);
+		float4 row3 = (m._m03_m13_m23_m33);
+		
+		return float4x4(
+			row0,
+			row1,
+			row2,
+			row3);
+	}*/
+    
+	void main_ps(
+		float2 texcoord : TEXCOORD0,
+		out float4 color : COLOR0)
+	{
+            float2 scrSize = float2(1024, 1024);//float2(1296,838);
+            
+            color = 0;
+            
+			float4 position = getPosition(texcoord);
+            //float4 position = mul(world_to_view,getPosition(texcoord));
+            float2 random_normal = normalize(tex2D(random_normal_sampler, scrSize * texcoord / 16.0f).xy);//rand(texcoord);//normalize(tex2D(random_normal_sampler, scrSize * texcoord / 16.0f).xy);
+            //float3 normal = mul(view_to_world, getNormal(texcoord));
+            float3 normal = getNormal(texcoord);
+            
+			float depth_value = length(position - view_in_world);
+			
+            //float depth_value = position.z;
+            //color.rgb = position.xyz;
+            
+            //return;
+            int numSamples = 4;
+            float occlusion = 0.0f;
+			
+			//float4x4 view_clip_to_view = transpose(projection);
+			
+			// transform radius from view-clip (screenspace) to view
+			float4 tmp = float4(occ_sample_radius, 0, 0, 1);
+			//tmp = mul(view_clip_to_view, tmp);
+			//tmp = mul(view_to_world, tmp);
+			
+			float4 tmp2 = mul(projection, tmp);
+            float calculated_radius = tmp2.x;
+
+			//float occ_sample_radius_in_world = tmp.x;
+            //float calculated_radius = occ_sample_radius_in_world / depth_value;
+            //float calculated_radius = 0.05;
+			
+			//float occ_sample_radius_in_view = tmp.x;
+            //float calculated_radius = occ_sample_radius_in_view / depth_value;
+            
+            for(int i=0; i < numSamples; i++) {
+                float2 sampleVector = normalize(reflect(samples[i],random_normal)) * calculated_radius;
+                //Lets rotate the vector by 45 degrees
+                float2 rotated_uv = float2(sampleVector.x * 0.707 - sampleVector.y * 0.707, sampleVector.x * 0.707 + sampleVector.y * 0.707);
+                             
+                occlusion += calcOcclusion(texcoord, sampleVector*0.25, position.xyz, normal);
+                occlusion += calcOcclusion(texcoord, rotated_uv*0.5, position.xyz, normal);
+                occlusion += calcOcclusion(texcoord, sampleVector*0.75, position.xyz, normal);
+                occlusion += calcOcclusion(texcoord, rotated_uv, position.xyz, normal);
+            }
+			
+            occlusion /= (numSamples*4.0f);
+
+            float occ = saturate(1.0f - occlusion);//saturate(1.0f - occlusion)*(1 - occ_inverted) + saturate(occlusion)*(occ_inverted);
+
+            color.rgb = float3(occ,occ,occ);
+            
+	}
+	">
+</pixel_shader>

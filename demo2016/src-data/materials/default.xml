@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+
+<material
+	name = "default"
+	material_p3d = "default"
+	>
+    <shader file = "data/shaders/self_illuminate_fade.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <!--
+            <self_illuminate_map value = "data/images/tmp/godray_2011.jpg"/>
+            -->
+            <self_illuminate_color value = "0.0 0.0 0.0"/>
+            <!--<alpha_coeff value = "0"/>-->
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "depth_material"
+	>
+    <shader file = "data/shaders/depth_shader.xml"> 
+        <parameters>
+           <!-- <diffuse_map value = "data/images/common/white.tga"/>-->
+            <!--
+            <diffuse_map value = "data/images/title/gldc.jpg"/>
+            <specular_map value = "data/images/title/glds.jpg"/>
+            <normal_map value = "data/images/metal/gldn.jpg"/>
+            -->
+        </parameters>
+	</shader>
+</material>

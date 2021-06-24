@@ -1,0 +1,1 @@
+demo2008.exe -verbose -convert -window -res=1280x720 -timeline=data/timelines/heijariluola.xml  

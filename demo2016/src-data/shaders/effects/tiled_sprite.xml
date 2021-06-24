@@ -1,0 +1,97 @@
+<?xml version="1.0" ?>
+<parameters>
+	<parameter
+		label = "Low resolution map1"
+		name = "low_resolution_map1"
+		type = "texture2D"
+		hlsl = "low_resolution_texture1"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+	<parameter
+		label = "Low resolution map2"
+		name = "low_resolution_map2"
+		type = "texture2D"
+		hlsl = "low_resolution_texture2"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+	<parameter
+		label = "Low resolution map3"
+		name = "low_resolution_map3"
+		type = "texture2D"
+		hlsl = "low_resolution_texture3"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+	<parameter
+		label = "Sprite map"
+		name = "sprite_map"
+		type = "texture2D"
+		hlsl = "sprite_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+</parameters>
+
+<sampler_states>
+	<sampler
+		name = "low_resolution_sampler1"
+		texture = "low_resolution_texture1"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "POINT"
+		mag_filter = "POINT"
+		mip_filter = "NONE"
+		>
+	</sampler>
+	<sampler
+		name = "low_resolution_sampler2"
+		texture = "low_resolution_texture2"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "POINT"
+		mag_filter = "POINT"
+		mip_filter = "NONE"
+		>
+	</sampler>
+	<sampler
+		name = "low_resolution_sampler3"
+		texture = "low_resolution_texture3"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "POINT"
+		mag_filter = "POINT"
+		mip_filter = "NONE"
+		>
+	</sampler>
+	<sampler
+		name = "sprite_sampler"
+		texture = "sprite_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "POINT"
+		mag_filter = "POINT"
+		mip_filter = "NONE"
+		>
+	</sampler>	
+</sampler_states>
+
+<streams>
+	<stream0
+		position = 0
+		tangent = 0
+		normal = 0
+		texcoord = 0>
+	</stream0>
+</streams>
+
+<vertex_shader
+	stream = "stream0">
+	<include_hlsl file = "data/shaders/hlsl/common_vs.hlsl"/>
+	<include_hlsl file = "data/shaders/hlsl/tbn_vs.hlsl"/>
+</vertex_shader>
+
+<pixel_shader>
+	<include_hlsl file = "data/shaders/hlsl/effects/tiled_sprite.hlsl"/>
+</pixel_shader>

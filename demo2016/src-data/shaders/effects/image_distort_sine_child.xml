@@ -1,0 +1,195 @@
+<?xml version="1.0" ?>
+<parameters>
+	<parameter
+		label = "Source map"
+		name = "child_texture"
+		type = "texture2D"
+		hlsl = "child_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+    <!-- Amplitude -->
+	<parameter
+		label = "Strength"
+		name = "strength"
+		type = "float"
+		hlsl = "strength"
+		default_value = "0.0">
+	</parameter>
+	<parameter
+		label = "Wavelength"
+		name = "wavelength"
+		type = "float"
+		hlsl = "wavelength"
+		default_value = "1.0">
+	</parameter>  
+    <parameter
+		label = "DecayConstant"
+		name = "decayconstant"
+		type = "float"
+		hlsl = "decayconstant"
+		default_value = "-1.0">
+	</parameter>
+    <parameter
+		label = "Phaseshift"
+		name = "phaseshift"
+		type = "float"
+		hlsl = "phaseshift"
+		default_value = "0.0">
+	</parameter>    
+<!--	<parameter
+		label = "Translation"
+		name = "translation"
+		type = "float3"
+		hlsl = "translation"
+		default_value = "0 0 0">
+	</parameter>
+-->
+    <parameter
+		label = "Texcoord multiplier"
+		name = "texcoord_multiplier"
+		type = "float3"
+		hlsl = "texcoord_multiplier"
+		default_value = "1.0 1.0 1.0">
+	</parameter>    
+
+    <parameter
+		label = "Texcoord offset"
+		name = "texcoord_offset"
+		type = "float3"
+		hlsl = "texcoord_offset"
+		default_value = "0.0 0.0 0">
+	</parameter>    
+	
+	<parameter
+		label = "RGB Strength"
+		name = "rgb_strength"
+		type = "float"
+		hlsl = "rgb_strength"
+		default_value = "0.0">
+	</parameter>
+</parameters>
+
+<sampler_states>
+	<sampler
+		name = "s0"
+		texture = "child_texture"
+		address_u = "MIRROR"
+		address_v = "MIRROR"
+		address_w = "MIRROR"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+</sampler_states>
+
+<streams>
+	<stream0
+		position = 0
+		tangent = 0
+		normal = 0
+		texcoord = 0>
+	</stream0>
+</streams>
+
+<vertex_shader
+	stream = "stream0"
+	hlsl = "
+	struct input_vertex
+	{
+		float4 position : POSITION;
+		float2 texcoord : TEXCOORD0;
+	};
+
+	struct output_vertex
+	{
+		float4 position : POSITION;
+		float2 texcoord : TEXCOORD0;
+	};
+
+	void main_vs(in input_vertex input, out output_vertex output)
+	{
+		output = input;
+	}
+	">
+</vertex_shader>
+<pixel_shader
+	hlsl = "
+	float time_x;
+	float time_y;
+	float strength;
+    float wavelength;
+    float decayconstant;
+    float phaseshift;
+
+    float3 texcoord_multiplier;
+    float3 texcoord_offset;
+    
+	float rgb_strength;
+
+	texture2D child_texture;
+	//texture2D source_texture;
+	sampler2D s0;
+    
+    //Y= Amplitude*exp(-K*X)*sin((2*pi*X/Wavelength)+PhaseShift
+    float calcDampenedSine(float amplitude, float K, float wave, float phase, float time, float y) {
+        return (amplitude*exp(-K*y*time)*sin(2*3.14*y*time/wave)+phase);
+    }
+    
+	void main_ps(
+		float2 texcoord : TEXCOORD0,
+		out float4 color : COLOR0)
+	{
+		color = 0;
+		//if(strength > 0)
+		{
+   
+   		  //float2 tx = texcoord-float2(0.5,0.5);
+          float2 tx = texcoord;
+          float time_xx = strength * time_x;//time_x * 1.0f / (strength);
+
+		  tx = texcoord_offset.xy + tx * texcoord_multiplier.xy;
+		  
+		  // yMultiplier = -1
+		  // yOffset = 1
+		  //tx.y = yOffset + tx.y * yMultiplier;
+          //tx.y = 1 + tx.y * -1;
+          //tx.y = 1 - tx.y;
+          
+          float sineVal = calcDampenedSine(strength*20,decayconstant,wavelength,phaseshift,10,tx.y);
+          //sineVal *= calcDampenedSine(strength*30,decayconstant * 0.5,wavelength,phaseshift,1,tx.y);
+          //sineVal += calcDampenedSine(strength,decayconstant,wavelength*2,phaseshift+100,time_xx,tx.y+0.25f);
+          
+          tx.x = tx.x+sineVal;
+          
+          float2 tx_r = texcoord;
+          float2 tx_g = texcoord;
+          float2 tx_b = texcoord;
+          //tx_r.x = tx_r.x * (1.0 - strength);
+		  //tx_g.x = tx_g.x * (1.0 - strength*2);
+		  //tx_b.x = tx_b.x * (1.0 - strength*3);
+          tx_r.x += sineVal*(1.0 - rgb_strength);//+0.005;
+          tx_g.x += sineVal*(1.0 - rgb_strength*10);//+0.01;
+          tx_b.x += sineVal*(1.0 - rgb_strength*20);//+0.015;
+          
+          
+          //tx.y = tx.y+calcDampenedSine(strength,decayconstant,wavelength,phaseshift,time_y,tx.x);
+          //tx.y = tx.y+strength*exp(-0.5*tx.x*time_y)*sin((2*3.14*tx.x*time_y/10.0)+time_y);
+          //color = tex2D(s0,tx);
+   		  //tx.y = tx.y * (sin( texcoord.x*strength+time_y));
+   		  //tx.x = tx.x * (cos( texcoord.y*strength+time_x));
+		  //tx  += tx+float2(0.5,0.5);
+   		  /*color.r = tex2D(s0,tx).r;
+          color.g = tex2D(s0,tx+calcDampenedSine(strength*2,decayconstant,wavelength*2,phaseshift,time_xx,tx.y+0.25f)).g;
+          color.b = tex2D(s0,tx+calcDampenedSine(strength*4,decayconstant,wavelength*4,phaseshift,time_xx*2,tx.y+0.55f)).b;
+          */
+          color.r = tex2D(s0,tx_r).r;
+          color.g = tex2D(s0,tx_g).g;
+          color.b = tex2D(s0,tx_b).b;
+
+		}
+		//else
+		 // color = tex2D(s0,texcoord);
+	}
+	">
+</pixel_shader>

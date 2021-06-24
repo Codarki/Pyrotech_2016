@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scene>
+    <timerange valid="true" start="0" end="16.5"/>
+    <music firstBeatOffset="0" beatsPerMinute="120"/>
+    <curves>
+        <catmull_rom name="image_distort_abstrakti_strength">
+            <value_offset v="0"/>
+            <value_multiplier v="1"/>
+            <key time="0" value="0"/>
+            <key time="4.20171" value="0"/>
+            <key time="7.15089" value="0.103104"/>
+            <key time="10.1093" value="0"/>
+        </catmull_rom>
+    </curves>
+</scene>
+

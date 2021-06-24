@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+
+<material
+	name = "pomppuvaloboxi"
+	material_p3d = "pomppuvaloboxi"
+	>
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml">
+        <parameters>
+            <diffuse_color value = "0.5 0.5 0.5"/>
+            <specular_color value = "0.5 0.5 0.5"/>
+            <fresnel_normal_incidence value = "0.5"/>
+            <roughness value = "0.5"/>
+        </parameters>
+	</shader>    
+</material>
+
+<!--
+<material
+	name = "greexbox"
+	shader = "data/shaders/cook_torrance.xml"
+	material_p3d = "greexbox"
+	>
+	<parameters>
+	</parameters>
+</material>
+-->
+
+<material
+	name = "greexbox"
+	material_p3d = "greexbox"
+	>
+    <shader file = "data/shaders/reliefmap.xml" preshader = "data/shaders/preshader.xml">
+        <parameters>
+            <diffuse_map value = "data/images/reliefmap/rockwall.jpg"/>
+            <specular_map value = "data/images/reliefmap/rockwall.jpg"/>
+            <normal_map value = "data/images/reliefmap/rockwall.tga"/>
+            <occlusion_map value = "data/images/common/white.tga"/>
+
+            <ambient_color value = "0.02 0.02 0.02"/>
+            <diffuse_color value = "0.5 0.5 0.5"/>
+            <specular_color value = "0.5 0.5 0.5"/>
+
+            <!-- inverted heighmap? -->
+            <depth value = "-0.03"/>
+
+            <fresnel_normal_incidence value = "0.34"/>
+            <roughness value = "0.5"/>
+            <normal_scale value = "1.00"/>
+        </parameters>
+	</shader>    
+</material>

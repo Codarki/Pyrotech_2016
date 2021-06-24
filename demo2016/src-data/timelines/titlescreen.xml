@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+
+<sequences>
+	<scene_sequence
+	    name = "scene0"
+		scene = "data/scenes/titlescreen.p3d_scene" 
+		camera = "Camera01"		
+		frames_per_second = 30 
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "800" 
+        near_plane = "1"
+        far_plane = "50000"
+        ssao_enabled = "true">					
+		</scene_sequence>
+
+	
+	<!-- Pitää olla jotta noise toimii, ei ole päällä mutta vaaditaan tämä rivi -->
+	<image name = "noise_tex" path = "data/images/noise.jpg" />
+	<draw_to_texture name = "title_rgb_distort_tex">
+		<shared_texture name = "SceneTexture1"/>
+		<input sequence = "scene0"/>
+	</draw_to_texture>
+	<plasma>
+		<name v="image_distort_sine_scene0"/>
+		<material_name v="image_distort_sine_fullscreen_material_titlescreen"/>
+		<input sequence="title_rgb_distort_tex"/>
+	</plasma>	
+		<!-- Post processing päällä -->	
+	<!-- Tähän ei tarvitse koskea -->
+	<post_processing name = "Post processing">
+		<clear_color v = "0 0 0"/>
+		<input sequence = "image_distort_sine_scene0" time="0"/>			
+		<!-- input sequence ="draw_alkuspace"/ -->	
+
+	</post_processing>
+	
+	<!-- Depth buffer päällä -->
+	<!-- Tähän ei tarvitse koskea -->
+	<depth_buffer name = "Depth test">
+        <clear_color v = "0 0 0"/>
+		<input sequence = "Post processing"/>
+	</depth_buffer>
+
+	<!--  Linkataan Depth test sequence -->
+	<!--  Ei tarttis koskee -->
+	<composition name = "main timeline">	
+		<input sequence = "Depth test"/>
+	</composition>
+
+	<!-- Main timeline -->
+	<!--  Ei tarttis koskee -->		
+	<timeline>
+		<input sequence = "main timeline"/>
+	</timeline>
+</sequences>

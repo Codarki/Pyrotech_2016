@@ -1,0 +1,83 @@
+<?xml version="1.0" ?>
+<parameters>
+	<parameter
+		label = "Normal map"
+		name = "normal_map"
+		type = "texture2D"
+		hlsl = "normal_texture"
+		default_value = "data/images/common/normal.tga">
+	</parameter>
+	<parameter
+		label = "Normal scale"
+		name = "normal_scale"
+		type = "float"
+		hlsl = "normal_scale"
+		default_value = "1.0">
+	</parameter>
+	<parameter
+		label = "Angle in radians"
+		name = "angle_radians"
+		type = "float"
+		hlsl = "angle_radians"
+		default_value = "0.3">
+	</parameter>
+	<parameter
+		label = "Speed Coeffient"
+		name = "speed_coeff"
+		type = "float3"
+		hlsl = "speed_coeff"
+		default_value = "1 1 1">
+	</parameter>	
+	<parameter
+		label = "General Texcoord Offset"
+		name = "general_texcoord_offset"
+		type = "float3"
+		hlsl = "general_texcoord_offset"
+		default_value = "0 0 0">
+	</parameter>
+	<parameter
+		label = "Layer1 Texcoord Offset"
+		name = "layer1_texcoord_offset"
+		type = "float3"
+		hlsl = "layer1_texcoord_offset"
+		default_value = "0 0 0">
+	</parameter>
+	<parameter
+		label = "Layer2 Texcoord Offset"
+		name = "layer2_texcoord_offset"
+		type = "float3"
+		hlsl = "layer2_texcoord_offset"
+		default_value = "0 0 0">
+	</parameter>
+</parameters>
+
+<sampler_states>
+	<sampler
+		name = "normal_sampler"
+		texture = "normal_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+</sampler_states>
+
+<streams>
+	<stream0
+		position = 0
+		tangent = 0
+		normal = 0
+		texcoord = 0>
+	</stream0>
+</streams>
+
+<vertex_shader
+	stream = "stream0">
+	<include_hlsl file = "data/shaders/hlsl/effects/water_normal_texture.hlsl"/>
+</vertex_shader>
+<pixel_shader>
+	<include_hlsl file = "data/shaders/hlsl/effects/water_normal_texture.hlsl"/>
+</pixel_shader>

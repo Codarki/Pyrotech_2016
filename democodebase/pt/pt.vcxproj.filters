@@ -1,0 +1,698 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="stream">
+      <UniqueIdentifier>{c33d05e9-87bc-46ba-8cf3-24626bacbdc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stream\archives">
+      <UniqueIdentifier>{8e3343a4-665a-4406-bd9c-b6b084768d17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="math">
+      <UniqueIdentifier>{7e64b1a0-1615-4193-9208-ccebffed5ed4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core">
+      <UniqueIdentifier>{94fbad68-91da-463f-b07b-7bc05a581754}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\detail %28namespace%29">
+      <UniqueIdentifier>{8ad569f9-c5f1-4204-970b-7a17d2227a06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="boost %28namespace%29">
+      <UniqueIdentifier>{1e90291a-682a-42c3-a96c-f5f2d5307953}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="boost %28namespace%29\filesystem %28namespace%29">
+      <UniqueIdentifier>{11a35fda-f74f-4cb5-a555-b39e4118fbb6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="boost %28namespace%29\format %28namespace%29">
+      <UniqueIdentifier>{537df6b4-99bf-4390-a74e-247717f20b42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="boost %28namespace%29\ptr_container">
+      <UniqueIdentifier>{dc332a52-945b-49a2-8e0e-5564b4926ba9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="std %28namespace%29">
+      <UniqueIdentifier>{5dfba123-21c2-4b03-aa27-1738ccc91993}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="win32 %28namespace%29">
+      <UniqueIdentifier>{3bc5fce1-9c3f-4fa8-a1bf-1e78284539c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="win32 %28namespace%29\clipboard">
+      <UniqueIdentifier>{dda3da76-1515-44b4-92d0-7785016232fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="exceptions %28namespace%29">
+      <UniqueIdentifier>{52ddef24-568e-44b9-b956-15249e619b82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="parameters">
+      <UniqueIdentifier>{c0b232b9-9be9-46d6-9134-7f5352f7a85d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="math %28namespace%29">
+      <UniqueIdentifier>{8331e9d3-3adf-49fd-bc71-ced50811d761}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="math %28namespace%29\splines">
+      <UniqueIdentifier>{f3c4ad3b-e5fd-4459-9463-2acf930a7f1e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bounded_input_stream.h">
+      <Filter>stream</Filter>
+    </ClInclude>
+    <ClInclude Include="data_input_stream.h">
+      <Filter>stream</Filter>
+    </ClInclude>
+    <ClInclude Include="externalizable.h">
+      <Filter>stream</Filter>
+    </ClInclude>
+    <ClInclude Include="internalizable.h">
+      <Filter>stream</Filter>
+    </ClInclude>
+    <ClInclude Include="native_file_input_stream.h">
+      <Filter>stream</Filter>
+    </ClInclude>
+    <ClInclude Include="uncompressed_archive.h">
+      <Filter>stream\archives</Filter>
+    </ClInclude>
+    <ClInclude Include="box.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="box_builder.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="intersection.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math_utils.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="matrix.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="matrix_fwd.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="matrix_operations.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="matrix_utility.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="oriented_box.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="vector_utility.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="any_error.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="basic_types.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="config_node.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="config_node_utility.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="debug_only.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="directory_iterator.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="documentation.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="global.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="inline.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="log.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="none.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="progress_report.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="scoped_assignment.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="singleton.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="text_file_position.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="win32.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="detail\config_node_child_not_found.h">
+      <Filter>core\detail %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="detail\config_node_parse_failed.h">
+      <Filter>core\detail %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\assert.h">
+      <Filter>boost %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\auto_link.h">
+      <Filter>boost %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\bind.h">
+      <Filter>boost %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\cast.h">
+      <Filter>boost %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\enable_shared_from_this.h">
+      <Filter>boost %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\format.h">
+      <Filter>boost %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\function.h">
+      <Filter>boost %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\lexical_cast.h">
+      <Filter>boost %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\noncopyable.h">
+      <Filter>boost %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\null_deleter.h">
+      <Filter>boost %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\optional.h">
+      <Filter>boost %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\path.h">
+      <Filter>boost %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\shared_array.h">
+      <Filter>boost %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\shared_ptr.h">
+      <Filter>boost %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\smart_ptr.h">
+      <Filter>boost %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\filesystem\convenience.h">
+      <Filter>boost %28namespace%29\filesystem %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\fstream.h">
+      <Filter>boost %28namespace%29\filesystem %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\filesystem\operations.h">
+      <Filter>boost %28namespace%29\filesystem %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\filesystem\path_fwd.h">
+      <Filter>boost %28namespace%29\filesystem %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\format\format_fwd.h">
+      <Filter>boost %28namespace%29\format %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="boost\ptr_container\ptr_vector.h">
+      <Filter>boost %28namespace%29\ptr_container</Filter>
+    </ClInclude>
+    <ClInclude Include="std\iterator.h">
+      <Filter>std %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="std\list.h">
+      <Filter>std %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="std\map.h">
+      <Filter>std %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="std\set.h">
+      <Filter>std %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="std\stack.h">
+      <Filter>std %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="std\string.h">
+      <Filter>std %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="std\vector.h">
+      <Filter>std %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="win32\dialog_box_error.h">
+      <Filter>win32 %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="win32\dll.h">
+      <Filter>win32 %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="win32\font.h">
+      <Filter>win32 %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="win32\font_utility.h">
+      <Filter>win32 %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="win32\message_pump.h">
+      <Filter>win32 %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="win32\utility.h">
+      <Filter>win32 %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="win32\win32_error.h">
+      <Filter>win32 %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="win32\window.h">
+      <Filter>win32 %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="win32\window_class.h">
+      <Filter>win32 %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="win32\clipboard.h">
+      <Filter>win32 %28namespace%29\clipboard</Filter>
+    </ClInclude>
+    <ClInclude Include="win32\clipboard_text.h">
+      <Filter>win32 %28namespace%29\clipboard</Filter>
+    </ClInclude>
+    <ClInclude Include="exceptions\any_error.h">
+      <Filter>exceptions %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="exceptions\context.h">
+      <Filter>exceptions %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="exceptions\contextual_exception.h">
+      <Filter>exceptions %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="exceptions\file_error.h">
+      <Filter>exceptions %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="exceptions\path_file_context.h">
+      <Filter>exceptions %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="exceptions\string_context.h">
+      <Filter>exceptions %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="exceptions\text_file_error.h">
+      <Filter>exceptions %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="animatable_value.h">
+      <Filter>parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="animatable_value_source.h">
+      <Filter>parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="animatable_value_utility.h">
+      <Filter>parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="basic_value_source.h">
+      <Filter>parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="overridable_value_source.h">
+      <Filter>parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="parameter_collection.h">
+      <Filter>parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="parameter_node.h">
+      <Filter>parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="parameter_node_utility.h">
+      <Filter>parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="math\quaternion.h">
+      <Filter>math %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="math\rounding.h">
+      <Filter>math %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="math\step_curve.h">
+      <Filter>math %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="math\cr_data_set.h">
+      <Filter>math %28namespace%29\splines</Filter>
+    </ClInclude>
+    <ClInclude Include="math\cr_spline.h">
+      <Filter>math %28namespace%29\splines</Filter>
+    </ClInclude>
+    <ClInclude Include="math\cubic_hermite_spline.h">
+      <Filter>math %28namespace%29\splines</Filter>
+    </ClInclude>
+    <ClInclude Include="math\data_set.h">
+      <Filter>math %28namespace%29\splines</Filter>
+    </ClInclude>
+    <ClInclude Include="math\kb_data_set.h">
+      <Filter>math %28namespace%29\splines</Filter>
+    </ClInclude>
+    <ClInclude Include="math\kb_spline.h">
+      <Filter>math %28namespace%29\splines</Filter>
+    </ClInclude>
+    <ClInclude Include="math\spherical_cubic_interpolation.h">
+      <Filter>math %28namespace%29\splines</Filter>
+    </ClInclude>
+    <ClInclude Include="math\spline_value_source.h">
+      <Filter>math %28namespace%29\splines</Filter>
+    </ClInclude>
+    <ClInclude Include="win32\win32_macros.h">
+      <Filter>win32 %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="animatable_value_fwd.h">
+      <Filter>parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="animatable_value_base.h">
+      <Filter>parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="string_wrapper.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="exceptions\context_stack.h">
+      <Filter>exceptions %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="std\memory.h">
+      <Filter>std %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="string_builder.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="string_wrapper_builder.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="format.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="vector_fwd.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="path.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="data_stream_content.h">
+      <Filter>stream</Filter>
+    </ClInclude>
+    <ClInclude Include="std\cassert.h">
+      <Filter>std %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="box_fwd.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="input_file.h">
+      <Filter>stream</Filter>
+    </ClInclude>
+    <ClInclude Include="output_file.h">
+      <Filter>stream</Filter>
+    </ClInclude>
+    <ClInclude Include="file_openmode.h">
+      <Filter>stream</Filter>
+    </ClInclude>
+    <ClInclude Include="stream_fwd.h">
+      <Filter>stream</Filter>
+    </ClInclude>
+    <ClInclude Include="file_type.h">
+      <Filter>stream</Filter>
+    </ClInclude>
+    <ClInclude Include="native_c_file.h">
+      <Filter>stream</Filter>
+    </ClInclude>
+    <ClInclude Include="path_fwd.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="config_node_fwd.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="parameter_node_fwd.h">
+      <Filter>parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="overridable_value_source_fwd.h">
+      <Filter>parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="animatable_value_source_fwd.h">
+      <Filter>parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="parameter_collection_fwd.h">
+      <Filter>parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="string_wrapper_fwd.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="constant_value_source.h">
+      <Filter>parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="parameter_node_impl.h">
+      <Filter>parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="std\algorithm.h">
+      <Filter>std %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="composite_value_source.h">
+      <Filter>parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="input_stream_utility.h">
+      <Filter>stream</Filter>
+    </ClInclude>
+    <ClInclude Include="math\plane.h">
+      <Filter>math %28namespace%29</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="data_input_stream.cpp">
+      <Filter>stream</Filter>
+    </ClCompile>
+    <ClCompile Include="file_input_stream.cpp">
+      <Filter>stream</Filter>
+    </ClCompile>
+    <ClCompile Include="file_output_stream.cpp">
+      <Filter>stream</Filter>
+    </ClCompile>
+    <ClCompile Include="native_file_input_stream.cpp">
+      <Filter>stream</Filter>
+    </ClCompile>
+    <ClCompile Include="uncompressed_archive.cpp">
+      <Filter>stream\archives</Filter>
+    </ClCompile>
+    <ClCompile Include="matrix.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="vector.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="vector_utility.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="com_ptr.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="command_line.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="config_node.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="config_node_utility.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="directory_iterator.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="log.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="text_file_position.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="verbose.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="boost\null_deleter.cpp">
+      <Filter>boost %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="boost\filesystem\convenience.cpp">
+      <Filter>boost %28namespace%29\filesystem %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="win32\dialog_box_error.cpp">
+      <Filter>win32 %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="win32\dll.cpp">
+      <Filter>win32 %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="win32\font.cpp">
+      <Filter>win32 %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="win32\font_utility.cpp">
+      <Filter>win32 %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="win32\message_pump.cpp">
+      <Filter>win32 %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="win32\utility.cpp">
+      <Filter>win32 %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="win32\win32_error.cpp">
+      <Filter>win32 %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="win32\window.cpp">
+      <Filter>win32 %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="win32\window_class.cpp">
+      <Filter>win32 %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="win32\clipboard.cpp">
+      <Filter>win32 %28namespace%29\clipboard</Filter>
+    </ClCompile>
+    <ClCompile Include="win32\clipboard_text.cpp">
+      <Filter>win32 %28namespace%29\clipboard</Filter>
+    </ClCompile>
+    <ClCompile Include="exceptions\any_error.cpp">
+      <Filter>exceptions %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="exceptions\contextual_exception.cpp">
+      <Filter>exceptions %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="exceptions\file_error.cpp">
+      <Filter>exceptions %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="exceptions\path_file_context.cpp">
+      <Filter>exceptions %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="exceptions\string_context.cpp">
+      <Filter>exceptions %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="exceptions\text_file_error.cpp">
+      <Filter>exceptions %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="animatable_value.cpp">
+      <Filter>parameters</Filter>
+    </ClCompile>
+    <ClCompile Include="animatable_value_utility.cpp">
+      <Filter>parameters</Filter>
+    </ClCompile>
+    <ClCompile Include="parameter_collection.cpp">
+      <Filter>parameters</Filter>
+    </ClCompile>
+    <ClCompile Include="parameter_node.cpp">
+      <Filter>parameters</Filter>
+    </ClCompile>
+    <ClCompile Include="parameter_node_utility.cpp">
+      <Filter>parameters</Filter>
+    </ClCompile>
+    <ClCompile Include="math\quaternion.cpp">
+      <Filter>math %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="string_wrapper.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="exceptions\context_stack.cpp">
+      <Filter>exceptions %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="string_builder.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="string_wrapper_builder.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="format.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="path.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="input_file.cpp">
+      <Filter>stream</Filter>
+    </ClCompile>
+    <ClCompile Include="output_file.cpp">
+      <Filter>stream</Filter>
+    </ClCompile>
+    <ClCompile Include="file_openmode.cpp">
+      <Filter>stream</Filter>
+    </ClCompile>
+    <ClCompile Include="data_stream_content.cpp">
+      <Filter>stream</Filter>
+    </ClCompile>
+    <ClCompile Include="input_stream.cpp">
+      <Filter>stream</Filter>
+    </ClCompile>
+    <ClCompile Include="native_c_file.cpp">
+      <Filter>stream</Filter>
+    </ClCompile>
+    <ClCompile Include="input_stream_utility.cpp">
+      <Filter>stream</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="input_stream.inl">
+      <Filter>stream</Filter>
+    </None>
+    <None Include="output_stream.inl">
+      <Filter>stream</Filter>
+    </None>
+    <None Include="box.inl">
+      <Filter>math</Filter>
+    </None>
+    <None Include="matrix.inl">
+      <Filter>math</Filter>
+    </None>
+    <None Include="matrix_detail.inl">
+      <Filter>math</Filter>
+    </None>
+    <None Include="matrix_operations.inl">
+      <Filter>math</Filter>
+    </None>
+    <None Include="oriented_box.inl">
+      <Filter>math</Filter>
+    </None>
+    <None Include="config_node.inl">
+      <Filter>core</Filter>
+    </None>
+    <None Include="global.inl">
+      <Filter>core</Filter>
+    </None>
+    <None Include="animatable_value.inl">
+      <Filter>parameters</Filter>
+    </None>
+    <None Include="animatable_value_source.inl">
+      <Filter>parameters</Filter>
+    </None>
+    <None Include="parameter_node_utility.inl">
+      <Filter>parameters</Filter>
+    </None>
+    <None Include="math\cubic_hermite_spline.inl">
+      <Filter>math %28namespace%29\splines</Filter>
+    </None>
+    <None Include="math\data_set.inl">
+      <Filter>math %28namespace%29\splines</Filter>
+    </None>
+    <None Include="constant_value_source.inl">
+      <Filter>parameters</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuildStep Include="file_input_stream.h">
+      <Filter>stream</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="file_output_stream.h">
+      <Filter>stream</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="input_stream.h">
+      <Filter>stream</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="output_stream.h">
+      <Filter>stream</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="defs.h">
+      <Filter>private</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="vector.h">
+      <Filter>math</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="vector.inl">
+      <Filter>math</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="com_ptr.h">
+      <Filter>core</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="command_line.h">
+      <Filter>core</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="verbose.h">
+      <Filter>core</Filter>
+    </CustomBuildStep>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<light_shader>
+	<parameters>
+		<parameter
+			label = "Shadow map"
+			name = "shadow_map"
+			type = "texture2D"
+			hlsl = "shadow_texture"
+			default_value = "data/images/common/black.tga">
+		</parameter>
+		<parameter
+			label = "Mask texture"
+			name = "mask_texture"
+			type = "texture2D"
+			hlsl = "frustum_light_mask_texture"
+			default_value = "data/images/common/white.tga">
+		</parameter>
+	</parameters>
+	<sampler_states>
+		<sampler
+			name = "shadow_sampler"
+			texture = "shadow_texture"
+			address_u = "CLAMP"
+			address_v = "CLAMP"
+			address_w = "CLAMP"
+			min_filter = "POINT"
+			mag_filter = "POINT"
+			mip_filter = "POINT"
+			>
+		</sampler>
+		<sampler
+			name = "frustum_light_mask_sampler"
+			texture = "frustum_light_mask_texture"
+			address_u = "WRAP"
+			address_v = "WRAP"
+			address_w = "WRAP"
+			min_filter = "LINEAR"
+			mag_filter = "LINEAR"
+			mip_filter = "LINEAR"
+			>
+		</sampler>
+	</sampler_states>
+	<!-- TODO: Define required attributes from vertex shader here somehow. -->
+	<pixel_shader>
+		<include_hlsl file = "data/shaders/light/hlsl/shadow_mapped_frustum_light_no_attenuation.hlsl"/>
+	</pixel_shader>	
+</light_shader>

@@ -1,0 +1,123 @@
+<asset>
+	<scene>
+		<items>
+            <item>
+                <name>reflected_Camera01</name>
+                <is_generated>true</is_generated>
+                <parent_item name="Camera01"/>
+                <transformer>
+                    <reflection>
+                        <other_item name="Camera01"/>
+                        <!-- -0.928, 70.052, -29.151  -->
+                        <reflection_plane point = "-0.928 -29.151 70.052" normal = "0 1 0"/>
+                    </reflection>
+                </transformer>
+                <camera>
+                    <projection_item name="Camera01"/>
+                </camera>
+            </item>
+            <item>
+                <name>reflected_Camera02</name>
+                <is_generated>true</is_generated>
+                <parent_item name="Camera02"/>
+                <transformer>
+                    <reflection>
+                        <other_item name="Camera02"/>
+                        <!-- -0.928, 70.052, -29.151  -->
+                        <reflection_plane point = "-0.928 -29.151 70.052" normal = "0 1 0"/>
+                    </reflection>
+                </transformer>
+                <camera>
+                    <projection_item name="Camera02"/>
+                </camera>
+            </item>
+			<item>
+                <name>reflected_Camera03</name>
+                <is_generated>true</is_generated>
+                <parent_item name="Camera03"/>
+                <transformer>
+                    <reflection>
+                        <other_item name="Camera03"/>
+                        <!-- -0.928, 70.052, -29.151  -->
+                        <reflection_plane point = "-0.928 -29.151 70.052" normal = "0 1 0"/>
+                    </reflection>
+                </transformer>
+                <camera>
+                    <projection_item name="Camera03"/>
+                </camera>
+            </item>
+			
+		</items>
+    
+		<lights>
+        
+           			
+			     <light>
+				<item name="Spot14"/>
+				<light_shader_instance name="saaret_frustum_light"/>
+				<near_plane>100.0</near_plane>
+				<far_plane>500.0</far_plane>
+				<cast_shadows>true</cast_shadows>
+                <shadow_bias>0.0011</shadow_bias>
+			</light>
+			
+			
+					
+			<light>
+				<item name="Spot06"/>
+				<light_shader_instance name="ambient_frustum_light"/>
+				<near_plane>10.0</near_plane>
+				<far_plane>1200.0</far_plane>
+				<cast_shadows>false</cast_shadows>
+                <shadow_bias>0.0011</shadow_bias>
+			</light>
+			
+			<light>
+				<item name="Spot07"/>
+				<light_shader_instance name="ambient_frustum_light"/>
+				<near_plane>10.0</near_plane>
+				<far_plane>1200.0</far_plane>
+				<cast_shadows>false</cast_shadows>
+                <shadow_bias>0.0011</shadow_bias>
+			</light>
+			
+			<light>
+				<item name="Spot08"/>
+				<light_shader_instance name="ambient_frustum_light"/>
+				<near_plane>10.0</near_plane>
+				<far_plane>1200.0</far_plane>
+				<cast_shadows>false</cast_shadows>
+                <shadow_bias>0.0011</shadow_bias>
+			</light>
+			
+				<light>
+				<item name="Spot09"/>
+				<light_shader_instance name="ambient_frustum_light"/>
+				<near_plane>10.0</near_plane>
+				<far_plane>1200.0</far_plane>
+				<cast_shadows>false</cast_shadows>
+                <shadow_bias>0.0011</shadow_bias>
+			</light>
+			          
+		</lights>
+	</scene>
+     <convert>
+		<scene>
+			<mesh_instances>
+				<base_mesh>
+					<file>icerock01.p3d_model</file>
+				</base_mesh>
+				<base_mesh>
+					<file>icerock_med_01.p3d_model</file>
+				</base_mesh>
+				<base_mesh>
+					<file>plane04.p3d_model</file>
+				</base_mesh>
+				
+				
+			</mesh_instances>
+		</scene>
+	</convert>
+	
+    
+</asset>

@@ -1,0 +1,218 @@
+<?xml version="1.0" ?>
+<light_shader_instances>
+
+	<!-- default light materials at default.xml -->
+    <light_shader_instance
+		name = "planttunnel_pallo_spot"
+		shader = "data/shaders/light/frustum_light_shader.xml"
+		>
+		<parameters>
+            <!--<shadow_map shared_value = "ShadowTexture"/> -->
+			<!--<mask_texture value = "data/images/2014/waterfoam.jpg"/> -->
+            <mask_texture value = "data/images/lights/green_caustics.jpg"/>
+		</parameters>
+	</light_shader_instance> 
+	
+	 <light_shader_instance
+		name = "kotka_tv_spot"
+		shader = "data/shaders/light/frustum_light_shader.xml"
+		>
+		<parameters>
+            <!--<shadow_map shared_value = "ShadowTexture"/> -->
+			<!--<mask_texture value = "data/images/2014/waterfoam.jpg"/> -->
+            <mask_texture value = "data/images/lights/kotkatv.jpg"/>
+		</parameters>
+	</light_shader_instance> 
+    
+    <light_shader_instance
+		name = "planttunnel_light1"
+		shader = "data/shaders/light/shadow_mapped_frustum_light_shader.xml"
+		>
+		<parameters>
+            <shadow_map shared_value = "ShadowTexture"/>
+			<mask_texture value = "data/images/lights/grunge_spot.jpg"/>
+		</parameters>
+	</light_shader_instance> 
+    
+    <light_shader_instance
+		name = "black_light"
+		shader = "data/shaders/light/shadow_mapped_frustum_light_shader.xml"
+		>
+		<parameters>
+            <shadow_map shared_value = "ShadowTexture"/>
+			<mask_texture value = "data/images/common/black.tga"/>
+		</parameters>
+	</light_shader_instance>   
+    
+    <light_shader_instance
+		name = "saaret_frustum_light"
+		shader = "data/shaders/light/shadow_mapped_frustum_light_shader_no_attenuation_no_clip.xml">
+		<parameters>
+            <shadow_map shared_value = "ShadowTexture"/>
+			<!-- <mask_texture value = "data/images/lights/flashlight_pt.jpg"/> -->
+		</parameters>
+	</light_shader_instance>  
+
+<light_shader_instance
+		name = "ambient_frustum_light"
+		shader = "data/shaders/light/frustum_light_shader_no_attenuation.xml"
+		>
+		<parameters>
+            <shadow_map shared_value = "ShadowTexture"/>
+			<!-- <mask_texture value = "data/images/lights/flashlight_pt.jpg"/> -->
+		</parameters>
+	</light_shader_instance>    	
+	
+	<light_shader_instance
+		name = "ratcaustics_frustum_light"
+		shader = "data/shaders/light/frustum_light_shader_no_attenuation.xml"
+		>
+		<parameters>
+            <shadow_map shared_value = "ShadowTexture"/>
+			<mask_texture value = "data/images/lights/ratcaustics.jpg"/>
+			<!-- <mask_texture value = "data/images/lights/flashlight_pt.jpg"/> -->
+		</parameters>
+	</light_shader_instance> 
+	
+	
+	
+	<light_shader_instance
+		name = "lembient_frustum_light"
+		shader = "data/shaders/light/frustum_light_shader_no_attenuation.xml"
+		>
+		<parameters>
+            <shadow_map shared_value = "ShadowTexture"/>
+			<mask_texture value = "data/images/lights/blue_caustics.jpg"/>
+			<!-- <mask_texture value = "data/images/lights/flashlight_pt.jpg"/> -->
+		</parameters>
+	</light_shader_instance>    	
+	
+	<light_shader_instance
+		name = "leetluola_aukko_frustum_light"
+		shader = "data/shaders/light/shadow_mapped_frustum_light_shader.xml"
+		>
+		<parameters>
+            <shadow_map shared_value = "ShadowTexture"/>
+			<mask_texture value = "data/images/lights/flashlight_pt.jpg"/>
+		</parameters>
+	</light_shader_instance>    
+	
+    <!-- nuclei below -->
+	<light_shader_instance
+		name = "testi_frustum_light"
+		shader = "data/shaders/light/shadow_mapped_frustum_light_shader.xml"
+		>
+		<parameters>
+			<shadow_map shared_value = "ShadowTexture"/>
+			<!--<mask_texture value = "data/images/lights/flashlight_01.jpg"/>-->
+            <!--<mask_texture shared_value = "spotmask_texture_name_curve"/>-->
+            <mask_texture value = "data/images/lights/hud_green.jpg"/>
+		</parameters>
+	</light_shader_instance>
+	
+	<light_shader_instance
+		name = "tuuletin_frustum_light"
+		shader = "data/shaders/light/shadow_mapped_frustum_light_shader.xml"
+		>
+		<parameters>
+			<shadow_map shared_value = "ShadowTexture"/>
+			<!--<mask_texture value = "data/images/lights/flashlight_01.jpg"/>-->
+            <!--<mask_texture shared_value = "spotmask_texture_name_curve"/>-->
+            <mask_texture value = "data/images/lights/spot_tuuletin.jpg"/>
+		</parameters>
+	</light_shader_instance>
+	
+	<light_shader_instance
+		name = "taytekaytava_frustum_light"
+		shader = "data/shaders/light/shadow_mapped_frustum_light_shader.xml"
+		>
+		<parameters>
+			<shadow_map shared_value = "ShadowTexture"/>
+			<!--<mask_texture value = "data/images/lights/flashlight_01.jpg"/>-->
+            <!--<mask_texture shared_value = "spotmask_texture_name_curve"/>-->
+            <mask_texture value = "data/images/lights/spot_asm.jpg"/>
+		</parameters>
+	</light_shader_instance>
+
+	
+	<light_shader_instance
+		name = "yleis_frustum_light"
+		shader = "data/shaders/light/shadow_mapped_frustum_light_shader.xml"
+		>
+		<parameters>
+			<shadow_map shared_value = "ShadowTexture"/>
+            <mask_texture value = "data/images/lights/flashlight_pt.jpg"/>
+		</parameters>
+	</light_shader_instance>
+	
+	<light_shader_instance
+		name = "syslight_frustum_light"
+		shader = "data/shaders/light/shadow_mapped_frustum_light_shader.xml"
+		>
+		<parameters>
+			<shadow_map shared_value = "ShadowTexture"/>
+            <mask_texture value = "data/images/lights/syslight.png"/>
+		</parameters>
+	</light_shader_instance>
+	
+    
+    <light_shader_instance
+		name = "halytys_frustum_light"
+		shader = "data/shaders/light/shadow_mapped_frustum_light_shader.xml"
+		>
+		<parameters>
+            <shadow_map shared_value = "ShadowTexture"/>        
+			<mask_texture value = "data/images/lights/halytys.jpg"/>
+		</parameters>
+	</light_shader_instance>
+	
+	<light_shader_instance
+		name = "silmat_frustum_light"
+		shader = "data/shaders/light/shadow_mapped_frustum_light_shader.xml"
+		>
+		<parameters>
+            <shadow_map shared_value = "ShadowTexture"/>        
+			<mask_texture value = "data/images/lights/flashlight_pt.jpg"/>
+		</parameters>
+	</light_shader_instance>
+
+	<light_shader_instance
+		name = "kaytava_frustum_light"
+		shader = "data/shaders/light/shadow_mapped_frustum_light_shader.xml"
+		>
+		<parameters>
+            <shadow_map shared_value = "ShadowTexture"/>   
+			<mask_texture value = "data/images/lights/flashlight_pt.jpg"/>
+		</parameters>
+	</light_shader_instance>
+	
+	<light_shader_instance
+		name = "reaktori_frustum_light"
+		shader = "data/shaders/light/two_sided_frustum_light_shader.xml"
+		>
+		<parameters>
+			<mask_texture value = "data/images/lights/caustics.jpg"/>
+		</parameters>
+	</light_shader_instance>
+	
+	<light_shader_instance
+		name = "reaktori_frustum_light2"
+		shader = "data/shaders/light/shadow_mapped_frustum_light_shader.xml"
+		>
+		<parameters>
+            <shadow_map shared_value = "ShadowTexture"/>   		
+			<mask_texture value = "data/images/lights/spot_mask.png"/>
+		</parameters>
+	</light_shader_instance>	
+	
+	<light_shader_instance
+		name = "loppu_part2_frustum_light"
+		shader = "data/shaders/light/frustum_light_shader.xml"
+		>
+		<parameters>
+			<mask_texture value = "data/images/lights/caustics.jpg"/>
+		</parameters>
+	</light_shader_instance>
+	
+		
+</light_shader_instances>

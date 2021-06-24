@@ -1,0 +1,1758 @@
+<?xml version="1.0" ?>
+
+<material
+	name = "plastik"
+	material_p3d = "plastik"
+	>
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2015/plastik.jpg"/>
+            <!--<specular_map value = "data/images/2015/plastik.jpg"/> -->
+            <shininess_map value = "data/images/2015/plastik.jpg"/> <!-- ptkotkaspc.jpg too white -->
+            <!-- <normal_map value = "data/images/2014/graveln.jpg"/> -->
+            <!-- <occlusion_map value = "data/images/2014/ptkotkaocc.jpg"/ -->
+            <occlusion_map shared_value = "SSAOBuffer"/>
+            <reflection_map value = "data/images/2015/neonref.jpg"/>
+            <ambient_color value = "0.4 0.2 0.1"/>
+            <diffuse_color value = "6 6 6"/>
+            <specular_color value = "1.0 1.0 1.0"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.45"/>
+            <roughness value = "0.1"/> <!-- 0.30 -->
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.1 0 0.7"/>
+            <reflection_coeff value = "0.75"/>
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "wplastik"
+	material_p3d = "wplastik"
+	>
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2015/wplastik.jpg"/>
+            <!--<specular_map value = "data/images/2015/plastik.jpg"/> -->
+            <shininess_map value = "data/images/2015/wplastik.jpg"/> <!-- ptkotkaspc.jpg too white -->
+            <!-- <normal_map value = "data/images/2014/graveln.jpg"/> -->
+            <!-- <occlusion_map value = "data/images/2014/ptkotkaocc.jpg"/ -->
+            <occlusion_map shared_value = "SSAOBuffer"/>
+            <!-- <reflection_map value = "data/images/2015/refmap1.jpg"/> -->
+            <reflection_map value = "data/images/2015/fluormos.jpg"/>          
+            <ambient_color value = "0.2 0.2 0.2"/>
+            <diffuse_color value = "1 1 1"/>
+            <specular_color value = "1.0 1.0 1.0"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.3"/>
+            <roughness value = "0.1"/> <!-- 0.30 -->
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.1 0 0.7"/>
+            <reflection_coeff value = "50.0"/>
+            <reflection_texcoord_offset shared_value = "spider_ref_texcoord_offset"/>
+        </parameters>
+	</shader>
+</material>
+
+
+<!--
+<material
+	name = "telsu"
+	material_p3d = "telsu"
+	>
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/loading_screen/loading_screen_old.jpg"/>
+            <specular_map value = "data/images/loading_screen/loading_screen_old.jpg"/>
+            <shininess_map value = "data/images/loading_screen/loading_screen_old.jpg"/> 
+           
+            <occlusion_map shared_value = "SSAOBuffer"/>
+            <reflection_map value = "data/images/title/gldc.jpg"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "1 1 1"/>
+            <specular_color value = "0.7 0.7 0.7"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.25"/>
+            <roughness value = "0.90"/> 
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.1 0 0.7"/>
+            <reflection_coeff value = "0.35"/>
+        </parameters>
+	</shader>
+</material>
+-->
+
+
+<!--
+<material
+	name = "gravel"
+	material_p3d = "gravel"
+	>
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2014/gravel.jpg"/>
+            <specular_map value = "data/images/2014/gravel.jpg"/>
+            <shininess_map value = "data/images/2014/gravel.jpg"/>
+            <normal_map value = "data/images/2014/graveln.jpg"/>
+            <occlusion_map shared_value = "SSAOBuffer"/>
+            <reflection_map value = "data/images/title/gldc.jpg"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "1 1 1"/>
+            <specular_color value = "0.7 0.7 0.7"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.25"/>
+            <roughness value = "0.90"/>
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.2 0 0.2"/>
+            <reflection_coeff value = "0.35"/>
+        </parameters>
+	</shader>
+</material>
+-->
+<material
+	name = "gravel"
+	material_p3d = "gravel"
+	>
+  <shader file = "data/shaders/ice.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <diffuse_map value = "data/images/2016/ice.jpg"/>
+      <specular_map value = "data/images/2016/ice.jpg"/>
+      <shininess_map value = "data/images/2016/iceshi.jpg"/>
+      <normal_map value = "data/images/2016/icen.jpg"/>
+      <occlusion_map shared_value = "SSAOBuffer"/>
+	  <!--<emission_map value = "data/images/2015/cloudsky_color.jpg"/>-->
+      <reflection_map value = "data/images/2015/cloudsky_color.jpg"/>
+      <!-- <alpha_map value = "the texture"/> TODO glass --> 
+	  <scatter_map1 value = "data/images/2016/iceshi.jpg"/> <!-- When surface is facing camera -->
+	  <scatter_map2 value = "data/images/2016/fluor_bw.jpg"/> <!-- When surface is watched from light (even without light) -->
+	  <scatter_map3 value = "data/images/title/gldc.jpg"/> <!-- average of scatter 1 and 2 -->
+	  
+      <ambient_color value = "0.0 0.0 0.0"/>
+      <diffuse_color value = "1.7 1.7 1.7"/>
+      <specular_color value = "1.9 1.9 1.9"/> <!-- 0.6 0.7 0.9 --> 
+	  
+      <scatter_color1 value = "0.0 0.25 1.0"/> <!-- When surface is facing camera (even without light) -->
+      <scatter_color2 value = "0.25 0.5 1.0"/> <!-- When surface is watched from light -->
+      <scatter_color3 value = "0.0 0.75 1.0"/> <!-- average of scatter 1 and 2 -->
+	  <!-- colorful scatters for seeing maps clearly -->
+	  <!--
+      <scatter_color1 value = "1.0 0.0 0.0"/>
+      <scatter_color2 value = "0.0 1.0 0.0"/>
+      <scatter_color3 value = "0.0 0.0 1.0"/>
+	  -->
+	  
+      <normal_scale value = "1.0"/>
+      <fresnel_normal_incidence value = "0.45"/>
+      <roughness value = "0.30"/>
+      <diffuse_roughness value = "0.0"/>
+      <diffuse_specular_shininess_minmax value = "0 1 0 1"/> <!-- 0 1 -0.5 2.2 -->
+      <reflection_coeff value = "2.90"/>
+	  
+	  <!-- multiplier for all scatter colors -->
+      <scatter_coeff value = "4.0"/>
+
+      <emission_coeff value = "1.0"/>
+	  <!--<general_texcoord_offset shared_value = "linear_texcoord_y_curve" />-->
+	  <!--<color_texcoord_offset shared_value = "linear_texcoord_y_curve" />-->
+	  <!--<emission_texcoord_offset shared_value = "linear_texcoord_y_curve" />-->
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "whitewall"
+	material_p3d = "whitewall"
+	>
+    <shader file = "data/shaders/cook_torrance_reflection.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2014/whitewall.jpg"/>
+            <specular_map value = "data/images/2014/whitewalls.jpg"/>
+            <shininess_map value = "data/images/2014/whitewallshi.jpg"/> <!-- ptkotkaspc.jpg too white -->
+            <normal_map value = "data/images/2014/whitewalln.jpg"/>
+            <!-- <occlusion_map value = "data/images/2014/ptkotkaocc.jpg"/ -->
+            <occlusion_map shared_value = "SSAOBuffer"/>
+            <reflection_map shared_value = "ReflectionTexture"/>
+            <!--<reflection_map value = "data/images/title/gldc.jpg"/>-->
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "1.2 1.2 1.2"/>
+            <specular_color value = "0.8 0.8 0.8"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.25"/>
+            <roughness value = "0.90"/> <!-- 0.30 -->
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.2 0 0.2"/>
+            <reflection_coeff value = "0.35"/>
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "jalusta"
+	material_p3d = "jalusta"
+	>
+    <shader file = "data/shaders/cook_torrance_reflection.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2014/whitewall.jpg"/>
+            <specular_map value = "data/images/2014/whitewalls.jpg"/>
+            <shininess_map value = "data/images/2014/whitewallshi.jpg"/> <!-- ptkotkaspc.jpg too white -->
+            <normal_map value = "data/images/2014/whitewalln.jpg"/>
+            <!-- <occlusion_map value = "data/images/2014/ptkotkaocc.jpg"/ -->
+            <occlusion_map shared_value = "SSAOBuffer"/>
+            <reflection_map shared_value = "ReflectionTexture"/>
+            <!--<reflection_map value = "data/images/title/gldc.jpg"/>-->
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "1.2 1.2 1.2"/>
+            <specular_color value = "0.8 0.8 0.8"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.25"/>
+            <roughness value = "0.90"/> <!-- 0.30 -->
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.2 0 0.2"/>
+            <reflection_coeff value = "0.35"/>
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "barerock"
+	material_p3d = "barerock"
+	>
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2015/barerock.jpg"/>
+            <specular_map value = "data/images/2015/barerock.jpg"/>
+            <shininess_map value = "data/images/2015/barerock.jpg"/> <!-- ptkotkaspc.jpg too white -->
+            <normal_map value = "data/images/2015/barerockn.jpg"/>
+            <!-- <occlusion_map value = "data/images/2014/ptkotkaocc.jpg"/ -->
+            <occlusion_map shared_value = "SSAOBuffer"/>
+            <reflection_map value = "data/images/title/gldc.jpg"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "1 1 1"/>
+            <specular_color value = "0.7 0.7 0.7"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.1"/>
+            <roughness value = "0.70"/>
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.2 0.0 0.4"/>
+            <reflection_coeff value = "0.25"/>
+        </parameters>
+	</shader>
+</material>
+
+
+<material
+	name = "tumma"
+	material_p3d = "tumma"
+	>
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2016/tumma.jpg"/> 
+            <specular_map value = "data/images/2016/tumma.jpg"/>
+           
+            
+            <!-- <occlusion_map value = "data/images/2014/ptkotkaocc.jpg"/ -->
+            <occlusion_map shared_value = "SSAOBuffer"/>
+            <reflection_map value = "data/images/title/gldc.jpg"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "1 1 1"/>
+            <specular_color value = "0.4 0.4 0.4"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.1"/>
+            <roughness value = "0.70"/>
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.2 0.0 0.4"/>
+            <reflection_coeff value = "0.25"/>
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "ratfluor"
+	material_p3d = "ratfluor"
+	>
+	
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml"> 
+     <parameters>
+            <diffuse_map value = "data/images/2015/mossrock.jpg"/>
+            <specular_map value = "data/images/2015/mossrock.jpg"/>
+            <shininess_map value = "data/images/2015/mossrocks.jpg"/> 
+            <normal_map value = "data/images/2015/mossrockn.jpg"/>              
+            <occlusion_map shared_value = "SSAOBuffer"/>
+			<reflection_map value = "data/images/2015/cloudsky_color.jpg"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "0 0 0"/>
+            <specular_color value = "0.0 0.0 0.0"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.1"/>
+            <roughness value = "0.70"/>
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.2 0.0 0.4"/>
+            <reflection_coeff value = "0.25"/>
+          </parameters>
+
+		 </shader>
+	
+		 
+	<shader file = "data/shaders/self_illuminate_texture.xml">
+        <parameters>
+          <self_illuminate_map value = "data/images/2015/fluormos.jpg"/>
+		  <self_illuminate_color value = "4 4 6"/>
+        </parameters>
+   
+	</shader>
+	
+</material>
+
+
+<material
+	name = "luolrock"
+	material_p3d = "luolrock"
+	>
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2015/mossrock.jpg"/>
+            <specular_map value = "data/images/2015/mossrock.jpg"/>
+            <shininess_map value = "data/images/2015/mossrocks.jpg"/> 
+            <normal_map value = "data/images/2015/mossrockn.jpg"/>              
+            <occlusion_map shared_value = "SSAOBuffer"/>
+			<reflection_map value = "data/images/2015/cloudsky_color.jpg"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "1 1 1"/>
+            <specular_color value = "0.7 0.7 0.7"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.1"/>
+            <roughness value = "0.70"/>
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.2 0.0 0.4"/>
+            <reflection_coeff value = "0.25"/>
+          </parameters>
+
+		 </shader>
+		 
+		 
+	<shader file = "data/shaders/self_illuminate_texture.xml">
+        <parameters>
+          <self_illuminate_map value = "data/images/2015/fluormos.jpg"/>
+		  <self_illuminate_color value = "15 15 15"/>
+        </parameters>
+   
+	</shader>
+	
+</material>
+
+	<material
+	name = "ratarock"
+	material_p3d = "ratarock"
+	>
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2015/mossrock.jpg"/>
+            <specular_map value = "data/images/2015/mossrock.jpg"/>
+            <shininess_map value = "data/images/2015/mossrocks.jpg"/> 
+            <normal_map value = "data/images/2015/mossrockn.jpg"/>              
+            <occlusion_map shared_value = "SSAOBuffer"/>
+			<reflection_map value = "data/images/2015/cloudsky_color.jpg"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "1 1 1"/>
+            <specular_color value = "0.7 0.7 0.7"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.1"/>
+            <roughness value = "0.70"/>
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.2 0.0 0.4"/>
+            <reflection_coeff value = "0.25"/>
+          </parameters>
+    </shader>
+		 
+	<shader file = "data/shaders/ratvah.xml">
+        <parameters>
+		  <self_illuminate_map value = "data/images/2015/fluor_blue.jpg"/>
+		  <self_illuminate_color shared_value = "ratavah_curve"/>
+          <texcoord_offset shared_value = "ratavah_texcoord_curve"/>
+          <audio_spectrum shared_value = "audio_spectrum_vector4f"/>
+        </parameters>
+	</shader>
+		 
+	<shader file = "data/shaders/ratvah.xml">
+        <parameters>
+          <self_illuminate_map value = "data/images/2015/fluormos.jpg"/>
+		  <self_illuminate_color value = "5 5 5"/>
+          <audio_spectrum shared_value = "audio_spectrum_vector4f"/>
+        </parameters>
+	</shader>
+
+</material>
+
+<material
+	name = "spidrock"
+	material_p3d = "spidrock"
+	>
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2015/mossrock.jpg"/>
+            <specular_map value = "data/images/2015/mossrock.jpg"/>
+            <shininess_map value = "data/images/2015/mossrockshi.jpg"/> <!-- ptkotkaspc.jpg too white -->
+            <normal_map value = "data/images/2015/mossrockn.jpg"/>
+          <emission_map value ="data/images/2015/fluormos.jpg"/>
+            <emission_coeff value = "0.1 0.1 0.1"/>
+            
+            <!-- <occlusion_map value = "data/images/2014/ptkotkaocc.jpg"/ -->
+            <occlusion_map shared_value = "SSAOBuffer"/>
+			<reflection_map value = "data/images/title/gldc.jpg"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "1 1 1"/>
+            <specular_color value = "0.7 0.7 0.7"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.25"/>
+            <roughness value = "0.90"/> <!-- 0.30 -->
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.2 0 0.2"/>
+            <reflection_coeff value = "0.35"/>
+          </parameters>
+
+		 </shader>
+		 
+	<shader file = "data/shaders/self_illuminate_texture.xml">
+        <parameters>
+          <self_illuminate_map value = "data/images/2015/fluormos.jpg"/>
+		  <self_illuminate_color value = "1 1 1"/>
+		</parameters>
+   
+	</shader>
+     
+
+</material>
+
+<material
+	name = "redcloth"
+	material_p3d = "redcloth"
+	>
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2015/redcloth.jpg"/>
+            <specular_map value = "data/images/2015/redcloths.jpg"/>
+            <shininess_map value = "data/images/2015/redcloths.jpg"/> 
+            <normal_map value = "data/images/2015/redclothn.jpg"/>              
+            <occlusion_map shared_value = "SSAOBuffer"/>
+			<reflection_map value = "data/images/2015/cloudsky_color.jpg"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "2 2 2"/>
+            <specular_color value = "0.7 0.7 0.7"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.1"/>
+            <roughness value = "0.80"/>
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.2 0.0 0.4"/>
+            <reflection_coeff value = "0.25"/>
+        </parameters>
+	</shader>
+    
+</material>
+
+<material
+	name = "blucloth"
+	material_p3d = "blucloth"
+	>
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2015/blucloth.jpg"/>
+            <specular_map value = "data/images/2015/redcloths.jpg"/>
+            <shininess_map value = "data/images/2015/redcloths.jpg"/> 
+            <normal_map value = "data/images/2015/redclothn.jpg"/>              
+            <occlusion_map shared_value = "SSAOBuffer"/>
+			<reflection_map value = "data/images/2015/cloudsky_color.jpg"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "2 2 2"/>
+            <specular_color value = "0.7 0.7 0.7"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.1"/>
+            <roughness value = "0.80"/>
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.2 0.0 0.4"/>
+            <reflection_coeff value = "0.25"/>
+        </parameters>
+	</shader>
+    
+</material>
+
+<material
+	name = "yelcloth"
+	material_p3d = "yelcloth"
+	>
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2015/yelcloth.jpg"/>
+            <specular_map value = "data/images/2015/redcloths.jpg"/>
+            <shininess_map value = "data/images/2015/redcloths.jpg"/> 
+            <normal_map value = "data/images/2015/redclothn.jpg"/>              
+            <occlusion_map shared_value = "SSAOBuffer"/>
+			<reflection_map value = "data/images/2015/cloudsky_color.jpg"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "2 2 2"/>
+            <specular_color value = "0.7 0.7 0.7"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.1"/>
+            <roughness value = "0.80"/>
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.2 0.0 0.4"/>
+            <reflection_coeff value = "0.25"/>
+        </parameters>
+	</shader>
+    
+</material>
+
+<material
+	name = "brocloth"
+	material_p3d = "brocloth"
+	>
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2015/brocloth.jpg"/>
+            <specular_map value = "data/images/2015/redcloths.jpg"/>
+            <shininess_map value = "data/images/2015/redcloths.jpg"/> 
+            <normal_map value = "data/images/2015/redclothn.jpg"/>              
+            <occlusion_map shared_value = "SSAOBuffer"/>
+			<reflection_map value = "data/images/2015/cloudsky_color.jpg"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "1.5 1.5 1.5"/>
+            <specular_color value = "0.7 0.7 0.7"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.1"/>
+            <roughness value = "0.80"/>
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.2 0.0 0.4"/>
+            <reflection_coeff value = "0.25"/>
+        </parameters>
+	</shader>
+    
+</material>
+
+<!--
+<material
+	name = "alkuvesi"
+	material_p3d = "alkuvesi"
+	>
+  <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <diffuse_map value = "data/images/2016/ice.jpg"/>
+      <specular_map value = "data/images/2016/ice.jpg"/>
+      <shininess_map value = "data/images/2016/iceshi.jpg"/>
+      <normal_map value = "data/images/2016/icen.jpg"/>
+      <ambient_color value = "0.0 0.0 0.0"/>
+      <diffuse_color value = "0.6 0.7 0.9"/>
+      <specular_color value = "0.6 0.7 0.9"/>
+      <normal_scale value = "1.0"/>
+	   <reflection_map shared_value = "ReflectionTexture"/>
+	  <fresnel_normal_incidence value = "0.55"/>
+      <specular_exponent value = "300"/>
+      <reflection_coeff value = "0.95"/>
+	   <roughness value = "0.80"/>
+      <diffuse_roughness value = "0.8"/>
+      <diffuse_specular_shininess_minmax value = "0 1 -0.5 2.2"/>
+     <!-- <fresnel_normal_incidence value = "0.55"/>
+     
+      <reflection_coeff value = "0.60"/>  -->
+ <!--   </parameters>
+  </shader>
+</material>
+-->
+<!--
+<material
+	name = "alkuvesi"
+	material_p3d = "alkuvesi"
+	>
+  <shader file = "data/shaders/ice.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <diffuse_map value = "data/images/2016/ice.jpg"/>
+      <specular_map value = "data/images/2016/ice.jpg"/>
+      <shininess_map value = "data/images/2016/iceshi.jpg"/>
+      <normal_map value = "data/images/2016/icen.jpg"/>
+
+	  <reflection_map shared_value = "ReflectionTexture"/>
+
+	  <scatter_map1 value = "data/images/2016/iceshi.jpg"/>
+	  <scatter_map2 value = "data/images/2016/fluor_bw.jpg"/>
+	  <scatter_map3 value = "data/images/title/gldc.jpg"/>
+	  
+      <ambient_color value = "0.0 0.0 0.0"/>
+      <diffuse_color value = "1.7 1.7 1.7"/>
+      <specular_color value = "1.9 1.9 1.9"/>
+	  
+      <scatter_color1 value = "0.0 0.25 1.0"/>
+      <scatter_color2 value = "0.25 0.5 1.0"/>
+      <scatter_color3 value = "0.0 0.75 1.0"/>
+	  
+      <normal_scale value = "1.0"/>
+      <fresnel_normal_incidence value = "0.45"/>
+      <roughness value = "0.30"/>
+      <diffuse_roughness value = "0.0"/>
+      <diffuse_specular_shininess_minmax value = "0 1 0 1"/> 
+      <reflection_coeff value = "2.90"/>
+	  
+
+      <scatter_coeff value = "4.0"/>
+
+      <emission_coeff value = "1.0"/>
+    </parameters>
+  </shader>
+</material>
+-->
+<material
+	name = "alkuvesi"
+	material_p3d = "alkuvesi"
+	>
+  <shader file = "data/shaders/ice.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <diffuse_map value = "data/images/2016/ice.jpg"/>
+      <specular_map value = "data/images/2016/ice.jpg"/>
+      <shininess_map value = "data/images/2016/iceshi.jpg"/>
+      <normal_map value = "data/images/2016/icen.jpg"/>
+     <!-- <occlusion_map shared_value = "SSAOBuffer"/> -->
+	  <!--<emission_map value = "data/images/2015/cloudsky_color.jpg"/>-->
+	  <reflection_map shared_value = "ReflectionTexture"/>
+      <!-- <alpha_map value = "the texture"/> TODO glass --> 
+	  <scatter_map1 value = "data/images/2016/iceshi.jpg"/> <!-- When surface is facing camera -->
+	  <scatter_map2 value = "data/images/2016/fluor_bw.jpg"/> <!-- When surface is watched from light (even without light) -->
+	  <scatter_map3 value = "data/images/2016/snowblend.jpg"/> <!-- average of scatter 1 and 2 -->
+	  
+      <ambient_color value = "0.0 0.0 0.0"/>
+      <diffuse_color value = "10.7 10.7 10.7"/>
+      <specular_color value = "1.9 1.9 1.9"/> <!-- 0.6 0.7 0.9 --> 
+	  
+     <scatter_color1 value = "0.25 0.35 0.75"/><!-- When surface is facing camera (even without light) -->
+     <scatter_color2 value = "0.25 0.35 1.0"/><!-- When surface is watched from light -->
+     <scatter_color3 value = "0.25 0.35 0.55"/><!-- average of scatter 1 and 2 -->
+	  <!-- colorful scatters for seeing maps clearly -->
+	  
+      <!--<scatter_color1 value = "1.0 0.0 0.0"/>
+      <scatter_color2 value = "0.0 1.0 0.0"/>
+      <scatter_color3 value = "0.0 0.0 1.0"/>-->
+	  
+	  
+      <normal_scale value = "1.0"/>
+      <fresnel_normal_incidence value = "0.45"/>
+      <roughness value = "0.30"/>
+      <diffuse_roughness value = "0.0"/>
+      <diffuse_specular_shininess_minmax value = "0.2 0.7 0.2 0.7"/> <!-- 0 1 -0.5 2.2 -->
+      <reflection_coeff value = "1.90"/>
+	  
+	  <!-- multiplier for all scatter colors -->
+      <scatter_coeff value = "4.0"/>
+
+      <emission_coeff value = "1.0"/>
+	  <!--<general_texcoord_offset shared_value = "linear_texcoord_y_curve" />-->
+	  <!--<color_texcoord_offset shared_value = "linear_texcoord_y_curve" />-->
+	  <!--<emission_texcoord_offset shared_value = "linear_texcoord_y_curve" />-->
+    </parameters>
+  </shader>
+</material>
+
+<!--
+Opaque ice shader:
+Scatter 1: Most visible when camera is looking at surface, independent of direction of any lights. 
+Scatter 2: Most visible when camera is looking at surface directly from light.
+Scatter 3: Average of 1 and 2.
+Each of scatters can have own scatter texture map and scatter color.
+scatter_coeff multiplies each color
+Emission map works, but it's uniform.
+-->
+<material
+	name = "ice"
+	material_p3d = "ice"
+	>
+  <shader file = "data/shaders/ice.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <diffuse_map value = "data/images/2016/ice.jpg"/>
+      <specular_map value = "data/images/2016/ice.jpg"/>
+      <shininess_map value = "data/images/2016/iceshi.jpg"/>
+      <normal_map value = "data/images/2016/icen.jpg"/>
+      <occlusion_map shared_value = "SSAOBuffer"/>
+	  <!--<emission_map value = "data/images/2015/cloudsky_color.jpg"/>-->
+      <reflection_map value = "data/images/2015/moonsky_color.jpg"/>
+      <!-- <alpha_map value = "the texture"/> TODO glass --> 
+	  <scatter_map1 value = "data/images/2016/iceshi.jpg"/> <!-- When surface is facing camera -->
+	  <scatter_map2 value = "data/images/2016/fluor_bw.jpg"/> <!-- When surface is watched from light (even without light) -->
+	  <scatter_map3 value = "data/images/2016/snowblend.jpg"/> <!-- average of scatter 1 and 2 -->
+	  
+      <ambient_color value = "0.0 0.0 0.0"/>
+      <diffuse_color value = "1.7 1.7 1.7"/>
+      <specular_color value = "1.9 1.9 1.9"/> <!-- 0.6 0.7 0.9 --> 
+	  
+      <scatter_color1 value = "0.25 0.35 0.75"/> <!-- When surface is facing camera (even without light) -->
+      <scatter_color2 value = "0.25 0.35 1.0"/> <!-- When surface is watched from light -->
+      <scatter_color3 value = "0.25 0.35 0.55"/> <!-- average of scatter 1 and 2 -->
+	  <!-- colorful scatters for seeing maps clearly -->
+	  <!--
+      <scatter_color1 value = "1.0 0.0 0.0"/>
+      <scatter_color2 value = "0.0 1.0 0.0"/>
+      <scatter_color3 value = "0.0 0.0 1.0"/>
+	  -->
+	  
+      <normal_scale value = "1.0"/>
+      <fresnel_normal_incidence value = "0.45"/>
+      <roughness value = "0.30"/>
+      <diffuse_roughness value = "0.0"/>
+      <diffuse_specular_shininess_minmax value = "0 1 0 1"/> <!-- 0 1 -0.5 2.2 -->
+      <reflection_coeff value = "2.90"/>
+	  
+	  <!-- multiplier for all scatter colors -->
+      <scatter_coeff value = "4.0"/>
+
+      <emission_coeff value = "1.0"/>
+	  <!--<general_texcoord_offset shared_value = "linear_texcoord_y_curve" />-->
+	  <!--<color_texcoord_offset shared_value = "linear_texcoord_y_curve" />-->
+	  <!--<emission_texcoord_offset shared_value = "linear_texcoord_y_curve" />-->
+    </parameters>
+  </shader>
+</material>
+
+<!--
+Opaque ice shader:
+Scatter 1: Most visible when camera is looking at surface, independent of direction of any lights. 
+Scatter 2: Most visible when camera is looking at surface directly from light.
+Scatter 3: Average of 1 and 2.
+Each of scatters can have own scatter texture map and scatter color.
+scatter_coeff multiplies each color
+Emission map works, but it's uniform.
+-->
+
+<material
+	name = "ice2"
+	material_p3d = "ice2"
+	>
+  <shader file = "data/shaders/ice.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <diffuse_map value = "data/images/2016/ice2.jpg"/>
+      <specular_map value = "data/images/2016/ice2.jpg"/>
+      <shininess_map value = "data/images/2016/iceshi.jpg"/>
+      <normal_map value = "data/images/2016/icen.jpg"/>
+      <occlusion_map shared_value = "SSAOBuffer"/>
+	  <!--<emission_map value = "data/images/2015/cloudsky_color.jpg"/>-->
+      <reflection_map value = "data/images/2015/moonsky_color.jpg"/>
+      <!-- <alpha_map value = "the texture"/> TODO glass --> 
+	  <scatter_map1 value = "data/images/2016/iceshi.jpg"/> <!-- When surface is facing camera -->
+	  <scatter_map2 value = "data/images/2016/fluor_bw.jpg"/> <!-- When surface is watched from light (even without light) -->
+	  <scatter_map3 value = "data/images/2016/snowblend.jpg"/> <!-- average of scatter 1 and 2 -->
+	  
+      <ambient_color value = "0.0 0.0 0.0"/>
+      <diffuse_color value = "1.2 1.2 1.2"/>
+      <specular_color value = "1.9 1.9 1.9"/> <!-- 0.6 0.7 0.9 --> 
+	  
+      <scatter_color1 value = "0.25 0.30 0.35"/> <!-- When surface is facing camera (even without light) -->
+      <scatter_color2 value = "0.25 0.35 0.35"/> <!-- When surface is watched from light -->
+      <scatter_color3 value = "0.25 0.35 0.55"/> <!-- average of scatter 1 and 2 -->
+	  <!-- colorful scatters for seeing maps clearly -->
+	  <!--
+      <scatter_color1 value = "1.0 0.0 0.0"/>
+      <scatter_color2 value = "0.0 1.0 0.0"/>
+      <scatter_color3 value = "0.0 0.0 1.0"/>
+	  -->
+	  
+      <normal_scale value = "1.0"/>
+      <fresnel_normal_incidence value = "0.45"/>
+      <roughness value = "0.30"/>
+      <diffuse_roughness value = "0.0"/>
+      <diffuse_specular_shininess_minmax value = "0 1 0 1"/> <!-- 0 1 -0.5 2.2 -->
+      <reflection_coeff value = "2.90"/>
+	  
+	  <!-- multiplier for all scatter colors -->
+      <scatter_coeff value = "4.0"/>
+
+      <emission_coeff value = "1.0"/>
+	  <!--<general_texcoord_offset shared_value = "linear_texcoord_y_curve" />-->
+	  <!--<color_texcoord_offset shared_value = "linear_texcoord_y_curve" />-->
+	  <!--<emission_texcoord_offset shared_value = "linear_texcoord_y_curve" />-->
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "ddr_ice"
+	material_p3d = "ddr_ice"
+	>
+  <shader file = "data/shaders/ice.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <diffuse_map value = "data/images/2016/ice.jpg"/>
+      <specular_map value = "data/images/2016/ice.jpg"/>
+      <shininess_map value = "data/images/2016/iceshi.jpg"/>
+      <normal_map value = "data/images/2016/icen.jpg"/>
+      <occlusion_map shared_value = "SSAOBuffer"/>
+	  <!--<emission_map value = "data/images/2015/cloudsky_color.jpg"/>-->
+      <reflection_map value = "data/images/2015/moonsky_color.jpg"/>
+      <alpha_map value = "data/images/2016/glassalpha2.png"/>
+	  <scatter_map1 value = "data/images/2016/iceshi.jpg"/> <!-- When surface is facing camera -->
+	  <scatter_map2 value = "data/images/2016/fluor_bw.jpg"/> <!-- When surface is watched from light (even without light) -->
+	  <scatter_map3 value = "data/images/2015/darkbark.jpg"/> <!-- average of scatter 1 and 2 -->
+	  
+      <ambient_color value = "0.0 0.0 0.0"/>
+      <diffuse_color value = "1.7 1.7 1.7"/>
+      <specular_color value = "1.9 1.9 1.9"/> <!-- 0.6 0.7 0.9 --> 
+	  
+      <!--<scatter_color1 value = "0.25 0.35 0.75"/>--> <!-- When surface is facing camera (even without light) -->
+      <!--<scatter_color2 value = "0.25 0.35 1.0"/>--> <!-- When surface is watched from light -->
+      <!--<scatter_color3 value = "0.25 0.35 0.55"/>--> <!-- average of scatter 1 and 2 -->
+	  <!-- colorful scatters for seeing maps clearly -->
+
+      <scatter_color1 value = "1.0 0.0 0.0"/>
+      <scatter_color2 value = "0.0 1.0 0.0"/>
+      <scatter_color3 value = "0.0 0.0 1.0"/>
+	  
+      <normal_scale value = "1.0"/>
+      <fresnel_normal_incidence value = "0.45"/>
+      <roughness value = "0.30"/>
+      <diffuse_roughness value = "0.0"/>
+      <diffuse_specular_shininess_minmax value = "0 1 0 1"/> <!-- 0 1 -0.5 2.2 -->
+      <reflection_coeff value = "2.90"/>
+	  
+	  <!-- multiplier for all scatter colors -->
+      <scatter_coeff value = "4.0"/>
+
+      <emission_coeff value = "1.0"/>
+	  <!--<general_texcoord_offset shared_value = "linear_texcoord_y_curve" />-->
+	  <!--<color_texcoord_offset shared_value = "linear_texcoord_y_curve" />-->
+	  <!--<emission_texcoord_offset shared_value = "linear_texcoord_y_curve" />-->
+    </parameters>
+  </shader>
+</material>
+
+
+<material
+	name = "glass"
+	material_p3d = "glass"
+	>
+  <shader file = "data/shaders/glass.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <diffuse_map value = "data/images/2016/ice.jpg"/>
+      <specular_map value = "data/images/2016/ice.jpg"/>
+      <shininess_map value = "data/images/2016/iceshi.jpg"/>
+      <normal_map value = "data/images/2016/icen.jpg"/>
+      <occlusion_map shared_value = "SSAOBuffer"/>
+	  <!--<emission_map value = "data/images/2015/cloudsky_color.jpg"/>-->
+      <reflection_map value = "data/images/2015/refmap1.jpg"/>
+      <alpha_map value = "data/images/2016/glassalpha.png"/>
+	  <scatter_map1 value = "data/images/2016/iceshi.jpg"/> <!-- When surface is facing camera -->
+	  <scatter_map2 value = "data/images/2016/fluor_bw.jpg"/> <!-- When surface is watched from light (even without light) -->
+	  <scatter_map3 value = "data/images/2016/snowblend.jpg"/> <!-- average of scatter 1 and 2 -->
+	  
+      <ambient_color value = "0.0 0.0 0.0"/>
+      <diffuse_color value = "1.7 1.7 1.7"/>
+      <specular_color value = "1.9 1.9 1.9"/> <!-- 0.6 0.7 0.9 --> 
+	  
+      <scatter_color1 value = "0.25 0.35 0.75"/> <!-- When surface is facing camera (even without light) -->
+      <scatter_color2 value = "0.25 0.35 1.0"/> <!-- When surface is watched from light -->
+      <scatter_color3 value = "0.25 0.35 0.55"/> <!-- average of scatter 1 and 2 -->
+	  <!-- colorful scatters for seeing maps clearly -->
+	  <!--
+      <scatter_color1 value = "1.0 0.0 0.0"/>
+      <scatter_color2 value = "0.0 1.0 0.0"/>
+      <scatter_color3 value = "0.0 0.0 1.0"/>
+	  -->
+	  
+      <normal_scale value = "1.0"/>
+      <fresnel_normal_incidence value = "0.45"/>
+      <roughness value = "0.30"/>
+      <diffuse_roughness value = "0.0"/>
+      <diffuse_specular_shininess_minmax value = "0 1 0 1"/> <!-- 0 1 -0.5 2.2 -->
+      <reflection_coeff value = "2.90"/>
+	  
+	  <!-- multiplier for all scatter colors -->
+      <scatter_coeff value = "4.0"/>
+
+      <emission_coeff value = "1.0"/>
+	  <!--<general_texcoord_offset shared_value = "linear_texcoord_y_curve" />-->
+	  <!--<color_texcoord_offset shared_value = "linear_texcoord_y_curve" />-->
+	  <!--<emission_texcoord_offset shared_value = "linear_texcoord_y_curve" />-->
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "tsnow"
+	material_p3d = "tsnow">
+    <shader file = "data/shaders/snow.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2016/testsnow.jpg"/>
+            <specular_map value = "data/images/2016/testsnows.jpg"/>
+            <shininess_map value = "data/images/2016/snowblend.jpg"/>
+            <normal_map value = "data/images/2016/rgb_noise_1024.jpg"/>
+            <occlusion_map shared_value = "SSAOBuffer"/>
+			<reflection_map value = "data/images/2015/cloudsky_color.jpg"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "0.8 0.8 0.8"/>
+            <specular_color value = "0.2 0.2 0.2"/>
+            <normal_scale value = "4.0"/>
+            <fresnel_normal_incidence value = "0.01"/>
+            <roughness value = "0.7"/>
+            <diffuse_roughness value = "1.0"/>
+            <diffuse_specular_shininess_minmax value = "0.0 0.2 0.0 0.2"/>
+            <reflection_coeff value = "2.0"/>
+            <light_bleed shared_value = "light_bleed_curve"/> <!-- value = "0.7" -->
+        </parameters>
+	</shader>
+
+</material>
+
+<material
+	name = "snow"
+	material_p3d = "snow">
+    <shader file = "data/shaders/snow.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2016/testsnow.jpg"/>
+            <specular_map value = "data/images/2016/testsnow.jpg"/>
+            <shininess_map value = "data/images/2016/snowblend.jpg"/>
+            <!--<shininess_map value = "data/images/2016/testsnows.jpg"/>-->
+            <normal_map value = "data/images/2016/rgb_noise_1024.jpg"/>
+            <occlusion_map shared_value = "SSAOBuffer"/>
+			<reflection_map value = "data/images/2015/cloudsky_color.jpg"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "0.8 0.8 0.8"/>
+            <specular_color value = "0.2 0.2 0.2"/>
+            <normal_scale value = "4.0"/>
+            <fresnel_normal_incidence value = "0.01"/>
+            <roughness value = "0.7"/>
+            <diffuse_roughness value = "1.0"/>
+            <diffuse_specular_shininess_minmax value = "0.0 0.2 0.0 0.2"/>
+            <reflection_coeff value = "2.0"/>
+            <light_bleed value = "0.7"/>
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "mossrock"
+	material_p3d = "mossrock"
+	>
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2015/mossrock.jpg"/>
+            <specular_map value = "data/images/2015/mossrock.jpg"/>
+            <shininess_map value = "data/images/2015/mossrocks.jpg"/> 
+            <normal_map value = "data/images/2015/mossrockn.jpg"/>              
+            <occlusion_map shared_value = "SSAOBuffer"/>
+			<reflection_map value = "data/images/2015/cloudsky_color.jpg"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "0.8 0.8 0.8"/>
+            <specular_color value = "0.7 0.7 0.7"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.1"/>
+            <roughness value = "0.75"/>
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.2 0.0 0.4"/>
+            <reflection_coeff value = "0.25"/>
+        </parameters>
+	</shader>
+    
+</material>
+
+<material
+	name = "moss"
+	material_p3d = "moss"
+	>
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2015/moss.jpg"/>
+            <specular_map value = "data/images/2015/moss.jpg"/>
+            <shininess_map value = "data/images/2015/mossd.jpg"/> <!-- ptkotkaspc.jpg too white -->
+            <normal_map value = "data/images/2015/mossn.jpg"/>
+                     
+            <!-- <occlusion_map value = "data/images/2014/ptkotkaocc.jpg"/ -->
+            <occlusion_map shared_value = "SSAOBuffer"/>
+			<reflection_map value = "data/images/title/gldc.jpg"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "1 1 1"/>
+            <specular_color value = "0.7 0.7 0.7"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.25"/>
+            <roughness value = "0.90"/> <!-- 0.30 -->
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.2 0 0.2"/>
+            <reflection_coeff value = "0.35"/>
+            
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "tunnrock"
+	material_p3d = "tunnrock"
+	>
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2015/tunnrock.jpg"/>
+            <specular_map value = "data/images/2015/tunnrock.jpg"/>
+            <shininess_map value = "data/images/2015/mossrocks.jpg"/> 
+            <normal_map value = "data/images/2015/mossrockn.jpg"/>              
+            <occlusion_map shared_value = "SSAOBuffer"/>
+			<reflection_map value = "data/images/2015/cloudsky_color.jpg"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "1 1 1"/>
+            <specular_color value = "0.7 0.7 0.7"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.1"/>
+            <roughness value = "0.70"/>
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.2 0.0 0.4"/>
+            <reflection_coeff value = "0.25"/>
+        </parameters>
+	</shader>
+    
+    <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+        <parameters>
+          <self_illuminate_map shared_value = "plant_tunnel_emissive_curve"/>
+          <self_illuminate_color value = "10 10 10"/>
+        </parameters>
+    </shader>	
+	
+</material>
+
+<material
+	name = "troleaves"
+	material_p3d = "troleaves"
+	>
+    <shader file = "data/shaders/leaf.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2014/troleaves1.png"/>
+            <specular_map value = "data/images/2014/troleaves1.png"/>
+            <alpha_map value = "data/images/2014/troleaves1.png"/>
+
+            <scatter_map value = "data/images/2014/troleaves1_scat.png"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "0.25 0.25 0.25"/>
+            <specular_color value = "0.25 0.25 0.25"/>
+            <scatter_color value = "0.5 0.5 0.5"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.08"/>
+            <roughness value = "0.80"/> <!-- 0.30 -->
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.4 0 0.4"/>
+            <reflection_coeff value = "0.25"/>
+            <distort_scale_coeff value = "2 2 2"/>
+            <distort_time_coeff value = "0.02 0.01 0.02"/>
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "sleaf"
+	material_p3d = "sleaf"
+	>
+    <shader file = "data/shaders/leaf.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2015/sleaf.png"/>
+            <specular_map value = "data/images/2015/sleaf.png"/>
+            <alpha_map value = "data/images/2015/sleaf.png"/>
+            
+            <scatter_map value = "data/images/achromatism.jpg"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color shared_value = "lehti_color_curve"/>
+            <specular_color value = "0.5 0.5 0.5"/>
+            <scatter_color value = "0.6 1 0"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.05"/>
+            <roughness value = "0.80"/> <!-- 0.30 -->
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.2 0 0.2"/>
+            <reflection_coeff value = "0.25"/>
+            <distort_scale_coeff value = "1 1 1"/>
+            <distort_time_coeff value = "0.02 0.01 0.03"/>
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "saleh"
+	material_p3d = "saleh"
+	>
+    <shader file = "data/shaders/leaf.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2015/sleaf.png"/>
+            <specular_map value = "data/images/2015/sleaf.png"/>
+            <alpha_map value = "data/images/2015/sleaf.png"/>
+            
+            <scatter_map value = "data/images/achromatism.jpg"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+			<diffuse_color value = "0.5 0.5 0.5"/>
+            <specular_color value = "0.5 0.5 0.5"/>
+            <scatter_color value = "0.6 1 0"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.05"/>
+            <roughness value = "0.80"/> <!-- 0.30 -->
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.2 0 0.2"/>
+            <reflection_coeff value = "0.25"/>
+            <distort_scale_coeff value = "0.1 0.09 0.12"/>
+            <distort_time_coeff value = "0.04 0.02 0.05"/>
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "straw"
+	material_p3d = "straw"
+	>
+     
+    <shader file = "data/shaders/leaf.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2015/straw.png"/>
+            <specular_map value = "data/images/2015/straw.png"/>
+            <alpha_map value = "data/images/2015/straw.png"/>
+            
+            <scatter_map value = "data/images/2015/straw_scat.png"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "0.25 0.25 0.25"/>
+            <specular_color value = "0.25 0.25 0.25"/>
+            <scatter_color value = "0.5 0.5 0.5"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.08"/>
+            <roughness value = "0.80"/> <!-- 0.30 -->
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.4 0 0.4"/>
+            <reflection_coeff value = "0.25"/>
+            <distort_scale_coeff value = "1 1 1"/>
+            <distort_time_coeff value = "0.02 0.01 0.03"/>
+        </parameters>
+	</shader>
+    <!--
+    <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+        <parameters>
+          <self_illuminate_map value = "data/images/2015/illum_blue.jpg"/>
+          <self_illuminate_color shared_value = "grassta_hohka_curve"/>
+        </parameters>
+    </shader>
+	   -->
+</material>
+
+
+<material
+	name = "grassta"
+	material_p3d = "grassta"
+	>
+     
+    <shader file = "data/shaders/leaf.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2015/grassta2.png"/>
+            <specular_map value = "data/images/2015/grassta2.png"/>
+            <alpha_map value = "data/images/2015/grassta2.png"/>
+            
+            <scatter_map value = "data/images/2015/grassta2_scat.png"/>
+          <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "0.25 0.25 0.25"/>
+            <specular_color value = "0.25 0.25 0.25"/>
+            <scatter_color value = "0.5 0.5 0.5"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.08"/>
+            <roughness value = "0.80"/> <!-- 0.30 -->
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.4 0 0.4"/>
+            <reflection_coeff value = "0.25"/>
+            <distort_scale_coeff value = "1 1 1"/>
+            <distort_time_coeff value = "0.05 0.01 0.07"/>
+        </parameters>
+	</shader>
+    <!--
+    <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+        <parameters>
+          <self_illuminate_map value = "data/images/2015/illum_blue.jpg"/>
+          <self_illuminate_color shared_value = "grassta_hohka_curve"/>
+        </parameters>
+    </shader>
+	   -->
+</material>
+
+<material
+	name = "troleafs"
+	material_p3d = "troleafs"
+	>
+    <shader file = "data/shaders/leaf.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2015/oksat.png"/>
+            <specular_map value = "data/images/2015/oksat.png"/>
+            <alpha_map value = "data/images/2015/oksat.png"/>
+			<!-- <normal_map value = "data/images/2015/oksat.jpg"/>-->
+            
+            <scatter_map value = "data/images/2015/oksatscat.png"/>
+             <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "0.25 0.25 0.25"/>
+            <specular_color value = "0.25 0.25 0.25"/>
+            <scatter_color value = "0.5 0.5 0.5"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.08"/>
+            <roughness value = "0.80"/> <!-- 0.30 -->
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.4 0 0.4"/>
+            <reflection_coeff value = "0.25"/>
+            <distort_scale_coeff value = "2 2 2"/>
+            <distort_time_coeff value = "0.05 0.06 0.07"/>
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "soleafs"
+	material_p3d = "soleafs"
+	>
+    <shader file = "data/shaders/leaf.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2015/oksat.png"/>
+            <specular_map value = "data/images/2015/oksat.png"/>
+            <alpha_map value = "data/images/2015/oksat.png"/>
+			<!-- <normal_map value = "data/images/2015/oksat.jpg"/>-->
+            
+            <scatter_map value = "data/images/2015/oksatscat.png"/>
+             <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "0.25 0.25 0.25"/>
+            <specular_color value = "0.25 0.25 0.25"/>
+            <scatter_color value = "0.5 0.5 0.5"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.08"/>
+            <roughness value = "0.80"/> <!-- 0.30 -->
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.4 0 0.4"/>
+            <reflection_coeff value = "0.25"/>
+            <distort_scale_coeff value = "0.5 0.5 0.5"/>
+            <distort_time_coeff value = "0.05 0.06 0.07"/>
+        </parameters>
+	</shader>
+</material>
+
+
+<material
+	name = "saarleaf"
+	material_p3d = "saarleaf"
+	>
+    <shader file = "data/shaders/leaf.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2015/oksat.png"/>
+            <specular_map value = "data/images/2015/oksat.png"/>
+            <alpha_map value = "data/images/2015/oksat.png"/>
+			<!-- <normal_map value = "data/images/2015/oksat.jpg"/>-->
+            
+            <scatter_map value = "data/images/2015/oksatscat.png"/>
+             <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "0.25 0.25 0.25"/>
+            <specular_color value = "0.25 0.25 0.25"/>
+            <scatter_color value = "0.5 0.5 0.5"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.08"/>
+            <roughness value = "0.80"/> <!-- 0.30 -->
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.4 0 0.4"/>
+            <reflection_coeff value = "0.25"/>
+            <distort_scale_coeff value = "0.3 0.2 0.3"/>
+            <distort_time_coeff value = "0.08 0.04 0.07"/>
+        </parameters>
+	</shader>
+
+</material>
+
+
+
+<material
+	name = "troksat"
+	material_p3d = "troksat"
+	>
+    <shader file = "data/shaders/leaf.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2015/troksat.png"/>
+            <specular_map value = "data/images/2015/troksat.png"/>
+            <alpha_map value = "data/images/2015/troksat.png"/>
+            <normal_map value = "data/images/2015/troksatn.jpg"/>
+            <!--
+            <shininess_map value = "data/images/2014/mossrock.jpg"/>
+            -->
+            
+            <scatter_map value = "data/images/2015/trokscatter.png"/>
+           <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "0.25 0.25 0.25"/>
+            <specular_color value = "0.25 0.25 0.25"/>
+            <scatter_color value = "0.5 0.5 0.5"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.08"/>
+            <roughness value = "0.80"/> <!-- 0.30 -->
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.4 0 0.4"/>
+            <reflection_coeff value = "0.25"/>
+            <distort_scale_coeff value = "2 2 2"/>
+            <distort_time_coeff value = "0.02 0.01 0.03"/>
+        </parameters>
+	</shader>
+
+</material>
+
+<material
+	name = "fern"
+	material_p3d = "fern"
+	>
+    <shader file = "data/shaders/leaf.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2014/fern.png"/>
+            <specular_map value = "data/images/2014/fern.png"/>
+            <alpha_map value = "data/images/2014/fern.png"/>
+			<normal_map value = "data/images/2014/fern_n.jpg"/>
+			<shininess_map value = "data/images/2014/fernshiit.jpg"/> 
+            <!--
+            <shininess_map value = "data/images/2014/mossrock.jpg"/>
+            <normal_map value = "data/images/2014/mossrockn.jpg"/>
+            -->
+            <scatter_map value = "data/images/2014/fernscat.jpg"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "0.6 0.8 0.6"/>
+            <specular_color value = "0.5 0.5 0.5"/>
+            <scatter_color value = "0.7 0.9 0.7"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.08"/>
+            <roughness value = "0.20"/> 
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.4 0 1"/>
+            <reflection_coeff value = "0.25"/>
+            <distort_scale_coeff value = "1 1 1"/>
+            <distort_time_coeff value = "0.02 0.01 0.04"/>
+        </parameters>
+	</shader>
+
+</material>
+
+
+<material
+	name = "saarfern"
+	material_p3d = "saarfern"
+	>
+    <shader file = "data/shaders/leaf.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2014/fern.png"/>
+            <specular_map value = "data/images/2014/fern.png"/>
+            <alpha_map value = "data/images/2014/fern.png"/>
+			<normal_map value = "data/images/2014/fern_n.jpg"/>
+			<shininess_map value = "data/images/2014/fernshiit.jpg"/> 
+            <!--
+            <shininess_map value = "data/images/2014/mossrock.jpg"/>
+            <normal_map value = "data/images/2014/mossrockn.jpg"/>
+            -->
+            <scatter_map value = "data/images/2014/fernscat.jpg"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "0.6 0.8 0.6"/>
+            <specular_color value = "0.5 0.5 0.5"/>
+            <scatter_color value = "0.7 0.9 0.7"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.08"/>
+            <roughness value = "0.20"/> 
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.4 0 1"/>
+            <reflection_coeff value = "0.25"/>
+            <distort_scale_coeff value = "0.1 0.1 0.1"/>
+            <distort_time_coeff value = "0.02 0.01 0.04"/>
+        </parameters>
+	</shader>
+
+</material>
+
+<material
+	name = "saarstra"
+	material_p3d = "saarstra"
+	>
+     
+    <shader file = "data/shaders/leaf.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2015/straw.png"/>
+            <specular_map value = "data/images/2015/straw.png"/>
+            <alpha_map value = "data/images/2015/straw.png"/>
+            
+            <scatter_map value = "data/images/2015/straw_scat.png"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "0.25 0.25 0.25"/>
+            <specular_color value = "0.25 0.25 0.25"/>
+            <scatter_color value = "0.5 0.5 0.5"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.08"/>
+            <roughness value = "0.80"/> <!-- 0.30 -->
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.4 0 0.4"/>
+            <reflection_coeff value = "0.25"/>
+            <distort_scale_coeff value = "0.1 0.1 0.1"/>
+            <distort_time_coeff value = "0.02 0.01 0.03"/>
+        </parameters>
+	</shader>
+    <!--
+    <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+        <parameters>
+          <self_illuminate_map value = "data/images/2015/illum_blue.jpg"/>
+          <self_illuminate_color shared_value = "grassta_hohka_curve"/>
+        </parameters>
+    </shader>
+	   -->
+</material>
+
+<material
+	name = "branchit"
+	material_p3d = "branchit"
+	>
+    <shader file = "data/shaders/leaf.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2015/branchit.png"/>
+            <specular_map value = "data/images/2015/branchit.png"/>
+            <alpha_map value = "data/images/2015/branchit.png"/>
+			<normal_map value = "data/images/2015/branchitn.jpg"/>
+			<shininess_map value = "data/images/2015/branchit_shi.jpg"/> 
+           
+            <scatter_map value = "data/images/2015/branchit_scat.png"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "0.1 0.1 0.1"/>
+            <specular_color value = "0.1 0.1 0.1"/>
+            <scatter_color value = "0.45 0.45 0.45"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.08"/>
+            <roughness value = "0.40"/>
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.4 0 0.4"/>
+            <reflection_coeff value = "0.25"/>
+            <distort_scale_coeff value = "2 2 2"/>
+            <distort_time_coeff value = "0.05 0.06 0.07"/>
+        </parameters>
+	</shader>
+</material>
+
+
+<material
+	name = "ratbranch"
+	material_p3d = "ratbranch"
+	>
+    <shader file = "data/shaders/leaf.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2015/ratbranch.png"/>
+            <specular_map value = "data/images/2015/ratbranch.png"/>
+            <alpha_map value = "data/images/2015/ratbranch.png"/>
+			<normal_map value = "data/images/2015/branchitn.jpg"/>
+			<shininess_map value = "data/images/2015/branchit_shi.jpg"/> 
+           
+            <scatter_map value = "data/images/2015/ratbranch_scat.png"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "0.1 0.1 0.1"/>
+            <specular_color value = "0.1 0.1 0.1"/>
+            <scatter_color value = "0.45 0.45 0.45"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.08"/>
+            <roughness value = "0.40"/>
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.4 0 0.4"/>
+            <reflection_coeff value = "0.25"/>
+            <distort_scale_coeff value = "2 2 2"/>
+            <distort_time_coeff value = "0.05 0.06 0.07"/>
+        </parameters>
+	</shader>
+	
+	<shader file = "data/shaders/self_illuminate_texture.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2015/ratemi.jpg"/>
+      <self_illuminate_color value = "20 20 20"/>
+    </parameters>
+  </shader>
+	
+</material>
+
+
+<material
+	name = "ratleaf"
+	material_p3d = "ratleaf"
+	>
+    <shader file = "data/shaders/leaf.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2015/ratleaf.png"/>
+            <specular_map value = "data/images/2015/ratleaf.png"/>
+            <alpha_map value = "data/images/2015/ratleaf.png"/>
+            
+            <scatter_map value = "data/images/2015/ratleaf.png"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color shared_value = "ratlehti_color_curve"/>			
+            <specular_color value = "0.5 0.5 0.5"/>
+            <scatter_color value = "0.6 1 0"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.05"/>
+            <roughness value = "0.80"/> <!-- 0.30 -->
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.2 0 0.2"/>
+            <reflection_coeff value = "0.25"/>
+            <distort_scale_coeff value = "1 1 1"/>
+            <distort_time_coeff value = "0.02 0.01 0.03"/>
+        </parameters>
+	</shader>
+	
+		<shader file = "data/shaders/self_illuminate_texture.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2015/ratleaf_bright.jpg"/>
+      <self_illuminate_color value = "15 15 15"/>
+	  <distort_scale_coeff value = "1 1 1"/>
+          <distort_time_coeff value = "0.02 0.01 0.03"/>
+          <distort_position_coeff value = "1 1 1"/>
+    </parameters>
+  </shader>
+	
+</material>
+
+<material
+	name = "spiderweb"
+	material_p3d = "spiderweb"
+	>
+    <shader file = "data/shaders/leaf.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2015/spiderweb.png"/>
+            <specular_map value = "data/images/2015/spiderweb.png"/>
+            <alpha_map value = "data/images/2015/spiderweb.png"/>
+            <!--
+            <shininess_map value = "data/images/2014/mossrock.jpg"/>
+            <normal_map value = "data/images/2014/mossrockn.jpg"/>
+            -->
+			<self_illuminate_color value = "5 5 5"/>
+            <scatter_map value = "data/images/2015/spiderweb.png"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "1 1 1"/>
+            <specular_color value = "0.5 0.5 0.5"/>
+            <scatter_color value = "1 1 1"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.08"/>
+            <roughness value = "0.80"/> <!-- 0.30 -->
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.2 0 0.2"/>
+            <reflection_coeff value = "0.25"/>
+            <distort_scale_coeff value = "1 1 1"/>
+            <distort_time_coeff value = "0.02 0.02 0.02"/>
+        </parameters>
+	</shader>
+</material>
+
+
+<material
+	name = "banettaa"
+	material_p3d = "banettaa"
+	>
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2014/planet_dif_b.jpg"/>
+            <specular_map value = "data/images/2014/planet_dif_b.jpg"/>
+            <shininess_map value = "data/images/2014/planet_spc.jpg"/> <!-- ptkotkaspc.jpg too white -->
+            <normal_map value = "data/images/2014/planet_n.jpg"/>
+            <!-- <occlusion_map value = "data/images/2014/ptkotkaocc.jpg"/ -->
+            <occlusion_map shared_value = "SSAOBuffer"/>
+            <reflection_map value = "data/images/title/gldc.jpg"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "1 .8 1.4"/>
+            <specular_color value = "0.7 0.7 0.7"/>
+            <normal_scale value = "1.2"/>
+            <fresnel_normal_incidence value = "0.25"/>
+            <roughness value = "0.90"/> <!-- 0.30 -->
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.1 0 0.1"/>
+            <reflection_coeff value = "0.25"/>
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "panettaa"
+	material_p3d = "panettaa"
+	>
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2014/planet_dif.jpg"/>
+            <specular_map value = "data/images/2014/planet_dif.jpg"/>
+            <shininess_map value = "data/images/2014/planet_spc.jpg"/> <!-- ptkotkaspc.jpg too white -->
+            <normal_map value = "data/images/2014/planet_n.jpg"/>
+            <!-- <occlusion_map value = "data/images/2014/ptkotkaocc.jpg"/ -->
+            <occlusion_map shared_value = "SSAOBuffer"/>
+            <reflection_map value = "data/images/title/gldc.jpg"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "1 1 1"/>
+            <specular_color value = "0.7 0.7 0.7"/>
+            <normal_scale value = "1.2"/>
+            <fresnel_normal_incidence value = "0.25"/>
+            <roughness value = "0.90"/> <!-- 0.30 -->
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.1 0 0.1"/>
+            <reflection_coeff value = "0.25"/>
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "komposiitti"
+	material_p3d = "komposiitti"
+	>
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2014/planet_dif.jpg"/>
+            <specular_map value = "data/images/2014/planet_dif.jpg"/>
+            <shininess_map value = "data/images/2014/planet_spc.jpg"/>
+            <normal_map value = "data/images/2014/planet_n.jpg"/>
+            <occlusion_map shared_value = "SSAOBuffer"/>
+            <reflection_map value = "data/images/title/gldc.jpg"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "1 1 1"/>
+            <specular_color value = "0.7 0.7 0.7"/>
+            <normal_scale value = "1.2"/>
+            <fresnel_normal_incidence value = "0.25"/>
+            <roughness value = "0.90"/>
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.1 0 0.1"/>
+            <reflection_coeff value = "0.25"/>
+        </parameters>
+	</shader>
+
+    <!--
+    <shader file = "data/shaders/self_illuminate_texture.xml" > 
+        <parameters>
+            <self_illuminate_map value = "data/images/2014/gre_codarki.png"/>
+            <self_illuminate_color value = "1 1 1"/>
+        </parameters>
+	</shader>
+    -->
+</material>
+
+<material
+	name = "newrock"
+	material_p3d = "newrock"
+	>
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2014/newrock_dif.jpg"/>
+            <specular_map value = "data/images/2014/newrock_spc_color.jpg"/>
+            <shininess_map value = "data/images/2014/newrock_spc.jpg"/> <!-- ptkotkaspc.jpg too white -->
+            <normal_map value = "data/images/rocks/rock_n2.jpg"/>
+            <!-- <occlusion_map value = "data/images/2014/ptkotkaocc.jpg"/ -->
+            <occlusion_map shared_value = "SSAOBuffer"/>
+            <reflection_map value = "data/images/title/gldc.jpg"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "1 1 1"/>
+            <specular_color value = "0.7 0.7 0.7"/>
+            <normal_scale value = "1.2"/>
+            <fresnel_normal_incidence value = "0.25"/>
+            <roughness value = "0.90"/> <!-- 0.30 -->
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.1 0 0.1"/>
+            <reflection_coeff value = "0.25"/>
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "essovuori"
+	material_p3d = "essovuori"
+	>
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2014/essovuori.jpg"/>
+            <specular_map value = "data/images/2014/essovuori_spec.jpg"/>
+            <shininess_map value = "data/images/2014/essovuori_spec.jpg"/> <!-- ptkotkaspc.jpg too white -->
+            <normal_map value = "data/images/2014/essovuorin.jpg"/>
+            <!-- <occlusion_map value = "data/images/2014/ptkotkaocc.jpg"/ -->
+            <occlusion_map shared_value = "SSAOBuffer"/>
+            <reflection_map value = "data/images/title/gldc.jpg"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "0.25 0.25 0.25"/>
+            <specular_color value = "0.3 0.3 0.3"/>
+            <normal_scale value = "0.80"/>
+            <fresnel_normal_incidence value = "0.25"/>
+            <roughness value = "0.90"/> <!-- 0.30 -->
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.1 0 0.1"/>
+            <reflection_coeff value = "0.25"/>
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "putous"
+	material_p3d = "putous"
+	>
+    <shader file = "data/shaders/cook_torrance_water_alpha.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <!--<emission_map value = "data/images/common/white.tga"/>-->
+            <!--<diffuse_map value = "data/images/common/white.tga"/>
+            <specular_map value = "data/images/common/white.tga"/>-->
+        
+            <!--
+            <diffuse_map value = "data/images/rocks/rock2_c.jpg"/>
+            <specular_map value = "data/images/rocks/rock4_s.jpg"/>
+            <reflection_map value = "data/images/tmp/starbg.jpg"/>
+            -->
+            
+            <normal_map value = "data/images/rocks/rock_n2.jpg"/>
+            <alpha_map value = "data/images/tmp/vodalfa.png"/>
+            <occlusion_map value = "data/images/common/white.tga"/>	
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "2.3 2.75 2"/>
+            <specular_color value = "2.3 2.5 2"/>
+            <reflection_coeff value = "4"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.75"/>
+            <roughness value = "0.06"/>
+            <texcoord_offset_2 shared_value = "linear_texcoord_y_curve" />
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "musta"
+	material_p3d = "musta"
+	>
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/common/black.tga"/>
+            <specular_map value = "data/images/common/black.tga"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "0 0 0"/>
+            <specular_color value = "0.2 0.2 0.2"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.35"/>
+            <roughness value = "0.20"/>		
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "harmaa"
+	material_p3d = "harmaa"
+	>
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/common/black.tga"/>
+            <specular_map value = "data/images/common/black.tga"/>
+            <ambient_color value = "0 0 0"/>
+            <diffuse_color value = "0.15 0.15 0.15"/>
+            <specular_color value = "0.1 0.1 0.1"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.35"/>
+            <roughness value = "0.20"/>		
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "materal2"
+	material_p3d = "materal2"
+	>
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <!--
+            <ambient_ground_color value="0 1 0"/>
+            <ambient_sky_color value="0 0 1"/>
+            <ambient_sky_to_dir value="0 1 0"/>
+            <ambient_intensity value="0.03"/>
+            -->
+            
+            <shadow_map shared_value = "ShadowTexture"/>
+            <!--<spotmask_map shared_value = "spotmask_texture_name_curve"/>-->
+            <!--<spotmask_map value = "data/images/common/flashlight001_height_jenkins.png"/>-->
+            <!-- <spotmask_map value = "data/images/common/flashlight_01.jpg"/>  -->
+            <!-- <spotmask_map value = "data/images/common/grunge_spot.jpg"/> -->
+            <!--<spotmask_map value = "data/images/tmp/asmlogo.png"/> -->
+            <!-- <spotmask_map value = "data/images/common/spot_mask.png"/> -->
+            <!--<spotmask_map value = "data/images/2014/silmat.jpg"/>-->
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "0 0.5 0"/>
+            <specular_color value = "0.4 0.4 0.4"/>
+            <normal_scale value = "1.00"/>
+            <fresnel_normal_incidence value = "0.8"/>
+            <!--<fresnel_normal_incidence shared_value = "fresnel_test_curve"/>-->
+            <roughness value = "0.05"/>
+        </parameters>
+	</shader>
+</material>

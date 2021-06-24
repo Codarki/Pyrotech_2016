@@ -1,0 +1,155 @@
+<?xml version="1.0" ?>
+
+<sequences>
+	<!-- Lataa cave2.p3d_scenen käyttäen Camera01 nimistä kameraa -->
+	<!-- jos tarviit vaihtaa skeneä. tämä on ainut mitä tarvitsee muuttaa -->
+	<!-- esim data/scenes/munskene.p3d_scene -->
+	<scene_sequence
+	    name = "scene0"
+		scene = "data/scenes/titlescreen.p3d_scene"
+		camera = "Camera01"		
+		frames_per_second = 12
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "300"
+        near_plane = "1"
+        far_plane = "30000"
+        ssao_enabled = "true">					
+		</scene_sequence>
+	
+	<scene_sequence
+	    name = "scene1"
+		scene = "data/scenes/alkuhuone.p3d_scene"
+		camera = "Camera01"		
+		frames_per_second = 30
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "1000"
+        near_plane = "1"
+        far_plane = "30000"
+        ssao_enabled = "true">					
+		</scene_sequence>
+
+	<scene_sequence
+	    name = "scene2"
+		scene = "data/scenes/kaytava.p3d_scene"
+		camera = "Camera07"		
+		frames_per_second = 30
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "1000"
+        near_plane = "1"
+        far_plane = "30000"
+        ssao_enabled = "true">					
+		</scene_sequence>		
+
+		<scene_sequence
+	    name = "scene3"
+		scene = "data/scenes/reaktori.p3d_scene"
+		camera = "Camera01"		
+		frames_per_second = 30
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "1000"
+        near_plane = "1"
+        far_plane = "30000"
+        ssao_enabled = "true">					
+		</scene_sequence>		
+		
+	<scene_sequence
+	    name = "scene4"
+		scene = "data/scenes/absterdam.p3d_scene"
+		camera = "Camera01"		
+		frames_per_second = 30
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "1000"
+        near_plane = "1"
+        far_plane = "30000"
+        ssao_enabled = "true">					
+		</scene_sequence>	
+
+	<scene_sequence
+	    name = "scene5"
+		scene = "data/scenes/essokallio.p3d_scene"
+		camera = "Camera01"		
+		frames_per_second = 30
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "1000"
+        near_plane = "1"
+        far_plane = "30000"
+        ssao_enabled = "false">					
+		</scene_sequence>	
+
+	<scene_sequence
+	    name = "scene6"
+		scene = "data/scenes/loppu_part2.p3d_scene"
+		camera = "Camera01"		
+		frames_per_second = 30
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "1000"
+        near_plane = "1"
+        far_plane = "30000"
+        ssao_enabled = "false">					
+		</scene_sequence>			
+
+	<!-- Pitää olla jotta noise toimii, ei ole päällä mutta vaaditaan tämä rivi -->
+	<image name = "noise_tex" path = "data/images/noise.jpg" />
+	
+	<!-- draw_image name = "draw_alkuspace"><input sequence = "img_tausta"/></draw_image -->
+	<draw_to_texture name = "title_rgb_distort_tex">
+		<shared_texture name = "SceneTexture1"/>
+		<input sequence = "scene0"/>
+	</draw_to_texture>
+	<plasma>
+		<name v="image_distort_sine_scene0"/>
+		<material_name v="image_distort_sine_fullscreen_material_scene0"/>
+		<input sequence="title_rgb_distort_tex"/>
+	</plasma>	
+    
+	<!-- Post processing päällä -->	
+	<!-- Tähän ei tarvitse koskea -->
+	<post_processing name = "Post processing">
+		<clear_color v = "0 0 0"/>
+		<!--<input sequence = "scene0" time="0"/> -->
+        <input sequence = "image_distort_sine_scene0" time="0"/>
+		<input sequence = "scene1" time="24"/>
+		<input sequence = "scene2" time="57.3"/>
+		<input sequence = "scene3" time="130.0"/>
+	    <input sequence = "scene4" time="164" duration = "16"/>
+		<input sequence = "scene5" time="180" duration = "16"/>
+		<input sequence = "scene6" time="196"/>
+<!--		<input sequence = "scene1" time="199.8"/>	 -->
+		<!-- input sequence ="draw_alkuspace"/ -->	
+
+	</post_processing>
+	
+	<!-- Depth buffer päällä -->
+	<!-- Tähän ei tarvitse koskea -->
+	<depth_buffer name = "Depth test">
+        <clear_color v = "0 0 0"/>
+		<input sequence = "Post processing"/>
+	</depth_buffer>
+
+	<!--  Linkataan Depth test sequence -->
+	<!--  Ei tarttis koskee -->
+	<composition name = "main timeline">
+		<input sequence = "Audio_system"/>
+		<input sequence = "Depth test"/>
+	</composition>
+
+	<audio_system name = "Audio_system">
+		<audio_sequence name = "musa" path = "data/audio/Demo14_osuujauppoo.mp3"/>
+	</audio_system>
+	<!--<audio_system name = "Audio system">
+		<audio_sequence name = "musa" path = "data/audio/uusimusa2011.mp3"/>
+	</audio_system>	-->
+
+	<!-- Main timeline -->
+	<!--  Ei tarttis koskee -->		
+	<timeline>
+		<input sequence = "main timeline"/>
+	</timeline>
+</sequences>

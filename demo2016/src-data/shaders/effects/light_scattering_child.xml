@@ -1,0 +1,143 @@
+<?xml version="1.0" ?>
+<parameters>
+	<parameter
+		label = "Source map"
+		name = "child_texture"
+		type = "texture2D"
+		hlsl = "child_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+	<parameter
+		label = "Exposure"
+		name = "exposure"
+		type = "float"
+		hlsl = "exposure"
+		default_value = "1">
+	</parameter>
+	<parameter
+		label = "Decay"
+		name = "decay"
+		type = "float"
+		hlsl = "decay"
+		default_value = "1.0">
+	</parameter>	
+	<parameter
+		label = "Density"
+		name = "density"
+		type = "float"
+		hlsl = "density"
+		default_value = "1">
+	</parameter>
+	<parameter
+		label = "Weight"
+		name = "weight"
+		type = "float"
+		hlsl = "weight"
+		default_value = "1">
+	</parameter>	
+	<parameter
+		label = "Light screen space position X"
+		name = "lightScrPosX"
+		type = "float"
+		hlsl = "lightScrPosX"
+		default_value = "0.5">
+	</parameter>
+	<parameter
+		label = "Light screen space position Y"
+		name = "lightScrPosY"
+		type = "float"
+		hlsl = "lightScrPosY"
+		default_value = "0.5">
+	</parameter>		
+</parameters>
+
+<sampler_states>
+	<sampler
+		name = "s0"
+		texture = "child_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+</sampler_states>
+
+<streams>
+	<stream0
+		position = 0
+		tangent = 0
+		normal = 0
+		texcoord = 0>
+	</stream0>
+</streams>
+
+<vertex_shader
+	stream = "stream0"
+	hlsl = "
+	struct input_vertex
+	{
+		float4 position : POSITION;
+		float2 texcoord : TEXCOORD0;
+	};
+
+	struct output_vertex
+	{
+		float4 position : POSITION;
+		float2 texcoord : TEXCOORD0;
+	};
+
+	void main_vs(in input_vertex input, out output_vertex output)
+	{
+		output = input;
+	}
+	">
+</vertex_shader>
+<pixel_shader
+	hlsl = "
+	float time_x;
+	float time_y;
+
+	float exposure;
+	float decay;
+	float density;
+	float weight;
+	float lightScrPosX;
+	float lightScrPosY;
+	
+	texture2D child_texture;
+	sampler2D s0;
+    
+    static const int NUM_SAMPLES = 200;
+    
+	void main_ps(
+		float2 texcoord : TEXCOORD0,
+		out float4 color : COLOR0)
+	{
+		color = tex2D(s0, texcoord);		
+		
+		float2 deltaTextCoord = float2( texcoord - float2(lightScrPosX, lightScrPosY));
+		float2 uv = texcoord;
+		deltaTextCoord *= 1.0 /  float(NUM_SAMPLES) * density;
+		float illuminationDecay = 1.0;
+        
+		for(int i=0; i < NUM_SAMPLES ; i++)
+		{
+				uv -= deltaTextCoord;
+				float4 sample = tex2D(s0, uv );
+				
+				sample *= illuminationDecay * weight;
+				
+				color += sample;
+                
+				illuminationDecay *= decay;
+		}		 
+		
+		color *= exposure;
+        color = (color+tex2D(s0, texcoord ));
+			
+	}
+	">
+</pixel_shader>

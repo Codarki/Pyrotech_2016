@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scene>
+    <timerange valid="true" start="0" end="60"/>
+    <music firstBeatOffset="0" beatsPerMinute="120"/>
+    <curves>
+        <catmull_rom name="pilvi_color_r">
+            <value_offset v="0"/>
+            <value_multiplier v="6"/>
+            <key time="0" value="0.497426"/>
+            <key time="59.9" value="0.328467"/>
+        </catmull_rom>
+        <catmull_rom name="pilvi_color_g">
+            <value_offset v="0"/>
+            <value_multiplier v="6"/>
+            <key time="0" value="0.487706"/>
+            <key time="59.9" value="0.329069"/>
+        </catmull_rom>
+        <catmull_rom name="pilvi_color_b">
+            <value_offset v="0"/>
+            <value_multiplier v="6"/>
+            <key time="0" value="0.495687"/>
+            <key time="59.9" value="0.327077"/>
+        </catmull_rom>
+        <catmull_rom name="pilvi_fade_power">
+            <value_offset v="2"/>
+            <value_multiplier v="7"/>
+            <key time="0" value="0.0299795"/>
+            <key time="36.7997" value="0.0924182"/>
+            <key time="60" value="0.559853"/>
+        </catmull_rom>
+        <catmull_rom name="superwide_alpha">
+            <value_offset v="0"/>
+            <value_multiplier v="1"/>
+            <key time="0" value="0.0130528"/>
+            <key time="0.806849" value="0.865947"/>
+            <key time="1.50959" value="0.968347"/>
+            <key time="60" value="1"/>
+        </catmull_rom>
+    </curves>
+</scene>
+

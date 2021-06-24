@@ -1,0 +1,100 @@
+<?xml version="1.0" ?>
+
+<sequences>
+	<scene_sequence
+	    name = "testiscene_1"
+		scene = "data/scenes/spot_test_pos_moving.p3d_scene"
+		camera = "Camera01"
+		frames_per_second = 30
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "1000"
+        near_plane = "1"
+        far_plane = "1000"
+        ssao_enabled = "false"
+        />
+
+<!--
+    <scene_sequence
+	    name = "testiscene_1_spot"
+		scene = "data/scenes/spot_test_pos_moving.p3d_scene"
+		camera = "Spot01"
+		frames_per_second = 30
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "1000"
+        near_plane = "1"
+        far_plane = "1000"
+        ssao_enabled = "false"/>
+        
+	<scene_sequence
+	    name = "testiscene_2"
+		scene = "data/scenes/spot_test.p3d_scene"
+		camera = "Camera01"
+		frames_per_second = 30
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "1000"
+        near_plane = "1"
+        far_plane = "1000"
+        ssao_enabled = "false"/>
+-->
+        
+	<!-- Pitää olla jotta noise toimii, ei ole päällä mutta vaaditaan tämä rivi -->
+	<image name = "noise_tex" path = "data/images/noise.jpg" />
+    <image name = "ShadowDepthMap" path = "ShadowTexture" />
+
+
+	<draw_image name = "draw_spot_depth">
+		<input sequence = "ShadowDepthMap" />
+		<size v = "0.4 0.4"/>
+        <center v = "0.8 0.2"/>
+        <intensity>0.8</intensity>
+	</draw_image>
+    
+	<!--
+    <draw_image name = "draw_testiscene_1_from_spotlight">
+		<input sequence = "testiscene_1_spot" />
+		<size v = "0.1 0.15"/>
+	</draw_image>
+	-->
+    
+	<!-- Post processing päällä -->	
+	<!-- Tähän ei tarvitse koskea -->
+	<post_processing name = "Post processing">
+		<clear_color v = "0 0 0"/>
+        <time_curve>
+            <curve>spotlight_scene_time_curve</curve>
+        </time_curve>
+		<!-- input sequence ="draw_alkuspace"/-->	
+		<input sequence = "testiscene_1" >
+        </input>
+	</post_processing>
+	
+	<!-- Depth buffer päällä -->
+	<!-- Tähän ei tarvitse koskea -->
+	<depth_buffer name = "Depth test">
+        <clear_color v = "0 0 0"/>
+		 <input sequence = "Post processing"/> 
+         <!--<input sequence = "testiscene_1"/>-->
+         
+	</depth_buffer>
+
+	<!--  Linkataan Depth test sequence -->
+	<!--  Ei tarttis koskee -->
+	<composition name = "main timeline">
+		 <input sequence = "Depth test"/>
+         
+        <!-- <input sequence = "draw_spot_depth"/> -->
+	</composition>
+	
+	<!--<audio_system name = "Audio system">
+		<audio_sequence name = "musa" path = "data/audio/uusimusa2011.mp3"/>
+	</audio_system>	-->
+	
+	<!-- Main timeline -->
+	<!--  Ei tarttis koskee -->		
+	<timeline>
+		<input sequence = "main timeline"/>
+	</timeline>
+</sequences>

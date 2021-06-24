@@ -1,0 +1,70 @@
+<?xml version="1.0" ?>
+
+<material
+	name = "image_distort_sine_fullscreen_material_titlescreen"
+	material_p3d = "image distort material for titlescene"
+	>
+    <shader file = "data/shaders/effects/image_distort_sine_child.xml"> 
+        <parameters>
+            <!--<strength shared_value = "image_distort_titlescreen_strength_curve"/>-->
+            <strength value = "0.0001"/>
+            <wavelength shared_value = "image_distort_titlescreen_wavelength_curve"/>
+            <!--<wavelength value = "10"/> -->
+            <!--<decayconstant shared_value = "image_distort_titlescreen_decayconstant_curve"/>-->
+            <decayconstant value = "0.0"/>
+            <!--<phaseshift shared_value = "image_distort_titlescreen_phaseshift_curve"/>-->
+            <phaseshift value = "0.0008"/>
+            <rgb_strength value = "0.5"/>
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "image_distort_sine_fullscreen_material_abstrakti"
+	material_p3d = "image distort material for abstrakti"
+	>
+    <shader file = "data/shaders/effects/image_distort_sine_child.xml"> 
+        <parameters>
+            <!--<strength shared_value = "image_distort_titlescreen_strength_curve"/>-->
+            <strength shared_value = "image_distort_abstrakti_strength"/>
+            <wavelength value = "0.05"/>
+            <!--<decayconstant shared_value = "image_distort_titlescreen_decayconstant_curve"/>-->
+            <decayconstant value = "0.0"/>
+            <!--<phaseshift shared_value = "image_distort_titlescreen_phaseshift_curve"/>-->
+            <phaseshift value = "0.0008"/>
+            <rgb_strength value = "0.5"/>
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "image_distort_sine_fullscreen_material"
+	material_p3d = "image distort sine fullscreen material"
+	>
+    <shader file = "data/shaders/effects/image_distort_sine_child.xml"> 
+        <parameters>
+            <strength shared_value = "image_distort_orbmeteor_curve"/>
+            <wavelength value = "10"/>
+            <decayconstant value = "1.7"/>
+            <phaseshift value = "0.0"/>
+            <rgb_strength value = "0.7"/>
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "epichasma_p2_image_distort_material"
+	material_p3d = "epichasma_p2_image_distort_material"
+	>
+    <shader file = "data/shaders/effects/image_distort_sine_child.xml"> 
+        <parameters>
+            <strength shared_value = "image_distort_orbmeteor_curve"/>
+            <wavelength value = "10"/>
+            <decayconstant value = "1.7"/>
+            <phaseshift value = "0.0"/>
+            <rgb_strength value = "0.2"/>
+            <texcoord_multiplier value = "1 -1"/>
+            <texcoord_offset value = "0 1"/>
+        </parameters>
+	</shader>
+</material>

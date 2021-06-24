@@ -1,0 +1,11 @@
+*.suo
+*.opensdf
+*.sdf
+build
+/archiver_uncompressed/build
+*.pdb
+*.ilk
+*.exp
+/demo2008/exe/demo2008.lib
+/demo2008/ipch
+demo2008/demo2008.VC.db

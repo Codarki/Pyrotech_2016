@@ -1,0 +1,125 @@
+<asset>
+	<scene>
+		<lights>
+        
+            <light>
+				<item name="Spot001"/>
+				<light_shader_instance name="planttunnel_light1"/>
+				<near_plane>1.0</near_plane>
+				<far_plane>200.0</far_plane>
+				<cast_shadows>false</cast_shadows>
+                <shadow_bias>0.0011</shadow_bias>
+			</light>
+			
+			 <light>
+				<item name="Spot002"/>
+				<light_shader_instance name="planttunnel_light1"/>
+				<near_plane>1.0</near_plane>
+				<far_plane>200.0</far_plane>
+				<cast_shadows>false</cast_shadows>
+                <shadow_bias>0.0011</shadow_bias>
+			</light>
+			
+			<light>
+				<item name="Spot003"/>
+				<light_shader_instance name="planttunnel_light1"/>
+				<near_plane>1.0</near_plane>
+				<far_plane>200.0</far_plane>
+				<cast_shadows>false</cast_shadows>
+                <shadow_bias>0.0011</shadow_bias>
+			</light>
+			
+			<light>
+				<item name="Spot004"/>
+				<light_shader_instance name="planttunnel_light1"/>
+				<near_plane>1.0</near_plane>
+				<far_plane>200.0</far_plane>
+				<cast_shadows>false</cast_shadows>
+                <shadow_bias>0.0011</shadow_bias>
+			</light>
+            
+             <light>
+				<item name="Spot01"/>
+				<light_shader_instance name="planttunnel_pallo_spot"/>
+				<near_plane>1.0</near_plane>
+				<far_plane>200.0</far_plane>
+				<cast_shadows>false</cast_shadows>
+                <shadow_bias>0.0011</shadow_bias>
+			</light>
+			
+			 <light>
+				<item name="Spot02"/>
+				<light_shader_instance name="planttunnel_pallo_spot"/>
+				<near_plane>1.0</near_plane>
+				<far_plane>200.0</far_plane>
+				<cast_shadows>false</cast_shadows>
+                <shadow_bias>0.0011</shadow_bias>
+			</light>
+			
+			<light>
+				<item name="Spot03"/>
+				<light_shader_instance name="planttunnel_pallo_spot"/>
+				<near_plane>1.0</near_plane>
+				<far_plane>200.0</far_plane>
+				<cast_shadows>false</cast_shadows>
+                <shadow_bias>0.0011</shadow_bias>
+			</light>
+			
+			<light>
+				<item name="Spot04"/>
+				<light_shader_instance name="planttunnel_pallo_spot"/>
+				<near_plane>1.0</near_plane>
+				<far_plane>200.0</far_plane>
+				<cast_shadows>false</cast_shadows>
+                <shadow_bias>0.0011</shadow_bias>
+			</light>
+
+			<light>
+				<item name="Spot05"/>
+				<light_shader_instance name="ambient_frustrum_light"/>
+				<near_plane>1.0</near_plane>
+				<far_plane>800.0</far_plane>
+				<cast_shadows>false</cast_shadows>
+                <shadow_bias>0.0011</shadow_bias>
+			</light> 
+			
+            <!--
+			<light>
+				<item name="Omni01"/>
+				<light_shader_instance name="default_point_light"/>
+			</light>
+            -->
+            
+		</lights>
+	</scene>
+    <convert>
+		<scene>
+			<mesh_instances>
+				<base_mesh>
+					<file>curvepipe0.p3d_model</file>
+				</base_mesh>
+				<base_mesh>
+					<file>lehtia08.p3d_model</file>
+				</base_mesh>
+				<base_mesh>
+					<file>rock20.p3d_model.p3d_model</file>
+				</base_mesh>
+				<base_mesh>
+					<file>smallvalv0.p3d_model</file>
+				</base_mesh>
+				<base_mesh>
+					<file>straws01.p3d_model</file>
+				</base_mesh>
+				<base_mesh>
+					<file>straws01.p3d_model</file>
+				</base_mesh>
+				<base_mesh>
+					<file>tulikarp10.p3d_model</file>
+				</base_mesh>
+				<base_mesh>
+					<file>tulikarp10.p3d_model</file>
+				</base_mesh>
+			</mesh_instances>
+		</scene>
+	</convert>
+</asset>

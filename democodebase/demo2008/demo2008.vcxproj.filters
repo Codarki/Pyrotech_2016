@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="test">
+      <UniqueIdentifier>{fae7228f-1b1a-407a-8461-3ce5c34d2ab6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="content %28namespace%29">
+      <UniqueIdentifier>{6632fa42-6ec4-4e68-a2e4-98a6068df2f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="content %28namespace%29\sequences %28namespace%29">
+      <UniqueIdentifier>{795847e7-a712-441f-a0ee-d6a886c80890}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="content %28namespace%29\sequences %28namespace%29\kimmo_effui">
+      <UniqueIdentifier>{d817f6a9-8e75-4e22-a2b6-7653824781b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="content %28namespace%29\sequences %28namespace%29\kimmo_effui\detail %28namespace%29">
+      <UniqueIdentifier>{eea6a77e-d197-4bb8-aefc-3cbaae643ea0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="content %28namespace%29\core">
+      <UniqueIdentifier>{73f7f75f-3c45-4bf8-94dc-7c124940541b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="content %28namespace%29\loading_screen">
+      <UniqueIdentifier>{2099a4a2-78ee-423b-9e7c-10c5695b1c9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="conversion %28namespace%29">
+      <UniqueIdentifier>{fe75a192-5684-434c-8fb4-33db27a67cbf}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="box_vertex_stream.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="plasma.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="spline_test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="content\sequences\audio.cpp">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="content\sequences\audio_sync.cpp">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="content\sequences\audio_system.cpp">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="content\sequences\basic_composite_sequence.cpp">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="content\sequences\color_fade.cpp">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="content\sequences\composite_sequence.cpp">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="content\sequences\custom_effect.cpp">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="content\sequences\depth_buffer.cpp">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="content\sequences\draw_image.cpp">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="content\sequences\draw_to_texture.cpp">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="content\sequences\image.cpp">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="content\sequences\plasma.cpp">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="content\sequences\post_processing.cpp">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="content\sequences\post_processing_parameters.cpp">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="content\sequences\rendertarget.cpp">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="content\sequences\scene_sequence.cpp">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="content\sequences\simple_composite_sequence.cpp">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="content\sequences\kimmo_cylinder_deform.cpp">
+      <Filter>content %28namespace%29\sequences %28namespace%29\kimmo_effui</Filter>
+    </ClCompile>
+    <ClCompile Include="content\sequences\detail\cylinder.cpp">
+      <Filter>content %28namespace%29\sequences %28namespace%29\kimmo_effui\detail %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="content\sequences\detail\deformer.cpp">
+      <Filter>content %28namespace%29\sequences %28namespace%29\kimmo_effui\detail %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="content\demo_player.cpp">
+      <Filter>content %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="content\free_view.cpp">
+      <Filter>content %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="content\info_display.cpp">
+      <Filter>content %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="content\scene_player.cpp">
+      <Filter>content %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="content\sequence_builder.cpp">
+      <Filter>content %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="content\spline_parameter.cpp">
+      <Filter>content %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="content\timeline.cpp">
+      <Filter>content %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="content\timeline_player.cpp">
+      <Filter>content %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="content\utility.cpp">
+      <Filter>content %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="content\loading_screen.cpp">
+      <Filter>content %28namespace%29\loading_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="content\progress_bar.cpp">
+      <Filter>content %28namespace%29\loading_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="application.cpp" />
+    <ClCompile Include="dll_main.cpp" />
+    <ClCompile Include="win_main.cpp" />
+    <ClCompile Include="conversion\just_do_it.cpp">
+      <Filter>conversion %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="content\sequences\cloud_texture.cpp">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="content\sequences\bloom_parameters.cpp">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="content\sequences\post_processing_parameters_base.cpp">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="content\sequences\bright_pass_parameters.cpp">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="content\sequences\animated_texture.cpp">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="content\sequences\dof_parameters.cpp">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="content\curve_free_functions.cpp">
+      <Filter>content %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="content\sequences\light_scattering_parameters.cpp">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="box_vertex_stream.h">
+      <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="plasma.h">
+      <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="spline_test.h">
+      <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="content\sequences\audio.h">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="content\sequences\audio_system.h">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="content\sequences\basic_composite_sequence.h">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="content\sequences\color_fade.h">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="content\sequences\composite_sequence.h">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="content\sequences\custom_effect.h">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="content\sequences\depth_buffer.h">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="content\sequences\draw_image.h">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="content\sequences\draw_to_texture.h">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="content\sequences\image.h">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="content\sequences\plasma.h">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="content\sequences\post_processing.h">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="content\sequences\post_processing_parameters.h">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="content\sequences\rendertarget.h">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="content\sequences\scene_cache.h">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="content\sequences\scene_sequence.h">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="content\sequences\simple_composite_sequence.h">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="content\sequences\kimmo_cylinder_deform.h">
+      <Filter>content %28namespace%29\sequences %28namespace%29\kimmo_effui</Filter>
+    </ClInclude>
+    <ClInclude Include="content\sequences\detail\cylinder.h">
+      <Filter>content %28namespace%29\sequences %28namespace%29\kimmo_effui\detail %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="content\sequences\detail\deformer.h">
+      <Filter>content %28namespace%29\sequences %28namespace%29\kimmo_effui\detail %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="content\demo_player.h">
+      <Filter>content %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="content\free_view.h">
+      <Filter>content %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="content\info_display.h">
+      <Filter>content %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="content\scene_player.h">
+      <Filter>content %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="content\sequence_builder.h">
+      <Filter>content %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="content\spline_parameter.h">
+      <Filter>content %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="content\timeline.h">
+      <Filter>content %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="content\timeline_player.h">
+      <Filter>content %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="content\user_abort.h">
+      <Filter>content %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="content\utility.h">
+      <Filter>content %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="content\loading_screen.h">
+      <Filter>content %28namespace%29\loading_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="content\progress_bar.h">
+      <Filter>content %28namespace%29\loading_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="application.h" />
+    <ClInclude Include="win_main.h" />
+    <ClInclude Include="conversion\just_do_it.h">
+      <Filter>conversion %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="content\sequences\cloud_texture.h">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="content\sequences\bloom_parameters.h">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="content\sequences\post_processing_parameters_base.h">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="content\sequences\bright_pass_parameters.h">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="content\sequences\composite_sequence_collection.h">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="content\sequences\animated_texture.h">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="content\sequences\dof_parameters.h">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="content\curve_loader.h">
+      <Filter>content %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="content\curve_free_functions.h">
+      <Filter>content %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="content\reference_curve.h">
+      <Filter>content %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="content\sequences\light_scattering_parameters.h">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuildStep Include="content\sequences\audio_sync.h">
+      <Filter>content %28namespace%29\sequences %28namespace%29</Filter>
+    </CustomBuildStep>
+  </ItemGroup>
+</Project>

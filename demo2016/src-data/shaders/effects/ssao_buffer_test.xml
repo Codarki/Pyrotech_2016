@@ -1,0 +1,201 @@
+<?xml version="1.0" ?>
+<parameters>
+
+	<parameter
+		label = "Depth map"
+		name = "depth_map"
+		type = "texture2D"
+		hlsl = "depth_texture"
+		default_value = "data/images/common/black.tga">
+	</parameter>
+	<parameter
+		label = "Normal map"
+		name = "normal_map"
+		type = "texture2D"
+		hlsl = "normal_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>   
+	<parameter
+		label = "Random Normals map"
+		name = "random_normal_map"
+		type = "texture2D"
+		hlsl = "random_normal_texture"
+		default_value = "data/images/common/normal.tga">
+	</parameter>
+    <parameter
+		label = "Sample radius"
+		name = "occ_sample_radius"
+		type = "float"
+		hlsl = "occ_sample_radius"
+		default_value = "0.66">
+	</parameter>
+</parameters>
+
+<sampler_states>
+
+	<sampler
+		name = "depth_sampler"
+		texture = "depth_texture"
+		address_u = "CLAMP"
+		address_v = "CLAMP"
+		address_w = "CLAMP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+	<sampler
+		name = "normal_sampler"
+		texture = "normal_texture"
+		address_u = "CLAMP"
+		address_v = "CLAMP"
+		address_w = "CLAMP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+	<sampler
+		name = "random_normal_sampler"
+		texture = "random_normal_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "POINT"
+		mag_filter = "POINT"
+		mip_filter = "POINT"
+		>
+	</sampler>
+
+</sampler_states>
+
+<streams>
+	<stream0
+		position = 0
+		texcoord = 0>
+	</stream0>
+</streams>
+
+<vertex_shader
+	stream = "stream0"
+	hlsl = "
+
+	
+	struct input_vertex
+	{
+		float4 position : POSITION;
+		float2 texcoord : TEXCOORD0;
+	};
+
+	struct output_vertex
+	{
+		float4 position : POSITION;
+		float2 texcoord : TEXCOORD0;
+	};
+
+	void main_vs(in input_vertex input, out output_vertex output)
+	{
+		output = input;
+        //float4 pos       = float4(sign(input.position.xy), 0.0f, 1.0f);
+        //output.texcoord = pos.xy * float2(0.5f, -0.5f) + 0.5f;
+	}
+	">
+</vertex_shader>
+<pixel_shader
+	hlsl = "
+    	#pragma warning( disable : 3206 )
+    
+    texture2D depth_texture;
+	sampler2D depth_sampler;
+
+    texture2D normal_texture;
+	sampler2D normal_sampler;
+    
+    texture2D random_normal_texture;
+	sampler2D random_normal_sampler;
+    
+    //Parameters
+    float occ_sample_radius;
+    
+	float4 getPosition(float2 uv) {
+        float4 pos = tex2D(depth_sampler,uv).xyzw;
+        return  pos;
+    }
+	
+    float3 getNormal(float2 uv) {
+        float3 normal = normalize(tex2D(normal_sampler,uv).xyz * 2.0f - 1.0f);
+        
+        return normal;
+    }	
+	
+	float aoFF( float2 coord, float3 ddiff, float3 cnorm, float c1, float c2)
+	{
+	   float3 vv = normalize(ddiff);
+	   float rd = length(ddiff);
+	   return (1.0-clamp(dot(getNormal(coord+float2(c1,c2)),-vv),0.0,1.0)) *
+		  clamp(dot( cnorm,vv ),0.0,1.0)*(1.0 - 1.0/sqrt(1.0/(rd*rd) + 1.0));
+	}
+    
+	void main_ps(
+		float2 texcoord : TEXCOORD0,
+		out float4 color : COLOR0)
+	{
+		color = 0;
+		float4 pos = getPosition(texcoord);
+		
+		float2 scrSize = float2(512, 512);
+		float2 fres = float2(scrSize.x/128.0*5,scrSize.y/128.0*5);
+		float3 random =  tex2D(random_normal_sampler, texcoord*fres.xy);//normalize(tex2D(random_normal_sampler, scrSize * texcoord / 16.0f).xyz); //tex2D(random_normal_sampler, texcoord*fres.xy));
+		//random = random*2.0-float3(1,1,1);
+
+		float3 normal  = getNormal(texcoord);     
+		//float3 toLight = normalize(LightPos - pos.xyz);
+
+		//float diffuse = dot(normal,toLight);
+
+		float ao = 0.0;
+		//float3 gi = float3(0.0,0.0,0.0);
+		float incx = 1.0/scrSize.x*0.1;
+		float incy = 1.0/scrSize.y*0.1;
+		float pw = incx;
+		float ph = incy;
+		float cdepth = pos.z*(pos.w);
+
+		float3 p = pos.xyz;
+		float3 n = normal;//(tex2D(NormalMap,texcoord)); 
+		// 3 rounds, 8 samples each
+		for(float i=0.0; i<3.0; ++i) 
+		{
+			float npw = (pw+occ_sample_radius*random.x)/cdepth;
+			float nph = (ph+occ_sample_radius*random.y)/cdepth;
+
+			float3 ddiff = getPosition(texcoord+float2(npw,nph)).xyz-p;
+			float3 ddiff2 = getPosition(texcoord+float2(npw,-nph)).xyz-p;
+			float3 ddiff3 = getPosition(texcoord+float2(-npw,nph)).xyz-p;
+			float3 ddiff4 = getPosition(texcoord+float2(-npw,-nph)).xyz-p;
+			float3 ddiff5 = getPosition(texcoord+float2(0,nph)).xyz-p;
+			float3 ddiff6 = getPosition(texcoord+float2(0,-nph)).xyz-p;
+			float3 ddiff7 = getPosition(texcoord+float2(npw,0)).xyz-p;
+			float3 ddiff8 = getPosition(texcoord+float2(-npw,0)).xyz-p;
+
+			ao+=  aoFF( texcoord, ddiff,n,npw,nph);
+			ao+=  aoFF( texcoord, ddiff2,n,npw,-nph);
+			ao+=  aoFF( texcoord, ddiff3,n,-npw,nph);
+			ao+=  aoFF( texcoord, ddiff4,n,-npw,-nph);
+			ao+=  aoFF( texcoord, ddiff5,n,0,nph);
+			ao+=  aoFF( texcoord, ddiff6,n,0,-nph);
+			ao+=  aoFF( texcoord, ddiff7,n,npw,0);
+			ao+=  aoFF( texcoord, ddiff8,n,-npw,0);
+
+			//increase sampling area:
+			pw += incx;
+			ph += incy;    
+		}
+	
+		ao/=24.0;
+   
+		float occ = saturate( 1 - ao );
+		color.rgb = float3(occ,occ,occ); 
+	}
+	">
+</pixel_shader>

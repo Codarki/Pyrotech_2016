@@ -1,0 +1,142 @@
+<?xml version="1.0" ?>
+<parameters>
+	<parameter
+		label = "Source map"
+		name = "child_texture"
+		type = "texture2D"
+		hlsl = "child_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+	
+	<parameter
+		label = "Attenuation"
+		name = "attenuation"
+		type = "float3"
+		hlsl = "attenuation"
+		default_value = "0.1 0.01 0.001">
+	</parameter>
+	
+	<parameter
+		label = "Distance"
+		name = "distance"
+		type = "float"
+		hlsl = "distance"
+		default_value = "2.6">
+	</parameter>
+	
+	<parameter
+		label = "Number of balls"
+		name = "num_balls"
+		type = "float"
+		hlsl = "num_balls"
+		default_value = "50">
+	</parameter>
+	
+	<parameter
+		label = "Color of balls"
+		name = "color"
+		type = "float3"
+		hlsl = "ball_color"
+		default_value = "1.0 0.0 0.0">
+	</parameter>	
+	
+	
+</parameters>
+
+<sampler_states>
+	<sampler
+		name = "s0"
+		texture = "child_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+</sampler_states>
+
+<streams>
+	<stream0
+		position = 0
+		tangent = 0
+		normal = 0
+		texcoord = 0>
+	</stream0>
+</streams>
+
+<vertex_shader
+	stream = "stream0"
+	hlsl = "
+	struct input_vertex
+	{
+		float4 position : POSITION;
+		float2 texcoord : TEXCOORD0;
+	};
+
+	struct output_vertex
+	{
+		float4 position : POSITION;
+		float2 texcoord : TEXCOORD0;
+	};
+
+	void main_vs(in input_vertex input, out output_vertex output)
+	{
+		output = input;
+	}
+	">
+</vertex_shader>
+<pixel_shader
+	hlsl = "
+	float time_x;
+	float time_y;
+	float time;
+	float3 attenuation;
+	float distance;
+	float num_balls;
+	float3 ball_color;
+
+	texture2D child_texture;
+	sampler2D s0;
+	
+    float2 polarToCart(float2 polar)
+	{
+		float2 cart;
+		
+		cart.x = polar.x * cos(polar.y);
+		cart.y = polar.x * sin(polar.y);
+		
+		return cart;
+	}
+	
+	void main_ps(
+		float2 texcoord : TEXCOORD0,
+		out float4 color : COLOR0)
+	{
+
+		color = float4(0,0,0,1);
+        color = tex2D(s0,texcoord);
+		[fastopt]
+		for(int i=0;i<num_balls;i++)
+		{  
+		  float3 pos2 = float3(i*1+cos(time+i*i*i)*i*distance,i*1+sin(time+i)*i*distance,0);
+		  float3 pos = float3(polarToCart(float2(500*sin((time+i)*5/3),i)),0) + pos2;
+		  pos.x+=700;
+		  pos.y+=700;
+		  float4 pcolor = 0;
+		  float3 dir = pos - float3(texcoord.xy*1500,0);
+		  float dist2 = length(dir);
+		  
+		  if(dist2 < 1400)
+		  {
+			 dir/=(dist2);
+			 //pcolor = float4(pos/1400 * dot(dir, dir) ,1);
+			 //pcolor = float4(ball_color,1);
+			 color +=  color / dot(attenuation, float3(1.0f, dist2, dist2 * dist2));
+		  }
+		}
+        color = saturate(color);
+	}
+	">
+</pixel_shader>

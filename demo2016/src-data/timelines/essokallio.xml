@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+
+<sequences>
+	<scene_sequence
+	    name = "essokallio"
+		scene = "data/scenes/essokallio.p3d_scene" 
+		frames_per_second = 30 
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "1050" 
+        near_plane = "1"
+        far_plane = "50000"
+        ssao_enabled = "true">	
+		<camera curve="essokallio_camera_curve"/>
+		</scene_sequence>
+
+	
+	<!-- Pitää olla jotta noise toimii, ei ole päällä mutta vaaditaan tämä rivi -->
+	<image name = "noise_tex" path = "data/images/noise.jpg" />
+	<image name = "ruutuhoto_esso" path = "data/images/2014/bokeh_blue_lowerright.png" />	
+	<image name = "ruutuhoto2_esso" path = "data/images/2014/bokeh_ora_lowleft.png" />	
+
+    <draw_image name = "draw_ruutuhoto_esso">
+		<input sequence = "ruutuhoto_esso"/>
+		<alpha v = 0.3/>
+	</draw_image>	
+    <draw_image name = "draw_ruutuhoto2_esso">
+		<input sequence = "ruutuhoto2_esso"/>
+		<alpha v = 0.3/>
+	</draw_image>		
+	
+		<!-- Post processing päällä -->	
+	<!-- Tähän ei tarvitse koskea -->
+	<post_processing name = "Post processing">
+		<clear_color v = "0 0 0"/>
+		<input sequence = "essokallio" time="0"/>			
+		<!-- input sequence ="draw_alkuspace"/ -->	
+
+	</post_processing>
+	
+	<!-- Depth buffer päällä -->
+	<!-- Tähän ei tarvitse koskea -->
+	<depth_buffer name = "Depth test">
+        <clear_color v = "0 0 0"/>
+		<input sequence = "Post processing"/>
+		<input sequence = "draw_ruutuhoto_esso"/>		
+		<input sequence = "draw_ruutuhoto2_esso"/>		
+	</depth_buffer>
+
+	<!--  Linkataan Depth test sequence -->
+	<!--  Ei tarttis koskee -->
+	<composition name = "main timeline">	
+		<input sequence = "Depth test"/>
+	</composition>
+
+	<!-- Main timeline -->
+	<!--  Ei tarttis koskee -->		
+	<timeline>
+		<input sequence = "main timeline"/>
+	</timeline>
+</sequences>

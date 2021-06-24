@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<light_shader_instances>
+
+	<!-- Default light materials. Please don't touch. -->
+    
+	<light_shader_instance
+		name = "default_point_light"
+		shader = "data/shaders/light/point_light_shader.xml"
+		>
+		<parameters>
+		</parameters>
+	</light_shader_instance>
+	
+	<light_shader_instance
+		name = "default_frustum_light"
+		shader = "data/shaders/light/frustum_light_shader.xml"
+		>
+		<parameters>
+			<mask_texture value = "data/images/lights/flashlight_01.jpg"/>
+		</parameters>
+	</light_shader_instance>
+
+	<light_shader_instance
+		name = "default_shadow_mapped_frustum_light"
+		shader = "data/shaders/light/shadow_mapped_frustum_light_shader.xml"
+		>
+		<parameters>
+            <shadow_map shared_value = "ShadowTexture"/>
+			<mask_texture value = "data/images/lights/flashlight_01.jpg"/>
+		</parameters>
+	</light_shader_instance>
+	
+</light_shader_instances>

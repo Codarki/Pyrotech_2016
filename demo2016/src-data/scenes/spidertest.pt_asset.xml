@@ -1,0 +1,26 @@
+<asset>
+	<scene>
+		<lights>
+        
+            <light>
+				<item name="Spot01"/>
+				<light_shader_instance name="leetluola_aukko_frustum_light"/>
+				<near_plane>1.0</near_plane>
+				<far_plane>400.0</far_plane>
+				<cast_shadows>true</cast_shadows>
+                <!--<shadow_bias>1.0000169</shadow_bias>-->
+                <!--<shadow_bias>0.0000169</shadow_bias>-->
+                <shadow_bias>0.00011</shadow_bias>
+			</light>
+
+         
+            <!--
+			<light>
+				<item name="Omni01"/>
+				<light_shader_instance name="default_point_light"/>
+			</light>
+            -->
+            
+		</lights>
+	</scene>
+</asset>

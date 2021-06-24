@@ -1,0 +1,149 @@
+<?xml version="1.0" ?>
+<parameters>
+	<parameter
+		label = "Self illuminate map"
+		name = "self_illuminate_map"
+		type = "texture2D"
+		hlsl = "self_illuminate_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+	<parameter
+		label = "Self illuminate color"
+		name = "self_illuminate_color"
+		type = "float3"
+		hlsl = "self_illuminate_color"
+		default_value = "1.0 1.0 1.0">
+	</parameter>
+	<parameter
+		label = "Alpha Coeff"
+		name = "alpha_coeff"
+		type = "float"
+		hlsl = "alpha_coeff"
+		default_value = "1.0">
+	</parameter>
+	<parameter
+		label = "Texcoord Offset"
+		name = "texcoord_offset"
+		type = "float3"
+		hlsl = "texcoord_offset"
+		default_value = "0 0 0">
+	</parameter>
+	<parameter
+		label = "Fade power"
+		name = "fade_power"
+		type = "float"
+		hlsl = "fade_power"
+		default_value = "1.0">
+	</parameter>
+</parameters>
+
+<sampler_states>
+	<sampler
+		name = "self_illuminate_sampler"
+		texture = "self_illuminate_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+</sampler_states>
+
+<streams>
+	<stream0
+		position = 0
+		normal = 0
+		texcoord = 0>
+	</stream0>
+</streams>
+
+<additive_blend v="true"/>
+
+<vertex_shader
+	stream = "stream0"
+	hlsl = "
+	
+	#pragma warning(disable: 3206)
+	
+	float4x4 object_to_world;
+    float4x4 world_to_view;
+	float4x4 world_to_view_clip;
+	float3 view_in_world;
+	float3 texcoord_offset;
+
+	struct input_vertex
+	{
+		float4 position : POSITION;
+		float3 normal : NORMAL;
+		float2 texcoord : TEXCOORD0;
+	};
+
+	struct output_vertex
+	{
+		float4 position : POSITION;
+		float2 texcoord : TEXCOORD0;
+		float3 normal_in_view_clip : TEXCOORD1;
+		float3 view_dir_in_view_clip : TEXCOORD2;
+	};
+
+	void main_vs(in input_vertex input, out output_vertex output)
+	{
+		float4 position_in_world = mul(object_to_world, input.position);
+        float3 position_in_world_h = position_in_world.xyz / position_in_world.w;
+		float3 normal_in_world = normalize(mul((float3x3)object_to_world, input.normal));
+		float3 view_dir_in_world = normalize(position_in_world_h - view_in_world);
+
+		//output.normal_in_view_clip = normalize(mul((float3x3)world_to_view_clip, normal_in_world));
+		//output.view_dir_in_view_clip = normalize(mul((float3x3)world_to_view_clip, view_dir_in_world));
+
+   		output.normal_in_view_clip = normalize(mul((float3x3)world_to_view_clip, normal_in_world));
+		output.view_dir_in_view_clip = normalize(mul((float3x3)world_to_view_clip, view_dir_in_world));
+
+		output.position = mul(world_to_view_clip, position_in_world);
+		output.texcoord = input.texcoord + texcoord_offset.xy;
+	}
+	">
+</vertex_shader>
+<pixel_shader
+	hlsl = "
+	texture2D self_illuminate_texture;
+	sampler2D self_illuminate_sampler;
+	float3 self_illuminate_color;
+	float alpha_coeff;
+	float fade_power;
+    	
+	void main_ps(
+        out float4 color : COLOR0,
+        float2 texcoord : TEXCOORD0,
+        float3 normal_in_view_clip : TEXCOORD1,
+        float3 view_dir_in_view_clip : TEXCOORD2
+    )
+	{
+        float3 N = normalize(normal_in_view_clip);
+        float3 V = normalize(-view_dir_in_view_clip);
+        
+        float fade = saturate(dot(N, V));
+        //fade = smoothstep(0.5, 1.0, fade);
+        //fade = pow(fade, 3);
+        fade = pow(fade, fade_power);
+        
+        //color.xyz = 1;
+		//color.xyz = tex2D(self_illuminate_sampler, texcoord).xyz;
+		//color.xyzw = tex2D(self_illuminate_sampler, texcoord).xyzw;
+		//color.xyz *= self_illuminate_color;
+		//color *= fade * alpha_coeff;
+        //color.w = fade * alpha_coeff;
+        //color.w = 1;
+        
+        color.xyzw = tex2D(self_illuminate_sampler, texcoord).xyzw;
+		
+		// convert from gamma 2.2 to gamma 1.0
+		color = pow(abs(color), 2.2);
+		
+		color.xyz *= self_illuminate_color;
+		color *= fade * alpha_coeff;
+	}
+	">
+</pixel_shader>

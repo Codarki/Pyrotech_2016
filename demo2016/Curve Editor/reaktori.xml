@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scene>
+    <timerange valid="true" start="0" end="34"/>
+    <music firstBeatOffset="0" beatsPerMinute="120"/>
+    <curves>
+        <catmull_rom name="bogeh_alpha_curve">
+            <value_offset v="0"/>
+            <value_multiplier v="1"/>
+            <key time="0" value="0"/>
+            <key time="24.8536" value="0.00705252"/>
+            <key time="25.1802" value="0.0554268"/>
+            <key time="25.4955" value="0.296009"/>
+            <key time="25.7928" value="0.298883"/>
+            <key time="27.8401" value="0.299787"/>
+            <key time="27.982" value="0.304878"/>
+            <key time="31.0311" value="0.00221729"/>
+        </catmull_rom>
+    </curves>
+</scene>
+

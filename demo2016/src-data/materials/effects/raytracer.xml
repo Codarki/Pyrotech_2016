@@ -1,0 +1,16 @@
+<material
+	name = "raytracer_material"
+	material_p3d = "raytracer"
+	>
+    <shader file = "data/shaders/effects/raytracer_child.xml">    
+        <parameters>
+            <background_map value = "data/images/common/black.tga"/>
+            <!--<background_map value = "data/images/tmp/createbg.jpg"/> <!--//data/images/tmp/space3.jpg-->
+            <background_map2 value = "data/images/common/black.tga"/>
+            <!--<background_map2 value = "data/images/tmp/spcbg.jpg"/>-->
+            <object_pos shared_value = "raytrace_pos_curve"/>
+            <object_scale shared_value = "raytrace_scale_curve"/>
+            <object_distance shared_value = "raytrace_object_distance_curve"/>
+        </parameters>
+	</shader>        
+</material>

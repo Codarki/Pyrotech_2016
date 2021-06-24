@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+
+<material
+	name = "light_scatter_blend_material"
+	material_p3d = "light scatter blend material"
+	>
+    <shader file = "data/shaders/effects/light_scatter_blend_child.xml"> 
+        <parameters>
+            <blend_map shared_value = "light_scattering_texture"/>
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "light_scatter_blend_material_alpha_mask"
+	material_p3d = "light scatter blend material alpha mask"
+	>
+    <shader file = "data/shaders/effects/light_scatter_blend_child.xml"> 
+        <parameters>
+            <blend_map shared_value = "light_scattering_texture"/>
+            <alpha_mask_map shared_value = "light_scattering_alpha_mask_texture"/>
+        </parameters>
+	</shader>
+</material>

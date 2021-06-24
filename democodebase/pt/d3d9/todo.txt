@@ -1,0 +1,3 @@
+- Add compiled shader cache (pixel and vertex)
+- reference_step_curve doesn't store curve name properly.
+

@@ -1,0 +1,99 @@
+GENERAL KEYS
+------------------
+
+ESCAPE
+ -quits demo
+
+C
+ -toggles free cam mode
+
+I or F1
+ -toggles info screen
+
+R
+ -reset timeline
+
+F2
+ -appends all the current parameters to parameter_hierarchy.txt
+
+SPACE
+ -pauses the demo
+
+COMMA
+ -rewinds 1 sec
+
+SHIFT+COMMA
+ -rewinds 1 / 30 sec (1 frame)
+
+CTLR+COMMA
+ -rewinds 3 sec
+
+PERIOD
+ -forwards 1 sec
+
+SHIFT+PERIOD
+ -forwards 1 / 30 sec (1 frame)
+
+CTLR+PERIOD
+ -forwards 3 sec
+
+RETURN
+ -adds sync points to sync.txt
+
+
+POST PROCESSING KEYS
+--------------------
+
+N+
+-add noise strength
+
+N-
+-negate noise strength
+
+Tone Mapping Adapted luminance
+Y+
+ -add adapted luminance
+Y-
+ -negate adapted luminance
+
+Tone mapping saturation
+ST+
+ -add saturation
+ST-
+ -negate saturation
+
+Tone mapping whitepoint
+W+
+ -add whitepoint in tonemap
+W-
+ -negate whitepoint in tonemap
+
+Bloom brightpass filter adapted luminance
+L+
+ -add bloom luminance
+L-
+ -negate bloom luminance
+
+Bloom brightpass treshold
+BT+
+ -add bloom brightpass treshold
+BT-
+ -negate bloom brightpass treshold
+
+Bloom brightpass offset
+BO+
+ -add bloom brightpass offset
+BO-
+ -negate bloom brightpass offset
+
+Bloom whitepoint
+BW+
+ -add bloom whitepoint
+BW-
+ -negate bloom whitepoint
+
+
+
+
+
+

@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+
+<sequences>
+	<scene_sequence
+	    name = "abstrakti"
+		scene = "data/scenes/abstrakti.p3d_scene"
+		camera = "Camera01"
+		frames_per_second = 30
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "800"
+        near_plane = "1"
+        far_plane = "5000"
+        ssao_enabled = "true">
+    </scene_sequence>
+
+    <image name = "SceneTexture1_image" path = "SceneTexture1" />
+	<image name = "noise_tex" path = "data/images/noise.jpg" />
+	<image name = "ruutuhoto" path = "data/images/2014/bokeh_green_right.png" />	
+	
+    <draw_image name = "draw_SceneTexture1_image_to_screen"><input sequence = "SceneTexture1_image"/></draw_image>
+    <draw_image name = "draw_ruutuhoto"><input sequence = "ruutuhoto"/></draw_image>	
+
+    <!-- abstrakti -->
+	<composition name =  "c_abstrakti">
+		<input sequence = "abstrakti"/>
+	</composition>
+	<draw_to_texture name = "draw_abstrakti_to_SceneTexture"><shared_texture name = "SceneTexture1"/>
+		<input sequence = "c_abstrakti"/>
+	</draw_to_texture>
+
+    <!-- Post processing -->
+	<post_processing name = "Post_processing">
+		<clear_color v = "0 0 0"/>
+		<input sequence= "draw_SceneTexture1_image_to_screen"/>
+		<!--<input sequence = "abstrakti" time="0"/>-->
+	</post_processing>
+
+	<!-- Depth buffer -->
+	<depth_buffer name = "Depth_test">
+        <clear_color v = "0 0 0"/>
+        <input sequence = "draw_abstrakti_to_SceneTexture"/>
+		<input sequence = "Post_processing"/>
+		<input sequence = "draw_ruutuhoto"/>
+	</depth_buffer>
+
+	<composition name = "main_timeline">
+		<input sequence = "Depth_test"/>
+	</composition>
+
+	<timeline>
+		<input sequence = "main_timeline"/>
+	</timeline>
+</sequences>

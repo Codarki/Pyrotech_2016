@@ -1,0 +1,112 @@
+31.7.2009
+ - Separated scene rendering to two passes: opaques first and translucents
+   second. Translucent rendering has additive blend with depth write disabled,
+   so they can be drawn in any order. This means that additive translucent
+   objects now draw correctly with opaques in the same scene.
+   When multiple scenes are drawn at the same time, where all have opaques
+   and translucents, drawing is incorrect.
+ - Changed translucent rendering to alpha blend solely on alpha channel.
+   (texture alpha channel * shader alpha coefficient). This fixes alpha
+   blending in general. (might have to adjust texture maps)
+ - Translucent objects are drawn only once and without a light, instead for
+   each light. All transparent materials has to be made N count brighter.
+   (N is the count of lights in the scene)
+ - Added depth pre-pass. Renders opaque scene without lights and color write
+   disabled, without any pixel shader. This eliminates overdraw, and speeds
+   up all scenes with heavy pixel shader.
+ - Optimized Cook-Torrance shader for pixels, where light is facing away.
+ - Hierarchical transformations works for parented items.
+
+29.7.2009
+ - image sequence for noise is now optional. Noise post processing tries to
+   load "data/images/noise.jpg" if omitted. The texture is still required.
+ - Breaking change. Added "frequency" parameter to noise.
+ - Prevented all paths to d3d9 resize, so window can be moved and resized.
+   Will not resize rendertarget though.
+ - Audio rewind on timeline rewind seems to be broken.
+
+28.7.2009
+ - TCB Rotation controller works (TCB parameters ignored for now). ie smooth
+   rotations. (Euler Rotation controller plots a key for each frame, and linear
+   interpolation is used, TCB Rotation controller sets keys as seen in Max)
+ - Tension, Continuity and Bias parameters are read and used in engine, in
+   all other than rotation keys (ie position and scale).
+
+27.7.2009
+ - Cleaned some spam from logging.
+ - Normal scale re-enabled in Cook-Torrance.
+ - Added emission map to Cook-Torrance shader with coefficient value.
+ - Optimized Cook-Torrance shader to skip per-pixel lighting when light
+   attenuation is small enough.
+ - Added "general_texcoord_offset", "color_texcoord_offset" and
+   "emission_texcoord_offset" parameters to Cook-Torrance shader.
+
+26.7.2009
+ - Tangent space calculation fixed for all triangles. Not sure if it's final working fix.
+ - Fixed a bug where sequence added child programmatically. (audio_system)
+
+25.7.2009
+ - Plasma sequence now automatically sets "child_texture" for its effect.
+
+24.7.2009
+ - Refactored all sequences. All sequences are now composite sequences. This removes
+   most of the special cases in configurations. Should not break existing timelines, but
+   allows greatly simplified configurations.
+ - Fixed a bug where shader default parameter values was never used, and crashed.
+
+22.7.2009
+ - Refactored all sequences to update and draw in single pass. It is now possible
+   to playback same sequence multiple times at the same time.
+ - Fixed bug where curves were read two times, breaking shared_textures.
+ - Added shared_textures, which can be linked to draw_to_texture sequence and material
+   input parameter.
+ - Fixed a bug in draw_to_texture where depth was cleared.
+
+21.7.2009
+ - Engine sets world_to_view matrix automatically.
+ - Added optional "additive" keys to random curves, where random keys are relative
+   (gets added) to previous, rather than being absolute keys. Use of additive requires
+   use of "start" value attribute.
+ - Fixed bug where floating point precision error caused rendering of frame multiple
+   times, when computer has been on long time (like a week)
+ - Added fake reflection 2d map to cook torrance surface shader.
+ - Added optional "additive_blend" parameter for sufrace shaders. Enabled in
+   self_illuminate_texture shader.
+ - Optimized mesh topology creation more.
+
+20.7.2009
+ - Optimized mesh topology creation. Combined millions of memory allocations of few bytes.
+ - Fixed HLSL error reporting for vertex shaders.
+ - Fixed bug again in shaders where tangent space was wrong when object was translated.
+   Non-uniform scaling will break tangent space and is not supported.
+ - Dropped light range from attenuation for more physically correct lighting.
+   Attenuation is now controlled with light color * intensity (multiplier) with some constant
+   value (range 100).
+
+18.7.2009
+ - Refactored few shaders.
+ - Fixed bug in blinn shader where tangent space was wrong, ie incorrect shading.
+ - Implemented Cook-Torrance shader.
+
+17.7.2009
+ - Refactored surface (material) parameter building
+   - Added class pt::d3d9::rendering::source::material_description
+ - Refactored surface (material) parameter linking to surface shader parameters
+   - Added class pt::d3d9::rendering::surface_shader_parameters
+   - All material parameters can be linked to shared parameters (curves)
+ - Added random curve key generation.
+   - Seed for deterministic randomisation. (same results each run)
+   - Random or uniform time steps
+   - Uniform or non-uniform elements for random vectors (colors, texcoords, etc)
+   - Can be mixed with hand written keys.
+ - Dropped support for p3d materials for now. (texture names read from .3ds)
+ - Shader XML files can now include any number of HLSL shader files with
+   "include_hlsl" child XML element.
+ - Shader compilation error now shows correct file (.cpp, .xml or .hlsl) and
+   line number with detailed error.
+ - Disabled QueryPerformanceCounter(), using GetTickCount().
+ - Fixed free view, while player paused too.
+
+16.7.2009
+ - Added class pt::d3d9::rendering::source::material_description
+ - Added class pt::d3d9::rendering::surface_shader_parameters

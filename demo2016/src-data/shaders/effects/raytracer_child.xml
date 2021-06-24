@@ -1,0 +1,754 @@
+<?xml version="1.0" ?>
+<parameters>
+	<parameter
+		label = "Source map"
+		name = "child_texture"
+		type = "texture2D"
+		hlsl = "child_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+	
+	<parameter
+		label = "Background texture map"
+		name = "background_map"
+		type = "texture2D"
+		hlsl = "background_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+	
+	<parameter
+		label = "Background texture map2"
+		name = "background_map2"
+		type = "texture2D"
+		hlsl = "background_texture2"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+	
+	<parameter
+		label = "Object position"
+		name = "object_pos"
+		type = "float3"
+		hlsl = "object_pos"
+		default_value = "0 0 0">
+	</parameter>
+	
+	<parameter
+		label = "jämyli"
+		name = "object_scale"
+		type = "float"
+		hlsl = "object_scale"
+		default_value = "1">
+	</parameter>		
+	<parameter
+		label = "distance"
+		name = "object_distance"
+		type = "float"
+		hlsl = "object_distance"
+		default_value = "2">
+	</parameter>		
+</parameters>
+
+<sampler_states>
+	<sampler
+		name = "s0"
+		texture = "child_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+	
+	<sampler
+		name = "s1"
+		texture = "background_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+	
+	<sampler
+		name = "s2"
+		texture = "background_texture2"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>	
+</sampler_states>
+
+<streams>
+	<stream0
+		position = 0
+		tangent = 0
+		normal = 0
+		texcoord = 0>
+	</stream0>
+</streams>
+
+<vertex_shader
+	stream = "stream0"
+	hlsl = "
+	struct input_vertex
+	{
+		float4 position : POSITION;
+		float2 texcoord : TEXCOORD0;
+	};
+
+	struct output_vertex
+	{
+		float4 position : POSITION;
+		float2 texcoord : TEXCOORD0;
+	};
+
+	void main_vs(in input_vertex input, out output_vertex output)
+	{
+		output.position = input.position;
+		output.texcoord = (float2(output.position.x, output.position.y) + 1.0f)/2.0f;
+	}
+	">
+</vertex_shader>
+
+<pixel_shader
+hlsl = "
+
+#pragma warning( disable : 3565; disable: 3207; disable : 3571; disable: 3205; disable: 3206; disable: 3550; )
+
+texture2D child_texture;
+sampler2D s0;
+texture2D background_texture;
+sampler2D s1;
+texture2D background_texture2;
+sampler2D s2;
+float3  object_pos;
+float  object_scale;
+float time_x;
+float time_y;
+float time;
+static const float epsilon = 0.0001;
+static const float PI = 3.141592653;
+
+//Data structures
+struct material
+{
+   float3 color;
+   float  diffusePower;
+   float  specularPower;
+   float shininess;
+   float reflection;
+};
+
+static material materials[7];
+
+struct hitObject
+{
+   bool noAnyHit;
+   bool hit;
+   float3 pi;
+   float3 normal;
+   material mat;
+   float2 uv;
+   int objID;
+   
+   //For shadows
+   float shade;
+};
+
+struct sphere
+{
+   float3 pos;
+   float radius;
+   material mat;
+};
+
+struct plane
+{
+   float3 normal;
+   float D;
+   material mat;
+};
+
+struct box
+{
+	float3 min;
+	float3 max;
+	
+	material mat;
+};
+
+struct ray
+{
+   float3 orig;
+   float3 dir;
+   float3 invDir;
+};
+
+struct light 
+{
+   float3 pos;
+   float3 color;
+};
+
+//int NUM_PLANES = 2;
+static plane planes[2];
+
+//int NUM_SPHERES = 7;
+static sphere spheres[9];
+
+//int NUM_BOXES = 2;
+static box boxes[2];
+
+//int NUM_LIGHTS = 3;
+static light lights[3];
+
+//Calcuate spherical texture uv
+float2 calcSphericalUV(float3 hitPos)
+{
+	float a = 0.5;
+	float r = 1;
+	
+	float s = a * cos(hitPos.z / r) / PI;
+	float t = a * cos(hitPos.x / (r * sin(PI*s))) / (2 * PI);
+	
+	return float2(s,t);
+}
+
+//Lightning shaders
+float3 diffuse(float3 L, float3 N, material objMat, float3 lightColor)
+{
+   float3 color = {0,0,0};
+   float prod = dot(L, N);
+   
+   if(prod <= 0) return color;
+   
+   float diffusePower = prod * objMat.diffusePower;
+   
+   color = diffusePower * objMat.color * lightColor;
+   
+   return color;
+   
+}
+
+float3 blinn(float3 L, float3 N, float3 V, material objMat, float3 lightColor)
+{
+   if(objMat.specularPower <= 0) return float3(0,0,0);
+   
+
+   float3 color = {0,0,0};
+   
+   float L_dot_N = dot(L, N);
+   
+   if(L_dot_N > 0) 
+   {
+      float3 R = L - 2.0 * L_dot_N * N;
+      float V_dot_R = dot(V,R);
+      if(V_dot_R > 0) 
+      {
+        float specI = pow(abs(V_dot_R),objMat.shininess);
+        specI *= objMat.specularPower;
+        color.r = specI  * objMat.color.r * lightColor.r;
+        color.g = specI  * objMat.color.g * lightColor.g;
+        color.b = specI  * objMat.color.b * lightColor.b;
+      }
+   }
+   
+   return color;
+
+}
+
+//Primitive objects intersection and normal calculations
+float3 sphereNormal(in sphere sph, in float3 pi)
+{
+   return float3(pi - sph.pos);
+}
+
+bool sphereIntersect(sphere sph, ray r, inout float dist)
+{
+   bool intersection = false;
+   
+   float3 fromRayToSphere =sph.pos - r.orig;
+   
+   float B = dot(r.dir, fromRayToSphere);
+   float D = B * B - dot(fromRayToSphere,fromRayToSphere) + sph.radius * sph.radius;
+   
+   if(D < 0.0) 
+   { 
+      return false;
+   }
+   
+   float t0 = B - sqrt(D);
+   float t1 = B + sqrt(D);
+   
+   if(t0 > epsilon)
+   {
+      if( t0 < dist )
+      {
+         dist = t0;
+         intersection = true;
+      }
+   }
+   
+   if(t1 > epsilon)
+   {
+      if(t1 < dist)
+      {
+         dist = t1;
+         intersection = true;
+      }
+   }
+   
+   return intersection;
+   
+}
+
+bool planeIntersect(plane pln, ray r, inout float dist)
+{
+   float d = dot(pln.normal, r.dir);
+   if(d!=epsilon)
+   {
+	  if(d==0) return false;
+      float lDist = -(dot(pln.normal, r.orig) + pln.D) / d;
+      
+      if(lDist > epsilon)
+      {
+         if(lDist < dist+epsilon)
+         {
+            dist = lDist;
+            return true;
+         }
+      }
+   }
+   
+   return false;
+   
+};
+
+bool boxIntersect(box b, ray r, inout float dist)
+{
+	bool intersect = false;
+	double tx1 = (b.min.x - r.orig.x) * r.invDir.x;
+	double tx2 = (b.max.x - r.orig.x) * r.invDir.x;
+	
+	double tmin = min(tx1, tx2);
+	double tmax = max(tx1, tx2);
+	
+	double ty1 = (b.min.y - r.orig.y)*r.invDir.y;
+	double ty2 = (b.max.y - r.orig.y)*r.invDir.y;
+	
+	tmin = max(tmin, min(ty1, ty2));
+	tmax = min(tmax, max(ty1, ty2));
+	
+	
+	double tz1 = (b.min.z - r.orig.z)*r.invDir.z;
+	double tz2 = (b.max.z - r.orig.z)*r.invDir.z;
+	
+	tmin = max(tmin, min(tz1, tz2));
+	tmax = min(tmax, max(tz1, tz2));
+	
+	if(tmax >= max(0,tmin))
+	{
+		if( tmin < dist )
+		{
+			dist=(float)tmin;
+			intersect = true;
+		}
+	}
+	
+	return intersect;
+};
+
+float3 boxNormal(in box b, in float3 pi)
+{
+	return float3(0,1,0);
+
+}
+
+float3 calcIntersectionPoint(ray r, float dist)
+{
+   return (r.orig + r.dir * dist);
+};
+
+void calcIntersections(in ray r, inout hitObject objHit, bool testShadows)
+{
+  float dista = 2000.0;
+  int objID=-1;
+  
+  sphere hitSphere;
+  plane  hitPlane;
+  box    hitBox;
+  
+  material currentMat;
+  objHit.shade = 1;
+  objHit.mat = materials[0];
+  objHit.normal = float3(0,0,0);
+  objHit.pi = float3(0,0,0);
+  objHit.hit = false;
+  
+  [unroll]
+  for(int i=0;i<6;i++)
+  {
+  
+     if(sphereIntersect(spheres[i],r,dista))
+     {
+        if(testShadows)
+        {
+           objHit.shade = 0;
+           return;
+        }
+		
+        hitSphere = spheres[i];
+        currentMat = hitSphere.mat;
+        objID = 1;
+        objHit.hit = true;
+     }
+  }
+  
+  [unroll]
+  for(i=0;i<1;i++)
+  {
+  
+     if(planeIntersect(planes[i],r,dista))
+     {
+        if(testShadows)
+        {
+           objHit.shade = 0;
+           return;
+        }
+        hitPlane = planes[i];
+        currentMat = hitPlane.mat;
+        objID = 2;
+        objHit.hit = true;
+     }
+  }
+  
+  [unroll]
+  for(i=0;i<0;i++)
+  {
+  
+     if(boxIntersect(boxes[i],r,dista))
+     {
+        if(testShadows)
+        {
+           objHit.shade = 0;
+           return;
+        }
+        hitBox = boxes[i];
+        currentMat = hitBox.mat;
+        objID = 3;
+        objHit.hit = true;
+     }
+  }  
+  
+  //Point of intersection
+  float3 pi = calcIntersectionPoint(r, dista);
+  objHit.objID = -1;
+  float3 N;
+  if(objID == 1) {
+     N = sphereNormal(hitSphere, pi);
+	// objHit.uv = calcSphericalUV(pi);
+  }
+  else if(objID == 2) {
+     N = hitPlane.normal;
+  }
+  else if(objID ==3) {
+	 N = boxNormal(hitBox, pi);
+  }
+  else return;
+  
+  objHit.objID = objID;
+  
+  N = normalize(N);
+  
+  objHit.mat = currentMat;
+  objHit.normal = N;
+  objHit.pi = pi;
+ 
+}
+
+float castShadowRay(float3 L, float3 pi)
+{
+   
+   float3 toLight = pi+(L);
+   float lightDist = length(L);
+   
+   ray lightRay;
+   lightRay.orig = toLight;
+   lightRay.dir = (L / lightDist);
+   
+   hitObject objHit;
+   objHit.shade = 1;
+   calcIntersections(lightRay, objHit, true);
+   
+   return objHit.shade;
+} 
+
+hitObject castRay(ray r, out float3 accColor)
+{
+   accColor = 0;
+   float refCoeff = 1.0;
+   int depth = 0;
+   hitObject objHit;
+   objHit.noAnyHit = false;
+   
+   [loop]
+   while(depth++<4)
+   {
+      //if(refCoeff <= epsilon) break;
+      
+      //Calculate ray object intersection
+      calcIntersections(r, objHit, false);
+      
+      if(!objHit.hit) {
+	    if(depth <= 1)
+			objHit.noAnyHit= true;
+		//break;
+	  }
+      
+      //Cast vector from intersection point to every light in scene
+	  [unroll]
+      for(int i=0;i<2;i++)
+      {
+        float3 L = normalize(lights[i].pos - objHit.pi);
+        float inShadow = castShadowRay(L,objHit.pi);
+        
+        if(inShadow > 0)
+        {
+           float3 diffuseColor =  refCoeff * diffuse(L,objHit.normal,objHit.mat,lights[i].color);           
+           accColor += diffuseColor;
+           float3 specularColor = refCoeff * blinn(L,objHit.normal,r.dir,objHit.mat,lights[i].color);
+           accColor += specularColor;
+        }
+      }
+      
+      //Reflections
+      if(objHit.mat.reflection > 0)
+      {
+        refCoeff *= (objHit.mat.reflection);
+        
+        float3 R = reflect(r.dir, objHit.normal);
+        
+        r.orig = objHit.pi;
+        r.dir = normalize(R);
+		r.invDir = 1.0 / r.dir;
+        
+      }
+	  else break;
+   }
+   
+   return objHit;
+  
+};
+
+//static float3 sphere_start_pos = {0.9, 0.9, 5};
+static float3 sphere_start_pos = {0, 0, 0};
+float object_distance;
+
+void initializeObjects()
+{
+   /*float3 color;
+   float  diffusePower;
+   float  specularPower;
+   float shininess;
+   float reflection;
+*/
+   //Light green material
+   materials[0].color = float3(0.2,0.8,0.2);
+   materials[0].diffusePower = 1;
+   materials[0].specularPower = 1;
+   materials[0].shininess = 60;
+   materials[0].reflection = 0.1;
+   
+   //Light blue  material
+   materials[1].color = float3(0.7,0.7,1.0);
+   materials[1].diffusePower = 0.5;
+   materials[1].specularPower = 1;
+   materials[1].shininess = 20;
+   materials[1].reflection = 0.9;   
+
+   //Gray
+   materials[2].color = float3(0.7,0.7,0.7);
+   materials[2].diffusePower = 1;
+   materials[2].specularPower = 0;
+   materials[2].shininess = 20;
+   materials[2].reflection = 0.10; 
+   
+   //Sand
+   materials[3].color = float3(0.84,0.54,0.15);
+   materials[3].diffusePower = 1;
+   materials[3].specularPower = 0.23;
+   materials[3].shininess = 20;
+   materials[3].reflection = 0.1;
+   
+   //Chrome
+   materials[4].color = float3(0.6,0.6,0.6);
+   materials[4].diffusePower = 1;
+   materials[4].specularPower = 0.8;
+   materials[4].shininess = 80;
+   materials[4].reflection = 1.0;
+   
+   //Magenta
+   materials[5].color = float3(1,0,1);
+   materials[5].diffusePower = 1;
+   materials[5].specularPower = 0.1;
+   materials[5].shininess = 100;
+   materials[5].reflection = 0.08;
+   
+   //White matte
+   materials[6].color = float3(1,1,1);
+   materials[6].diffusePower = 1;
+   materials[6].specularPower = 0.0;
+   materials[6].shininess = 100;
+   materials[6].reflection = 0.00;  
+
+   //Lights
+   lights[0].pos = float3(-2,5,2);
+   lights[0].color = float3(0.6,0.6,0.6);
+   
+   lights[1].pos = float3(2, 5, -2);
+   lights[1].color = float3(0.2, 0.4, 0.6);
+   
+   lights[2].pos = float3(0, 0, 0);
+   lights[2].color = float3(0.2, 0.2, 0.2);   
+   
+   //Plane
+   planes[0].normal = float3(0, 1, 0);
+   planes[0].D = 2.5;
+   planes[0].mat = materials[2];
+   
+   planes[1].normal = float3(0, 0, -1);
+   planes[1].D = 6;
+   planes[1].mat = materials[2];   
+   
+   //Spheres
+   
+   spheres[0].pos = float3(-1, 0, 0) * object_distance;
+   spheres[0].radius = 1*object_scale;
+   spheres[0].mat = materials[0];
+   
+   spheres[1].pos =  float3(1, 0, 0) * object_distance;
+   spheres[1].radius = 1*object_scale;
+   spheres[1].mat = materials[1];
+   
+   spheres[2].pos =  float3(0, 1, 0) * object_distance;
+   spheres[2].radius = 1*object_scale;
+   spheres[2].mat = materials[2];   
+   
+   spheres[3].pos =  float3(0, -1, 0) * object_distance;
+   spheres[3].radius = 1*object_scale;
+   spheres[3].mat = materials[3];
+
+   spheres[4].pos =  float3(0, 0, -1) * object_distance;
+   spheres[4].radius = 1*object_scale;
+   spheres[4].mat = materials[4];   
+   
+   spheres[5].pos = float3(0,0, 1) * object_distance;
+   spheres[5].radius = 1*object_scale;
+   spheres[5].mat = materials[5];
+  
+   //Boxes
+   boxes[0].min = float3(-10,-10,-10);
+   boxes[0].max = float3(10,10,10);   
+   boxes[0].mat = materials[0];
+};
+
+void main_ps(
+	float2 texcoord : TEXCOORD0,
+	out float4 color : COLOR0)
+{
+	
+	float cosVar1 = 1.0 - cos(time_x);
+	float sinVar1 = sin(time_x);
+	
+	float3 axis = normalize(float3(1,1,1));
+	
+	float4x4 rotMat;
+	rotMat._m00 = 1.0 + cosVar1 * (axis.x * axis.x - 1.0);
+	rotMat._m01 = -axis.z * sinVar1 + cosVar1 * axis.x * axis.y;
+	rotMat._m02 = axis.y * sinVar1 + cosVar1 * axis.x * axis.z;
+	rotMat._m03 = 0;
+	
+	rotMat._m10 = axis.z * sinVar1 + cosVar1 * axis.x * axis.y;
+	rotMat._m11 = 1.0  + cosVar1 * (axis.y * axis.y - 1.0);
+	rotMat._m12 = -axis.x * sinVar1 + cosVar1 * axis.y * axis.z;
+	rotMat._m13 = 0;
+	
+	rotMat._m20 = -axis.y * sinVar1 + cosVar1 * axis.x * axis.z;
+	rotMat._m21 = axis.x * sinVar1 + cosVar1 * axis.y * axis.z;
+	rotMat._m22 = 1.0 + cosVar1 * ( axis.z * axis.z - 1.0);
+	rotMat._m23 = 0.0;
+	
+   //sphere_start_pos.z = sphere_start_pos.z * sinVar1 * 0.2 + 2;//+time;
+   //sphere_start_pos.x++;//sphere_start_pos.x * cosVar1 * 0.1;
+   
+   sphere_start_pos += object_pos;
+	
+   //Initialize scene objects
+   initializeObjects();
+
+   spheres[0].pos = mul((float3x3)rotMat, spheres[0].pos).xyz+sphere_start_pos;	
+   spheres[1].pos = mul((float3x3)rotMat, spheres[1].pos).xyz+sphere_start_pos;
+   spheres[2].pos = mul((float3x3)rotMat, spheres[2].pos).xyz+sphere_start_pos;
+   spheres[3].pos = mul((float3x3)rotMat, spheres[3].pos).xyz+sphere_start_pos;
+   spheres[4].pos = mul((float3x3)rotMat, spheres[4].pos).xyz+sphere_start_pos;
+   spheres[5].pos = mul((float3x3)rotMat, spheres[5].pos).xyz+sphere_start_pos;
+   spheres[6].pos = mul((float3x3)rotMat, spheres[6].pos).xyz+sphere_start_pos;
+   
+   //spheres[7].pos = mul((float3x3)rotMat, spheres[7].pos).xyz+sphere_start_pos;
+   //spheres[8].pos = mul((float3x3)rotMat, spheres[8].pos).xyz+sphere_start_pos;
+   
+   
+   //planes[0].normal =  mul((float3x3)rotMat, -planes[0].normal).xyz;
+   //planes[0].D = 4.5*sinVar1;
+  //lights[0].pos.x = lights[0].pos.x * cos(time_x * 1.2) * 2.5;
+   //lights[0].pos.z = lights[0].pos.z * sin(time_y * 0.9) * 1.5;
+   
+
+   
+   //Cast primary ray
+   ray r;
+   int numSamples = 4;
+   float4 col = float4(0,0,0,0);
+  
+   float2 uv = -1.0+2.0*texcoord;
+   r.orig = float3(0, 0, 0);
+   r.dir  = normalize(float3(((uv)*float2(1.7638,1)),1.0) - r.orig);
+
+   
+   hitObject objHit = castRay(r,col.xyz);
+   float4 texCol = 1;
+
+   if(objHit.noAnyHit == true)
+   {
+	  color = tex2D(s2,texcoord);
+   }
+   /*else if(objHit.hit == false)
+   {
+	  float2 uv2 = texcoord;
+	  uv2.y = uv2.y - 0.1;
+	  uv2.x = uv2.x + time_x * 0.2;
+	  texCol = tex2D(s1,uv2);
+	  color = col * texCol;
+   }*/
+	else
+	{
+		color = col;
+		color.w = 1;
+	}
+
+     
+  /* if(objHit.objID == -1) {
+	  color = texCol;
+   } else*/
+   
+}
+">
+</pixel_shader>

@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="elements">
+      <UniqueIdentifier>{e91583b9-7133-4673-b427-9e2607f105b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core">
+      <UniqueIdentifier>{0ff623bd-bdf2-4431-a312-91412a40b5f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="events">
+      <UniqueIdentifier>{f8988bf1-4484-4ba8-9dc3-469696628eab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="events\handlers">
+      <UniqueIdentifier>{f2aaa658-8350-45a2-b085-f63e7dc27116}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="elements %28namespace%29">
+      <UniqueIdentifier>{9215fad8-51cb-458d-9a86-e263f9613a6a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="bounded_element.cpp">
+      <Filter>elements</Filter>
+    </ClCompile>
+    <ClCompile Include="button.cpp">
+      <Filter>elements</Filter>
+    </ClCompile>
+    <ClCompile Include="dragging_tool.cpp">
+      <Filter>elements</Filter>
+    </ClCompile>
+    <ClCompile Include="element.cpp">
+      <Filter>elements</Filter>
+    </ClCompile>
+    <ClCompile Include="table.cpp">
+      <Filter>elements</Filter>
+    </ClCompile>
+    <ClCompile Include="text_entry.cpp">
+      <Filter>elements</Filter>
+    </ClCompile>
+    <ClCompile Include="text_field.cpp">
+      <Filter>elements</Filter>
+    </ClCompile>
+    <ClCompile Include="element_registration.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="element_registration_manager.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="element_registry.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="function_element_type.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="bounded_event.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="close_event.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="draw_event.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="event.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="event_with_canvas.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="input_event.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="mouse_event.cpp">
+      <Filter>events</Filter>
+    </ClCompile>
+    <ClCompile Include="character_event_handler.cpp">
+      <Filter>events\handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="close_event_handler.cpp">
+      <Filter>events\handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="draw_event_handler.cpp">
+      <Filter>events\handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="event_handler.cpp">
+      <Filter>events\handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="generic_event_handler.cpp">
+      <Filter>events\handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="key_down_event_handler.cpp">
+      <Filter>events\handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="mouse_button_event_handler.cpp">
+      <Filter>events\handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="mouse_move_event_handler.cpp">
+      <Filter>events\handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="elements\line.cpp">
+      <Filter>elements %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="elements\rectangle.cpp">
+      <Filter>elements %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="elements\window.cpp">
+      <Filter>elements %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="canvas.cpp" />
+    <ClCompile Include="child_frame.cpp" />
+    <ClCompile Include="native_window.cpp" />
+    <ClCompile Include="parented_element.cpp" />
+    <ClCompile Include="common.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bounded_element.h">
+      <Filter>elements</Filter>
+    </ClInclude>
+    <ClInclude Include="button.h">
+      <Filter>elements</Filter>
+    </ClInclude>
+    <ClInclude Include="dragging_tool.h">
+      <Filter>elements</Filter>
+    </ClInclude>
+    <ClInclude Include="element.h">
+      <Filter>elements</Filter>
+    </ClInclude>
+    <ClInclude Include="table.h">
+      <Filter>elements</Filter>
+    </ClInclude>
+    <ClInclude Include="text_entry.h">
+      <Filter>elements</Filter>
+    </ClInclude>
+    <ClInclude Include="text_entry_callback.h">
+      <Filter>elements</Filter>
+    </ClInclude>
+    <ClInclude Include="text_field.h">
+      <Filter>elements</Filter>
+    </ClInclude>
+    <ClInclude Include="element_registration.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="element_registration_manager.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="element_registry.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="element_type.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="function_element_type.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="bounded_event.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="close_event.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="draw_event.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="event.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="event_with_canvas.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="input_event.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="mouse_event.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="character_event_handler.h">
+      <Filter>events\handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="close_event_handler.h">
+      <Filter>events\handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="draw_event_handler.h">
+      <Filter>events\handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="event_handler.h">
+      <Filter>events\handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="generic_event_handler.h">
+      <Filter>events\handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="key_down_event_handler.h">
+      <Filter>events\handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="mouse_button_event_handler.h">
+      <Filter>events\handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="mouse_move_event_handler.h">
+      <Filter>events\handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="elements\line.h">
+      <Filter>elements %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="elements\rectangle.h">
+      <Filter>elements %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="elements\window.h">
+      <Filter>elements %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="canvas.h" />
+    <ClInclude Include="child_frame.h" />
+    <ClInclude Include="common.h" />
+    <ClInclude Include="def.h" />
+    <ClInclude Include="invalidatable.h" />
+    <ClInclude Include="native_window.h" />
+    <ClInclude Include="parented_element.h" />
+    <ClInclude Include="utility.h" />
+    <ClInclude Include="input_event_fwd.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="event_context.h">
+      <Filter>events</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

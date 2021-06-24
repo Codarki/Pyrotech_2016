@@ -1,0 +1,187 @@
+<?xml version="1.0" ?>
+<parameters>
+	<parameter
+		label = "Specular map"
+		name = "specular_map"
+		type = "texture2D"
+		hlsl = "specular_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+	<parameter
+		label = "Normal map"
+		name = "normal_map"
+		type = "texture2D"
+		hlsl = "normal_texture"
+		default_value = "data/images/common/normal.tga">
+	</parameter>
+	<parameter
+		label = "Reflection map"
+		name = "reflection_map"
+		type = "texture2D"
+		hlsl = "reflection_texture"
+		default_value = "data/images/common/black.tga">
+	</parameter>
+	<parameter
+		label = "Depth map"
+		name = "depth_map"
+		type = "texture2D"
+		hlsl = "depth_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>     
+	<parameter
+		label = "Specular color"
+		name = "specular_color"
+		type = "float3"
+		hlsl = "specular"
+		default_value = "1.0 1.0 1.0">
+	</parameter>
+	<parameter
+		label = "Surface color"
+		name = "surface_color"
+		type = "float3"
+		hlsl = "surface_color"
+		default_value = "0.75 0.8 0.9">
+	</parameter> 
+	<parameter
+		label = "Depth color"
+		name = "depth_color"
+		type = "float3"
+		hlsl = "depth_color"
+		default_value = "0.0 0.25 0.5">
+	</parameter> 
+	<parameter
+		label = "Speed"
+		name = "speed"
+		type = "float3"
+		hlsl = "speed"
+		default_value = "1.15 0.91 0.84">
+	</parameter> 
+	<parameter
+		label = "Scale"
+		name = "scale"
+		type = "float3"
+		hlsl = "scale"
+		default_value = "0.94 0.46 1.25">
+	</parameter> 
+    <parameter
+		label = "Water visibility"
+		name = "visibility"
+		type = "float"
+		hlsl = "visibility"
+		default_value = "1">
+	</parameter> 
+    <!--
+    <parameter
+		label = "Blend factor"
+		name = "blend_factor"
+		type = "float"
+		hlsl = "blend_factor"
+		default_value = "0.2">
+	</parameter>
+    -->
+	<parameter
+		label = "specular_exponent"
+		name = "specular_exponent"
+		type = "float"
+		hlsl = "specular_exponent"
+		default_value = "10">
+	</parameter>
+	<parameter
+		label = "reflection_coeff"
+		name = "reflection_coeff"
+		type = "float"
+		hlsl = "reflection_coeff"
+		default_value = "0.7">
+	</parameter>
+	<parameter
+		label = "Fresnel reflectance as measured at normal incidence"
+		name = "fresnel_normal_incidence"
+		type = "float"
+		hlsl = "fresnel_normal_incidence"
+		default_value = "0.25">
+	</parameter>
+	<parameter
+		label = "Normal scale"
+		name = "normal_scale"
+		type = "float"
+		hlsl = "normal_scale"
+		default_value = "1.0">
+	</parameter>
+	<parameter
+		label = "General Texcoord Offset"
+		name = "general_texcoord_offset"
+		type = "float3"
+		hlsl = "general_texcoord_offset"
+		default_value = "0 0 0">
+	</parameter>
+</parameters>
+
+<sampler_states>
+	<sampler
+		name = "specular_sampler"
+		texture = "specular_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+	<sampler
+		name = "normal_sampler"
+		texture = "normal_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+	<sampler
+		name = "reflection_sampler"
+		texture = "reflection_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+	<sampler
+		name = "depth_sampler"
+		texture = "depth_texture"
+		address_u = "CLAMP"
+		address_v = "CLAMP"
+		address_w = "CLAMP"
+		min_filter = "POINT"
+		mag_filter = "POINT"
+		mip_filter = "POINT"
+		>
+	</sampler>      
+</sampler_states>
+
+<streams>
+	<stream0
+		position = 0
+		tangent = 0
+		normal = 0
+		texcoord = 0>
+	</stream0>
+</streams>
+
+<is_transparent v = "true"/>
+<cull_mode v = "CCW"/>
+<vertex_shader
+	stream = "stream0">
+	<include_hlsl file = "data/shaders/hlsl/common_vs.hlsl"/>
+	<include_hlsl file = "data/shaders/hlsl/tbn_vs.hlsl"/>
+</vertex_shader>
+
+<pixel_shader>
+	<include_hlsl file = "data/shaders/hlsl/common_ps.hlsl"/>
+	<include_hlsl file = "data/shaders/hlsl/water_functions.hlsl"/>
+	<include_hlsl file = "data/shaders/hlsl/water.hlsl"/>
+</pixel_shader>

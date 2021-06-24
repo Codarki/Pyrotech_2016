@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+
+<material
+	name = "plasma_material"
+	material_p3d = "plasma material"
+	>
+    <shader file = "data/shaders/effects/plasma_child.xml"> 
+        <parameters>
+            <!--<source_map value = "data/images/cavemaps/refmap.jpg"/>-->
+            <!--bckimg_map value = "data/images/demoname.png"/-->
+            <scale value = "2 2 2"/>
+            <translation value = "0 0 0"/>
+        </parameters>
+	</shader>
+</material>

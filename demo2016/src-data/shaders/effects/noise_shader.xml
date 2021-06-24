@@ -1,0 +1,121 @@
+<?xml version="1.0" ?>
+<parameters>
+	<parameter
+		label = "Source map"
+		name = "source_map"
+		type = "texture2D"
+		hlsl = "source_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+	<parameter
+		label = "Bckimg map"
+		name = "bckimg_map"
+		type = "texture2D"
+		hlsl = "bckimg_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>	
+	<parameter
+		label = "Scale"
+		name = "scale"
+		type = "float3"
+		hlsl = "scale"
+		default_value = "1 1 1">
+	</parameter>
+	<parameter
+		label = "Translation"
+		name = "translation"
+		type = "float3"
+		hlsl = "translation"
+		default_value = "0 0 0">
+	</parameter>
+</parameters>
+
+<sampler_states>
+	<sampler
+		name = "s0"
+		texture = "source_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "NONE"
+		>
+	</sampler>
+	<sampler
+		name = "s1"
+		texture = "bckimg_texture"
+		address_u = "CLAMP"
+		address_v = "CLAMP"
+		address_w = "CLAMP"
+		min_filter = "POINT"
+		mag_filter = "POINT"
+		mip_filter = "NONE"
+		>
+	</sampler>	
+</sampler_states>
+
+<streams>
+	<stream0
+		position = 0
+		tangent = 0
+		normal = 0
+		texcoord = 0>
+	</stream0>
+</streams>
+
+<vertex_shader
+	stream = "stream0"
+	hlsl = "
+	struct input_vertex
+	{
+		float4 position : POSITION;
+		float2 texcoord : TEXCOORD0;
+	};
+
+	struct output_vertex
+	{
+		float4 position : POSITION;
+		float2 texcoord : TEXCOORD0;
+	};
+
+	void main_vs(in input_vertex input, out output_vertex output)
+	{
+		output = input;
+	}
+	">
+</vertex_shader>
+<pixel_shader
+	hlsl = "
+	float time_x;
+	float time_y;
+	float3 scale;
+	float3 translation;
+
+	texture2D source_texture;
+	texture2D bckimg_texture;
+	sampler2D s0;
+	sampler2D s1;
+
+	void main_ps(
+		float2 texcoord : TEXCOORD0,
+		out float4 color : COLOR0)
+	{
+		color = 0;
+		
+		float4 background_color = tex2D(s1,texcoord);
+		
+		texcoord.x = texcoord.x+time_x;
+		texcoord.y = texcoord.y+time_y;
+		
+		float4 noise_color = tex2D(s0, texcoord)* 0.2f;
+		//noise_color *= 0.2;
+		//float noise_color = tex2D(s0,texcoord).w;
+		
+		background_color *= 0.95;
+		//color.w = 1.0f;
+		//noise_color.w = 0.5f;
+		color = background_color + noise_color;
+	}
+	">
+</pixel_shader>

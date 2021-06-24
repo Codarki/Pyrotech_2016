@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+
+<material
+	name = "image_distort_material"
+	material_p3d = "image distort material"
+	>
+    <shader file = "data/shaders/effects/image_distort_child.xml"> 
+        <parameters>
+            <strength shared_value = "image_distort_curve"/>
+            <wavelength value = "1"/>
+            <decayconstant value = "1"/>
+            <phaseshift value = "0"/>
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "logohajoo_image_distort_material"
+	material_p3d = "logohajoo_image_distort_material"
+	>
+    <shader file = "data/shaders/effects/image_distort_child.xml"> 
+        <parameters>
+            <strength shared_value = "logohajoo_image_distort_strength_curve"/>
+            <wavelength value = "1"/>
+            <decayconstant value = "1"/>
+            <phaseshift value = "0"/>
+        </parameters>
+	</shader>
+</material>

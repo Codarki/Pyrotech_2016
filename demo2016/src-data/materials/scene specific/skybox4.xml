@@ -1,0 +1,77 @@
+<?xml version="1.0" ?>
+
+<material
+	name = "skybox4"
+	material_p3d = "skybox4">
+    <shader file = "data/shaders/skybox.xml" preshader = "data/shaders/preshader.xml">
+        <parameters>
+            <self_illuminate_map value = "data/images/bg/skyblue.jpg"/>
+            <self_illuminate_color value = "1 1 1"/>
+        </parameters>
+	</shader>    
+</material>
+
+<material
+	name = "harmaa2"
+	material_p3d = "harmaa2">
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml">
+        <parameters>
+            <diffuse_map value = "data/images/tmp/harmaa.png"/>
+            <specular_map value = "data/images/moon/moons.jpg"/>
+            <normal_map value = "data/images/tmp/harmaa.png"/>
+            <occlusion_map shared_value = "SSAOBuffer"/>
+
+            <ambient_color value = "0.1 0.1 0.1"/>
+            <diffuse_color value = "0.5 0.5 0.5"/>
+            <specular_color value = "0.1 0.1 0.1"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.25"/>
+            <roughness value = "0.7"/>
+        </parameters>
+	</shader>    
+</material>
+
+<material
+	name = "harmaa3"
+	material_p3d = "harmaa3">
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml">
+	<parameters>
+		<diffuse_map value = "data/images/tmp/harmaa.png"/>
+		<specular_map value = "data/images/moon/moons.jpg"/>
+		<normal_map value = "data/images/tmp/harmaa.png"/>
+		<occlusion_map shared_value = "SSAOBuffer"/>
+
+		<ambient_color value = "0.0 0.0 0.0"/>
+		<diffuse_color value = "0.9 0.9 0.9"/>
+		<specular_color value = "0.1 0.1 0.1"/>
+		<normal_scale value = "1.0"/>
+		<fresnel_normal_incidence value = "0.25"/>
+		<roughness value = "0.7"/>
+	</parameters>
+	</shader>    
+</material>
+
+<material
+	name = "vesi4"
+	material_p3d = "vesi4"
+	>
+    <shader file = "data/shaders/cook_torrance_tunneli.xml" preshader = "data/shaders/preshader.xml">
+	<parameters>
+		<!--<emission_map value = "data/images/common/white.tga"/>-->
+		<!--<diffuse_map value = "data/images/common/white.tga"/>
+		<specular_map value = "data/images/common/white.tga"/>-->
+	
+		<diffuse_map value = "data/images/rocks/rock2_c.jpg"/>
+		<specular_map value = "data/images/rocks/rock4_s.jpg"/>
+		<normal_map value = "data/images/rocks/rock_n2.jpg"/>
+		<occlusion_map value = "data/images/common/white.tga"/>	
+		<ambient_color value = "0.01 0.01 0.1"/>
+		<diffuse_color value = "0.8 0.8 0.8"/>
+		<specular_color value = "0.2 0.2 0.2"/>
+		<normal_scale value = "1.0"/>
+		<fresnel_normal_incidence value = "0.35"/>
+		<roughness value = "0.20"/>
+		<general_texcoord_offset shared_value = "tunneli texcoord 01"/>
+	</parameters>
+	</shader>    
+</material>

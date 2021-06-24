@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E015E88A-4018-4C04-9DC2-AA5CA308DCF7}</ProjectGuid>
+    <RootNamespace>demo2008</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">exe\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">build\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">exe\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">build\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(DXSDK_DIR)Include;$(IncludePath)</IncludePath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(DXSDK_DIR)Lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(DXSDK_DIR)Include;$(IncludePath)</IncludePath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(DXSDK_DIR)Lib\x86;$(LibraryPath)</LibraryPath>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)_d</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..;..\SDK\boost;../SDK;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_SCL_SECURE_NO_WARNINGS;_HAS_ITERATOR_DEBUGGING=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <BrowseInformation>false</BrowseInformation>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <DisableSpecificWarnings>%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(OutDir)$(ProjectName)_d.exe</OutputFile>
+      <AdditionalLibraryDirectories>..\SDK\fmod\win32\api\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)demo2008_d.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalDependencies>msvcprtd.lib;msvcrtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy ..\SDK\fmod\win32\api\fmodex.dll $(ProjectDir)exe</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>..;..\SDK\boost;../SDK;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <BrowseInformation>false</BrowseInformation>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/LTCG %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>d3d9.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\SDK\fmod\win32\api\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy ..\SDK\fmod\win32\api\fmodex.dll $(ProjectDir)exe</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="box_vertex_stream.cpp" />
+    <ClCompile Include="content\curve_free_functions.cpp" />
+    <ClCompile Include="content\sequences\animated_texture.cpp" />
+    <ClCompile Include="content\sequences\bloom_parameters.cpp" />
+    <ClCompile Include="content\sequences\bright_pass_parameters.cpp" />
+    <ClCompile Include="content\sequences\cloud_texture.cpp" />
+    <ClCompile Include="content\sequences\dof_parameters.cpp" />
+    <ClCompile Include="content\sequences\light_scattering_parameters.cpp" />
+    <ClCompile Include="content\sequences\post_processing_parameters_base.cpp" />
+    <ClCompile Include="conversion\just_do_it.cpp" />
+    <ClCompile Include="plasma.cpp" />
+    <ClCompile Include="spline_test.cpp" />
+    <ClCompile Include="content\sequences\audio.cpp" />
+    <ClCompile Include="content\sequences\audio_sync.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="content\sequences\audio_system.cpp" />
+    <ClCompile Include="content\sequences\basic_composite_sequence.cpp" />
+    <ClCompile Include="content\sequences\color_fade.cpp" />
+    <ClCompile Include="content\sequences\composite_sequence.cpp" />
+    <ClCompile Include="content\sequences\custom_effect.cpp" />
+    <ClCompile Include="content\sequences\depth_buffer.cpp" />
+    <ClCompile Include="content\sequences\draw_image.cpp" />
+    <ClCompile Include="content\sequences\draw_to_texture.cpp" />
+    <ClCompile Include="content\sequences\image.cpp" />
+    <ClCompile Include="content\sequences\plasma.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="content\sequences\post_processing.cpp" />
+    <ClCompile Include="content\sequences\post_processing_parameters.cpp" />
+    <ClCompile Include="content\sequences\rendertarget.cpp" />
+    <ClCompile Include="content\sequences\scene_sequence.cpp" />
+    <ClCompile Include="content\sequences\simple_composite_sequence.cpp" />
+    <ClCompile Include="content\sequences\kimmo_cylinder_deform.cpp" />
+    <ClCompile Include="content\sequences\detail\cylinder.cpp" />
+    <ClCompile Include="content\sequences\detail\deformer.cpp" />
+    <ClCompile Include="content\demo_player.cpp" />
+    <ClCompile Include="content\free_view.cpp" />
+    <ClCompile Include="content\info_display.cpp" />
+    <ClCompile Include="content\scene_player.cpp" />
+    <ClCompile Include="content\sequence_builder.cpp" />
+    <ClCompile Include="content\spline_parameter.cpp" />
+    <ClCompile Include="content\timeline.cpp" />
+    <ClCompile Include="content\timeline_player.cpp" />
+    <ClCompile Include="content\utility.cpp" />
+    <ClCompile Include="content\loading_screen.cpp" />
+    <ClCompile Include="content\progress_bar.cpp" />
+    <ClCompile Include="application.cpp" />
+    <ClCompile Include="dll_main.cpp" />
+    <ClCompile Include="win_main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="box_vertex_stream.h" />
+    <ClInclude Include="content\curve_free_functions.h" />
+    <ClInclude Include="content\curve_loader.h" />
+    <ClInclude Include="content\reference_curve.h" />
+    <ClInclude Include="content\sequences\animated_texture.h" />
+    <ClInclude Include="content\sequences\bloom_parameters.h" />
+    <ClInclude Include="content\sequences\bright_pass_parameters.h" />
+    <ClInclude Include="content\sequences\cloud_texture.h" />
+    <ClInclude Include="content\sequences\composite_sequence_collection.h" />
+    <ClInclude Include="content\sequences\dof_parameters.h" />
+    <ClInclude Include="content\sequences\light_scattering_parameters.h" />
+    <ClInclude Include="content\sequences\post_processing_parameters_base.h" />
+    <ClInclude Include="conversion\just_do_it.h" />
+    <ClInclude Include="plasma.h" />
+    <ClInclude Include="spline_test.h" />
+    <ClInclude Include="content\sequences\audio.h" />
+    <CustomBuildStep Include="content\sequences\audio_sync.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+    <ClInclude Include="content\sequences\audio_system.h" />
+    <ClInclude Include="content\sequences\basic_composite_sequence.h" />
+    <ClInclude Include="content\sequences\color_fade.h" />
+    <ClInclude Include="content\sequences\composite_sequence.h" />
+    <ClInclude Include="content\sequences\custom_effect.h" />
+    <ClInclude Include="content\sequences\depth_buffer.h" />
+    <ClInclude Include="content\sequences\draw_image.h" />
+    <ClInclude Include="content\sequences\draw_to_texture.h" />
+    <ClInclude Include="content\sequences\image.h" />
+    <ClInclude Include="content\sequences\plasma.h" />
+    <ClInclude Include="content\sequences\post_processing.h" />
+    <ClInclude Include="content\sequences\post_processing_parameters.h" />
+    <ClInclude Include="content\sequences\rendertarget.h" />
+    <ClInclude Include="content\sequences\scene_cache.h" />
+    <ClInclude Include="content\sequences\scene_sequence.h" />
+    <ClInclude Include="content\sequences\simple_composite_sequence.h" />
+    <ClInclude Include="content\sequences\kimmo_cylinder_deform.h" />
+    <ClInclude Include="content\sequences\detail\cylinder.h" />
+    <ClInclude Include="content\sequences\detail\deformer.h" />
+    <ClInclude Include="content\demo_player.h" />
+    <ClInclude Include="content\free_view.h" />
+    <ClInclude Include="content\info_display.h" />
+    <ClInclude Include="content\scene_player.h" />
+    <ClInclude Include="content\sequence_builder.h" />
+    <ClInclude Include="content\spline_parameter.h" />
+    <ClInclude Include="content\timeline.h" />
+    <ClInclude Include="content\timeline_player.h" />
+    <ClInclude Include="content\user_abort.h" />
+    <ClInclude Include="content\utility.h" />
+    <ClInclude Include="content\loading_screen.h" />
+    <ClInclude Include="content\progress_bar.h" />
+    <ClInclude Include="application.h" />
+    <ClInclude Include="win_main.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\external\boost_impl\boost_impl.vcxproj">
+      <Project>{066510fa-362f-4032-857c-4427e1f07b91}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\external\fmod_impl\fmod_impl.vcxproj">
+      <Project>{db4bb69a-40b3-402b-bfd4-fc26a6af0a7d}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\external\tinyxml_impl\tinyxml_impl.vcxproj">
+      <Project>{b4b0a7fb-ae5f-4009-ade5-a78bd9b2879d}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\p3d_format\p3d_format.vcxproj">
+      <Project>{61831e91-c061-4d7a-9368-d3955e321450}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\pt\d3d9\d3d9.vcxproj">
+      <Project>{ce5a577e-5127-49f8-bce8-ea9544b95fc2}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\pt\pt.vcxproj">
+      <Project>{bf805277-0284-4883-868d-8609bf6b95b9}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\pt\ui\ui.vcxproj">
+      <Project>{54114b2d-9d58-4cfe-9ce4-0222a93501e0}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\pt_conversion\pt_conversion.vcxproj">
+      <Project>{6b4573cb-1bf3-41fc-a5ff-384228605aef}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

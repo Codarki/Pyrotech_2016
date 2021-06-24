@@ -1,0 +1,81 @@
+<?xml version="1.0" ?>
+<parameters>
+	<parameter
+		label = "Source map"
+		name = "child_texture"
+		type = "texture2D"
+		hlsl = "child_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+	<parameter
+		label = "Negative"
+		name = "negative"
+		type = "float"
+		hlsl = "negative"
+		default_value = "1.0">
+	</parameter>
+</parameters>
+
+<sampler_states>
+	<sampler
+		name = "s0"
+		texture = "child_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+</sampler_states>
+
+<streams>
+	<stream0
+		position = 0
+		tangent = 0
+		normal = 0
+		texcoord = 0>
+	</stream0>
+</streams>
+
+<vertex_shader
+	stream = "stream0"
+	hlsl = "
+	struct input_vertex
+	{
+		float4 position : POSITION;
+		float2 texcoord : TEXCOORD0;
+	};
+
+	struct output_vertex
+	{
+		float4 position : POSITION;
+		float2 texcoord : TEXCOORD0;
+	};
+
+	void main_vs(in input_vertex input, out output_vertex output)
+	{
+		output = input;
+	}
+	">
+</vertex_shader>
+<pixel_shader
+	hlsl = "
+	float time_x;
+	float time_y;
+	float negative;
+
+	texture2D child_texture;
+	sampler2D s0;
+
+	void main_ps(
+		float2 texcoord : TEXCOORD0,
+		out float4 color : COLOR0)
+	{
+		float4 texcol = tex2D(s0, texcoord);
+		color.xyz = abs(negative - texcol.xyz);
+		color.w = texcol.w;
+	}
+	">
+</pixel_shader>

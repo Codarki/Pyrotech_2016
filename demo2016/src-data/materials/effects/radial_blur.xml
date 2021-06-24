@@ -1,0 +1,109 @@
+<?xml version="1.0" ?>
+
+<material
+	name = "escape_radial_blur_material"
+	material_p3d = "escape_radial_blur_material"
+	>
+    <shader file = "data/shaders/effects/radial_blur_child.xml"> 
+        <parameters>
+            <blurScaleStart value = "1"/>
+            <blurScale value = "-0.27"/>
+            <!--<blurFocus value = "1.5"/>-->
+            <blurFocus shared_value = "escape_radial_blur_focus_curve"/>
+            <!--<blurPositionX value = "0.6"/>
+            <blurPositionY value = "0.5"/>-->
+            <blurPositionX shared_value = "escape_radial_blur_x_pos_curve"/>
+            <blurPositionY shared_value = "escape_radial_blur_y_pos_curve"/>
+        </parameters>
+	</shader>     
+</material>
+
+<material
+	name = "radial_blur_material"
+	material_p3d = "radial blur material"
+	>
+    <shader file = "data/shaders/effects/radial_blur_child.xml"> 
+        <parameters>
+            <!--<source_map value = "data/images/cavemaps/refmap.jpg"/>-->
+            <!--bckimg_map value = "data/images/demoname.png"/-->
+            <blurScaleStart value = "1"/>
+            <blurScale value = "-0.27"/> <!-- -0.27 -->
+            
+            <!-- 1.0 - n -->
+            <blurFocus value = "1.0"/>
+            <blurPositionX value = "0.5"/>
+            <blurPositionY value = "0.5"/>		
+        </parameters>
+	</shader>     
+</material>
+
+<material
+	name = "radial_blur_esso_kallio_material"
+	material_p3d = "esso kallio kamaa"
+	>
+    <shader file = "data/shaders/effects/radial_blur_child.xml"> 
+        <parameters>
+            <!--<source_map value = "data/images/cavemaps/refmap.jpg"/>-->
+            <!--bckimg_map value = "data/images/demoname.png"/-->
+            <blurScaleStart value = "1"/>
+            <blurScale value = "-0.27"/>
+            <blurFocus shared_value = "esso_radial_focus"/>
+            
+            <blurPositionX shared_value = "esso_radial_blur_x"/>
+            <blurPositionY shared_value = "esso_radial_blur_y"/>
+            <!--<blurFocus shared_value = "esso_radial_focus"/>-->
+            <!--
+            <blurFocus value = "0.0"/>
+            <blurScale value = "0"/>
+            <blurScaleStart value = "0" />
+            -->
+            <!--<blurPositionX value = "0.5"/>
+            <blurPositionY value = "0.5"/>-->
+        </parameters>
+	</shader>     
+</material>
+
+<material
+	name = "rockexplode_radial_blur_material"
+	material_p3d = "rockexplode_radial_blur_material"
+	>
+    <shader file = "data/shaders/effects/radial_blur_child.xml"> 
+        <parameters>
+            <blurScaleStart value = "1"/>
+            <blurScale value = "-0.27"/>
+            <blurFocus shared_value = "rockexplode_blur_focus_curve"/>
+            <blurPositionX shared_value = "rockexplode_blur_x_pos_curve"/>
+            <blurPositionY shared_value = "rockexplode_blur_x_pos_curve"/>		
+        </parameters>
+	</shader>     
+</material>
+
+<material
+	name = "viirus_radial_blur_material"
+	material_p3d = "viirus_radial_blur_material"
+	>
+    <shader file = "data/shaders/effects/radial_blur_child.xml"> 
+        <parameters>
+            <blurScaleStart value = "1"/>
+            <blurScale value = "-0.27"/>
+            <blurFocus value = "1.5"/>
+            <blurPositionX value = "0.6"/>
+            <blurPositionY value = "0.5"/>
+        </parameters>
+	</shader>     
+</material>
+
+<material
+	name = "boom_radial_blur_material"
+	material_p3d = "boom_radial_blur_material"
+	>
+    <shader file = "data/shaders/effects/radial_blur_child.xml"> 
+        <parameters>
+            <blurScaleStart value = "1.0"/>
+            <blurScale value = "-0.7"/>
+            <blurFocus shared_value = "boom_blur_focus_curve"/>
+            <blurPositionX value = "0.5"/>
+            <blurPositionY value = "0.5"/>
+        </parameters>
+	</shader>     
+</material>

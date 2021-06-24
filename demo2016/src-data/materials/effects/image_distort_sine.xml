@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+
+<material
+	name = "image_distort_sine_material"
+	material_p3d = "image distort sine material"
+	>
+    <shader file = "data/shaders/effects/image_distort_sine_child.xml"> 
+        <parameters>
+            <strength shared_value = "image_distort_curve"/>
+            <wavelength value = "10"/>
+            <decayconstant value = "0.7"/>
+            <phaseshift shared_value = "image_distort_phase_curve"/>
+            <rgb_strength shared_value="image_distort_rgb_curve"/>
+        </parameters>
+	</shader>
+</material>

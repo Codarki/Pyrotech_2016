@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+
+<material
+	name = "negative_material"
+	material_p3d = "negative material"
+	>
+    <shader file = "data/shaders/effects/negative_child.xml"> 
+        <parameters>
+            <negative shared_value = "value_0_1_sync_curve"/>
+        </parameters>
+	</shader>        
+</material>

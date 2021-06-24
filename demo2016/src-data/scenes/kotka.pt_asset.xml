@@ -1,0 +1,151 @@
+<asset>
+	<scene>
+		<items>
+            <item>
+                <name>reflected_Camera01</name>
+                <is_generated>true</is_generated>
+                <parent_item name="Camera01"/>
+                <transformer>
+                    <reflection>
+                        <other_item name="Camera01"/>
+                        <!-- 1.056, 320.975, -0.755 -->
+                        <reflection_plane point = "1.056 -0.755 320.975" normal = "0 -1 0"/>
+                    </reflection>
+                </transformer>
+                <camera>
+                    <projection_item name="Camera01"/>
+                </camera>
+            </item>
+            <item>
+                <name>reflected_Camera02</name>
+                <is_generated>true</is_generated>
+                <parent_item name="Camera02"/>
+                <transformer>
+                    <reflection>
+                        <other_item name="Camera02"/>
+                        <!-- 1.056, 320.975, -0.755 -->
+                        <reflection_plane point = "1.056 -0.755 320.975" normal = "0 -1 0"/>
+                    </reflection>
+                </transformer>
+                <camera>
+                    <projection_item name="Camera02"/>
+                </camera>
+            </item>
+            <item>
+                <name>reflected_Camera03</name>
+                <is_generated>true</is_generated>
+                <parent_item name="Camera03"/>
+                <transformer>
+                    <reflection>
+                        <other_item name="Camera03"/>
+                        <!-- 1.056, 320.975, -0.755 -->
+                        <reflection_plane point = "1.056 -0.755 320.975" normal = "0 -1 0"/>
+                    </reflection>
+                </transformer>
+                <camera>
+                    <projection_item name="Camera03"/>
+                </camera>
+            </item>
+            <item>
+                <name>reflected_Camera04</name>
+                <is_generated>true</is_generated>
+                <parent_item name="Camera04"/>
+                <transformer>
+                    <reflection>
+                        <other_item name="Camera04"/>
+                        <!-- 1.056, 320.975, -0.755 -->
+                        <reflection_plane point = "1.056 -0.755 320.975" normal = "0 -1 0"/>
+                    </reflection>
+                </transformer>
+                <camera>
+                    <projection_item name="Camera04"/>
+                </camera>
+            </item>
+            <item>
+                <name>reflected_Camera05</name>
+                <is_generated>true</is_generated>
+                <parent_item name="Camera05"/>
+                <transformer>
+                    <reflection>
+                        <other_item name="Camera05"/>
+                        <!-- 1.056, 320.975, -0.755 -->
+                        <reflection_plane point = "1.056 -0.755 320.975" normal = "0 -1 0"/>
+                    </reflection>
+                </transformer>
+                <camera>
+                    <projection_item name="Camera05"/>
+                </camera>
+            </item>
+		</items>
+    
+		<lights>
+        
+            <light>
+				<item name="Spot01"/>
+				<light_shader_instance name="leetluola_aukko_frustum_light"/>
+				<near_plane>1.0</near_plane>
+				<far_plane>200.0</far_plane>
+				<cast_shadows>true</cast_shadows>
+                <!--<shadow_bias>1.0000169</shadow_bias>-->
+                <!--<shadow_bias>0.0000169</shadow_bias>-->
+                <shadow_bias>0.00001</shadow_bias>
+			</light>
+			
+			  <light>
+				<item name="Spot02"/>
+				<light_shader_instance name="leetluola_aukko_frustum_light"/>
+				<near_plane>1.0</near_plane>
+				<far_plane>200.0</far_plane>
+				<cast_shadows>true</cast_shadows>
+                <!--<shadow_bias>1.0000169</shadow_bias>-->
+                <!--<shadow_bias>0.0000169</shadow_bias>-->
+                <shadow_bias>0.00001</shadow_bias>
+			</light>
+			
+			 <light>
+				<item name="Spot03"/>
+				<light_shader_instance name="kotka_tv_spot"/>
+				<near_plane>1.0</near_plane>
+				<far_plane>200.0</far_plane>
+				<cast_shadows>false</cast_shadows>
+                <!--<shadow_bias>1.0000169</shadow_bias>-->
+                <!--<shadow_bias>0.0000169</shadow_bias>-->
+                <shadow_bias>0.00011</shadow_bias>
+			</light>
+
+         
+            <!--
+			<light>
+				<item name="Omni01"/>
+				<light_shader_instance name="default_point_light"/>
+			</light>
+            -->
+            
+		</lights>
+	</scene>
+	<convert>
+		<scene>
+			<mesh_instances>
+				<base_mesh>
+					<file>Cone01.p3d_model</file>
+				</base_mesh>
+				<base_mesh>
+					<file>godray_n.p3d_model</file>
+				</base_mesh>
+				<base_mesh>
+					<file>jalka1.p3d_model</file>
+				</base_mesh>
+				<base_mesh>
+					<file>lazorb01.p3d_model</file>
+				</base_mesh>
+				<base_mesh>
+					<file>lazorp04.p3d_model</file>
+				</base_mesh>
+				<base_mesh>
+					<file>saadin1.p3d_model</file>
+				</base_mesh>
+                
+			</mesh_instances>
+		</scene>
+	</convert>
+</asset>

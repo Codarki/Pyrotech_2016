@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+
+<material
+	name = "alpha_mask_material"
+	material_p3d = "alpha mask material"
+	>
+    <shader file = "data/shaders/effects/alpha_mask_child.xml"> 
+        <parameters>
+            <!-- <negative shared_value = "value_0_1_sync_curve"/> -->
+            <alpha_mask_map value = "data/images/tmp/alphatest.png"/>
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "alpha_mask_material_2"
+	material_p3d = "alpha mask material 2"
+	>
+    <shader file = "data/shaders/effects/alpha_mask_child_2.xml"> 
+        <parameters>
+            <!-- <negative shared_value = "value_0_1_sync_curve"/> -->
+            <destination_map shared_value ="SceneTexture1"/>
+            <!--<alpha_mask_map value = "data/images/tmp/valkopallo.jpg"/>-->
+            <step shared_value="alpha_mask_interpolation_curve"/>
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "alpha_mask_material_3"
+	material_p3d = "alpha mask material 3"
+	>
+    <shader file = "data/shaders/effects/alpha_mask_child_2.xml"> 
+        <parameters>
+            <!-- <negative shared_value = "value_0_1_sync_curve"/> -->
+            <destination_map shared_value ="SceneTexture2"/>
+            <!--<alpha_mask_map value = "data/images/tmp/valkopallo.jpg"/>-->
+            <step shared_value="alpha_mask_interpolation_curve"/>
+        </parameters>
+	</shader>
+</material>

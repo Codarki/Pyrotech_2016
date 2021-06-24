@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+
+<sequences>
+	<scene_sequence
+	    name = "sriini"
+		scene = "data/scenes/sriini.p3d_scene" 
+		frames_per_second = 30 
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "500" 
+        near_plane = "1"
+        far_plane = "5000"
+        ssao_enabled = "true">
+		<camera curve="sriini_camera_curve"/>		
+		</scene_sequence>	
+		
+		
+	<!-- Pitää olla jotta noise toimii, ei ole päällä mutta vaaditaan tämä rivi -->
+	<image name = "noise_tex" path = "data/images/noise.jpg" />
+	
+		<!-- Post processing päällä -->	
+	<!-- Tähän ei tarvitse koskea -->
+	<post_processing name = "Post processing">
+		<clear_color v = "0 0 0"/>
+		<input sequence = "sriini" time="0"/>	
+				<!-- input sequence ="draw_alkuspace"/ -->	
+
+	</post_processing>
+	
+	<!-- Depth buffer päällä -->
+	<!-- Tähän ei tarvitse koskea -->
+	<depth_buffer name = "Depth test">
+        <clear_color v = "0 0 0"/>
+		<input sequence = "Post processing"/>
+	</depth_buffer>
+
+	<!--  Linkataan Depth test sequence -->
+	<!--  Ei tarttis koskee -->
+	<composition name = "main timeline">	
+		<input sequence = "Depth test"/>
+	</composition>
+
+	<!-- Main timeline -->
+	<!--  Ei tarttis koskee -->		
+	<timeline>
+		<input sequence = "main timeline"/>
+	</timeline>
+</sequences>

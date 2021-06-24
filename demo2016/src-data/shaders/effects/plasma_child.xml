@@ -1,0 +1,145 @@
+<?xml version="1.0" ?>
+<parameters>
+	<parameter
+		label = "Source map"
+		name = "child_texture"
+		type = "texture2D"
+		hlsl = "child_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+	<parameter
+		label = "Scale"
+		name = "scale"
+		type = "float3"
+		hlsl = "scale"
+		default_value = "1 1 1">
+	</parameter>
+	<parameter
+		label = "Translation"
+		name = "translation"
+		type = "float3"
+		hlsl = "translation"
+		default_value = "0 0 0">
+	</parameter>
+</parameters>
+
+<sampler_states>
+	<sampler
+		name = "s0"
+		texture = "child_texture"
+		address_u = "MIRROR"
+		address_v = "MIRROR"
+		address_w = "MIRROR"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+</sampler_states>
+
+<streams>
+	<stream0
+		position = 0
+		tangent = 0
+		normal = 0
+		texcoord = 0>
+	</stream0>
+</streams>
+
+<vertex_shader
+	stream = "stream0"
+	hlsl = "
+	struct input_vertex
+	{
+		float4 position : POSITION;
+		float2 texcoord : TEXCOORD0;
+	};
+
+	struct output_vertex
+	{
+		float4 position : POSITION;
+		float2 texcoord : TEXCOORD0;
+	};
+
+	void main_vs(in input_vertex input, out output_vertex output)
+	{
+		output = input;
+	}
+	">
+</vertex_shader>
+<pixel_shader
+	hlsl = "
+	float time_x;
+	float time_y;
+	float3 scale;
+	float3 translation;
+
+	texture2D child_texture;
+	//texture2D source_texture;
+	sampler2D s0;
+
+	struct magnet
+	{
+		float2 position;
+		float4 strength;
+	};
+	magnet magnets[8];
+	    	
+	float to_radian(float x)
+	{
+		return x * 3.1415 * 2;
+	}
+	float2 to_radian(float2 x)
+	{
+		return x * 3.1415 * 2;
+	}
+
+	float2 distort(float2 frequency, float2 scale)
+	{
+		float2 r = to_radian(frequency);
+		return float2(sin(r.y), sin(r.x)) * scale;
+	}
+
+	float2 plasma(float2 pos, float2 scale, float scramble, float2 angle_offset)
+	{
+		float2 y_axis_value;
+		float2 x_axis_value;
+		y_axis_value.x = cos(pos.y * scale.y * 0.67) * scramble + angle_offset.x;
+		y_axis_value.y = sin(pos.y * scale.y * 0.95) * scramble + angle_offset.y;
+
+		x_axis_value.x = cos(pos.x * scale.x * 0.78) * scramble;
+		x_axis_value.y = sin(pos.x * scale.x * 1.13) * scramble;
+
+		return y_axis_value + x_axis_value;
+	}
+
+	void main_ps(
+		float2 texcoord : TEXCOORD0,
+		out float4 color : COLOR0)
+	{
+		color = 0;
+
+		// Origo at center.
+		float2 centered_texcoord = texcoord - 0.5;
+		float2 pos = centered_texcoord * scale.xy + translation.xy;
+		float t = 1.0;
+		float t_coeff = 2.0;
+		float max_distort = 0.05;
+
+		float2 time = {time_x, time_y};
+		float2 time_coeff = {0.2, 0.2};
+		float2 time_coeff_delta = {0.3, 0.3};
+
+		float2 freq_offset_coeff = {0.4, 0.4};
+		float2 freq_offset_coeff_delta = {0.2, 0.2};
+
+		float scramble = 2;
+		float2 angle_offset = {time_x, time_y};
+		float2 pos2 = plasma(pos, scale.xy, scramble, angle_offset);
+		texcoord += float2(cos(pos2.x), sin(pos2.y)) * 0.1;
+	    
+		//color.xyz = tex2D(s0, texcoord);
+		color.xyzw = tex2D(s0, texcoord);
+	}
+	">
+</pixel_shader>

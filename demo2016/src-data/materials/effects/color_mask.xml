@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+
+<material
+	name = "color_mask_pyrotech_material"
+	material_p3d = "alpha mask pyrotech material"
+	>
+    <shader file = "data/shaders/effects/color_mask_child.xml"> 
+        <parameters>
+            <color_mask_map shared_value = "SceneTexture1"/>
+        </parameters>
+	</shader>
+</material>
+

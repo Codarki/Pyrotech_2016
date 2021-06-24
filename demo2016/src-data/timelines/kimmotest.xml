@@ -1,0 +1,70 @@
+<?xml version="1.0" ?>
+
+<sequences>
+	<scene_sequence
+	    name = "testiscene"
+		scene = "data/scenes/vesitestscene.p3d_scene" 
+		camera = "Camera01"		
+		frames_per_second = 30 
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "5000" 
+        near_plane = "2"
+        far_plane = "1000"
+        ssao_enabled = "false">					
+	</scene_sequence>
+
+	<scene_sequence
+	    name = "testiscene_reflection"
+		scene = "data/scenes/vesitestscene.p3d_scene" 
+		camera = "reflected_Camera01"		
+		frames_per_second = 30 
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "5000" 
+        near_plane = "2"
+        far_plane = "1000"
+        ssao_enabled = "false">					
+	</scene_sequence>
+    
+	<image name = "noise_tex" path = "data/images/noise.jpg" />
+    <image name = "ReflectionTexture_image" path = "ReflectionTexture" />
+    
+	<draw_to_texture name = "draw_testiscene_reflection_to_ReflectionTexture">
+		<clear_color v = "0 0.1 0.0"/>
+        <shared_texture name = "ReflectionTexture"/>
+		<input sequence = "testiscene_reflection"/>
+	</draw_to_texture>
+    
+	<draw_image name = "draw_reflection_image">
+		<input sequence = "ReflectionTexture_image" />
+		<size v = "0.4 0.4"/>
+        <center v = "0.8 0.2"/>
+        <intensity>1.0</intensity>
+	</draw_image>    
+    
+	<post_processing name = "Post_processing">
+		<clear_color v = "0 0 0.2"/>
+		<input sequence = "draw_testiscene_reflection_to_ReflectionTexture" time="0"/>
+		<input sequence = "testiscene" time="0"/>
+        <input sequence = "draw_reflection_image"/>
+	</post_processing>
+	
+	<depth_buffer name = "Depth_test">
+        <clear_color v = "0 0 0"/>
+		<input sequence = "Post_processing"/>
+	</depth_buffer>
+
+	<composition name = "main_timeline">	
+		<input sequence = "Audio_system" time="0"/>
+		<input sequence = "Depth_test"/>
+	</composition>
+
+	<audio_system name = "Audio_system">
+		<audio_sequence name = "musa" path = "data/audio/untitled.mp3" time="0"/>
+	</audio_system>
+    
+	<timeline>
+		<input sequence = "main_timeline"/>
+	</timeline>
+</sequences>

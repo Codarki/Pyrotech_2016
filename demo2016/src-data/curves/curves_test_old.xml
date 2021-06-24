@@ -1,0 +1,2581 @@
+<?xml version= "1.0" ?>
+
+<!-- 2012 curves -->
+
+
+<curves>    
+	<step_curve name="ptlatty_texture_curve" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "30"/>
+		<key time = "0" value = "data/images/tmp/ptlatty.png"/>
+		<key time = "6" value = "data/images/common/alpha.png"/>
+	</step_curve>
+
+
+	<reference_step_curve name="fenix_siivet_texture_curve" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "26"/>
+		<key time = "0" value = "fire_sequence_texture_curve"/>
+		<key time = "1" value = "fire_sequence_texture_curve"/>
+		<key time = "2" value = "fire_sequence_texture_curve"/>
+		<key time = "3" value = "fire_sequence_texture_curve"/>
+		<key time = "4" value = "fire_sequence_texture_curve"/>
+		<key time = "5" value = "fire_sequence_texture_curve"/>
+		<key time = "6" value = "fire_sequence_texture_curve"/>
+		<key time = "7" value = "fire_sequence_texture_curve"/>
+		<key time = "8" value = "fire_sequence_texture_curve"/>
+		<key time = "9" value = "fire_sequence_texture_curve"/>
+		<key time = "10" value = "fire_sequence_texture_curve"/>
+		<key time = "11" value = "fire_sequence_texture_curve"/>
+		<key time = "12" value = "fire_sequence_texture_curve"/>
+		<key time = "13" value = "fire_sequence_texture_curve"/>
+		<key time = "14" value = "fire_sequence_texture_curve"/>
+		<key time = "15" value = "fire_sequence_texture_curve"/>
+		<key time = "16" value = "fire_sequence_texture_curve"/>
+		<key time = "17" value = "fire_sequence_texture_curve"/>
+		<key time = "18" value = "fire_sequence_texture_curve"/>
+		<key time = "19" value = "fire_sequence_texture_curve"/>
+		<key time = "20" value = "fire_sequence_texture_curve"/>
+		<key time = "21" value = "fire_sequence_texture_curve"/>
+		<key time = "22" value = "fire_sequence_texture_curve"/>
+		<key time = "23" value = "fire_sequence_texture_curve"/>
+		<key time = "24" value = "fire_sequence_texture_curve"/>
+		<key time = "25" value = "fire_sequence_texture_curve"/>
+		<key time = "26" value = "fire_sequence_texture_curve"/>
+		<key time = "27" value = "fire_sequence_texture_curve"/>
+		<key time = "28" value = "fire_sequence_texture_curve"/>
+		<key time = "29" value = "fire_sequence_texture_curve"/>
+		<key time = "30" value = "fire_sequence_texture_curve"/>
+		<key time = "31" value = "fire_sequence_texture_curve"/>
+		<key time = "32" value = "fire_sequence_texture_curve"/>
+		<key time = "33" value = "fire_sequence_texture_curve"/>
+		<key time = "34" value = "fire_sequence_texture_curve"/>
+		<key time = "35" value = "fire_sequence_texture_curve"/>
+		<key time = "36" value = "fire_sequence_texture_curve"/>
+		<key time = "37" value = "fire_sequence_texture_curve"/>
+		<key time = "38" value = "fire_sequence_texture_curve"/>
+	</reference_step_curve>
+
+	<step_curve name="fire_sequence_texture_curve" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "1"/>
+		<key time = "0" value = "data/images/fireseq/fire_01.png"/>
+		<key time = "1" value = "data/images/fireseq/fire_02.png"/>
+		<key time = "2" value = "data/images/fireseq/fire_03.png"/>
+		<key time = "3" value = "data/images/fireseq/fire_04.png"/>
+		<key time = "4" value = "data/images/fireseq/fire_05.png"/>
+		<key time = "5" value = "data/images/fireseq/fire_06.png"/>
+		<key time = "6" value = "data/images/fireseq/fire_07.png"/>
+		<key time = "7" value = "data/images/fireseq/fire_08.png"/>
+		<key time = "8" value = "data/images/fireseq/fire_09.png"/>
+		<key time = "9" value = "data/images/fireseq/fire_10.png"/>
+		<key time = "10" value = "data/images/fireseq/fire_11.png"/>
+		<key time = "11" value = "data/images/fireseq/fire_12.png"/>
+		<key time = "12" value = "data/images/fireseq/fire_13.png"/>
+		<key time = "13" value = "data/images/fireseq/fire_14.png"/>
+		<!--<key time = "14" value = "data/images/fireseq/fire_15.png"/>-->
+		<key time = "15" value = "data/images/fireseq/fire_16.png"/>
+		<key time = "16" value = "data/images/fireseq/fire_17.png"/>
+		<key time = "17" value = "data/images/fireseq/fire_18.png"/>
+		<key time = "18" value = "data/images/fireseq/fire_19.png"/>
+		<key time = "19" value = "data/images/fireseq/fire_20.png"/>
+		<key time = "20" value = "data/images/fireseq/fire_21.png"/>
+		<key time = "21" value = "data/images/fireseq/fire_22.png"/>
+		<key time = "22" value = "data/images/fireseq/fire_23.png"/>
+		<key time = "23" value = "data/images/fireseq/fire_24.png"/>
+		<key time = "24" value = "data/images/fireseq/fire_25.png"/>
+		<key time = "25" value = "data/images/fireseq/fire_26.png"/>
+		<key time = "26" value = "data/images/fireseq/fire_27.png"/>
+	</step_curve>
+	
+        <reference_step_curve name="shalama2_varina_texture_curve" type="text">
+		<time_offset v = "90"/>
+		<time_multiplier v = "30"/>
+		<random seed = 1607>
+			<timing start_time = 0 end_time = 30/>
+			<random_interval min_step = "1" max_step = "2"/>
+			<values>
+				<value v = "shalama_sequence_texture_curve"/>
+			</values>
+		</random>
+	</reference_step_curve>
+	
+	
+    <reference_step_curve name="shalama_varina_texture_curve" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "30"/>
+		<random seed = 1607>
+			<timing start_time = 0 end_time = 30.5/>
+			<random_interval min_step = "2" max_step = "6"/>
+			<values>
+				<value v = "shalama_sequence_texture_curve"/>
+			</values>
+		</random>
+	</reference_step_curve>
+    
+	<step_curve name="shalama_sequence_texture_curve" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "1"/>
+		<key time = "0" value = "data/images/shalama/shalama_000.png"/>
+		<key time = "1" value = "data/images/shalama/shalama_001.png"/>
+		<key time = "2" value = "data/images/shalama/shalama_002.png"/>
+		<key time = "3" value = "data/images/shalama/shalama_003.png"/>
+		<key time = "4" value = "data/images/shalama/shalama_004.png"/>
+		<key time = "5" value = "data/images/shalama/shalama_005.png"/>
+		<key time = "6" value = "data/images/shalama/shalama_006.png"/>
+		<key time = "7" value = "data/images/shalama/shalama_007.png"/>
+		<key time = "8" value = "data/images/shalama/shalama_008.png"/>
+		<key time = "9" value = "data/images/shalama/shalama_009.png"/>
+		<key time = "10" value = "data/images/shalama/shalama_010.png"/>
+		<key time = "11" value = "data/images/shalama/shalama_011.png"/>
+		<key time = "12" value = "data/images/shalama/shalama_012.png"/>
+		<key time = "13" value = "data/images/shalama/shalama_013.png"/>
+		<key time = "14" value = "data/images/shalama/shalama_014.png"/>
+		<key time = "15" value = "data/images/shalama/shalama_015.png"/>
+		<key time = "16" value = "data/images/shalama/shalama_016.png"/>
+		<key time = "17" value = "data/images/shalama/shalama_017.png"/>
+		<key time = "18" value = "data/images/shalama/shalama_018.png"/>
+		<key time = "19" value = "data/images/shalama/shalama_019.png"/>
+		<key time = "20" value = "data/images/shalama/shalama_020.png"/>
+		<key time = "21" value = "data/images/shalama/shalama_021.png"/>
+		<key time = "22" value = "data/images/shalama/shalama_022.png"/>
+		<key time = "23" value = "data/images/shalama/shalama_023.png"/>
+		<key time = "24" value = "data/images/shalama/shalama_024.png"/>
+		<key time = "25" value = "data/images/shalama/shalama_025.png"/>
+		<key time = "26" value = "data/images/shalama/shalama_026.png"/>
+        <key time = "27" value = "data/images/shalama/shalama_027.png"/>
+        <key time = "28" value = "data/images/shalama/shalama_028.png"/>
+        <key time = "29" value = "data/images/shalama/shalama_029.png"/>
+        <key time = "30" value = "data/images/shalama/shalama_030.png"/>
+		<key time = "31" value = "data/images/common/alpha.png"/>
+	</step_curve>
+    
+	<catmull_rom3 name = "lintuovertest_texture_curve">
+		<key time = 0 value = "0 0 0 "/>
+		<key time = 3000 value = "2 -20 0 "/>
+	</catmull_rom3>
+
+	<catmull_rom3 name = "lintuovertest_color_curve">
+		<!--<key time = 0   value = "0.0007 0.0013 0.0060 "/>-->
+		<key time = 0   value = "0.0014 0.0036 0.0120 "/>
+		<key time = 750 value = "0.0028 0.0072 0.0240 "/>
+		<key time = 800 value = "0.014 0.036 0.120 "/>
+	</catmull_rom3>
+	
+	<catmull_rom3 name = "hahmoalpha_texture_uv_curve1">
+		<key time = 0 value = "0 0 0 "/>
+		<key time = 3000 value = "30 120 0 "/>
+	</catmull_rom3>
+	<catmull_rom3 name = "hahmoalpha_texture_uv_curve2">
+		<time_offset v = "13"/>
+		<key time = 0 value = "0.1 0.2 0 "/>
+		<key time = 3000 value = "-27 73 0 "/>
+	</catmull_rom3>
+	<catmull_rom3 name = "hahmoalpha_texture_uv_curve3">
+		<time_offset v = "7"/>
+		<key time = 0 value = "0.2 0.1 0 "/>
+		<key time = 3000 value = "24 117 0 "/>
+	</catmull_rom3>
+	<catmull_rom3 name = "hahmoalpha_texture_uv_curve4">
+		<time_offset v = "19"/>
+		<key time = 0 value = "0.2 0.1 0 "/>
+		<key time = 3000 value = "-33 141 0 "/>
+	</catmull_rom3>
+
+	<catmull_rom3 name = "sahkosala_alpha_texture_uv_curve1">
+		<key time = 0 value = "0 0 0"/>
+		<key time = 3000 value = "20 -200 0"/>
+	</catmull_rom3>
+	<catmull_rom3 name = "sahkosala_alpha_texture_uv_curve2">
+		<key time = 0 value = "0 0 0"/>
+		<key time = 3000 value = "-20 -200 0"/>
+	</catmull_rom3>
+	
+	<!-- -->
+	<step_curve name="credit_hoaxi_texture_curve" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "30"/>
+		<key time = 0.000 value = "data/images/common/alpha.png"/> 
+		<key time = 2.375 value = "data/images/credits/hoaxi.png"/> 
+	</step_curve>
+	<step_curve name="credit_codarki_texture_curve" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "30"/>
+		<key time = 0.000 value = "data/images/common/alpha.png"/> 
+		<key time = 7.375 value = "data/images/credits/codarki.png"/> 
+	</step_curve>
+	<step_curve name="credit_pharaffin_texture_curve" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "30"/>
+		<key time = 0.000 value = "data/images/common/alpha.png"/> 
+		<key time = 12.375 value = "data/images/credits/pharaffin.png"/> 
+	</step_curve>
+	<step_curve name="credit_rayjan_texture_curve" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "30"/>
+		<key time = 0.000 value = "data/images/common/alpha.png"/> 
+		<key time = 17.375 value = "data/images/credits/rayjan.png"/> 
+	</step_curve>	
+	
+	<step_curve name="greet_asd_texture_curve" type="text">
+		<time_offset v = "45"/>
+		<time_multiplier v = "30"/>
+		<key time = -1.500 value = "data/images/common/alpha.png"/> 
+		<key time = 0.000 value = "data/images/greets/asd1.png"/> 
+		<key time = 0.375 value = "data/images/greets/asd2.png"/> 
+		<key time = 0.750 value = "data/images/greets/asd3.png"/> 		
+		<key time = 3.000 value = "data/images/greets/amurska1.png"/> 
+		<key time = 3.187 value = "data/images/greets/amurska2.png"/> 
+		<key time = 3.375 value = "data/images/greets/amurska3.png"/> 
+		<key time = 3.750 value = "data/images/greets/amurska4.png"/> 
+		<key time = 4.125 value = "data/images/greets/amurska5.png"/> 
+		<key time = 6.375 value = "data/images/greets/byterapers1.png"/> 
+		<key time = 6.750 value = "data/images/greets/byterapers2.png"/> 
+		<key time = 7.125 value = "data/images/greets/byterapers3.png"/> 
+		<key time = 9.375 value = "data/images/greets/fairlight1.png"/> 
+		<key time = 9.750 value = "data/images/greets/fairlight2.png"/> 
+		<key time = 10.125 value = "data/images/common/alpha.png"/> 
+		<key time = 10.406 value = "data/images/greets/cncd1.png"/> 
+		<key time = 10.593 value = "data/images/greets/cncd2.png"/> 
+		<key time = 10.875 value = "data/images/greets/cncd3.png"/> 
+		<key time = 11.125 value = "data/images/greets/cncd4.png"/> 
+		<key time = 13.275 value = "data/images/greets/damones1.png"/> 
+		<key time = 13.400 value = "data/images/greets/damones2.png"/> 
+		<key time = 16.500 value = "data/images/greets/division1.png"/> 
+		<key time = 16.687 value = "data/images/greets/division2.png"/> 
+		<key time = 17.000 value = "data/images/greets/division3.png"/> 
+		<key time = 17.187 value = "data/images/greets/division4.png"/> 
+		<key time = 18.375 value = "data/images/greets/wideload1.png"/> 
+		<key time = 18.750 value = "data/images/greets/wideload2.png"/> 
+			
+<!--		
+		<key time =  0 value = "data/images/common/alpha.png"/>		
+		<key time =  1.5 value = "data/images/greets/asd1.png"/>
+		<key time =  1.75 value = "data/images/greets/asd2.png"/>
+		<key time =  2.1 value = "data/images/greets/asd3.png"/>
+		<key time =  3.3 value = "data/images/common/alpha.png"/>
+		<key time =  4.3 value = "data/images/greets/amurska1.png"/>
+		<key time =  4.45 value = "data/images/greets/amurska2.png"/>
+		<key time =  4.6 value = "data/images/greets/amurska3.png"/>
+		<key time =  5.0 value = "data/images/greets/amurska4.png"/>
+		<key time =  5.30 value = "data/images/greets/amurska5.png"/>
+		<key time =  6.5 value = "data/images/common/alpha.png"/>		-->
+	</step_curve>
+		
+	<step_curve name="pisura_texture_loop" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "1"/>		
+		<key time =  0.0 value = "data/images/tmp/pisurastate1.png"/>
+		<key time =  1.5 value = "data/images/tmp/pisurastate2.png"/>
+		<key time =  3.0 value = "data/images/tmp/pisurastate3.png"/>
+		<key time =  4.5 value = "data/images/common/alpha.png"/>
+	</step_curve>
+
+	<reference_step_curve name="pisura_texture_curve" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "1"/>
+		<random seed = 1607>
+			<timing start_time = 0 end_time = 400.5/>
+			<random_interval min_step = "5" max_step = "20"/>
+			<values>
+				<value v = "pisura_texture_loop"/>
+			</values>
+		</random>
+		<!--<key time = "0" value = "pisura_texture_loop"/>
+		<key time = "20" value = "pisura_texture_loop"/>
+		<key time = "30" value = "pisura_texture_loop"/>
+		-->
+	</reference_step_curve>
+
+	<reference_step_curve name="pisura_texture_curve2" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "1"/>
+		<random seed = 1608>
+			<timing start_time = 0 end_time = 400.5/>
+			<random_interval min_step = "5" max_step = "20"/>
+			<values>
+				<value v = "pisura_texture_loop"/>
+			</values>
+		</random>
+	</reference_step_curve>
+	
+	<reference_step_curve name="pisura_texture_curve3" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "1"/>
+		<random seed = 1609>
+			<timing start_time = 0 end_time = 400.5/>
+			<random_interval min_step = "5" max_step = "20"/>
+			<values>
+				<value v = "pisura_texture_loop"/>
+			</values>
+		</random>
+	</reference_step_curve>
+	<reference_step_curve name="pisura_texture_curve4" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "1"/>
+		<random seed = 1610>
+			<timing start_time = 0 end_time = 400.5/>
+			<random_interval min_step = "5" max_step = "20"/>
+			<values>
+				<value v = "pisura_texture_loop"/>
+			</values>
+		</random>
+	</reference_step_curve>
+	<reference_step_curve name="pisura_texture_curve5" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "1"/>
+		<random seed = 1611>
+			<timing start_time = 0 end_time = 400.5/>
+			<random_interval min_step = "5" max_step = "20"/>
+			<values>
+				<value v = "pisura_texture_loop"/>
+			</values>
+		</random>
+	</reference_step_curve>
+	<reference_step_curve name="pisura_texture_curve6" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "1"/>
+		<random seed = 1612>
+			<timing start_time = 0 end_time = 400.5/>
+			<random_interval min_step = "5" max_step = "20"/>
+			<values>
+				<value v = "pisura_texture_loop"/>
+			</values>
+		</random>
+	</reference_step_curve>
+	<reference_step_curve name="pisura_texture_curve7" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "1"/>
+		<random seed = 1613>
+			<timing start_time = 0 end_time = 400.5/>
+			<random_interval min_step = "5" max_step = "20"/>
+			<values>
+				<value v = "pisura_texture_loop"/>
+			</values>
+		</random>
+	</reference_step_curve>
+	<reference_step_curve name="pisura_texture_curve8" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "1"/>
+		<random seed = 1614>
+			<timing start_time = 0 end_time = 400.5/>
+			<random_interval min_step = "5" max_step = "20"/>
+			<values>
+				<value v = "pisura_texture_loop"/>
+			</values>
+		</random>
+	</reference_step_curve>
+	<reference_step_curve name="pisura_texture_curve9" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "1"/>
+		<random seed = 1615>
+			<timing start_time = 0 end_time = 400.5/>
+			<random_interval min_step = "5" max_step = "20"/>
+			<values>
+				<value v = "pisura_texture_loop"/>
+			</values>
+		</random>
+	</reference_step_curve>
+	
+	<catmull_rom3 name = "pisuratus_texcoord_offset_curve">
+		<time_multiplier v = "30"/>
+	    <key time = 0 value = "0 0 0"/>
+		<key time = 30 value = "0 -40 0"/>
+	</catmull_rom3>	
+
+	<catmull_rom3 name = "vauhtiviiva_texcoord_offset_curve">
+		<time_multiplier v = "30"/>
+	    <key time = 0 value = "0 0 0"/>
+		<key time = 30 value = "0 -40 0"/>
+	</catmull_rom3>		
+
+<!-- -->
+<catmull_rom name = "tronman_alpha_curve">
+		<!-- sync points at 3, 6, 9, 12, 15, 18 and 21, in seconds. -->
+		<time_offset v = "0"/> 
+		<time_multiplier v = "30.0"/>
+
+	    <key time = "0.0" value = "1.5"/>
+		<key time = "50.0" value = "1.5"/>
+	  </catmull_rom>
+	
+	<catmull_rom name = "hahmo1_alpha_curve">
+		<!-- sync points at 3, 6, 9, 12, 15, 18 and 21, in seconds. -->
+		<time_offset v = "90"/> 
+		<time_multiplier v = "30.0"/>
+
+	    <key time = "0.0" value = "0.0"/>
+	    <key time = "0.001" value = "0.0"/>
+		
+	    <key time = "2.7999" value = "0.0"/>
+        <key time = "2.8" value = "0.0"/>
+        <key time = "3.0" value = "1.0"/>
+        <key time = "4.0" value = "1.0"/>
+        <key time = "4.2" value = "0.0"/>
+        <key time = "4.2001" value = "0.0"/>
+		
+        <key time = "5.799" value = "0.0"/>
+        <key time = "5.8" value = "0.0"/>
+		<key time = "6.0" value = "1.0000"/>
+		<key time = "7.0" value = "1.0000"/>
+        <key time = "7.2" value = "0.0"/>
+        <key time = "7.201" value = "0.0"/>
+		
+        <key time = "8.799" value = "0.0"/>
+        <key time = "8.8" value = "0.0"/>
+		<key time = "9.0" value = "1.0000"/>
+		<key time = "10.0" value = "1.0000"/>
+        <key time = "10.2" value = "0.0"/>
+        <key time = "10.201" value = "0.0"/>
+		
+        <key time = "11.799" value = "0.0"/>
+        <key time = "11.8" value = "0.0"/>
+		<key time = "12.0" value = "1.0000"/>
+		<key time = "13.0" value = "1.0000"/>
+        <key time = "13.2" value = "0.0"/>
+        <key time = "13.201" value = "0.0"/>
+
+        <key time = "14.799" value = "0.0"/>
+        <key time = "14.8" value = "0.0"/>
+		<key time = "15.0" value = "1.0000"/>
+		<key time = "16.0" value = "1.0000"/>
+        <key time = "16.2" value = "0.0"/>
+        <key time = "16.201" value = "0.0"/>
+
+        <key time = "17.799" value = "0.0"/>
+        <key time = "17.8" value = "0.0"/>
+		<key time = "18.0" value = "1.0000"/>
+		<key time = "19.0" value = "1.0000"/>
+        <key time = "19.2" value = "0.0"/>
+        <key time = "19.201" value = "0.0"/>
+
+        <key time = "20.799" value = "0.0"/>
+        <key time = "20.8" value = "0.0"/>
+		<key time = "21.0" value = "1.0000"/>
+		<key time = "22.0" value = "1.0000"/>
+        <key time = "22.2" value = "0.0"/>
+        <key time = "22.201" value = "0.0"/>
+	</catmull_rom>
+
+	<catmull_rom name = "hahmo2_alpha_curve">
+		<!-- sync points at 3, 6, 9, 12, 15, 18 and 21, in seconds. -->
+		<time_offset v = "95"/> 
+		<time_multiplier v = "30.0"/>
+
+	    <key time = "0.0" value = "0.0"/>
+	    <key time = "0.001" value = "0.0"/>
+		
+	    <key time = "2.7999" value = "0.0"/>
+        <key time = "2.8" value = "0.0"/>
+        <key time = "3.0" value = "1.0"/>
+        <key time = "4.0" value = "1.0"/>
+        <key time = "4.2" value = "0.0"/>
+        <key time = "4.2001" value = "0.0"/>
+		
+        <key time = "5.799" value = "0.0"/>
+        <key time = "5.8" value = "0.0"/>
+		<key time = "6.0" value = "1.0000"/>
+		<key time = "7.0" value = "1.0000"/>
+        <key time = "7.2" value = "0.0"/>
+        <key time = "7.201" value = "0.0"/>
+		
+        <key time = "8.799" value = "0.0"/>
+        <key time = "8.8" value = "0.0"/>
+		<key time = "9.0" value = "1.0000"/>
+		<key time = "10.0" value = "1.0000"/>
+        <key time = "10.2" value = "0.0"/>
+        <key time = "10.201" value = "0.0"/>
+		
+        <key time = "11.799" value = "0.0"/>
+        <key time = "11.8" value = "0.0"/>
+		<key time = "12.0" value = "1.0000"/>
+		<key time = "13.0" value = "1.0000"/>
+        <key time = "13.2" value = "0.0"/>
+        <key time = "13.201" value = "0.0"/>
+
+        <key time = "14.799" value = "0.0"/>
+        <key time = "14.8" value = "0.0"/>
+		<key time = "15.0" value = "1.0000"/>
+		<key time = "16.0" value = "1.0000"/>
+        <key time = "16.2" value = "0.0"/>
+        <key time = "16.201" value = "0.0"/>
+
+        <key time = "17.799" value = "0.0"/>
+        <key time = "17.8" value = "0.0"/>
+		<key time = "18.0" value = "1.0000"/>
+		<key time = "19.0" value = "1.0000"/>
+        <key time = "19.2" value = "0.0"/>
+        <key time = "19.201" value = "0.0"/>
+
+        <key time = "20.799" value = "0.0"/>
+        <key time = "20.8" value = "0.0"/>
+		<key time = "21.0" value = "1.0000"/>
+		<key time = "22.0" value = "1.0000"/>
+        <key time = "22.2" value = "0.0"/>
+        <key time = "22.201" value = "0.0"/>
+	</catmull_rom>
+
+	<catmull_rom name = "hahmo3_alpha_curve">
+		<!-- sync points at 3, 6, 9, 12, 15, 18 and 21, in seconds. -->
+		<time_offset v = "99"/> 
+		<time_multiplier v = "30.0"/>
+
+	    <key time = "0.0" value = "0.0"/>
+	    <key time = "0.001" value = "0.0"/>
+		
+	    <key time = "2.7999" value = "0.0"/>
+        <key time = "2.8" value = "0.0"/>
+        <key time = "3.0" value = "1.0"/>
+        <key time = "4.0" value = "1.0"/>
+        <key time = "4.2" value = "0.0"/>
+        <key time = "4.2001" value = "0.0"/>
+		
+        <key time = "5.799" value = "0.0"/>
+        <key time = "5.8" value = "0.0"/>
+		<key time = "6.0" value = "1.0000"/>
+		<key time = "7.0" value = "1.0000"/>
+        <key time = "7.2" value = "0.0"/>
+        <key time = "7.201" value = "0.0"/>
+		
+        <key time = "8.799" value = "0.0"/>
+        <key time = "8.8" value = "0.0"/>
+		<key time = "9.0" value = "1.0000"/>
+		<key time = "10.0" value = "1.0000"/>
+        <key time = "10.2" value = "0.0"/>
+        <key time = "10.201" value = "0.0"/>
+		
+        <key time = "11.799" value = "0.0"/>
+        <key time = "11.8" value = "0.0"/>
+		<key time = "12.0" value = "1.0000"/>
+		<key time = "13.0" value = "1.0000"/>
+        <key time = "13.2" value = "0.0"/>
+        <key time = "13.201" value = "0.0"/>
+
+        <key time = "14.799" value = "0.0"/>
+        <key time = "14.8" value = "0.0"/>
+		<key time = "15.0" value = "1.0000"/>
+		<key time = "16.0" value = "1.0000"/>
+        <key time = "16.2" value = "0.0"/>
+        <key time = "16.201" value = "0.0"/>
+
+        <key time = "17.799" value = "0.0"/>
+        <key time = "17.8" value = "0.0"/>
+		<key time = "18.0" value = "1.0000"/>
+		<key time = "19.0" value = "1.0000"/>
+        <key time = "19.2" value = "0.0"/>
+        <key time = "19.201" value = "0.0"/>
+
+        <key time = "20.799" value = "0.0"/>
+        <key time = "20.8" value = "0.0"/>
+		<key time = "21.0" value = "1.0000"/>
+		<key time = "22.0" value = "1.0000"/>
+        <key time = "22.2" value = "0.0"/>
+        <key time = "22.201" value = "0.0"/>
+	</catmull_rom>
+	
+	<catmull_rom name = "sahkosala_alpha_curve">
+		<time_offset v = "0"/> 
+		<time_multiplier v = "1.0"/>
+		
+		<!-- base keys -->
+		<random seed = 8345>
+			<timing start_time = 0 end_time = 2000/>
+			<random_interval min_step = 30 max_step = 30/>
+			<value min = "0.0" max = "0.0" uniform = "true"/>
+		</random>
+		<!-- add spike keys -->
+		<random seed = 1351616>
+			<timing start_time = 0 end_time = 2000/>
+			<random_interval min_step = 50 max_step = 130/>
+			<value min = "1.0" max = "1.0" uniform = "true"/>
+		</random>
+		
+	</catmull_rom>
+	
+	<catmull_rom3 name = "sahkosala_color_curve">
+		<!-- base keys -->
+		<random seed = 2144>
+			<timing start_time = 0 end_time = 800/>
+			<random_interval min_step = 3 max_step = 3/>
+			<value min = "0.7 0.7 0.9" max = "0.7 0.7 0.9" uniform = "true"/>
+		</random>
+		<!-- add spike keys -->
+		<random seed = 73344>
+			<timing start_time = 0 end_time = 800/>
+			<random_interval min_step = 1 max_step = 2/>
+			<value min = "0.2 0.2 0.4" max = "1.6 1.6 2" uniform = "true"/>
+		</random>
+	</catmull_rom3>
+	
+	
+	<catmull_rom3 name = "hahmo_color_curve">
+		<!-- base keys -->
+		<random seed = 3344>
+			<timing start_time = 0 end_time = 1000/>
+			<random_interval min_step = 2 max_step = 2/>
+			<value min = "0.4 0.4 0.5" max = "0.4 0.4 0.5" uniform = "true"/>
+		</random>
+		<!-- add spike keys -->
+		<random seed = 73344>
+			<timing start_time = 0 end_time = 1000/>
+			<random_interval min_step = 1 max_step = 4/>
+			<value min = "0.3 0.3 0.4" max = "1.6 1.6 1.9" uniform = "true"/>
+		</random>
+	</catmull_rom3>
+
+
+	<catmull_rom3 name = "raytrace_pos_curve">
+		<value_multiplier v = "4 4 1"/>
+		<value_offset v = "0 0 -2"/>
+		<time_offset v = "0"/>
+		<time_multiplier v = "1"/>	
+	
+		<!--<key time = 0 value = "0 0 0"/>
+		<key time = 10 value = "0 10 0"/>-->
+		<random seed = 1607>
+			<timing start_time = 0 end_time = 400.5/>
+			<random_interval min_step = 1.5 max_step = 2.0/>
+			<value min = "-1.0 -1.0 -1.0" max = "1.0 1.0 1.0" uniform = "false"/>
+		</random>
+	</catmull_rom3>
+	
+	<catmull_rom name = "raytrace_scale_curve">
+	    <key time = 0 value = 0.0/>
+		<key time = 10 value = 5/>
+	</catmull_rom>
+	
+	<!-- uudet fadet-->
+		<catmull_rom name = "fade_in_out_curve_2_4_2_ms">
+	    <key time = 0 value = 0.0/>
+		<key time = 0.999 value = 0.0/>
+		<key time = 3 value = 1.0/>
+		<key time = 7 value = 1.0/>
+		<key time = 9 value = 0.0/>		
+		<key time = 9.01 value = 0.0/>				
+	</catmull_rom>
+	
+	<catmull_rom name = "fade_in_curve_250ms">
+	    <key time = 0 value = 0.0/>
+		<key time = 0.02 value = 0.0/>
+		<key time = 0.25 value = 1.0/>
+	</catmull_rom>
+	<catmull_rom name = "fade_out_curve_250ms">
+	    <key time = 0 value = 1.0/>
+		<key time = 0.02 value = 1.0/>
+		<key time = 0.25 value = 0.0/>
+	</catmull_rom>
+	<catmull_rom name = "fade_in_curve_500ms">
+	    <key time = 0 value = 0.0/>
+		<key time = 0.02 value = 0.0/>
+		<key time = 0.5 value = 1.0/>
+	</catmull_rom>
+	<catmull_rom name = "fade_out_curve_500ms">
+	    <key time = 0 value = 1.0/>
+		<key time = 0.02 value = 1.0/>
+		<key time = 0.5 value = 0.0/>
+	</catmull_rom>
+	<catmull_rom name = "fade_in_curve_1000ms">
+	    <key time = 0 value = 0.0/>
+		<key time = 0.02 value = 0.0/>
+		<key time = 1 value = 1.0/>
+	</catmull_rom>
+	<catmull_rom name = "fade_in_curve_2000ms">
+	    <key time = 0 value = 0.0/>
+		<key time = 0.02 value = 0.0/>
+		<key time = 2 value = 1.0/>
+	</catmull_rom>
+	<catmull_rom name = "fade_in_curve_5000ms_light">
+	    <key time = 0 value = 0.0/>
+		<key time = 0.02 value = 0.0/>
+		<key time = 5 value = 0.3/>
+		<key time = 7 value = 0.0/>
+	</catmull_rom>	
+	<catmull_rom name = "fade_in_curve_5000ms_hard">
+	    <key time = 0 value = 0.0/>
+		<key time = 0.02 value = 0.0/>
+		<key time = 5 value = 1/>
+		<key time = 7 value = 0.0/>
+	</catmull_rom>		
+	<catmull_rom name = "fade_out_curve_1000ms">
+	    <key time = 0 value = 1.0/>
+		<key time = 0.02 value = 1.0/>
+		<key time = 1 value = 0.0/>
+	</catmull_rom>
+	<catmull_rom name = "fade_out_curve_2000ms">
+	    <key time = 0 value = 1.0/>
+		<key time = 0.02 value = 1.0/>
+		<key time = 2 value = 0.0/>
+	</catmull_rom>	
+	<catmull_rom name = "fade_out_curve_3000ms">
+	    <key time = 0 value = 1.0/>
+		<key time = 0.02 value = 1.0/>
+		<key time = 3 value = 0.0/>
+	</catmull_rom>
+	
+<!-- Post processing 2012 -->
+
+	<catmull_rom name = "tone_mapping_adapted_luminance">
+		<time_offset v = "0.0"/>
+		<key time = 0.0 value = "0.25"/>
+				
+		<!-- titlescene time="15" duration="27" -->
+		<key time = "14.998" value = "0.25"/>
+		<key time = "14.999" value = "0.25"/>
+		<key time = "15.0" value = "0.16"/>
+		<key time = "15.0" value = "0.16"/>
+		<key time = "41.8" value = "0.16"/>
+		<key time = "41.9" value = "0.16"/>
+
+		<!-- nightsky time="42" duration="11.7" -->
+		<!-- nightsky2 time="53.7" duration="12.3" -->
+		<key time = "42.401" value = "0.16"/>
+		<key time = "42.400" value = "0.16"/>
+		<key time = "42.402" value = "0.16"/>
+		<key time = "42.403" value = "0.16"/>
+		<key time = "65.9998" value = "0.16"/>
+		<key time = "65.9999" value = "0.16"/>
+		
+		<!-- treeoflife time="66" duration="28" -->
+		<!-- icarussian time="66" duration="48" -->
+		<!-- cityscene time="90" duration="24" -->
+		<!-- ptlintu time ="114" duration="25.5" -->
+		<!-- traintunnel time="139.5" duration="24" -->
+		<!-- sahkopilvit time="163.5" duration="23.5" -->
+		<!-- metsajuna time="187" duration="12.5" -->
+		<!-- closetrain time ="199.5" duration="32" -->
+		<!-- akkunaloppu time = "223.5" duration="8" -->
+	</catmull_rom>
+	
+	<catmull_rom name = "bright_pass_adapted_luminance">
+		<time_offset v = "0.0"/>
+		<key time = "0.0" value = "0.36"/>
+		<key time = "14.99" value = "0.36"/>
+		<key time = "15.1" value = "0.16"/>	
+		<!-- titlescene time="15" duration="27" -->
+		<!-- nightsky time="42" duration="11.7" -->
+		<!-- nightsky2 time="53.7" duration="12.3" -->
+		<!-- treeoflife time="66" duration="28" -->
+		<!-- icarussian time="66" duration="48" -->
+		<!-- cityscene time="90" duration="24" -->
+		<!-- ptlintu time ="114" duration="25.5" -->
+		<!-- traintunnel time="139.5" duration="24" -->
+		<!-- sahkopilvit time="163.5" duration="23.5" -->
+		<!-- metsajuna time="187" duration="12.5" -->
+		<!-- closetrain time ="199.5" duration="32" -->
+		<!-- akkunaloppu time = "223.5" duration="8" -->
+		<key time = "90.99" value = "0.16"/>
+		<key time = "91.00" value = "0.38"/>
+		<key time = "115.00" value = "0.38"/>
+		<key time = "137.49" value = "0.16"/>
+		<key time = "137.5" value = "0.16"/>
+		<key time = "139.5" value = "0.016"/>
+		<key time = "140.099" value = "0.16"/>
+		<key time = "140.1" value = "0.16"/>
+		
+		<key time = "186.5" value = "0.16"/>
+		<key time = "187.5" value = "0.016"/>
+		<key time = "189.5" value = "0.16"/>
+	</catmull_rom>
+	
+	<catmull_rom name = "noise_strength_curve">
+		<!-- logoscene" time="0" duration="20" -->
+		<!--random seed = 100>
+			<timing start_time = 0 end_time = 300/>
+			<random_interval min_step = 1 max_step = 4/>
+			<value min = "0.1" max = "0.2" uniform = "true"/>
+		</random-->
+		
+	<key time = 0.0 value = "0.1"/>
+		<key time = 14.0 value = "0.1"/>
+	</catmull_rom>
+	
+	<catmull_rom name = "tone_mapping_white_point">
+		<!-- logoscene" time="0" duration="20" -->
+		<random seed = 2200>
+			<timing start_time = 0 end_time = 300/>
+			<random_interval min_step = 2 max_step = 4/>
+			<value min = "0.2" max = "0.3" uniform = "true"/>
+		</random>
+	</catmull_rom>
+		
+	<catmull_rom name = "saturation_curve">
+		<!-- logoscene" time="0" duration="20" -->
+		<random seed = 2300>
+			<timing start_time = 0 end_time = 211/>
+			<random_interval min_step = 2 max_step = 6/>
+			<value min = "0.7" max = "0.9" uniform = "true"/>
+		</random>
+		<key time = "211.5" value = "0.9"/>
+		<key time = "230" value = "0.0"/>
+	</catmull_rom>
+	
+	<catmull_rom name = "ssao_bias">
+		<random seed = 767728>
+			<timing start_time = 0 end_time = 1000/>
+			<random_interval min_step = 30 max_step = 60/>
+			<value min = "-1" max = "1" uniform = "true"/>
+		</random>
+	</catmull_rom>	
+	
+	<catmull_rom name = "ssao_scale">
+		<random seed = 12512>
+			<timing start_time = 0 end_time = 1000/>
+			<random_interval min_step = 30 max_step = 60/>
+			<value min = "-1" max = "1" uniform = "true"/>
+		</random>
+	</catmull_rom>		
+	
+	<catmull_rom3 name = "color_correction_curve">
+		<!-- logoscene" time="0" duration="20" -->
+		<random seed = 2600>
+			<timing start_time = 0 end_time = 300/>
+			<random_interval min_step = 2.0 max_step = 4.0/>
+			<value min = "1.0 1.0 1.0" max = "1.0 1.0 1.0" uniform = "false"/>
+		</random>
+	</catmull_rom3>
+
+	<catmull_rom name = "Bloom_offset_curve">
+		<!-- logoscene" time="0" duration="20" -->
+		<key time = 0.0 value = "2.0"/>
+		<key time = 10 value = "2.0"/>
+	</catmull_rom>
+
+	<catmull_rom name = "bloom_white_point_curve">
+		<!-- logoscene" time="0" duration="20" -->
+		<random seed = 2800>
+			<timing start_time = 0 end_time = 300/>
+			<random_interval min_step = 2 max_step = 4/>
+			<value min = "0.40" max = "0.40" uniform = "true"/>
+		</random>
+	</catmull_rom>
+	
+<!-- Camera curves 2013 -->
+<!-- x bpm - 0.375 sec -->
+<!-- 120 bpm - 0.5 sec -->
+
+<step_curve name="scene1_camera_curve" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "1"/>
+		<key time =  0.0 value = "Camera01"/>
+		<key time =  8.0 value = "Camera05"/>
+		<key time =  16.0 value = "Camera02"/>
+		<key time =  20.0 value = "Camera06"/>			
+		<key time =  24.0 value = "Camera03"/>		
+		<key time =  26.0 value = "Camera04"/>	
+		<key time =  28.0 value = "Camera03"/>		
+		</step_curve>
+		
+		<step_curve name="tayte_camera_curve" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "1"/>
+		<key time =  0.0 value = "Camera04"/>
+		<key time =  8.0 value = "Camera02"/>		
+		<key time =  18.0 value = "Camera01"/>		
+		</step_curve>
+		
+		<step_curve name="juoksu_camera_curve" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "1"/>
+		<key time =  0.0 value = "Camera07"/>
+		<key time =  4.7 value = "Camera03"/>		
+		<key time =  8.1 value = "Camera01"/>		
+		<key time =  12.1 value = "Camera07"/>	
+		</step_curve>
+		
+		<step_curve name="sriini_camera_curve" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "1"/>
+		<key time =  0.0 value = "Camera04"/>
+		<key time =  3.0 value = "Camera01"/>
+		<key time =  4.5 value = "Camera02"/>
+		</step_curve>
+
+		<step_curve name="reaktori_camera_curve" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "1"/>
+		<key time =  0.0 value = "Camera01"/>
+		<key time =  4.0 value = "Camera04"/>
+		<key time =  8.0 value = "Camera01"/>
+		<key time =  14.4 value = "Camera06"/>
+		<key time =  16 value = "Camera03"/>		
+		<key time =  28 value = "Camera07"/>		
+		<key time =  32 value = "Camera04"/>			
+		</step_curve>		
+		
+		<step_curve name="essokallio_camera_curve" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "1"/>
+		<key time =  0.0 value = "Camera01"/>
+		<key time =  6.0 value = "Camera07"/>
+		<key time =  10.0 value = "Camera02"/>
+		</step_curve>	
+		
+	<step_curve name="akkuna_camera_curve" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "0.375"/>
+		<key time =  0.0 value = "Camera03"/>		
+		<key time =  16.0 value = "Camera01"/>	
+	</step_curve>
+
+	<step_curve name="trainend_camera_curve" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "0.375"/>
+		<key time =  0.0 value = "Camera01"/>		
+		<key time =  12.0 value = "Camera02"/>	
+	</step_curve>
+	
+	<step_curve name="icarussian_camera_curve" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "0.375"/>
+		<key time =  0.0 value = "Camera01"/>
+		<key time =  80.0 value = "Camera02"/>	
+		<key time =  96.0 value = "Camera03"/>	
+		<key time =  104.0 value = "Camera01"/>	
+	</step_curve>
+
+	<step_curve name="essojuna_camera_curve" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "0.375"/>
+		<key time =  0.0 value = "Camera02"/>
+		<key time =  4.0 value = "Camera04"/>
+		<key time =  8.0 value = "Camera03"/>	
+		<key time =  12.0 value = "Camera01"/>				
+	</step_curve>
+
+	<step_curve name="birdfy_camera_curve" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "0.375"/>
+		<key time =  0.0 value = "Camera01"/>
+		<key time =  16.0 value = "Camera02"/>	
+		<key time =  32.0 value = "Camera01"/>			
+	</step_curve>
+
+	<step_curve name="treeoflife_camera_curve" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "0.375"/>
+		<key time =  0.0 value = "Camera01"/>
+		<key time =  20.0 value = "Camera02"/>	
+		<key time =  32.0 value = "Camera03"/>			
+	</step_curve>
+
+	<step_curve name="traintunnel_camera_curve" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "0.375"/>
+		<key time =  0.0 value = "Camera01"/>
+		<key time =  14.0 value = "Camera03"/>	
+		<key time =  20.0 value = "Camera01"/>	
+		<key time =  30.0 value = "Camera02"/>	
+		<key time =  44.0 value = "Camera01"/>		
+	</step_curve>	
+	
+	<step_curve name="patsmetsa_camera_curve" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "0.6315789473684211"/>
+		<key time =  0.0 value = "Camera03"/>
+		<key time =  4.0 value = "Camera02"/>
+		<key time =  8.0 value = "Camera01"/>
+		<key time =  12.0 value = "Camera03"/>
+		<key time =  16.0 value = "Camera01"/>
+		<key time =  20.0 value = "Camera02"/>
+		<key time =  24.0 value = "Camera01"/>
+		<key time =  28.0 value = "Camera02"/>
+		<key time =  32.0 value = "Camera03"/>
+		<key time =  36.0 value = "Camera02"/>
+		<key time =  40.0 value = "Camera01"/>
+	</step_curve>
+
+	<step_curve name="pointerdextery_camera_curve" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "1"/>
+		<key time =  0.0 value = "Camera03"/>
+		<key time =  4.0 value = "Camera01"/>
+		<key time =  6.0 value = "Camera02"/>
+	</step_curve>
+
+	<step_curve name="timoalku_camera_curve" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "1"/>
+		<key time =  0.0 value = "Camera02"/>
+		<key time =  5.0 value = "Camera01"/>
+		<key time =  5.4 value = "Camera02"/>
+		<key time =  10.0 value = "Camera01"/>
+		<key time =  10.4 value = "Camera02"/>
+		<key time =  15.0 value = "Camera01"/>
+		<key time =  15.4 value = "Camera02"/>	
+		<key time =  20.0 value = "Camera01"/>
+		<key time =  20.4 value = "Camera02"/>	
+		<key time =  25.0 value = "Camera01"/>
+		<key time =  25.4 value = "Camera02"/>			
+	</step_curve>
+
+	<step_curve name="creation_camera_curve" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "1.0"/>
+		<key time =  0.0 value = "Camera01"/>
+		<key time =  2.0 value = "Camera02"/>
+		<key time =  4.0 value = "Camera03"/>
+		<key time =  6.0 value = "Camera04"/>
+		<key time =  8.0 value = "Camera03"/>
+		<key time =  10.0 value = "Camera02"/>
+		<key time =  12.0 value = "Camera01"/>
+		<key time =  14.0 value = "Camera04"/>
+		<key time =  16.0 value = "Camera01"/>
+	</step_curve>
+
+	<step_curve name="ruohoscene_camera_curve" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "1.0"/>
+		<key time =  0.0 value = "Camera01"/>
+		<key time =  8.0 value = "Camera04"/>
+	</step_curve>
+	
+<!-- material curves 2012, these are at 30 fps -->
+	<catmull_rom3 name = "laser_color_curve">
+		<key time = 0 value = "0 0 0"/>
+		<key time = 300 value = "0 0 0"/>
+		<key time = 305 value = "0.0005 0.0005 0.0005"/>
+		<key time = 310 value = "0.01 0.01 0.01"/>
+		<key time = 320 value = "0.03 0.03 0.03"/>
+		<key time = 330 value = "0.08 0.08 0.08"/>
+		<random seed = 6143>
+			<timing start_time = 390 end_time = 1000/>
+			<random_interval min_step = 30 max_step = 60/>
+			<value min = "0.08 0.08 0.08" max = "0.1 0.1 0.1" uniform = "true"/>
+		</random>
+	</catmull_rom3>
+	
+	<catmull_rom3 name = "streak_color_curve">
+		<!-- base keys -->
+		<random seed = 1344>
+			<timing start_time = 0 end_time = 1000/>
+			<random_interval min_step = 2 max_step = 2/>
+			<value min = "1.0 1.0 1.0" max = "1.0 1.0 1.0" uniform = "true"/>
+		</random>
+		<!-- add spike keys -->
+		<random seed = 71344>
+			<timing start_time = 0 end_time = 1000/>
+			<random_interval min_step = 1 max_step = 4/>
+			<value min = "2.0 2.0 2.0" max = "10.0 10.0 10.0" uniform = "true"/>
+		</random>
+	</catmull_rom3>
+
+	<catmull_rom name = "streak_alpha_curve">
+		<!-- base keys -->
+		<random seed = 1345>
+			<timing start_time = 0 end_time = 10000/>
+			<random_interval min_step = 2 max_step = 2/>
+			<value min = "0.0" max = "0.0" uniform = "true"/>
+		</random>
+		<!-- add spike keys -->
+		<random seed = 71345>
+			<timing start_time = 0 end_time = 10000/>
+			<random_interval min_step = 0.5 max_step = 1/>
+			<value min = "0.4" max = "0.9" uniform = "true"/>
+		</random>
+	</catmull_rom>
+	
+	<catmull_rom3 name = "ukkonen_color_curve">
+		<!-- base keys -->
+		<random seed = 18348>
+			<timing start_time = 0 end_time = 1000/>
+			<random_interval min_step = 7 max_step = 7/>
+			<value min = "-1 -1 -1" max = "-1 -1 -1" uniform = "true"/>
+		</random>
+		<!-- add spike keys -->
+		<random seed = 61348>
+			<timing start_time = 0 end_time = 1000/>
+			<random_interval min_step = 15 max_step = 60/>
+			<value min = "2.0 2.0 2.0" max = "8.0 8.0 8.0" uniform = "true"/>
+		</random>
+	</catmull_rom3>
+	
+		<catmull_rom3 name = "ukkonen2_color_curve">
+		<!-- base keys -->
+		<random seed = 12355>
+			<timing start_time = 0 end_time = 1000/>
+			<random_interval min_step = 7 max_step = 7/>
+			<value min = "-1 -1 -1" max = "-1 -1 -1" uniform = "true"/>
+		</random>
+		<!-- add spike keys -->
+		<random seed = 7146348>
+			<timing start_time = 0 end_time = 1000/>
+			<random_interval min_step = 15 max_step = 60/>
+			<value min = "2.0 2.0 2.0" max = "8.0 8.0 8.0" uniform = "true"/>
+		</random>
+	</catmull_rom3>
+
+	
+<!-- misc 2012 curves -->
+
+	<catmull_rom name = "escape_radial_blur_focus_curve">
+		<value_offset v = "0.0"/>
+		<value_multiplier v = "1.0"/>
+		
+		<!--
+		
+		HEI KAVERIT,
+		
+		TÄHÄN TULEE KOKO DEMON RADIAL BLUR VOIMAKKUUS CURVE. Aika on timeline sekunneissa.
+		
+		JOKO TEETTE SEN TAI SÄÄDÄTTE RANDOMIN ARVOT KOHILLEEN, TAI SITTEN MENNÄÄN NÄILLÄ.
+		
+		Mä meen nukkuun.
+		t. Kimmo
+		
+		OK T. Timo
+		
+		-->
+		
+		<random seed = 167817>
+			<timing start_time = 0 end_time = 212.5/>
+			<random_interval min_step = 3 max_step = 5/>
+			<value min = "0.40" max = "1.10" uniform = "true"/>
+		</random>
+	</catmull_rom>
+	
+	<catmull_rom name = "escape_radial_blur_x_pos_curve">
+		<random seed = 67818>
+			<timing start_time = 0 end_time = 169.5/>
+			<random_interval min_step = 4 max_step = 12/>
+			<value min = "0.3" max = "0.7" uniform = "true"/>
+		</random>
+		<!-- from blimpcrash to end -->
+		<random seed = 167818>
+			<timing start_time = 169.5 end_time = 212.5/>
+			<random_interval min_step = 4 max_step = 12/>
+			<value min = "0.2" max = "0.5" uniform = "true"/>
+		</random>
+	</catmull_rom>		
+
+	<catmull_rom name = "escape_radial_blur_y_pos_curve">
+		<random seed = 67819>
+			<timing start_time = 0 end_time = 169.5/>
+			<random_interval min_step = 4 max_step = 12/>
+			<value min = "0.3" max = "0.7" uniform = "true"/>
+		</random>		
+		<!-- from blimpcrash to end -->
+		<random seed = 167819>
+			<timing start_time = 169.5 end_time = 212.5/>
+			<random_interval min_step = 4 max_step = 12/>
+			<value min = "0.3" max = "0.7" uniform = "true"/>
+		</random>
+	</catmull_rom>		
+	
+<!-- Old stuff follows -->
+
+	<catmull_rom name = "seismo_alpha_curve">
+		<key time = 0.0 value = "0.0"/>
+		<key time = 0.01 value = "0.0"/>
+		<key time = 299.9 value = "1.0"/>
+		<key time = 300 value = "1.0"/>
+	</catmull_rom>
+	
+	<catmull_rom name = "metaballs_2d_distance_curve_1">
+		<key time = 0.0 value = "1.0"/>
+		<key time = 10.0 value = "2.0"/>
+		<key time = 20.0 value = "2.6"/>
+		<key time = 30.0 value = "4.0"/>
+		<key time = 40.0 value = "6.0"/>
+		<key time = 60.0 value = "9.0"/>
+	</catmull_rom>
+	
+<!-- tulivuori curves -->
+	<catmull_rom3 name = "lava_curve">
+		<random seed = 1344>
+			<timing start_time = 0 end_time = 10000/>
+			<random_interval min_step = 10 max_step = 20/>
+			<value min = "6.0 6.0 6.0" max = "25.0 25.0 25.0" uniform = "true"/>
+		</random>
+	</catmull_rom3>
+	
+	<catmull_rom3 name = "substance_curve">
+		<random seed = 1344>
+			<timing start_time = 0 end_time = 10000/>
+			<random_interval min_step = 10 max_step = 20/>
+			<value min = "0.2 4.0 1.7" max = "0.3 28.0 5.0" uniform = "true"/>
+		</random>
+	</catmull_rom3>
+
+	<catmull_rom3 name = "linear_texcoord_y_curve">
+		<key time = 0 value = "0 0 0"/>
+		<key time = 2000 value = "0 10 0"/>
+	</catmull_rom3>
+	
+	<catmull_rom3 name = "linear_texcoord_x_curve">
+		<key time = 0 value = "0 0 0"/>
+		<key time = 2000 value = "10 0 0"/>
+	</catmull_rom3>	
+	
+	<catmull_rom3 name = "liikkuva_lava_texcoord_curve">
+		<key time = 0 value = "0 0 0"/>
+		<key time = 2000 value = "0 20 0"/>
+	</catmull_rom3>
+	
+	<catmull_rom3 name = "ledi_texcoord_curve">
+		<key time = 0 value = "0 0 0"/>
+		<key time = 2000 value = "80 0 0"/>
+	</catmull_rom3>
+
+<!-- boom -->
+	<catmull_rom3 name = "boom_texcoord_curve_01">
+		<time_multiplier v = "30"/>
+		<key time = 0 value = "0.0 0.45 0"/>
+		<key time = 2 value = "0.5 0.45 0"/>
+		<key time = 6 value = "0.5 0.45 0"/>
+	</catmull_rom3>
+	<catmull_rom3 name = "boom_texcoord_curve_02">
+		<time_multiplier v = "30"/>
+		<key time = 0 value = "0.2 0.2 0"/>
+		<key time = 2 value = "0.7 0.2 0"/>
+		<key time = 6 value = "0.7 0.2 0"/>
+	</catmull_rom3>
+	<catmull_rom3 name = "boom_texcoord_curve_03">
+		<time_multiplier v = "30"/>
+		<key time = 0 value = "0.3 0.7 0"/>
+		<key time = 2 value = "1.6 0.7 0"/>
+		<key time = 6 value = "1.6 0.7 0"/>
+	</catmull_rom3>
+
+	<catmull_rom3 name = "boom_color_curve_01">
+		<key time = 0 value = "4 2 1"/>
+		<key time = 30 value = "2 1 0"/>
+		<key time = 100 value = "2 2 2"/>
+	</catmull_rom3>
+	<catmull_rom3 name = "boom_color_curve_02">
+		<key time = 0 value = "4 2 0"/>
+		<key time = 90 value = "3 1 0"/>
+		<key time = 100 value = "2 2 2"/>
+	</catmull_rom3>
+	<catmull_rom3 name = "boom_color_curve_03">
+		<key time = 0 value = "6 4 1"/>
+		<key time = 150 value = "4 2 0"/>
+		<key time = 300 value = "2 2 2"/>
+	</catmull_rom3>
+	
+	
+	<catmull_rom4 name = "boom_cutoff_min_curve">
+		<key time = 0 value = "0.3 0.3 0.3 0.2"/>
+		<key time = 2000 value = "0.3 0.3 0.3 0.2"/>
+	</catmull_rom4>
+	<catmull_rom4 name = "boom_cutoff_max_curve">
+		<key time = 0 value = "0.4 0.4 0.4 0.5"/>
+		<key time = 2000 value = "0.4 0.4 0.4 0.5"/>
+	</catmull_rom4>
+	
+	<catmull_rom name = "boom_time_curve">
+		<key time = 0 value = "0"/>
+		<key time = 4 value = "1.5"/>
+		<key time = 10 value = "2.5"/>
+	</catmull_rom>
+
+	<catmull_rom4 name = "fire_fade_cutoff_min_curve">
+		<key time = 0.0 value = "0.8 0.9 0.9 0.9"/>
+		<key time = 2.0 value = "0.0 0.1 0.2 0.0"/>
+		<key time = 3.0 value = "0.0 0.0 0.0 0.0"/>
+	</catmull_rom4>
+	<catmull_rom4 name = "fire_fade_cutoff_max_curve">
+		<key time = 0.0 value = "0.9 1.0 1.0 1.0"/>
+		<key time = 2.0 value = "0.3 0.4 0.5 0.5"/>
+		<key time = 3.0 value = "0.0 0.0 0.0 0.0"/>
+	</catmull_rom4>
+	
+
+<!-- texcoord curves -->
+	<catmull_rom3 name = "tunneli texcoord 01">
+		<key time = 0 value = "0 0"/>
+		<key time = 1000 value = "0 -2"/>
+	</catmull_rom3>
+	
+	<catmull_rom3 name = "orb_texcoord_01">
+		<key time = 0 value = "0 0"/>
+		<key time = 1000 value = "0 -10"/>
+	</catmull_rom3>	
+
+	<catmull_rom3 name = "viirus texcoord 01">
+		<key time = 0 value = "0 0"/>
+		<key time = 900 value = "0.4 -0.4"/>
+	</catmull_rom3>
+
+	<catmull_rom3 name = "liekki texcoord 01">
+		<key time = 0 value = "0 0"/>
+		<key time = 3000 value = "70 160"/>
+	</catmull_rom3>
+	<catmull_rom3 name = "liekki texcoord 02">
+		<key time = 0 value = "0 0"/>
+		<key time = 1000 value = "-15 60"/>
+	</catmull_rom3>
+	
+<!-- wormhole curves -->
+	<catmull_rom3 name = "wormhole texcoord 01">
+		<key time = 0 value = "0 0 0"/>
+		<key time = 600 value = "10 20 0"/>
+	</catmull_rom3>
+	<catmull_rom3 name = "wormhole texcoord 02">
+		<key time = 0 value = "0 0 0"/>
+		<key time = 600 value = "-10 50 0"/>
+	</catmull_rom3>
+	<catmull_rom3 name = "wormhole texcoord 03">
+		<key time = 0 value = "0 0 0"/>
+		<key time = 600 value = "0 90 0"/>
+	</catmull_rom3>
+	<catmull_rom3 name = "wormhole texcoord 04">
+		<key time = 0 value = "0 0 0"/>
+		<key time = 600 value = "40 10 0"/>
+	</catmull_rom3>
+	<catmull_rom3 name = "wormhole texcoord 06">
+		<key time = 0 value = "0 0 0"/>
+		<key time = 600 value = "-60 50 0"/>
+	</catmull_rom3>
+
+	<catmull_rom3 name = "ledi_color">
+		<random seed = 125>
+			<timing start_time = 0 end_time = 2000/>
+			<random_interval min_step = 30 max_step = 30/>
+			<value min = "10 5 5" max = "30 15 15" uniform = "true"/>
+		</random>
+	</catmull_rom3>
+	<catmull_rom3 name = "wormhole color 01">
+		<random seed = 125>
+			<timing start_time = 0 end_time = 600/>
+			<random_interval min_step = 10 max_step = 20/>
+			<value min = "1.0 1.0 1.0" max = "2.0 2.0 2.0" uniform = "false"/>
+		</random>
+	</catmull_rom3>
+	<catmull_rom3 name = "wormhole color 02">
+		<random seed = 12>
+			<timing start_time = 0 end_time = 600/>
+			<random_interval min_step = 20 max_step = 40/>
+			<value min = "1.0 1.0 1.0" max = "2.0 2.0 2.0" uniform = "false"/>
+		</random>
+	</catmull_rom3>
+	<catmull_rom3 name = "wormhole color 03">
+		<random seed = 1>
+			<timing start_time = 0 end_time = 600/>
+			<random_interval min_step = 30 max_step = 60/>
+			<value min = "1.0 1.0 1.0" max = "2.0 2.0 2.0" uniform = "false"/>
+		</random>
+	</catmull_rom3>
+
+	<catmull_rom3 name = "tahtisumu color 01 curve">
+		<random seed = 1>
+			<timing start_time = 0 end_time = 600/>
+			<random_interval min_step = 10 max_step = 20/>
+			<value min = "0.2 0.2 0.3" max = "0.8 0.8 1.2" uniform = "true"/>
+		</random>
+	</catmull_rom3>
+
+	<catmull_rom3 name = "tahtisumu color 02 curve">
+		<random seed = 1>
+			<timing start_time = 0 end_time = 600/>
+			<random_interval min_step = 10 max_step = 20/>
+			<value min = "0.4 0.4 0.2" max = "1.2 1.2 0.8" uniform = "true"/>
+		</random>
+	</catmull_rom3>
+
+	<catmull_rom3 name = "tahtisumu color 03 curve">
+		<random seed = 1>
+			<timing start_time = 0 end_time = 600/>
+			<random_interval min_step = 10 max_step = 20/>
+			<value min = "0.4 0.2 0.1" max = "1.2 1.0 0.8" uniform = "true"/>
+		</random>
+	</catmull_rom3>
+
+<!-- single float curves -->
+	<catmull_rom name = "alkuliekki_alphacurve">
+	    <key time = 0 value = 0.5/>
+		<key time = 680 value = 0.5/>
+		<key time = 775 value = 0/>
+	</catmull_rom>
+	<catmull_rom name = "alkustara_alphacurve">
+	    <key time = 0 value = 0.16/>
+		<key time = 680 value = 0.16/>
+		<key time = 775 value = 0/>
+	</catmull_rom>
+	<catmull_rom name = "vesi_alku_white_curve">
+	    <key time = 0 value = 0.0/>
+		<key time = 0.25 value = 0.0/>
+	</catmull_rom>
+	<catmull_rom name = "vesi_alku_black_curve">
+	    <key time = 0 value = 1.0/>
+		<key time = 0.245 value = 1.0/>
+		<key time = 0.25 value = 1.0/>
+		<key time = 2.99 value = 0.0/>
+		<key time = 3.0 value = 0.0/>
+	</catmull_rom>
+	<catmull_rom name = "epichasma_alku_white_curve">
+	    <key time = 0 value = 0.0/>
+		<key time = 0.01 value = 0.0/>
+		<key time = 0.125 value = 1.0/>
+		<key time = 0.24 value = 0.0/>
+		<key time = 0.25 value = 0.0/>
+	</catmull_rom>
+	<catmull_rom name = "epichasma_alku_black_curve">
+	    <key time = 0 value = 1.0/>
+		<key time = 0.245 value = 1.0/>
+		<key time = 0.25 value = 1.0/>
+		<key time = 2.99 value = 0.0/>
+		<key time = 3.0 value = 0.0/>
+	</catmull_rom>
+	
+	<catmull_rom name = "draw_vesi_scene2_scene_image_alpha_curve">
+	    <key time = 0.0 value = 0.0/>
+		<key time = 0.1 value = 0.0/>
+		<key time = 3.9 value = 1.0/>
+		<key time = 4.0 value = 1.0/>
+	</catmull_rom>
+	
+	<catmull_rom name = "orb_count_alpha_curve">
+	    <key time = 0.0 value = 1.0/>
+		<key time = 1.0 value = 0.0/>
+	</catmull_rom>
+
+	<catmull_rom name = "endlogo_alpha_curve">
+	    <key time = 0.0 value = 0.0/>
+		<key time = 2 value = 1.0/>
+	</catmull_rom>	
+	
+	<catmull_rom name = "draw_logohajoo2_scene_image_alpha_curve">
+	    <key time = 0.0 value = 0.0/>
+		<key time = 0.1 value = 0.0/>
+		<key time = 1.9 value = 1.0/>
+		<key time = 2.0 value = 1.0/>
+	</catmull_rom>
+	
+	<catmull_rom name = "alpha_to_opaque_5sec_curve">
+	    <key time = 0 value = 0.0/>
+		<key time = 0.01 value = 0.0/>
+		<key time = 7.99 value = 1.0/>
+		<key time = 8 value = 1.0/>
+	</catmull_rom>
+	
+	<catmull_rom name = "end_scene_images_alpha_curve">
+	    <key time = 0 value = 0.0/>
+		<key time = 1 value = 1.0/>
+		<key time = 4 value = 1.0/>
+		<key time = 5 value = 0.0/>
+	</catmull_rom>
+	<catmull_rom2 name = "end_scene_images_size_curve">
+	    <key time = 0 value = "0.3 0.3"/>
+		<key time = 5 value = "0.4 0.4"/>
+	</catmull_rom2>
+	<catmull_rom2 name = "end_scene_images_center_curve_1">
+	    <key time = 0 value = "0.4 0.4"/>
+		<key time = 5 value = "0.3 0.3"/>
+	</catmull_rom2>
+	<catmull_rom2 name = "end_scene_images_center_curve_2">
+	    <key time = 0 value = "0.6 0.6"/>
+		<key time = 5 value = "0.7 0.7"/>
+	</catmull_rom2>
+	<catmull_rom name = "substanced_alpha_curve">
+	    <key time = 0 value = 0.0/>
+		<key time = 4 value = 1.0/>
+		<key time = 10 value = 1.0/>
+		<key time = 12 value = 0.0/>
+	</catmull_rom>
+	<catmull_rom name = "cred_1_alpha_curve">
+	    <key time = 0 value = 0.0/>
+		<key time = 3 value = 1.0/>
+		<key time = 5 value = 1.0/>
+		<key time = 8 value = 0.0/>
+	</catmull_rom>
+	<catmull_rom name = "cred_title_alpha_curve">
+	    <key time = 0 value = 0.0/>
+		<key time = 3 value = 0.0/>		
+		<key time = 6 value = 1.0/>
+		<key time = 12 value = 1.0/>
+		<key time = 15 value = 0.0/>
+	</catmull_rom>	
+	<catmull_rom name = "cred_new_title_alpha_curve">
+	    <key time = 0 value = 0.0/>
+		<key time = 8 value = 0.0/>		
+		<key time = 11 value = 1.0/>
+		<key time = 14 value = 1.0/>
+		<key time = 17 value = 0.0/>
+	</catmull_rom>		
+	<catmull_rom name = "respect_alpha_curve">
+	    <key time = 0.00 value = 0.0/>
+	    <key time = 0.01 value = 0.0/>
+		<key time = 1.00 value = 1.0/>
+		<key time = 24.00 value = 1.0/>
+		<key time = 25.00 value = 0.0/>
+	</catmull_rom>
+	
+	<catmull_rom name = "greets_alpha_curve">
+	    <key time = 0 value = 0.0/>
+		<key time = 0.25000 value = 1.0/>
+		<key time = 0.25001 value = 1.0/>
+		<key time = 1.5 value = 0.0/>
+	</catmull_rom>
+
+	<catmull_rom2 name = "greets_size_curve">
+	    <key time = 0 value = "0 0"/>
+		<key time = 0.25000 value = "0.5 0.2"/>
+		<key time = 0.25001 value = "0.5 0.2"/>
+		<key time = 1.5 value = "0.75 0.3"/>
+	</catmull_rom2>
+	
+	<catmull_rom3 name = "orbtext_texcoord_offset_curve">
+		<time_multiplier v = "30"/>
+	    <key time = 0 value = "0 0"/>
+		<key time = 30 value = "0 5"/>
+	</catmull_rom3>	
+	
+	<catmull_rom name = "tronball_yellow_alpha_curve">
+		<key time = 0 value = "0"/>
+		<key time = 0.0100021000000083 value = "1"/>
+		<key time = 1.01000210000001 value = "0"/>
+		<key time = 1.71600340000001 value = "0"/>
+		<key time = 1.7260055 value = "1"/>
+		<key time = 2.7260055 value = "0"/>
+		<key time = 3.40100100000001 value = "0"/>
+		<key time = 3.4110031 value = "1"/>
+		<key time = 4.4110031 value = "0"/>
+		<key time = 5.1010055 value = "0"/>
+		<key time = 5.1110077 value = "1"/>
+		<key time = 6.1110077 value = "0"/>
+		<key time = 6.84799960000001 value = "0"/>
+		<key time = 6.8580017 value = "1"/>
+		<key time = 7.8580017 value = "0"/>
+		<key time = 8.564003 value = "0"/>
+		<key time = 8.57400510000001 value = "1"/>
+		<key time = 9.57400510000001 value = "0"/>
+		<key time = 10.2960052 value = "0"/>
+		<key time = 10.3060074 value = "1"/>
+		<key time = 11.3060074 value = "0"/>
+		<key time = 12.012001 value = "0"/>
+		<key time = 12.0220032 value = "1"/>
+		<key time = 13.0220032 value = "0"/>
+		<key time = 13.3220062 value = "0"/>
+		<key time = 13.3320084 value = "1"/>
+		<key time = 14.3320084 value = "0"/>
+		<key time = 13.7590027 value = "0"/>
+		<key time = 13.7690048 value = "1"/>
+		<key time = 14.7690048 value = "0"/>
+		<key time = 15.413002 value = "0"/>
+		<key time = 15.4230041 value = "1"/>
+		<key time = 16.4230041 value = "0"/>
+		<key time = 17.1290054 value = "0"/>
+		<key time = 17.1390076 value = "1"/>
+		<key time = 18.1390076 value = "0"/>
+		<key time = 18.8600006 value = "0"/>
+		<key time = 18.8700027 value = "1"/>
+		<key time = 19.8700027 value = "0"/>
+	</catmull_rom>	
+
+	<catmull_rom name = "boom_blur_focus_curve">
+		<value_offset v = "1.0"/>
+		<value_multiplier v = "1.0"/>
+		<key time = 0.0 value = "0.001"/>
+		<key time = 2.0 value = "0.001"/>
+		<key time = 2.5 value = "0.2"/>
+		<key time = 8.5 value = "2.0"/>
+	</catmull_rom>
+
+	<catmull_rom name = "rockexplode_blur_x_pos_curve">
+		<key time = 0.0 value = "0.5"/>
+		<key time = 5.0 value = "0.2"/>
+		<key time = 15.0 value = "0.6"/>
+		<key time = 20.0 value = "0.4"/>
+	</catmull_rom>	
+
+	<catmull_rom name = "rockexplode_blur_y_pos_curve">
+		<key time = 0.0 value = "0.5"/>
+		<key time = 5.0 value = "0.4"/>
+		<key time = 15.0 value = "0.2"/>
+		<key time = 20.0 value = "0.5"/>
+	</catmull_rom>	
+
+	<catmull_rom name = "rockexplode_blur_focus_curve">
+		<time_offset v = "-133.25"/>
+		<value_offset v = "0.6"/>
+		<value_multiplier v = "0.3"/>
+		<key time = 0.0 value = "1.0"/>
+		
+		<key time = 133.480011 value = "0.0"/>
+		<key time = 133.490005 value = "1.0"/>
+		
+		<key time = 134.182007 value = "0.0"/>
+		<key time = 134.192001 value = "1.0"/>
+		
+		<key time = 135.070999 value = "0.0"/>
+		<key time = 135.080994 value = "1.0"/>
+
+		<key time = 135.913010 value = "0.0"/>
+		<key time = 135.923004 value = "1.0"/>
+
+		<key time = 136.787003 value = "0.0"/>
+		<key time = 136.796997 value = "1.0"/>
+		 
+		<key time = 137.645004 value = "0.0"/>
+		<key time = 137.654999 value = "1.0"/>
+		 
+		<key time = 138.519012 value = "0.0"/>
+		<key time = 138.529007 value = "1.0"/>
+
+		<key time = 139.361008 value = "0.0"/>
+		<key time = 139.371002 value = "1.0"/>
+
+		<key time = 140.204010 value = "0.0"/>
+		<key time = 140.214005 value = "1.0"/>
+
+		<key time = 141.093002 value = "0.0"/>
+		<key time = 141.102997 value = "1.0"/>
+
+		<key time = 141.935013 value = "0.0"/>
+		<key time = 141.945007 value = "1.0"/>
+
+		<key time = 142.792999 value = "0.0"/>
+		<key time = 142.802994 value = "1.0"/>
+
+		<key time = 143.636002 value = "0.0"/>
+		<key time = 143.645996 value = "1.0"/>
+
+		<key time = 144.478012 value = "0.0"/>
+		<key time = 144.488007 value = "1.0"/>
+
+		<key time = 145.367004 value = "0.0"/>
+		<key time = 145.376999 value = "1.0"/>
+
+		<key time = 146.241013 value = "0.0"/>
+		<key time = 146.251007 value = "1.0"/>
+
+		<key time = 147.021011 value = "0.0"/>
+		<key time = 147.031006 value = "1.0"/>
+
+		<key time = 147.926010 value = "0.0"/>
+		<key time = 147.936005 value = "1.0"/>
+
+		<key time = 148.784012 value = "0.0"/>
+		<key time = 148.794006 value = "1.0"/>
+
+		<key time = 149.657013 value = "0.0"/>
+		<key time = 149.667007 value = "1.0"/>
+
+		<key time = 150.500000 value = "0.0"/>
+		<key time = 150.509995 value = "1.0"/>
+
+		<key time = 151.358002 value = "0.0"/>
+		<key time = 151.367996 value = "1.0"/>
+
+		<key time = 152.216003 value = "0.0"/>
+		<key time = 152.225998 value = "1.0"/>
+
+		<key time = 153.042007 value = "0.0"/>
+		<key time = 153.052002 value = "1.0"/>
+
+		<key time = 153.932007 value = "0.0"/>
+		<key time = 153.942001 value = "1.0"/>
+	</catmull_rom>	
+
+	<catmull_rom name = "blur_x_pos_curve">
+		<key time = 0.0 value = "0.5"/>
+		<key time = 5.0 value = "0"/>
+		<key time = 10.0 value = "0.5"/>
+		<key time = 15.0 value = "1"/>
+		<key time = 20.0 value = "0.5"/>
+		
+	</catmull_rom>	
+
+    <!-- Bitmap rotation curve -->
+	<catmull_rom name = "Randomtext rotate curve">
+		<key time = 0 value = 0/>
+		<key time = 15 value = 360/>
+        <key time = 30 value = 0/>
+	</catmull_rom>
+	
+    <catmull_rom name = "image_distort_orbmeteor_curve">
+		<random seed = 125>
+			<timing start_time = 0 end_time = 100/>
+			<random_interval min_step = 5 max_step = 15/>
+			<value min = "0" max = "0.03"/>
+		</random>
+	</catmull_rom>
+	
+	<catmull_rom name = "logohajoo_image_distort_strength_curve">
+		<value_multiplier v = "0.01" />
+		<key time = 0 value = 0/>
+		<key time = 2 value = 1/>
+		<key time = 4 value = 0/>
+
+		<key time = 7 value = 0/>
+		<key time = 12 value = 1/>
+		<key time = 17 value = 0/>
+		
+		<key time = 21 value = 0/>
+		<key time = 25.5 value = 1/>
+		<key time = 30 value = 0/>
+	</catmull_rom> 
+	
+    
+	<catmull_rom name = "image_distort_phase_curve">   
+		<value_multiplier v="1.0"/>
+		<key time = 2.75099993 value = 0/>
+		<key time = 2.76099992 value = 0/>
+		<key time = 3.26099992 value = 0/>
+		<key time = 5.35599995 value = 0/>
+		<key time = 5.36600018 value =  0/>
+		<key time = 5.86600018 value = 0/>
+		<key time = 8.06999969 value = 0/>
+		<key time = 8.07999992 value =  0/>
+		<key time = 8.57999992 value = 0/>
+		<key time = 10.7379999 value = 0/>
+		<key time = 10.7480001 value =  0.01/>
+		<key time = 11.2480001 value = 0.01/>
+		<key time = 13.3280001 value = 2/>
+		<key time = 16.0680008 value =  0.6/>
+		<key time = 32.0890007 value =  0.4/>
+		<key time = 32.5890007 value = 0/>
+	</catmull_rom>
+	
+	<catmull_rom name = "image_distort_curve">   
+		<value_multiplier v="1.5"/>
+		<key time = 2.75099993 value = 0/>
+		<key time = 2.76099992 value = 0.01/>
+		<key time = 3.26099992 value = 0/>
+		<key time = 5.35599995 value = 0/>
+		<key time = 5.36600018 value =  0.01/>
+		<key time = 5.86600018 value = 0/>
+		<key time = 8.06999969 value = 0/>
+		<key time = 8.07999992 value =  0.01/>
+		<key time = 8.57999992 value = 0/>
+		<key time = 10.7379999 value = 0/>
+		<key time = 10.7480001 value =  0.01/>
+		<key time = 11.2480001 value = 0/>
+		<key time = 13.3280001 value = 0/>
+		<key time = 13.3380003 value =  0.01/>
+		<key time = 13.8380003 value = 0/>
+		<key time = 16.0580006 value = 0/>
+		<key time = 16.0680008 value =  0.01/>
+		<key time = 16.5680008 value = 0/>
+		<key time = 18.7250004 value = 0/>
+		<key time = 18.7350006 value =  0.01/>
+		<key time = 19.2350006 value = 0/>
+		<key time = 21.3619995 value = 0/>
+		<key time = 21.3719997 value =  0.01/>
+		<key time = 21.8719997 value = 0/>
+		<key time = 24.0289993 value = 0/>
+		<key time = 24.0389996 value =  0.01/>
+		<key time = 24.5389996 value = 0/>
+		<key time = 26.7280006 value = 0/>
+		<key time = 26.7380009 value =  0.01/>
+		<key time = 27.2380009 value = 0/>
+		<key time = 29.3649998 value = 0/>
+		<key time = 29.375 value =  0.01/>
+		<key time = 29.875 value = 0/>
+		<key time = 32.0790024 value = 0/>
+		<key time = 32.0890007 value =  0.01/>
+		<key time = 32.5890007 value = 0/>
+	</catmull_rom>
+
+	<catmull_rom name = "image_distort_rgb_curve">   
+		<value_multiplier v="1.0"/>
+		<key time = 2.75099993 value = 0/>
+		<key time = 2.76099992 value = 0.01/>
+		<key time = 3.26099992 value = 0/>
+		<key time = 5.35599995 value = 0/>
+		<key time = 5.36600018 value =  0.01/>
+		<key time = 5.86600018 value = 0/>
+		<key time = 8.06999969 value = 0/>
+		<key time = 8.07999992 value =  0.01/>
+		<key time = 8.57999992 value = 0/>
+		<key time = 10.7379999 value = 0/>
+		<key time = 10.7480001 value =  0.01/>
+		<key time = 11.2480001 value = 0/>
+		<key time = 13.3280001 value = 0/>
+		<key time = 13.3380003 value =  0.01/>
+		<key time = 13.8380003 value = 0/>
+		<key time = 16.0580006 value = 0/>
+		<key time = 16.0680008 value =  0.01/>
+		<key time = 16.5680008 value = 0/>
+		<key time = 18.7250004 value = 0/>
+		<key time = 18.7350006 value =  0.01/>
+		<key time = 19.2350006 value = 0/>
+		<key time = 21.3619995 value = 0/>
+		<key time = 21.3719997 value =  0.01/>
+		<key time = 21.8719997 value = 0/>
+		<key time = 24.0289993 value = 0/>
+		<key time = 24.0389996 value =  0.01/>
+		<key time = 24.5389996 value = 0/>
+		<key time = 26.7280006 value = 0/>
+		<key time = 26.7380009 value =  0.01/>
+		<key time = 27.2380009 value = 0/>
+		<key time = 29.3649998 value = 0/>
+		<key time = 29.375 value =  0.01/>
+		<key time = 29.875 value = 0/>
+		<key time = 32.0790024 value = 0/>
+		<key time = 32.0890007 value =  0.01/>
+		<key time = 32.5890007 value = 0/>
+	</catmull_rom> 
+	
+<catmull_rom3 name = "base_drum_simple_curve_blue">
+	<key time = 2209.26018 value = "0 0 0 "/>
+	<key time = 2209.860078 value = "0 0 12 "/>
+	<key time = 2233.860168 value = "0 0 0 "/>
+	<key time = 2307.600174 value = "0 0 0 "/>
+	<key time = 2308.200072 value = "0 0 12 "/>
+	<key time = 2332.200162 value = "0 0 0 "/>
+	<key time = 2414.280168 value = "0 0 0 "/>
+	<key time = 2414.880066 value = "0 0 12 "/>
+	<key time = 2438.880156 value = "0 0 0 "/>
+	<key time = 2517.240144 value = "0 0 0 "/>
+	<key time = 2517.840042 value = "0 0 12 "/>
+	<key time = 2541.840132 value = "0 0 0 "/>
+	<key time = 2620.20012 value = "0 0 0 "/>
+	<key time = 2620.800018 value = "0 0 12 "/>
+	<key time = 2644.800108 value = "0 0 0 "/>
+	<key time = 2722.200162 value = "0 0 0 "/>
+	<key time = 2722.800066 value = "0 0 12 "/>
+	<key time = 2746.800156 value = "0 0 0 "/>
+	<key time = 2827.08 value = "0 0 0 "/>
+	<key time = 2827.679904 value = "0 0 12 "/>
+	<key time = 2851.679994 value = "0 0 0 "/>
+	<key time = 2929.080048 value = "0 0 0 "/>
+	<key time = 2929.679946 value = "0 0 12 "/>
+	<key time = 2953.680036 value = "0 0 0 "/>
+	<key time = 3030.180132 value = "0 0 0 "/>
+	<key time = 3030.78003 value = "0 0 12 "/>
+	<key time = 3054.78012 value = "0 0 0 "/>
+	<key time = 3135 value = "0 0 0 "/>
+	<key time = 3135.599898 value = "0 0 12 "/>
+	<key time = 3159.599988 value = "0 0 0 "/>
+	<key time = 3236.100084 value = "0 0 0 "/>
+	<key time = 3236.699982 value = "0 0 12 "/>
+	<key time = 3260.700072 value = "0 0 0 "/>
+	<key time = 3338.100126 value = "0 0 0 "/>
+	<key time = 3338.70003 value = "0 0 12 "/>
+	<key time = 3362.70012 value = "0 0 0 "/>
+	<key time = 3442.020036 value = "0 0 0 "/>
+	<key time = 3442.619934 value = "0 0 12 "/>
+	<key time = 3466.620024 value = "0 0 0 "/>
+	<key time = 3544.980012 value = "0 0 0 "/>
+	<key time = 3545.57991 value = "0 0 12 "/>
+	<key time = 3569.58 value = "0 0 0 "/>
+	<key time = 3646.980054 value = "0 0 0 "/>
+	<key time = 3647.579958 value = "0 0 12 "/>
+	<key time = 3671.580048 value = "0 0 0 "/>
+	<key time = 3751.800156 value = "0 0 0 "/>
+	<key time = 3752.400054 value = "0 0 12 "/>
+	<key time = 3776.400144 value = "0 0 0 "/>
+	<key time = 3852.899778 value = "0 0 0 "/>
+	<key time = 3853.49991 value = "0 0 12 "/>
+	<key time = 3877.5 value = "0 0 0 "/>
+</catmull_rom3>
+
+	<catmull_rom3 name = "base_drum_simple_curve_green">
+		<key time = 2087.64015 value = "0 0 0 "/>
+		<key time = 2088.240054 value = "0 12 0 "/>
+		<key time = 2112.240144 value = "0 0 0 "/>
+		<key time = 2128.800204 value = "0 0 0 "/>
+		<key time = 2129.400102 value = "0 12 0 "/>
+		<key time = 2153.400192 value = "0 0 0 "/>
+		<key time = 2182.200162 value = "0 0 0 "/>
+		<key time = 2182.800066 value = "0 12 0 "/>
+		<key time = 2206.800156 value = "0 0 0 "/>
+		<key time = 2232.720108 value = "0 0 0 "/>
+		<key time = 2233.320006 value = "0 12 0 "/>
+		<key time = 2257.320096 value = "0 0 0 "/>
+		<key time = 2284.20021 value = "0 0 0 "/>
+		<key time = 2284.800108 value = "0 12 0 "/>
+		<key time = 2308.800204 value = "0 0 0 "/>
+		<key time = 2335.680084 value = "0 0 0 "/>
+		<key time = 2336.279982 value = "0 12 0 "/>
+		<key time = 2360.280078 value = "0 0 0 "/>
+		<key time = 2389.020078 value = "0 0 0 "/>
+		<key time = 2389.619982 value = "0 12 0 "/>
+		<key time = 2413.620072 value = "0 0 0 "/>
+		<key time = 2437.680132 value = "0 0 0 "/>
+		<key time = 2438.28003 value = "0 12 0 "/>
+		<key time = 2462.28012 value = "0 0 0 "/>
+		<key time = 2490.120162 value = "0 0 0 "/>
+		<key time = 2490.72006 value = "0 12 0 "/>
+		<key time = 2514.720156 value = "0 0 0 "/>
+		<key time = 2541.600036 value = "0 0 0 "/>
+		<key time = 2542.199934 value = "0 12 0 "/>
+		<key time = 2566.20003 value = "0 0 0 "/>
+		<key time = 2594.040072 value = "0 0 0 "/>
+		<key time = 2594.63997 value = "0 12 0 "/>
+		<key time = 2618.64006 value = "0 0 0 "/>
+		<key time = 2646.420138 value = "0 0 0 "/>
+		<key time = 2647.020036 value = "0 12 0 "/>
+		<key time = 2671.020126 value = "0 0 0 "/>
+		<key time = 2697.000048 value = "0 0 0 "/>
+		<key time = 2697.599946 value = "0 12 0 "/>
+		<key time = 2721.600036 value = "0 0 0 "/>
+		<key time = 2747.519988 value = "0 0 0 "/>
+		<key time = 2748.119886 value = "0 12 0 "/>
+		<key time = 2772.119982 value = "0 0 0 "/>
+		<key time = 2799.960024 value = "0 0 0 "/>
+		<key time = 2800.559922 value = "0 12 0 "/>
+		<key time = 2824.560012 value = "0 0 0 "/>
+		<key time = 2850.480192 value = "0 0 0 "/>
+		<key time = 2851.080096 value = "0 12 0 "/>
+		<key time = 2875.080186 value = "0 0 0 "/>
+		<key time = 2876.70021 value = "0 0 0 "/>
+		<key time = 2877.300108 value = "0 12 0 "/>
+		<key time = 2901.300204 value = "0 0 0 "/>
+		<key time = 2902.92 value = "0 0 0 "/>
+		<key time = 2903.519898 value = "0 12 0 "/>
+		<key time = 2927.519988 value = "0 0 0 "/>
+		<key time = 2953.440168 value = "0 0 0 "/>
+		<key time = 2954.040072 value = "0 12 0 "/>
+		<key time = 2978.040162 value = "0 0 0 "/>
+		<key time = 3003.960114 value = "0 0 0 "/>
+		<key time = 3004.560012 value = "0 12 0 "/>
+		<key time = 3028.560102 value = "0 0 0 "/>
+		<key time = 3056.400144 value = "0 0 0 "/>
+		<key time = 3057.000048 value = "0 12 0 "/>
+		<key time = 3081.000138 value = "0 0 0 "/>
+		<key time = 3106.020126 value = "0 0 0 "/>
+		<key time = 3106.620024 value = "0 12 0 "/>
+		<key time = 3130.62012 value = "0 0 0 "/>
+		<key time = 3160.320054 value = "0 0 0 "/>
+		<key time = 3160.919952 value = "0 12 0 "/>
+		<key time = 3184.920042 value = "0 0 0 "/>
+		<key time = 3209.880066 value = "0 0 0 "/>
+		<key time = 3210.479964 value = "0 12 0 "/>
+		<key time = 3234.480054 value = "0 0 0 "/>
+		<key time = 3263.28003 value = "0 0 0 "/>
+		<key time = 3263.879928 value = "0 12 0 "/>
+		<key time = 3287.880018 value = "0 0 0 "/>
+		<key time = 3313.800204 value = "0 0 0 "/>
+		<key time = 3314.400102 value = "0 12 0 "/>
+		<key time = 3338.400192 value = "0 0 0 "/>
+		<key time = 3364.380114 value = "0 0 0 "/>
+		<key time = 3364.980012 value = "0 12 0 "/>
+		<key time = 3388.980102 value = "0 0 0 "/>
+		<key time = 3417.720108 value = "0 0 0 "/>
+		<key time = 3418.320006 value = "0 12 0 "/>
+		<key time = 3442.320096 value = "0 0 0 "/>
+		<key time = 3468.240054 value = "0 0 0 "/>
+		<key time = 3468.839952 value = "0 12 0 "/>
+		<key time = 3492.840042 value = "0 0 0 "/>
+		<key time = 3519.720156 value = "0 0 0 "/>
+		<key time = 3520.320054 value = "0 12 0 "/>
+		<key time = 3544.320144 value = "0 0 0 "/>
+		<key time = 3571.20003 value = "0 0 0 "/>
+		<key time = 3571.799928 value = "0 12 0 "/>
+		<key time = 3595.800018 value = "0 0 0 "/>
+		<key time = 3621.780168 value = "0 0 0 "/>
+		<key time = 3622.380066 value = "0 12 0 "/>
+		<key time = 3646.380156 value = "0 0 0 "/>
+		<key time = 3670.439988 value = "0 0 0 "/>
+		<key time = 3671.039886 value = "0 12 0 "/>
+		<key time = 3695.039976 value = "0 0 0 "/>
+		<key time = 3700.380018 value = "0 0 0 "/>
+		<key time = 3700.979922 value = "0 12 0 "/>
+		<key time = 3724.980012 value = "0 0 0 "/>
+		<key time = 3725.640108 value = "0 0 0 "/>
+		<key time = 3726.240006 value = "0 12 0 "/>
+		<key time = 3750.240096 value = "0 0 0 "/>
+		<key time = 3778.080138 value = "0 0 0 "/>
+		<key time = 3778.680036 value = "0 12 0 "/>
+		<key time = 3802.680132 value = "0 0 0 "/>
+		<key time = 3828.600084 value = "0 0 0 "/>
+		<key time = 3829.199982 value = "0 12 0 "/>
+		<key time = 3853.200072 value = "0 0 0 "/>
+		<key time = 3878.22006 value = "0 0 0 "/>
+		<key time = 3878.820192 value = "0 12 0 "/>
+		<key time = 3902.820282 value = "0 0 0 "/>
+		<key time = 3929.699706 value = "0 0 0 "/>
+		<key time = 3930.299838 value = "0 12 0 "/>
+		<key time = 3954.299928 value = "0 0 0 "/>
+	</catmull_rom3>
+	
+	<catmull_rom3 name = "base_drum_simple_curve_red">
+		<key time = 2087.64015 value = "0 0 0 "/>
+		<key time = 2088.240054 value = "12 0 0 "/>
+		<key time = 2112.240144 value = "0 0 0 "/>
+		<key time = 2107.260132 value = "0 0 0 "/>
+		<key time = 2107.86003 value = "12 0 0 "/>
+		<key time = 2131.86012 value = "0 0 0 "/>
+		<key time = 2131.620024 value = "0 0 0 "/>
+		<key time = 2132.219922 value = "12 0 0 "/>
+		<key time = 2156.220018 value = "0 0 0 "/>
+		<key time = 2155.92018 value = "0 0 0 "/>
+		<key time = 2156.520078 value = "12 0 0 "/>
+		<key time = 2180.520174 value = "0 0 0 "/>
+		<key time = 2183.100126 value = "0 0 0 "/>
+		<key time = 2183.70003 value = "12 0 0 "/>
+		<key time = 2207.70012 value = "0 0 0 "/>
+		<key time = 2207.400054 value = "0 0 0 "/>
+		<key time = 2207.999952 value = "12 0 0 "/>
+		<key time = 2232.000048 value = "0 0 0 "/>
+		<key time = 2232.720108 value = "0 0 0 "/>
+		<key time = 2233.320006 value = "12 0 0 "/>
+		<key time = 2257.320096 value = "0 0 0 "/>
+		<key time = 2259.84009 value = "0 0 0 "/>
+		<key time = 2260.439988 value = "12 0 0 "/>
+		<key time = 2284.440078 value = "0 0 0 "/>
+		<key time = 2286.060102 value = "0 0 0 "/>
+		<key time = 2286.660006 value = "12 0 0 "/>
+		<key time = 2310.660096 value = "0 0 0 "/>
+		<key time = 2310.36003 value = "0 0 0 "/>
+		<key time = 2310.959928 value = "12 0 0 "/>
+		<key time = 2334.960024 value = "0 0 0 "/>
+		<key time = 2337.540204 value = "0 0 0 "/>
+		<key time = 2338.140108 value = "12 0 0 "/>
+		<key time = 2362.140198 value = "0 0 0 "/>
+		<key time = 2361.840132 value = "0 0 0 "/>
+		<key time = 2362.44003 value = "12 0 0 "/>
+		<key time = 2386.440126 value = "0 0 0 "/>
+		<key time = 2389.920042 value = "0 0 0 "/>
+		<key time = 2390.519946 value = "12 0 0 "/>
+		<key time = 2414.520036 value = "0 0 0 "/>
+		<key time = 2413.320006 value = "0 0 0 "/>
+		<key time = 2413.919904 value = "12 0 0 "/>
+		<key time = 2437.92 value = "0 0 0 "/>
+		<key time = 2439.540024 value = "0 0 0 "/>
+		<key time = 2440.139922 value = "12 0 0 "/>
+		<key time = 2464.140012 value = "0 0 0 "/>
+		<key time = 2466.720198 value = "0 0 0 "/>
+		<key time = 2467.320096 value = "12 0 0 "/>
+		<key time = 2491.320192 value = "0 0 0 "/>
+		<key time = 2490.120162 value = "0 0 0 "/>
+		<key time = 2490.72006 value = "12 0 0 "/>
+		<key time = 2514.720156 value = "0 0 0 "/>
+		<key time = 2517.240144 value = "0 0 0 "/>
+		<key time = 2517.840042 value = "12 0 0 "/>
+		<key time = 2541.840132 value = "0 0 0 "/>
+		<key time = 2543.460162 value = "0 0 0 "/>
+		<key time = 2544.06006 value = "12 0 0 "/>
+		<key time = 2568.06015 value = "0 0 0 "/>
+		<key time = 2568.720018 value = "0 0 0 "/>
+		<key time = 2569.319916 value = "12 0 0 "/>
+		<key time = 2593.320006 value = "0 0 0 "/>
+		<key time = 2593.980102 value = "0 0 0 "/>
+		<key time = 2594.58 value = "12 0 0 "/>
+		<key time = 2618.580096 value = "0 0 0 "/>
+		<key time = 2619.240186 value = "0 0 0 "/>
+		<key time = 2619.84009 value = "12 0 0 "/>
+		<key time = 2643.84018 value = "0 0 0 "/>
+		<key time = 2646.420138 value = "0 0 0 "/>
+		<key time = 2647.020036 value = "12 0 0 "/>
+		<key time = 2671.020126 value = "0 0 0 "/>
+		<key time = 2669.820096 value = "0 0 0 "/>
+		<key time = 2670.42 value = "12 0 0 "/>
+		<key time = 2694.42009 value = "0 0 0 "/>
+		<key time = 2696.940078 value = "0 0 0 "/>
+		<key time = 2697.539976 value = "12 0 0 "/>
+		<key time = 2721.540072 value = "0 0 0 "/>
+		<key time = 2723.160096 value = "0 0 0 "/>
+		<key time = 2723.759994 value = "12 0 0 "/>
+		<key time = 2747.760084 value = "0 0 0 "/>
+		<key time = 2748.42018 value = "0 0 0 "/>
+		<key time = 2749.020078 value = "12 0 0 "/>
+		<key time = 2773.020174 value = "0 0 0 "/>
+		<key time = 2773.680036 value = "0 0 0 "/>
+		<key time = 2774.27994 value = "12 0 0 "/>
+		<key time = 2798.28003 value = "0 0 0 "/>
+		<key time = 2799.900054 value = "0 0 0 "/>
+		<key time = 2800.499952 value = "12 0 0 "/>
+		<key time = 2824.500048 value = "0 0 0 "/>
+		<key time = 2826.120072 value = "0 0 0 "/>
+		<key time = 2826.71997 value = "12 0 0 "/>
+		<key time = 2850.72006 value = "0 0 0 "/>
+		<key time = 2851.380156 value = "0 0 0 "/>
+		<key time = 2851.980054 value = "12 0 0 "/>
+		<key time = 2875.98015 value = "0 0 0 "/>
+		<key time = 2877.600174 value = "0 0 0 "/>
+		<key time = 2878.200072 value = "12 0 0 "/>
+		<key time = 2902.200162 value = "0 0 0 "/>
+		<key time = 2901.960066 value = "0 0 0 "/>
+		<key time = 2902.55997 value = "12 0 0 "/>
+		<key time = 2926.56006 value = "0 0 0 "/>
+		<key time = 2929.080048 value = "0 0 0 "/>
+		<key time = 2929.679946 value = "12 0 0 "/>
+		<key time = 2953.680036 value = "0 0 0 "/>
+		<key time = 2953.440168 value = "0 0 0 "/>
+		<key time = 2954.040072 value = "12 0 0 "/>
+		<key time = 2978.040162 value = "0 0 0 "/>
+		<key time = 2979.599988 value = "0 0 0 "/>
+		<key time = 2980.199892 value = "12 0 0 "/>
+		<key time = 3004.199982 value = "0 0 0 "/>
+		<key time = 3004.920042 value = "0 0 0 "/>
+		<key time = 3005.519946 value = "12 0 0 "/>
+		<key time = 3029.520036 value = "0 0 0 "/>
+		<key time = 3031.080096 value = "0 0 0 "/>
+		<key time = 3031.679994 value = "12 0 0 "/>
+		<key time = 3055.680084 value = "0 0 0 "/>
+		<key time = 3055.439988 value = "0 0 0 "/>
+		<key time = 3056.039886 value = "12 0 0 "/>
+		<key time = 3080.039976 value = "0 0 0 "/>
+		<key time = 3082.560198 value = "0 0 0 "/>
+		<key time = 3083.160096 value = "12 0 0 "/>
+		<key time = 3107.160186 value = "0 0 0 "/>
+		<key time = 3107.880018 value = "0 0 0 "/>
+		<key time = 3108.479922 value = "12 0 0 "/>
+		<key time = 3132.480012 value = "0 0 0 "/>
+		<key time = 3134.040072 value = "0 0 0 "/>
+		<key time = 3134.63997 value = "12 0 0 "/>
+		<key time = 3158.64006 value = "0 0 0 "/>
+		<key time = 3159.36012 value = "0 0 0 "/>
+		<key time = 3159.960024 value = "12 0 0 "/>
+		<key time = 3183.960114 value = "0 0 0 "/>
+		<key time = 3185.520174 value = "0 0 0 "/>
+		<key time = 3186.120072 value = "12 0 0 "/>
+		<key time = 3210.120162 value = "0 0 0 "/>
+		<key time = 3210.839994 value = "0 0 0 "/>
+		<key time = 3211.439898 value = "12 0 0 "/>
+		<key time = 3235.439988 value = "0 0 0 "/>
+		<key time = 3237.060012 value = "0 0 0 "/>
+		<key time = 3237.65991 value = "12 0 0 "/>
+		<key time = 3261.660006 value = "0 0 0 "/>
+		<key time = 3263.22006 value = "0 0 0 "/>
+		<key time = 3263.819964 value = "12 0 0 "/>
+		<key time = 3287.820054 value = "0 0 0 "/>
+		<key time = 3288.540114 value = "0 0 0 "/>
+		<key time = 3289.140012 value = "12 0 0 "/>
+		<key time = 3313.140108 value = "0 0 0 "/>
+		<key time = 3315.660096 value = "0 0 0 "/>
+		<key time = 3316.259994 value = "12 0 0 "/>
+		<key time = 3340.260084 value = "0 0 0 "/>
+		<key time = 3340.019988 value = "0 0 0 "/>
+		<key time = 3340.619886 value = "12 0 0 "/>
+		<key time = 3364.619982 value = "0 0 0 "/>
+		<key time = 3365.280078 value = "0 0 0 "/>
+		<key time = 3365.879976 value = "12 0 0 "/>
+		<key time = 3389.880066 value = "0 0 0 "/>
+		<key time = 3390.540162 value = "0 0 0 "/>
+		<key time = 3391.14006 value = "12 0 0 "/>
+		<key time = 3415.14015 value = "0 0 0 "/>
+		<key time = 3416.76018 value = "0 0 0 "/>
+		<key time = 3417.360078 value = "12 0 0 "/>
+		<key time = 3441.360168 value = "0 0 0 "/>
+		<key time = 3442.020036 value = "0 0 0 "/>
+		<key time = 3442.619934 value = "12 0 0 "/>
+		<key time = 3466.620024 value = "0 0 0 "/>
+		<key time = 3467.28012 value = "0 0 0 "/>
+		<key time = 3467.880018 value = "12 0 0 "/>
+		<key time = 3491.880114 value = "0 0 0 "/>
+		<key time = 3493.500138 value = "0 0 0 "/>
+		<key time = 3494.100036 value = "12 0 0 "/>
+		<key time = 3518.100126 value = "0 0 0 "/>
+		<key time = 3519.720156 value = "0 0 0 "/>
+		<key time = 3520.320054 value = "12 0 0 "/>
+		<key time = 3544.320144 value = "0 0 0 "/>
+		<key time = 3544.980012 value = "0 0 0 "/>
+		<key time = 3545.57991 value = "12 0 0 "/>
+		<key time = 3569.58 value = "0 0 0 "/>
+		<key time = 3570.240096 value = "0 0 0 "/>
+		<key time = 3570.839994 value = "12 0 0 "/>
+		<key time = 3594.84009 value = "0 0 0 "/>
+		<key time = 3597.420042 value = "0 0 0 "/>
+		<key time = 3598.019946 value = "12 0 0 "/>
+		<key time = 3622.020036 value = "0 0 0 "/>
+		<key time = 3623.580096 value = "0 0 0 "/>
+		<key time = 3624.179994 value = "12 0 0 "/>
+		<key time = 3648.180084 value = "0 0 0 "/>
+		<key time = 3648.900144 value = "0 0 0 "/>
+		<key time = 3649.500048 value = "12 0 0 "/>
+		<key time = 3673.500138 value = "0 0 0 "/>
+		<key time = 3674.160006 value = "0 0 0 "/>
+		<key time = 3674.759904 value = "12 0 0 "/>
+		<key time = 3698.759994 value = "0 0 0 "/>
+		<key time = 3699.42009 value = "0 0 0 "/>
+		<key time = 3700.019988 value = "12 0 0 "/>
+		<key time = 3724.020078 value = "0 0 0 "/>
+		<key time = 3724.680174 value = "0 0 0 "/>
+		<key time = 3725.280078 value = "12 0 0 "/>
+		<key time = 3749.280168 value = "0 0 0 "/>
+		<key time = 3749.94003 value = "0 0 0 "/>
+		<key time = 3750.539934 value = "12 0 0 "/>
+		<key time = 3774.540024 value = "0 0 0 "/>
+		<key time = 3777.12021 value = "0 0 0 "/>
+		<key time = 3777.720108 value = "12 0 0 "/>
+		<key time = 3801.720198 value = "0 0 0 "/>
+		<key time = 3803.339994 value = "0 0 0 "/>
+		<key time = 3803.939898 value = "12 0 0 "/>
+		<key time = 3827.939988 value = "0 0 0 "/>
+		<key time = 3829.500048 value = "0 0 0 "/>
+		<key time = 3830.099946 value = "12 0 0 "/>
+		<key time = 3854.100036 value = "0 0 0 "/>
+		<key time = 3854.820096 value = "0 0 0 "/>
+		<key time = 3855.420228 value = "12 0 0 "/>
+		<key time = 3879.420318 value = "0 0 0 "/>
+		<key time = 3880.979922 value = "0 0 0 "/>
+		<key time = 3881.580048 value = "12 0 0 "/>
+		<key time = 3905.580138 value = "0 0 0 "/>
+		<key time = 3906.299742 value = "0 0 0 "/>
+		<key time = 3906.899874 value = "12 0 0 "/>
+		<key time = 3930.899964 value = "0 0 0 "/>
+		<key time = 3931.56006 value = "0 0 0 "/>
+		<key time = 3932.160186 value = "12 0 0 "/>
+		<key time = 3956.160276 value = "0 0 0 "/>
+		<key time = 3955.859988 value = "0 0 0 "/>
+		<key time = 3956.460114 value = "12 0 0 "/>
+		<key time = 3980.460204 value = "0 0 0 "/>
+		<key time = 3983.039706 value = "0 0 0 "/>
+		<key time = 3983.639832 value = "12 0 0 "/>
+		<key time = 4007.639922 value = "0 0 0 "/>
+		<key time = 4006.439664 value = "0 0 0 "/>
+		<key time = 4007.039796 value = "12 0 0 "/>
+		<key time = 4031.039886 value = "0 0 0 "/>
+
+	</catmull_rom3>
+	
+    <catmull_rom name = "Randomtext rotate curve">
+        <key time = 2.07999992 value = 0/>
+        <key time = 2.08999991 value = 1/>
+        <key time = 2.0999999 value = 0/>
+        <key time = 4.79399967 value = 0/>
+        <key time = 4.8039999 value = 1/>
+        <key time = 4.81400013 value = 0/>
+        <key time = 7.55599976 value = 0/>
+        <key time = 7.56599998 value = 1/>
+        <key time = 7.57600021 value = 0/>
+        <key time = 10.052 value = 0/>
+        <key time = 10.0620003 value = 1/>
+        <key time = 10.0720005 value = 0/>
+        <key time = 12.5629997 value = 0/>
+        <key time = 12.573 value = 1/>
+        <key time = 12.5830002 value = 0/>
+    </catmull_rom>
+
+	<step_curve name="blur_strength_texture_curve" type="text">
+		<key time =  0 value = "data/images/common/white.tga"/>
+		<key time =  2 value = "data/images/common/black.tga"/>
+		<key time =  4 value = "data/images/common/white.tga"/>
+		<key time =  6 value = "data/images/common/black.tga"/>
+		<key time =  8 value = "data/images/common/white.tga"/>
+		<key time = 10 value = "data/images/common/black.tga"/>
+        <key time = 20 value = "data/images/common/white.tga"/>
+	</step_curve>
+    
+    <step_curve name="bloom_horizontal_strength_texture_curve" type="text">
+        <key time = 0 value = "data/images/common/white.tga"/>
+        <key time = 1000 value = "data/images/common/white.tga"/>
+       <!-- <key time =  0 value = "data/images/2014/silmat.jpg"/>
+        <key time =  100 value = "data/images/2014/silmat.jpg"/>-->
+    </step_curve>
+    
+	<step_curve name="texture_swap_test_curve" type="text">
+		<key time =  0 value = "data/images/rocks/r_col.jpg"/>
+		<key time =  20 value = "data/images/rocks/rock2_c.jpg"/>
+		<key time =  40 value = "data/images/rocks/urock_c.jpg"/>
+		<key time =  60 value = "data/images/rocks/r_spc.jpg"/>
+		<key time =  80 value = "data/images/rocks/r_col.jpg"/>
+		<key time = 100 value = "data/images/rocks/rock2_c.jpg"/>
+	</step_curve>
+    
+    <step_curve name="spotmask_texture_name_curve" type="text">
+		<time_offset v = "0"/>
+		<time_multiplier v = "7"/>
+		<key time =  0 value = "data/images/lights/flashlight_01.jpg"/>
+		<key time =  20 value = "data/images/2014/silmat.jpg"/>
+		<key time =  40 value = "data/images/lights/spot_mask.png"/>
+		<key time =  60 value = "data/images/tmp/asmlogo.png"/>
+		<key time =  80 value = "data/images/lights/grunge_spot.jpg"/>
+		<key time = 100 value = "data/images/lights/flashlight001_height_jenkins.png"/>
+	</step_curve>
+	
+	<catmull_rom name = "fresnel_test_curve">
+		<time_multiplier v = "30"/>
+		<key time = 0 value = 0/>
+		<key time = 10 value = 1/>
+        <key time = 10.1 value = 1/>
+        <key time = 20 value = 0/>
+	</catmull_rom>
+	
+	<catmull_rom name = "godray_fadepower_curve">
+		<value_offset v = "-0.2"/>
+		<time_offset v = "-7.5"/>
+		<time_multiplier v = "30"/>
+		<key time = 0 value = 0/>
+		<key time = 0.0100021000000083 value = 1/>
+		<key time = 1.01000210000001 value = 0/>
+		<key time = 1.71600340000001 value = 0/>
+		<key time = 1.7260055 value = 1/>
+		<key time = 2.7260055 value = 0/>
+		<key time = 3.40100100000001 value = 0/>
+		<key time = 3.4110031 value = 1/>
+		<key time = 4.4110031 value = 0/>
+		<key time = 5.1010055 value = 0/>
+		<key time = 5.1110077 value = 1/>
+		<key time = 6.1110077 value = 0/>
+		<key time = 6.84799960000001 value = 0/>
+		<key time = 6.8580017 value = 1/>
+		<key time = 7.8580017 value = 0/>
+		<key time = 8.564003 value = 0/>
+		<key time = 8.57400510000001 value = 1/>
+		<key time = 9.57400510000001 value = 0/>
+		<key time = 10.2960052 value = 0/>
+		<key time = 10.3060074 value = 1/>
+		<key time = 11.3060074 value = 0/>
+		<key time = 12.012001 value = 0/>
+		<key time = 12.0220032 value = 1/>
+		<key time = 13.0220032 value = 0/>
+		<key time = 13.3220062 value = 0/>
+		<key time = 13.3320084 value = 1/>
+		<key time = 14.3320084 value = 0/>
+		<key time = 13.7590027 value = 0/>
+		<key time = 13.7690048 value = 1/>
+		<key time = 14.7690048 value = 0/>
+		<key time = 15.413002 value = 0/>
+		<key time = 15.4230041 value = 1/>
+		<key time = 16.4230041 value = 0/>
+		<key time = 17.1290054 value = 0/>
+		<key time = 17.1390076 value = 1/>
+		<key time = 18.1390076 value = 0/>
+		<key time = 18.8600006 value = 0/>
+		<key time = 18.8700027 value = 1/>
+		<key time = 19.8700027 value = 0/>
+	</catmull_rom>
+
+	<catmull_rom2 name = "launchpad_silu_size_curve">
+		<value_multiplier v = "0.1 0.1"/>
+		<value_offset v = "1.1 1.1"/>
+		<time_offset v = "-0.25"/>
+		<time_multiplier v = "1"/>	
+		<key time = 0 value = "0  0"/>
+		<key time = 0.0100021000000083 value = "1  1"/>
+		<key time = 1.01000210000001 value = "0  0"/>
+		<key time = 1.71600340000001 value = "0  0"/>
+		<key time = 1.7260055 value = "1  1"/>
+		<key time = 2.7260055 value = "0  0"/>
+		<key time = 3.40100100000001 value = "0  0"/>
+		<key time = 3.4110031 value = "1  1"/>
+		<key time = 4.4110031 value = "0  0"/>
+		<key time = 5.1010055 value = "0  0"/>
+		<key time = 5.1110077 value = "1  1"/>
+		<key time = 6.1110077 value = "0  0"/>
+		<key time = 6.84799960000001 value = "0  0"/>
+		<key time = 6.8580017 value = "1  1"/>
+		<key time = 7.8580017 value = "0  0"/>
+		<key time = 8.564003 value = "0  0"/>
+		<key time = 8.57400510000001 value = "1  1"/>
+		<key time = 9.57400510000001 value = "0  0"/>
+		<key time = 10.2960052 value = "0  0"/>
+		<key time = 10.3060074 value = "1  1"/>
+		<key time = 11.3060074 value = "0  0"/>
+		<key time = 12.012001 value = "0  0"/>
+		<key time = 12.0220032 value = "1  1"/>
+		<key time = 13.0220032 value = "0  0"/>
+		<key time = 13.3220062 value = "0  0"/>
+		<key time = 13.3320084 value = "1  1"/>
+		<key time = 14.3320084 value = "0  0"/>
+		<key time = 13.7590027 value = "0  0"/>
+		<key time = 13.7690048 value = "1  1"/>
+		<key time = 14.7690048 value = "0  0"/>
+		<key time = 15.413002 value = "0  0"/>
+		<key time = 15.4230041 value = "1  1"/>
+		<key time = 16.4230041 value = "0  0"/>
+		<key time = 17.1290054 value = "0  0"/>
+		<key time = 17.1390076 value = "1  1"/>
+		<key time = 18.1390076 value = "0  0"/>
+		<key time = 18.8600006 value = "0  0"/>
+		<key time = 18.8700027 value = "1  1"/>
+		<key time = 19.8700027 value = "0  0"/>
+	</catmull_rom2>
+
+	<catmull_rom2 name = "orb_count_size_curve">
+		<key time = 0 value = "0.3 0.3"/>
+		<key time = 2 value = "0.6 1.8"/>		
+	</catmull_rom2>	
+	
+<catmull_rom3 name = "godray_color_curve">
+	<value_multiplier v = "10.0 10.0 10.0"/>
+	<value_offset v = "2.0 4.0 8.0"/>
+	<time_offset v = "-7.5"/>
+	<time_multiplier v = "30"/>	
+	<key time = 0 value = "0  0  0"/>
+	<key time = 0.0100021000000083 value = "1  1  1"/>
+	<key time = 1.01000210000001 value = "0  0  0"/>
+	<key time = 1.71600340000001 value = "0  0  0"/>
+	<key time = 1.7260055 value = "1  1  1"/>
+	<key time = 2.7260055 value = "0  0  0"/>
+	<key time = 3.40100100000001 value = "0  0  0"/>
+	<key time = 3.4110031 value = "1  1  1"/>
+	<key time = 4.4110031 value = "0  0  0"/>
+	<key time = 5.1010055 value = "0  0  0"/>
+	<key time = 5.1110077 value = "1  1  1"/>
+	<key time = 6.1110077 value = "0  0  0"/>
+	<key time = 6.84799960000001 value = "0  0  0"/>
+	<key time = 6.8580017 value = "1  1  1"/>
+	<key time = 7.8580017 value = "0  0  0"/>
+	<key time = 8.564003 value = "0  0  0"/>
+	<key time = 8.57400510000001 value = "1  1  1"/>
+	<key time = 9.57400510000001 value = "0  0  0"/>
+	<key time = 10.2960052 value = "0  0  0"/>
+	<key time = 10.3060074 value = "1  1  1"/>
+	<key time = 11.3060074 value = "0  0  0"/>
+	<key time = 12.012001 value = "0  0  0"/>
+	<key time = 12.0220032 value = "1  1  1"/>
+	<key time = 13.0220032 value = "0  0  0"/>
+	<key time = 13.3220062 value = "0  0  0"/>
+	<key time = 13.3320084 value = "1  1  1"/>
+	<key time = 14.3320084 value = "0  0  0"/>
+	<key time = 13.7590027 value = "0  0  0"/>
+	<key time = 13.7690048 value = "1  1  1"/>
+	<key time = 14.7690048 value = "0  0  0"/>
+	<key time = 15.413002 value = "0  0  0"/>
+	<key time = 15.4230041 value = "1  1  1"/>
+	<key time = 16.4230041 value = "0  0  0"/>
+	<key time = 17.1290054 value = "0  0  0"/>
+	<key time = 17.1390076 value = "1  1  1"/>
+	<key time = 18.1390076 value = "0  0  0"/>
+	<key time = 18.8600006 value = "0  0  0"/>
+	<key time = 18.8700027 value = "1  1  1"/>
+	<key time = 19.8700027 value = "0  0  0"/>
+</catmull_rom3>
+
+	<catmull_rom name = "train_streak_pow_curve">
+	    <key time = 0 value = 0.0/>
+        <key time = 8.0 value = 0.0/>
+		<key time = 8.01 value = 0.0000/>
+        <key time = 8.02 value = 0.0001/>
+        <key time = 10.99 value = 0.0008/>
+        <key time = 11.0 value = 0.0000/>
+        <key time = 20 value = 0/>
+	</catmull_rom>
+		<catmull_rom name = "train_streak_xpos_curve">
+	    <key time = 0 value = 1.0/>
+        <key time = 8.0 value = 1.0/>
+		<key time = 8.01 value = 1.0/>
+        <key time = 8.52 value = 1.0000/>
+        <key time = 10.99 value = 0.0000/>
+        <key time = 11.0 value = 0.0000/>
+        <key time = 20 value = 0/>
+	</catmull_rom>
+    
+	<catmull_rom name = "lonkero_streak_power_curve">
+	    <key time = 0 value = 0.0/>
+        <key time = 1 value = 0.0/>        
+        <key time = 4.99 value = 1.0/>
+        <key time = 5 value = 1.0/>
+        <key time = 13.99 value = 1.0/>
+        <key time = 14.00 value = 1.0/>        
+	</catmull_rom>
+    
+	<catmull_rom name = "lonkero_streak_xpos_curve">
+	    <key time = 0 value = 0.525/>
+        <key time = 4.99 value = 0.525/>
+        <key time = 5 value = 0.525/> <!-- 0.67 -->
+        <key time = 13.99 value = 0.525/> <!-- 0.67 -->
+        <key time = 14.00 value = 0.525/>
+	</catmull_rom>
+	<catmull_rom name = "lonkero_streak_ypos_curve">
+	    <key time = 0 value = 0.19/>
+        <key time = 5 value = 0.39/>
+        <key time = 13.99 value = 0.39/>
+        <key time = 14.00 value = 0.5/>    
+	</catmull_rom>
+	<catmull_rom name = "value_0_1_sync_curve">
+	    <key time = "0" value = "0"/>
+        <key time = "10" value = "1"/>
+        <key time = "20" value = "0"/>
+	</catmull_rom>
+    
+    <catmull_rom name = "spotlight_scene_time_curve">
+	    <key time = "0" value = "0"/>
+        <key time = "5" value = "5"/>
+        <key time = "6" value = "5"/>
+        <key time = "7" value = "5"/>
+        <key time = "8" value = "5"/>
+        <key time = "200" value = "200"/>
+	</catmull_rom>
+    
+    <!-- 0-1 to lerp from rgb to yuv -->
+	<catmull_rom4 name = "yuv_curve">
+	    <key time = "0" value = "0 0 0 1"/>
+        <!--<key time = "10" value = "1 1 1 1"/>-->
+        <key time = "20" value = "0 0 0 1"/>
+	</catmull_rom4>
+    <!-- 0-1 to lerp from rgb to yuv -->
+	<catmull_rom name = "alpha_mask_interpolation_curve">
+	    <key time = "0" value = "0"/>
+        <!--<key time = "10" value = "1 1 1 1"/>-->
+		<key time = "4" value = "0"/>
+		<key time = "6" value = "1"/>
+		<key time = "9.99" value = "1"/>
+        <key time = "12" value = "0"/>
+	</catmull_rom>
+    <catmull_rom name = "credits_streak_power_curve">
+	    <key time = 0 value = 0.0/>
+        <key time = 2.074 value = 0.0/>
+        <key time = 2.075 value = 0.2/>
+        <key time = 2.375 value = 1.0/> <!-- hoaxi -->
+        <key time = 4.375 value = 1.0/>
+        
+        <key time = 6.000 value = 0.0/>
+        
+        <key time = 8.074 value = 0.0/>
+        <key time = 8.075 value = 0.2/>
+        <key time = 8.375 value = 1.0/> <!-- codarki -->
+        <key time = 10.375 value = 1.0/>
+        <key time = 12.0 value = 0.0/>
+        
+        
+        <key time = 13.074 value = 0.0/>
+        <key time = 13.075 value = 0.2/>
+        <key time = 13.375 value = 1.0/> <!-- pharaffin -->
+        <key time = 15.375 value = 1.0/>
+        <key time = 17.0 value = 0.0/>
+        
+        <key time = 18.074 value = 0.0/>
+        <key time = 18.075 value = 0.2/>
+        <key time = 18.375 value = 1.0/> <!-- rayjan -->
+        <key time = 20.375 value = 1.0/>
+        <key time = 22.0 value = 0.0/>        
+        <key time = 29.0 value = 1.0/>
+	</catmull_rom>
+	<catmull_rom name = "credits_streak_xpos_curve">
+	    <key time = 0 value = 0.9/>
+        <key time = 2.375 value = 0.9/> <!-- hoaxi -->
+        
+        <key time = 7.999 value = 0.9/>
+        <key time = 8.000 value = 0.22/>    <!-- codarki -->
+        
+        <key time = 12.999 value = 0.22/>
+        <key time = 13.000 value = 0.4/>    <!-- pharaffin -->
+        
+        <key time = 17.999 value = 0.4/>
+        <key time = 18.000 value = 0.6/>    <!-- rayjan -->  
+        
+        <key time = 22.999 value = 0.6/>  
+        <key time = 23.000 value = 0.5/>             
+	</catmull_rom>
+	<catmull_rom name = "credits_streak_ypos_curve">
+	    <key time = 0 value = 0.52/>
+        <key time = 2.375 value = 0.52/> <!-- hoaxi -->
+        
+        <key time = 7.999 value = 0.52/>
+        <key time = 8.000 value = 0.27/>    <!-- codarki -->
+        
+        <key time = 12.999 value = 0.27/>
+        <key time = 13.000 value = 0.75/>    <!-- pharaffin -->
+        
+        <key time = 17.999 value = 0.75/>
+        <key time = 18.000 value = 0.5/>    <!-- rayjan -->          
+	</catmull_rom>
+    
+    <catmull_rom3 name = "distort_position_time_curve">
+        <value_multiplier v = "1 1 1"/>
+        <value_offset v = "0 0 0"/>
+        <time_offset v = "0"/>
+        <time_multiplier v = "30"/>	
+        <key time = 0 value = "1 0  0"/>
+        <key time = 15 value = "0  1  0"/>
+        <key time = 25 value = "0  0  0"/>
+    </catmull_rom3>
+    
+    <catmull_rom3 name = "distort_position_freq_curve">
+        <value_multiplier v = "1 1 1"/>
+        <value_offset v = "0 0 0"/>
+        <time_offset v = "4"/>
+        <time_multiplier v = "30"/>	
+        <key time = 0 value = "0  0  0"/>
+        <key time = 15 value = "0 1  0"/>
+        <key time = 25 value = "0  0  1"/>
+    </catmull_rom3>
+    
+    <catmull_rom3 name = "distort_position_scale_curve">
+        <value_multiplier v = "1 5 1"/>
+        <value_offset v = "0 0 0"/>
+        <time_offset v = "0"/>
+        <time_multiplier v = "30"/>	
+        <key time = 0 value = "0  0  0"/>
+        <key time = 15 value = "0  1  0"/>
+        <key time = 25 value = "1 0  0"/>
+    </catmull_rom3>        
+    
+</curves>

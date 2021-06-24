@@ -1,0 +1,456 @@
+<?xml version="1.0" ?>
+
+<material
+	name = "stripetile"
+	material_p3d = "stripetile"
+	>
+  <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <diffuse_map value = "data/images/2014/stripetile.jpg"/>
+      <specular_map value = "data/images/2014/stripetile.jpg"/>
+      <shininess_map value = "data/images/2014/brightmetal_spc.jpg"/>
+      <!-- ptkotkaspc.jpg too white -->
+      <normal_map value = "data/images/2014/brightmetal_n.jpg"/>
+      <!-- <occlusion_map value = "data/images/2014/ptkotkaocc.jpg"/ -->
+      <occlusion_map shared_value = "SSAOBuffer"/>
+      <reflection_map value = "data/images/title/gldc.jpg"/>
+      <ambient_color value = "0.0 0.0 0.0"/>
+      <diffuse_color value = "0.3 0.3 0.3"/>
+      <specular_color value = "0.5 0.5 0.5"/>
+      <normal_scale value = "1.00"/>
+      <fresnel_normal_incidence value = "0.45"/>
+      <roughness value = "0.80"/>
+      <!-- 0.30 -->
+      <diffuse_roughness value = "0.8"/>
+      <diffuse_specular_shininess_minmax value = "0 0.8 0 0.8"/>
+      <reflection_coeff value = "0.25"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "boximetal"
+	material_p3d = "boximetal"
+	>
+  <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <diffuse_map value = "data/images/2014/boximetal.jpg"/>
+      <specular_map value = "data/images/2014/boximetal.jpg"/>
+      <shininess_map value = "data/images/2014/brightmetal_spc.jpg"/>
+      <!-- ptkotkaspc.jpg too white -->
+      <normal_map value = "data/images/2014/brightmetal_n.jpg"/>
+      <!-- <occlusion_map value = "data/images/2014/ptkotkaocc.jpg"/ -->
+      <occlusion_map shared_value = "SSAOBuffer"/>
+      <reflection_map value = "data/images/title/gldc.jpg"/>
+      <ambient_color value = "0.0 0.0 0.0"/>
+      <diffuse_color value = "0.3 0.3 0.3"/>
+      <specular_color value = "0.5 0.5 0.5"/>
+      <normal_scale value = "1.00"/>
+      <fresnel_normal_incidence value = "0.45"/>
+      <roughness value = "0.80"/>
+      <!-- 0.30 -->
+      <diffuse_roughness value = "0.8"/>
+      <diffuse_specular_shininess_minmax value = "0 0.8 0 0.8"/>
+      <reflection_coeff value = "0.25"/>
+    </parameters>
+  </shader>
+</material>
+
+
+<material
+	name = "brightmetal"
+	material_p3d = "brightmetal"
+	>
+  <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <diffuse_map value = "data/images/2014/brightmetal.jpg"/>
+      <specular_map value = "data/images/2014/brightmetal_spc_col.jpg"/>
+      <shininess_map value = "data/images/2014/brightmetal_spc.jpg"/>
+      <!-- ptkotkaspc.jpg too white -->
+      <normal_map value = "data/images/2014/brightmetal_n.jpg"/>
+      <!-- <occlusion_map value = "data/images/2014/ptkotkaocc.jpg"/ -->
+      <occlusion_map shared_value = "SSAOBuffer"/>
+      <reflection_map value = "data/images/title/gldc.jpg"/>
+      <ambient_color value = "0.0 0.0 0.0"/>
+      <diffuse_color value = "0.9 0.9 0.9"/>
+      <specular_color value = "0.8 0.8 0.8"/>
+      <normal_scale value = "1.00"/>
+      <fresnel_normal_incidence value = "0.45"/>
+      <roughness value = "0.40"/>
+      <!-- 0.30 -->
+      <diffuse_roughness value = "0.8"/>
+      <diffuse_specular_shininess_minmax value = "0 0.8 0 0.8"/>
+      <reflection_coeff value = "0.55"/>
+    </parameters>
+  </shader>
+</material>
+
+
+<material
+	name = "darkmetal"
+	material_p3d = "darkmetal"
+	>
+  <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <diffuse_map value = "data/images/2014/darkmetal.jpg"/>
+      <specular_map value = "data/images/2014/darkmetalspc.jpg"/>
+      <shininess_map value = "data/images/2014/darkmetal.jpg"/>
+      <!-- ptkotkaspc.jpg too white -->
+      <normal_map value = "data/images/2014/ptkotkan.jpg"/>
+      <!-- <occlusion_map value = "data/images/2014/ptkotkaocc.jpg"/ -->
+      <occlusion_map shared_value = "SSAOBuffer"/>
+      <reflection_map value = "data/images/title/gldc.jpg"/>
+      <ambient_color value = "0.0 0.0 0.0"/>
+      <!--<ambient_color value = "0.05 0.05 0.05"/>-->
+      <diffuse_color value = "0.3 0.3 0.3"/>
+      <specular_color value = "0.5 0.5 0.5"/>
+      <normal_scale value = "1.00"/>
+      <fresnel_normal_incidence value = "0.45"/>
+      <roughness value = "0.80"/>
+      <!-- 0.30 -->
+      <diffuse_roughness value = "0.8"/>
+      <diffuse_specular_shininess_minmax value = "0 1 0 1"/>
+      <reflection_coeff value = "0.25"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "kehys"
+	material_p3d = "kehys"
+	>
+  <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <diffuse_map value = "data/images/2014/clearmetal.jpg"/>
+      <specular_map value = "data/images/2014/clearmetalscol.jpg"/>
+      <shininess_map value = "data/images/2014/clearmetalshi.jpg"/>
+      <!-- ptkotkaspc.jpg too white -->
+      <normal_map value = "data/images/2014/ptkotkan.jpg"/>
+      <!-- <occlusion_map value = "data/images/2014/ptkotkaocc.jpg"/ -->
+      <occlusion_map shared_value = "SSAOBuffer"/>
+      <reflection_map value = "data/images/2014/titleref.jpg"/>
+      <ambient_color value = "0.0 0.0 0.0"/>
+      <!--<ambient_color value = "0.05 0.05 0.05"/>-->
+      <diffuse_color value = "0.3 0.3 0.3"/>
+      <specular_color value = "0.5 0.5 0.5"/>
+      <normal_scale value = "1.00"/>
+      <fresnel_normal_incidence value = "0.75"/>
+      <roughness value = "0.80"/>
+      <!-- 0.30 -->
+      <diffuse_roughness value = "0.8"/>
+      <diffuse_specular_shininess_minmax value = "0 1 0 1"/>
+      <reflection_coeff value = "0.45"/>
+    </parameters>
+  </shader>
+</material>
+
+
+<material
+	name = "ptkotka"
+	material_p3d = "ptkotka"
+	>
+  <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <diffuse_map value = "data/images/2014/clearmetal.jpg"/>
+      <specular_map value = "data/images/2014/clearmetalscol.jpg"/>
+      <shininess_map value = "data/images/2014/clearmetalshi.jpg"/>
+      <!-- ptkotkaspc.jpg too white -->
+      <normal_map value = "data/images/2014/ptkotkan.jpg"/>
+      <!-- <occlusion_map value = "data/images/2014/ptkotkaocc.jpg"/ -->
+      <occlusion_map shared_value = "SSAOBuffer"/>
+      <reflection_map value = "data/images/2015/neonref.jpg"/>
+      <ambient_color value = "0.0 0.0 0.0"/>
+      <!--<ambient_color value = "0.05 0.05 0.05"/>-->
+      <diffuse_color value = "0.3 0.3 0.3"/>
+      <specular_color value = "0.5 0.5 0.5"/>
+      <normal_scale value = "1.00"/>
+      <fresnel_normal_incidence value = "0.75"/>
+      <roughness value = "0.80"/>
+      <!-- 0.30 -->
+      <diffuse_roughness value = "0.8"/>
+      <diffuse_specular_shininess_minmax value = "0 1 0 1"/>
+      <reflection_coeff value = "0.45"/>
+    </parameters>
+  </shader>
+ 
+  
+ 
+
+  
+</material>
+
+<material
+	name = "saleikko"
+	material_p3d = "saleikko"
+	>
+  <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <diffuse_map value = "data/images/2014/saleikko.jpg"/>
+      <specular_map value = "data/images/2014/saleikko_spc_color.jpg"/>
+      <shininess_map value = "data/images/2014/saleikko_spc.jpg"/>
+      <!-- ptkotkaspc.jpg too white -->
+      <normal_map value = "data/images/2014/saleikkon.jpg"/>
+      <!-- <occlusion_map value = "data/images/2014/ptkotkaocc.jpg"/ -->
+      <occlusion_map shared_value = "SSAOBuffer"/>
+      <reflection_map value = "data/images/title/gldc.jpg"/>
+      <ambient_color value = "0.0 0.0 0.0"/>
+      <!--<ambient_color value = "0.05 0.05 0.05"/>-->
+      <diffuse_color value = "0.25 0.25 0.25"/>
+      <specular_color value = "0.4 0.4 0.4"/>
+      <normal_scale value = "1.00"/>
+      <fresnel_normal_incidence value = "0.45"/>
+      <roughness value = "0.80"/>
+      <!-- 0.30 -->
+      <diffuse_roughness value = "0.8"/>
+      <reflection_coeff value = "0.25"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "blastdoor"
+	material_p3d = "blastdoor"
+	>
+  <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <diffuse_map value = "data/images/2014/blastdoor.jpg"/>
+      <specular_map value = "data/images/2014/blastdoor.jpg"/>
+      <shininess_map value = "data/images/2014/ptkotkadif_DISP.jpg"/>
+      <!-- ptkotkaspc.jpg too white -->
+      <normal_map value = "data/images/2014/ptkotkan.jpg"/>
+      <!-- <occlusion_map value = "data/images/2014/ptkotkaocc.jpg"/ -->
+      <occlusion_map shared_value = "SSAOBuffer"/>
+      <reflection_map value = "data/images/title/gldc.jpg"/>
+      <ambient_color value = "0.0 0.0 0.0"/>
+      <!--<ambient_color value = "0.05 0.05 0.05"/>-->
+      <diffuse_color value = "0.25 0.25 0.25"/>
+      <specular_color value = "0.4 0.4 0.4"/>
+      <normal_scale value = "1.00"/>
+      <fresnel_normal_incidence value = "0.45"/>
+      <roughness value = "0.80"/>
+      <!-- 0.30 -->
+      <diffuse_roughness value = "0.8"/>
+      <diffuse_specular_shininess_minmax value = "0 1 0 1"/>
+      <reflection_coeff value = "0.25"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "floorhole"
+	material_p3d = "floorhole"
+	>
+  <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <diffuse_map value = "data/images/2014/floorhole.jpg"/>
+      <specular_map value = "data/images/2014/floorhole.jpg"/>
+      <shininess_map value = "data/images/2014/floorholespc.jpg"/>
+      <normal_map value = "data/images/2014/floorholen.jpg"/>
+      <!-- <occlusion_map value = "data/images/2014/ptkotkaocc.jpg"/ -->
+      <occlusion_map shared_value = "SSAOBuffer"/>
+      <reflection_map value = "data/images/title/gldc.jpg"/>
+      <ambient_color value = "0.0 0.0 0.0"/>
+      <!--<ambient_color value = "0.05 0.05 0.05"/>-->
+      <diffuse_color value = "0.2 0.2 0.2"/>
+      <specular_color value = "0.4 0.4 0.4"/>
+      <normal_scale value = "1.00"/>
+      <fresnel_normal_incidence value = "0.75"/>
+      <roughness value = "0.80"/>
+      <!-- 0.30 -->
+      <diffuse_roughness value = "0.8"/>
+      <diffuse_specular_shininess_minmax value = "0 1 0 1"/>
+      <reflection_coeff value = "0.50"/>
+    </parameters>
+  </shader>
+</material>
+
+
+<material
+	name = "metalfloor"
+	material_p3d = "metalfloor"
+	>
+  <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <diffuse_map value = "data/images/2014/metalfloordif.jpg"/>
+      <specular_map value = "data/images/2014/metalfloor_spec_color.jpg"/>
+      <shininess_map value = "data/images/2014/metalfloorspc.jpg"/>
+      <normal_map value = "data/images/2014/metalfloorn.jpg"/>
+      <!-- <occlusion_map value = "data/images/2014/ptkotkaocc.jpg"/ -->
+      <occlusion_map shared_value = "SSAOBuffer"/>
+      <reflection_map value = "data/images/title/gldc.jpg"/>
+      <ambient_color value = "0.0 0.0 0.0"/>
+      <!--<ambient_color value = "0.05 0.05 0.05"/>-->
+      <diffuse_color value = "0.3 0.3 0.3"/>
+      <specular_color value = "0.4 0.4 0.4"/>
+      <normal_scale value = "0.90"/>
+      <fresnel_normal_incidence value = "0.35"/>
+      <roughness value = "0.80"/>
+      <!-- 0.30 -->
+      <diffuse_roughness value = "0.8"/>
+      <diffuse_specular_shininess_minmax value = "0 1 0 1"/>
+      <reflection_coeff value = "0.25"/>
+    </parameters>
+  </shader>
+</material>
+
+
+
+<material
+	name = "metalpaint"
+	material_p3d = "metalpaint"
+	>
+  <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <diffuse_map value = "data/images/2014/metalpaintdif.jpg"/>
+      <specular_map value = "data/images/2014/metalpaintdif.jpg"/>
+      <shininess_map value = "data/images/2014/metalpaintspc.jpg"/>
+      <normal_map value = "data/images/2014/metalpaintn.jpg"/>
+      <!-- <occlusion_map value = "data/images/2014/ptkotkaocc.jpg"/ -->
+      <occlusion_map shared_value = "SSAOBuffer"/>
+      <reflection_map value = "data/images/title/gldc.jpg"/>
+      <ambient_color value = "0.0 0.0 0.0"/>
+      <!--<ambient_color value = "0.05 0.05 0.05"/>-->
+      <diffuse_color value = "0.8 0.8 0.8"/>
+      <specular_color value = "0.5 0.5 0.5"/>
+      <normal_scale value = "1.00"/>
+
+      <fresnel_normal_incidence value = "0.35"/>
+      <roughness value = "0.80"/>
+      <!-- 0.30 -->
+      <diffuse_roughness value = "0.8"/>
+      <diffuse_specular_shininess_minmax value = "0 0.65 0 0.65"/>
+
+      <reflection_coeff value = "0.15"/>
+    </parameters>
+  </shader>
+</material>
+
+
+<material
+	name = "stargote"
+	material_p3d = "stargote"
+	>
+  <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <diffuse_map value = "data/images/2014/rustmetal.jpg"/>
+      <specular_map value = "data/images/2014/rustmetal_spec_color.jpg"/>
+      <shininess_map value = "data/images/2014/rustmetalspc.jpg"/>
+      <normal_map value = "data/images/2014/rustmetaln.jpg"/>
+      <!-- <occlusion_map value = "data/images/2014/rustmetalocc.jpg"/ -->
+      <occlusion_map shared_value = "SSAOBuffer"/>
+      <reflection_map value = "data/images/title/gldc.jpg"/>
+      <ambient_color value = "0.0 0.0 0.0"/>
+      <!--<ambient_color value = "0.05 0.05 0.05"/>-->
+      <diffuse_color value = "0.5 0.5 0.5"/>
+      <specular_color value = "0.5 0.5 0.5"/>
+      <normal_scale value = "1.50"/>
+      <fresnel_normal_incidence value = "0.55"/>
+      <roughness value = "0.80"/>
+      <!-- 0.30 -->
+      <diffuse_roughness value = "0.8"/>
+      <diffuse_specular_shininess_minmax value = "0 1 -0.5 2.2"/>
+      <reflection_coeff value = "0.50"/>
+    </parameters>
+  </shader>
+  
+   <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+        <parameters>
+          <self_illuminate_map value = "data/images/2014/circuit_new.png"/>
+          <self_illuminate_color shared_value = "grassta_hohka_curve"/>
+        </parameters>
+    </shader>
+  
+</material>
+
+<material
+	name = "rustmetal"
+	material_p3d = "rustmetal"
+	>
+  <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <diffuse_map value = "data/images/2014/rustmetal.jpg"/>
+      <specular_map value = "data/images/2014/rustmetal_spec_color.jpg"/>
+      <shininess_map value = "data/images/2014/rustmetalspc.jpg"/>
+      <normal_map value = "data/images/2014/rustmetaln.jpg"/>
+      <!-- <occlusion_map value = "data/images/2014/rustmetalocc.jpg"/ -->
+      <occlusion_map shared_value = "SSAOBuffer"/>
+      <reflection_map value = "data/images/2015/refmap1.jpg"/>
+      <ambient_color value = "0.0 0.0 0.0"/>
+      <!--<ambient_color value = "0.05 0.05 0.05"/>-->
+      <diffuse_color value = "0.6 0.6 0.6"/>
+      <specular_color value = "0.6 0.6 0.6"/>
+      <normal_scale value = "1.0"/>
+      <fresnel_normal_incidence value = "0.55"/>
+      <roughness value = "0.80"/>
+      <!-- 0.30 -->
+      <diffuse_roughness value = "0.8"/>
+      <diffuse_specular_shininess_minmax value = "0 1 -0.5 2.2"/>
+      <reflection_coeff value = "0.60"/>
+    </parameters>
+  </shader>
+</material>
+
+
+<material
+	name = "blugrey"
+	material_p3d = "blugrey"
+	>
+  <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <diffuse_map value = "data/images/2015/blugrey.jpg"/>
+      <specular_map value = "data/images/2015/blugrey.jpg"/>
+      <shininess_map value = "data/images/2014/rustmetalspc.jpg"/>
+      <!-- <normal_map value = "data/images/2015/rustmetaln.jpg"/> -->
+      <!-- <occlusion_map value = "data/images/2014/rustmetalocc.jpg"/ -->
+      <occlusion_map shared_value = "SSAOBuffer"/>
+      <reflection_map value = "data/images/2015/refmap1.jpg"/>
+      <ambient_color value = "0.0 0.0 0.0"/>
+      <!--<ambient_color value = "0.05 0.05 0.05"/>-->
+      <diffuse_color value = "0.6 0.8 1.6"/>
+      <specular_color value = "0.6 0.6 0.6"/>
+      <!-- <normal_scale value = "1.0"/> -->
+      <fresnel_normal_incidence value = "0.55"/>
+      <roughness value = "0.80"/>
+      <!-- 0.30 -->
+      <diffuse_roughness value = "0.8"/>
+      <diffuse_specular_shininess_minmax value = "0 1 -0.5 2.2"/>
+      <reflection_coeff value = "0.60"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "imofotron"
+	material_p3d = "imofotron"
+	>
+  <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <emission_map value = "data/images/tmp/imofotron.jpg"/>
+      <reflection_map value = "data/images/tmp/forestref.jpg"/>
+      <occlusion_map shared_value = "SSAOBuffer"/>
+      <!--<diffuse_map value = "data/images/10748-galvanized-metal-diffuse.jpg"/> 
+		<specular_map value = "data/images/8658-concrete-spec.jpg"/>
+		<normal_map value = "data/images/10748-galvanized-metal-normal.jpg"/> 
+				<diffuse_color value = "0.8 0.8 1"/>
+		<specular_color value = "0.8 0.8 1"/>
+		<normal_scale value = "1.50"/>
+		<fresnel_normal_incidence value = "0.8"/>
+		<roughness value = "0.2"/>
+		<diffuse_roughness value = "0.9"/>
+		<reflection_coeff value = "0.1"/>
+		-->
+    </parameters>
+  </shader>
+</material>
+
+
+<material
+	name = "musta2"
+	material_p3d = "musta2"
+	>
+  <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <!-- parameters? -->
+    </parameters>
+  </shader>
+</material>

@@ -1,0 +1,5 @@
+1.55.0
+
+
+To filter out all but source code from installation package:
+ROBOCOPY libs libs2 *.h *.hpp *.cpp /S /DCOPY:T

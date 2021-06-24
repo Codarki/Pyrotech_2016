@@ -1,0 +1,926 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="rendering %28namespace%29">
+      <UniqueIdentifier>{e06769ba-6729-43c1-a4f9-371160624c76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rendering %28namespace%29\constant_setters">
+      <UniqueIdentifier>{6c19cec8-dc86-42c0-b012-b96a9d28ec36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rendering %28namespace%29\core">
+      <UniqueIdentifier>{39c0d0b2-1f37-4972-8e16-d175362102c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rendering %28namespace%29\post_processing">
+      <UniqueIdentifier>{e172dcd7-497e-4690-8815-755424512b88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rendering %28namespace%29\source %28namespace%29">
+      <UniqueIdentifier>{402eb0d1-0ead-43ac-8770-49122c805c44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rendering %28namespace%29\transformations">
+      <UniqueIdentifier>{b9de815e-9888-4c1d-bae5-db9618ce91fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rendering %28namespace%29\variables">
+      <UniqueIdentifier>{5fe47c52-a4fe-4af2-94c9-c64e32878305}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rendering %28namespace%29\variables\detail">
+      <UniqueIdentifier>{806d8789-05a0-4827-9e74-d6e62bef7f25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rendering %28namespace%29\programs">
+      <UniqueIdentifier>{34c29258-e00e-46d0-82ed-b1a6df3910ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rendering %28namespace%29\lights">
+      <UniqueIdentifier>{534bd960-cf3a-4e64-8143-0733eec1fe80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resources">
+      <UniqueIdentifier>{36634483-e7ee-430c-ba97-170b4f6d4e46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaders %28namespace%29">
+      <UniqueIdentifier>{5983a8d5-b9d4-4b3c-aca3-348b637d6d68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core">
+      <UniqueIdentifier>{39beb7ea-9e51-4cc0-aa23-13859f691f49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\detail %28namespace%29">
+      <UniqueIdentifier>{080da681-0f5e-4934-bad7-2f245d1cb689}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resources\detail %28namespace%29">
+      <UniqueIdentifier>{2b7df651-f537-4dd8-924b-79ec5c366fa0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="rendering\drawable.h">
+      <Filter>rendering %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\geometry.h">
+      <Filter>rendering %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\item.h">
+      <Filter>rendering %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\transformation.h">
+      <Filter>rendering %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\transformer.h">
+      <Filter>rendering %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\variable_owner.h">
+      <Filter>rendering %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\view.h">
+      <Filter>rendering %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\animatable_setter.h">
+      <Filter>rendering %28namespace%29\constant_setters</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\constant_setter.h">
+      <Filter>rendering %28namespace%29\constant_setters</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\constant_setter_utility.h">
+      <Filter>rendering %28namespace%29\constant_setters</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\parameter_node_setter.h">
+      <Filter>rendering %28namespace%29\constant_setters</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\reference_setter.h">
+      <Filter>rendering %28namespace%29\constant_setters</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\sampler_setter.h">
+      <Filter>rendering %28namespace%29\constant_setters</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\simple_array_setter.h">
+      <Filter>rendering %28namespace%29\constant_setters</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\simple_constant_setter.h">
+      <Filter>rendering %28namespace%29\constant_setters</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\texture_setter.h">
+      <Filter>rendering %28namespace%29\constant_setters</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\variable_setter.h">
+      <Filter>rendering %28namespace%29\constant_setters</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\attribute_collection.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\basic_drawable.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\basic_geometry.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\camera.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\draw_calls.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\geometry_builder.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\item_builder.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\material_cache.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\renderer.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\scene.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\scene_builder.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\simple_view.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\spatial_data.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\static_vertex_stream.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\surface.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\surface_cache.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\surface_shader_parameters.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\surface_variables.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\transformer_variables.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\updatable.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="updatable_composite.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\bloom.h">
+      <Filter>rendering %28namespace%29\post_processing</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\blur.h">
+      <Filter>rendering %28namespace%29\post_processing</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\bright_pass_filter.h">
+      <Filter>rendering %28namespace%29\post_processing</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\bright_pass_filter2.h">
+      <Filter>rendering %28namespace%29\post_processing</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\noise.h">
+      <Filter>rendering %28namespace%29\post_processing</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\post_processing.h">
+      <Filter>rendering %28namespace%29\post_processing</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\scale.h">
+      <Filter>rendering %28namespace%29\post_processing</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\streak.h">
+      <Filter>rendering %28namespace%29\post_processing</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\tone_mapping.h">
+      <Filter>rendering %28namespace%29\post_processing</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\source\material.h">
+      <Filter>rendering %28namespace%29\source %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\source\material_builder.h">
+      <Filter>rendering %28namespace%29\source %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\source\material_collection.h">
+      <Filter>rendering %28namespace%29\source %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\source\material_description.h">
+      <Filter>rendering %28namespace%29\source %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\source\vertex_attribute.h">
+      <Filter>rendering %28namespace%29\source %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\angle_axis_rotation.h">
+      <Filter>rendering %28namespace%29\transformations</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\composite_transformation.h">
+      <Filter>rendering %28namespace%29\transformations</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\look_at_transformation.h">
+      <Filter>rendering %28namespace%29\transformations</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\rotation.h">
+      <Filter>rendering %28namespace%29\transformations</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\scaling.h">
+      <Filter>rendering %28namespace%29\transformations</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\simple_transformation.h">
+      <Filter>rendering %28namespace%29\transformations</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\srt_transformation.h">
+      <Filter>rendering %28namespace%29\transformations</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\translation.h">
+      <Filter>rendering %28namespace%29\transformations</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\composite_variable_owner.h">
+      <Filter>rendering %28namespace%29\variables</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\simple_variable_owner.h">
+      <Filter>rendering %28namespace%29\variables</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\detail\setter_container.h">
+      <Filter>rendering %28namespace%29\variables\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\program_cache.h">
+      <Filter>rendering %28namespace%29\programs</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\shading_program.h">
+      <Filter>rendering %28namespace%29\programs</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\light.h">
+      <Filter>rendering %28namespace%29\lights</Filter>
+    </ClInclude>
+    <ClInclude Include="constant_buffer.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+    <ClInclude Include="constant_utility.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+    <ClInclude Include="dynamic_vertex_buffer.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+    <ClInclude Include="font.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+    <ClInclude Include="index_buffer.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+    <ClInclude Include="pixel_shader.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+    <ClInclude Include="sampler_state.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+    <ClInclude Include="shader.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+    <ClInclude Include="stream_source.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+    <ClInclude Include="texture_2d.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+    <ClInclude Include="texture_2d_collection.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+    <ClInclude Include="texture_2d_value.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+    <ClInclude Include="vertex_buffer.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+    <ClInclude Include="vertex_declaration.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+    <ClInclude Include="vertex_shader.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+    <ClInclude Include="draw_rectangle.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="shaders\light_shader.h">
+      <Filter>shaders %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="shaders\point_light_shader.h">
+      <Filter>shaders %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="shaders\simple_surface_shader.h">
+      <Filter>shaders %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="shaders\stream_collection.h">
+      <Filter>shaders %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="shaders\surface_shader.h">
+      <Filter>shaders %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\transformer_builder.h">
+      <Filter>rendering %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\camera_builder.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\item_collection.h">
+      <Filter>rendering %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="error.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="device_child.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="device_convenience.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="enum_utility.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="native.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="semantic.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="formatted_text_source.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="text.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="utility.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="shader_builder.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+    <ClInclude Include="shader_convenience.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="scoped_convenience.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="detail\vertex_declaration_cache.h">
+      <Filter>core\detail %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="detail\state_manager.h">
+      <Filter>core\detail %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="fill_rectangle.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="vertex_streams.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+    <ClInclude Include="detail\native_resources.h">
+      <Filter>resources\detail %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="texture_2d_builder.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics_system.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics_adapter.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics_device.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\surface_shader_parameter_builder.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\drawable_builder.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics_device_fwd.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="texture_2d_fwd.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+    <ClInclude Include="constant_buffer_fwd.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+    <ClInclude Include="formatted_text_source_fwd.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="constant.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\parameter_node_setter_create.h">
+      <Filter>rendering %28namespace%29\constant_setters</Filter>
+    </ClInclude>
+    <ClInclude Include="constant_texture_2d_source.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+    <ClInclude Include="texture_2d_source.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+    <ClInclude Include="texture_2d_data_set_builder.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+    <ClInclude Include="texture_2d_source_base.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+    <ClInclude Include="texture_2d_value_utils.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+    <ClInclude Include="texture_2d_utils.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\camera_fwd.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\dof.h">
+      <Filter>rendering %28namespace%29\post_processing</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\composite_curve_description_collection.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\serialized_mesh_not_found_error.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\vector3f_setters.h">
+      <Filter>rendering %28namespace%29\constant_setters</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\matrix4x4f_setters.h">
+      <Filter>rendering %28namespace%29\constant_setters</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\light_variables.h">
+      <Filter>rendering %28namespace%29\lights</Filter>
+    </ClInclude>
+    <ClInclude Include="shaders\shader_utils.h">
+      <Filter>shaders %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="shaders\surface_shader_fwd.h">
+      <Filter>shaders %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="shaders\light_shader_fwd.h">
+      <Filter>shaders %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="pixel_shader_fwd.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+    <ClInclude Include="vertex_shader_fwd.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\variable_owner_fwd.h">
+      <Filter>rendering %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\shading_program_fwd.h">
+      <Filter>rendering %28namespace%29\programs</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\material_cache_fwd.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\shading_program_builder.h">
+      <Filter>rendering %28namespace%29\programs</Filter>
+    </ClInclude>
+    <ClInclude Include="shader_cache.h">
+      <Filter>resources</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\projection_matrix.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\view_variables.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\transformation_variables.h">
+      <Filter>rendering %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\item_geometry.h">
+      <Filter>rendering %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\light_builder.h">
+      <Filter>rendering %28namespace%29\lights</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\item_name.h">
+      <Filter>rendering %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\shader_variables.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\shader_parameters.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\light_properties.h">
+      <Filter>rendering %28namespace%29\lights</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\light_variables2.h">
+      <Filter>rendering %28namespace%29\lights</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\light_properties_cache.h">
+      <Filter>rendering %28namespace%29\lights</Filter>
+    </ClInclude>
+    <ClInclude Include="shaders\light_shader_collection.h">
+      <Filter>shaders %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\shader_parameter_builder.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\light_shader_parameter_builder.h">
+      <Filter>rendering %28namespace%29\lights</Filter>
+    </ClInclude>
+    <ClInclude Include="shaders\surface_shader_collection.h">
+      <Filter>shaders %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\light_shader_parameters.h">
+      <Filter>rendering %28namespace%29\lights</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\source\light_material.h">
+      <Filter>rendering %28namespace%29\source %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\light_scattering.h">
+      <Filter>rendering %28namespace%29\post_processing</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\time_setter.h">
+      <Filter>rendering %28namespace%29\constant_setters</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\reflection.h">
+      <Filter>rendering %28namespace%29\transformations</Filter>
+    </ClInclude>
+    <ClInclude Include="rendering\reflection_plane_in_world_source.h">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="rendering\item.cpp">
+      <Filter>rendering %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\transformation.cpp">
+      <Filter>rendering %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\transformer.cpp">
+      <Filter>rendering %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\constant_setter.cpp">
+      <Filter>rendering %28namespace%29\constant_setters</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\parameter_node_setter.cpp">
+      <Filter>rendering %28namespace%29\constant_setters</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\sampler_setter.cpp">
+      <Filter>rendering %28namespace%29\constant_setters</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\texture_setter.cpp">
+      <Filter>rendering %28namespace%29\constant_setters</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\attribute_collection.cpp">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\basic_drawable.cpp">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\basic_geometry.cpp">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\camera.cpp">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\draw_calls.cpp">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\geometry_builder.cpp">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\item_builder.cpp">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\material_cache.cpp">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\renderer.cpp">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\scene.cpp">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\scene_builder.cpp">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\simple_view.cpp">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\static_vertex_stream.cpp">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\surface.cpp">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\surface_cache.cpp">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\surface_shader_parameters.cpp">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\surface_variables.cpp">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\transformer_variables.cpp">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\bloom.cpp">
+      <Filter>rendering %28namespace%29\post_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\blur.cpp">
+      <Filter>rendering %28namespace%29\post_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\bright_pass_filter.cpp">
+      <Filter>rendering %28namespace%29\post_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\bright_pass_filter2.cpp">
+      <Filter>rendering %28namespace%29\post_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\noise.cpp">
+      <Filter>rendering %28namespace%29\post_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\post_processing.cpp">
+      <Filter>rendering %28namespace%29\post_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\scale.cpp">
+      <Filter>rendering %28namespace%29\post_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\streak.cpp">
+      <Filter>rendering %28namespace%29\post_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\tone_mapping.cpp">
+      <Filter>rendering %28namespace%29\post_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\source\material.cpp">
+      <Filter>rendering %28namespace%29\source %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\source\material_builder.cpp">
+      <Filter>rendering %28namespace%29\source %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\source\material_collection.cpp">
+      <Filter>rendering %28namespace%29\source %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\source\material_description.cpp">
+      <Filter>rendering %28namespace%29\source %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\angle_axis_rotation.cpp">
+      <Filter>rendering %28namespace%29\transformations</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\composite_transformation.cpp">
+      <Filter>rendering %28namespace%29\transformations</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\look_at_transformation.cpp">
+      <Filter>rendering %28namespace%29\transformations</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\rotation.cpp">
+      <Filter>rendering %28namespace%29\transformations</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\scaling.cpp">
+      <Filter>rendering %28namespace%29\transformations</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\srt_transformation.cpp">
+      <Filter>rendering %28namespace%29\transformations</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\translation.cpp">
+      <Filter>rendering %28namespace%29\transformations</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\composite_variable_owner.cpp">
+      <Filter>rendering %28namespace%29\variables</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\simple_variable_owner.cpp">
+      <Filter>rendering %28namespace%29\variables</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\detail\setter_container.cpp">
+      <Filter>rendering %28namespace%29\variables\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\program_cache.cpp">
+      <Filter>rendering %28namespace%29\programs</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\shading_program.cpp">
+      <Filter>rendering %28namespace%29\programs</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\light.cpp">
+      <Filter>rendering %28namespace%29\lights</Filter>
+    </ClCompile>
+    <ClCompile Include="constant_buffer.cpp">
+      <Filter>resources</Filter>
+    </ClCompile>
+    <ClCompile Include="constant_utility.cpp">
+      <Filter>resources</Filter>
+    </ClCompile>
+    <ClCompile Include="dynamic_vertex_buffer.cpp">
+      <Filter>resources</Filter>
+    </ClCompile>
+    <ClCompile Include="font.cpp">
+      <Filter>resources</Filter>
+    </ClCompile>
+    <ClCompile Include="index_buffer.cpp">
+      <Filter>resources</Filter>
+    </ClCompile>
+    <ClCompile Include="pixel_shader.cpp">
+      <Filter>resources</Filter>
+    </ClCompile>
+    <ClCompile Include="resource.cpp">
+      <Filter>resources</Filter>
+    </ClCompile>
+    <ClCompile Include="sampler_state.cpp">
+      <Filter>resources</Filter>
+    </ClCompile>
+    <ClCompile Include="shader.cpp">
+      <Filter>resources</Filter>
+    </ClCompile>
+    <ClCompile Include="stream_source.cpp">
+      <Filter>resources</Filter>
+    </ClCompile>
+    <ClCompile Include="texture_2d.cpp">
+      <Filter>resources</Filter>
+    </ClCompile>
+    <ClCompile Include="texture_2d_collection.cpp">
+      <Filter>resources</Filter>
+    </ClCompile>
+    <ClCompile Include="vertex_buffer.cpp">
+      <Filter>resources</Filter>
+    </ClCompile>
+    <ClCompile Include="vertex_declaration.cpp">
+      <Filter>resources</Filter>
+    </ClCompile>
+    <ClCompile Include="vertex_shader.cpp">
+      <Filter>resources</Filter>
+    </ClCompile>
+    <ClCompile Include="draw_rectangle.cpp">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="shaders\light_shader.cpp">
+      <Filter>shaders %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="shaders\point_light_shader.cpp">
+      <Filter>shaders %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="shaders\simple_surface_shader.cpp">
+      <Filter>shaders %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="shaders\stream_collection.cpp">
+      <Filter>shaders %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="shaders\surface_shader.cpp">
+      <Filter>shaders %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\item_collection.cpp">
+      <Filter>rendering %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="error.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="device_child.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="device_convenience.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="enum_utility.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="semantic.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="text.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="scoped_convenience.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="shader_convenience.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="detail\state_manager.cpp">
+      <Filter>core\detail %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="detail\vertex_declaration_cache.cpp">
+      <Filter>core\detail %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="fill_rectangle.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="vertex_streams.cpp">
+      <Filter>resources</Filter>
+    </ClCompile>
+    <ClCompile Include="texture_2d_builder.cpp">
+      <Filter>resources</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics_adapter.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics_device.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics_system.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\surface_shader_parameter_builder.cpp">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\drawable_builder.cpp">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="constant.cpp">
+      <Filter>resources</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\parameter_node_setter_create.cpp">
+      <Filter>rendering %28namespace%29\constant_setters</Filter>
+    </ClCompile>
+    <ClCompile Include="constant_texture_2d_source.cpp">
+      <Filter>resources</Filter>
+    </ClCompile>
+    <ClCompile Include="texture_2d_source.cpp">
+      <Filter>resources</Filter>
+    </ClCompile>
+    <ClCompile Include="texture_2d_data_set_builder.cpp">
+      <Filter>resources</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\dof.cpp">
+      <Filter>rendering %28namespace%29\post_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\vector3f_setters.cpp">
+      <Filter>rendering %28namespace%29\constant_setters</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\matrix4x4f_setters.cpp">
+      <Filter>rendering %28namespace%29\constant_setters</Filter>
+    </ClCompile>
+    <ClCompile Include="shaders\shader_utils.cpp">
+      <Filter>shaders %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\shading_program_builder.cpp">
+      <Filter>rendering %28namespace%29\programs</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\projection_matrix.cpp">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\camera_builder.cpp">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\transformer_builder.cpp">
+      <Filter>rendering %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\item_geometry.cpp">
+      <Filter>rendering %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\light_builder.cpp">
+      <Filter>rendering %28namespace%29\lights</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\shader_variables.cpp">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\light_variables2.cpp">
+      <Filter>rendering %28namespace%29\lights</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\light_properties.cpp">
+      <Filter>rendering %28namespace%29\lights</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\light_properties_cache.cpp">
+      <Filter>rendering %28namespace%29\lights</Filter>
+    </ClCompile>
+    <ClCompile Include="shaders\light_shader_collection.cpp">
+      <Filter>shaders %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\shader_parameter_builder.cpp">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\light_shader_parameter_builder.cpp">
+      <Filter>rendering %28namespace%29\lights</Filter>
+    </ClCompile>
+    <ClCompile Include="shaders\surface_shader_collection.cpp">
+      <Filter>shaders %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\light_shader_parameters.cpp">
+      <Filter>rendering %28namespace%29\lights</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\source\light_material.cpp">
+      <Filter>rendering %28namespace%29\source %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\light_scattering.cpp">
+      <Filter>rendering %28namespace%29\post_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\reflection.cpp">
+      <Filter>rendering %28namespace%29\transformations</Filter>
+    </ClCompile>
+    <ClCompile Include="rendering\reflection_plane_in_world_source.cpp">
+      <Filter>rendering %28namespace%29\core</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="rendering\animatable_setter.inl">
+      <Filter>rendering %28namespace%29\constant_setters</Filter>
+    </None>
+    <None Include="rendering\constant_setter.inl">
+      <Filter>rendering %28namespace%29\constant_setters</Filter>
+    </None>
+    <None Include="rendering\source\vertex_attribute.inl">
+      <Filter>rendering %28namespace%29\source %28namespace%29</Filter>
+    </None>
+    <None Include="constant_utility.inl">
+      <Filter>resources</Filter>
+    </None>
+    <None Include="device_convenience.inl">
+      <Filter>core</Filter>
+    </None>
+    <None Include="fill_rectangle.inl">
+      <Filter>core</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="todo.txt" />
+  </ItemGroup>
+</Project>

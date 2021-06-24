@@ -1,0 +1,51 @@
+<asset>
+	<scene>
+		<lights>
+        
+            <light>
+				<item name="Spot001"/>
+				<light_shader_instance name="planttunnel_light1"/>
+				<near_plane>1.0</near_plane>
+				<far_plane>200.0</far_plane>
+				<cast_shadows>false</cast_shadows>
+                <shadow_bias>0.0011</shadow_bias>
+			</light>
+			
+			 <light>
+				<item name="Spot002"/>
+				<light_shader_instance name="planttunnel_light1"/>
+				<near_plane>1.0</near_plane>
+				<far_plane>200.0</far_plane>
+				<cast_shadows>false</cast_shadows>
+                <shadow_bias>0.0011</shadow_bias>
+			</light>
+			
+			<light>
+				<item name="Spot003"/>
+				<light_shader_instance name="planttunnel_light1"/>
+				<near_plane>1.0</near_plane>
+				<far_plane>200.0</far_plane>
+				<cast_shadows>false</cast_shadows>
+                <shadow_bias>0.0011</shadow_bias>
+			</light>
+			
+			<light>
+				<item name="Spot004"/>
+				<light_shader_instance name="planttunnel_light1"/>
+				<near_plane>1.0</near_plane>
+				<far_plane>200.0</far_plane>
+				<cast_shadows>false</cast_shadows>
+                <shadow_bias>0.0011</shadow_bias>
+			</light>         
+            
+         
+            <!--
+			<light>
+				<item name="Omni01"/>
+				<light_shader_instance name="default_point_light"/>
+			</light>
+            -->
+            
+		</lights>
+	</scene>
+</asset>

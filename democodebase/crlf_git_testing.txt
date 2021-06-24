@@ -1,0 +1,41 @@
+Line1
+Line2
+Line3
+Line4
+Line5
+Line6
+Line7
+Line8
+Line9
+Line10
+Line11
+Line12
+Line13
+
+
+
+Line14 - ASD
+Line15
+Line16
+
+
+Git glossary. Terminology.
+https://www.kernel.org/pub/software/scm/git/docs/gitglossary.html
+
+Unhelpful blog post about "pink wall of text"
+http://www.hanselman.com/blog/YoureJustAnotherCarriageReturnLineFeedInTheWall.aspx
+
+Possibly the answer for our problem
+http://stackoverflow.com/questions/170961/whats-the-best-crlf-handling-strategy-with-git
+
+Some documentation about gitattributes
+http://git-scm.com/docs/gitattributes#_checking-out_and_checking-in
+
+Man page about gitattributes
+https://www.kernel.org/pub/software/scm/git/docs/gitattributes.html
+
+GitHub help about line endings for Windows
+https://help.github.com/articles/dealing-with-line-endings
+
+Tämä rivi lisätty ja Line6 rivi poistettu. -13.6.14 klo 08:53 -Phara
+Lisäsin Line6 takaisin. -17.6.14 klo 19:55 -Codarki

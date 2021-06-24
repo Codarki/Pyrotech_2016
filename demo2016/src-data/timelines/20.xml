@@ -1,0 +1,611 @@
+<?xml version="1.0" ?>
+<sequences>
+	<scene_sequence
+	    name = "kotka1"
+		scene = "data/scenes/kotka.p3d_scene"
+		camera = "Camera01"				
+		frames_per_second = "30"
+		start_time = "0.0"
+		start_frame = "30"
+		end_frame = "500"
+        near_plane = "1"
+        far_plane = "3000"
+        ssao_enabled = "false">	
+    </scene_sequence>
+	<scene_sequence
+	    name = "kotka1_reflection"
+		scene = "data/scenes/kotka.p3d_scene"
+		camera = "reflected_Camera01"				
+		frames_per_second = "30"
+		start_time = "0.0"
+		start_frame = "30"
+		end_frame = "500"
+        near_plane = "1"
+        far_plane = "3000"
+        ssao_enabled = "false">	
+    </scene_sequence>
+	
+	<scene_sequence
+	    name = "kotka2"
+		scene = "data/scenes/kotka.p3d_scene"
+		camera = "Camera02"				
+		frames_per_second = "30"
+		start_time = "0.0"
+		start_frame = "30"
+		end_frame = "500"
+        near_plane = "1"
+        far_plane = "3000"
+        ssao_enabled = "false">	
+    </scene_sequence>
+	<scene_sequence
+	    name = "kotka2_reflection"
+		scene = "data/scenes/kotka.p3d_scene"
+		camera = "reflected_Camera02"				
+		frames_per_second = "30"
+		start_time = "0.0"
+		start_frame = "30"
+		end_frame = "500"
+        near_plane = "1"
+        far_plane = "3000"
+        ssao_enabled = "false">	
+    </scene_sequence>
+
+    <scene_sequence
+	    name = "kotka3"
+		scene = "data/scenes/kotka.p3d_scene"
+		camera = "Camera03"				
+		frames_per_second = "30"
+		start_time = "0.0"
+		start_frame = "30"
+		end_frame = "500"
+        near_plane = "1"
+        far_plane = "3000"
+        ssao_enabled = "false">	
+    </scene_sequence>
+	<scene_sequence
+	    name = "kotka3_reflection"
+		scene = "data/scenes/kotka.p3d_scene"
+		camera = "reflected_Camera03"
+		frames_per_second = "30"
+		start_time = "0.0"
+		start_frame = "30"
+		end_frame = "500"
+        near_plane = "1"
+        far_plane = "3000"
+        ssao_enabled = "false">	
+    </scene_sequence>
+
+    <scene_sequence
+	    name = "kotka4"
+		scene = "data/scenes/kotka.p3d_scene"
+		camera = "Camera04"				
+		frames_per_second = "30"
+		start_time = "0.0"
+		start_frame = "30"
+		end_frame = "500"
+        near_plane = "1"
+        far_plane = "3000"
+        ssao_enabled = "false">	
+    </scene_sequence>
+	<scene_sequence
+	    name = "kotka4_reflection"
+		scene = "data/scenes/kotka.p3d_scene"
+		camera = "reflected_Camera04"
+		frames_per_second = "30"
+		start_time = "0.0"
+		start_frame = "30"
+		end_frame = "500"
+        near_plane = "1"
+        far_plane = "3000"
+        ssao_enabled = "false">	
+    </scene_sequence>
+
+    <scene_sequence
+	    name = "kotka5"
+		scene = "data/scenes/kotka.p3d_scene"
+		camera = "Camera05"
+		frames_per_second = "30"
+		start_time = "0.0"
+		start_frame = "600"
+		end_frame = "1500"
+        near_plane = "1"
+        far_plane = "3000"
+        ssao_enabled = "true">	
+    </scene_sequence>
+	<scene_sequence
+	    name = "kotka5_reflection"
+		scene = "data/scenes/kotka.p3d_scene"
+		camera = "reflected_Camera05"
+		frames_per_second = "30"
+		start_time = "0.0"
+		start_frame = "600"
+		end_frame = "1500"
+        near_plane = "1"
+        far_plane = "3000"
+        ssao_enabled = "false">	
+    </scene_sequence>
+	
+
+	<scene_sequence
+	    name = "saaret"
+		scene = "data/scenes/saaret.p3d_scene" 
+		frames_per_second = 30 
+		start_time = "0.0"
+		start_frame = "30"
+		end_frame = "2400" 
+        near_plane = "2"
+        far_plane = "1500"
+        ssao_enabled = "false">	
+		<camera curve="saaret_camera_curve"/>
+	</scene_sequence>
+
+	<scene_sequence
+	    name = "saaret_reflection"
+		scene = "data/scenes/saaret.p3d_scene" 
+		frames_per_second = 30 
+		start_time = "0.0"
+		start_frame = "30"
+		end_frame = "2400" 
+        near_plane = "2"
+        far_plane = "1500"
+        ssao_enabled = "false">
+		<camera curve="saaret_reflected_camera_curve"/>
+    </scene_sequence>
+	
+	<scene_sequence
+	    name = "planttunnel"
+		scene = "data/scenes/planttunnel.p3d_scene" 
+		frames_per_second = 30 
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "3000" 
+        near_plane = "2"
+        far_plane = "1000"
+        ssao_enabled = "false">	
+		<camera curve="plant_camera_curve"/>
+	</scene_sequence>
+
+	<scene_sequence
+	    name = "tauluscene"
+		scene = "data/scenes/tauluskene.p3d_scene" 
+		camera = "Camera01"		
+		frames_per_second = 30 
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "2400" 
+        near_plane = "2"
+        far_plane = "1500"
+        ssao_enabled = "false">	
+	</scene_sequence>
+    
+	<scene_sequence
+	    name = "tauluskene_reflection"
+		scene = "data/scenes/tauluskene.p3d_scene"
+		camera = "reflected_Camera01"
+		frames_per_second = 30
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "2400"
+        near_plane = "2"
+        far_plane = "1500"
+        ssao_enabled = "false">
+    </scene_sequence>
+				
+	<scene_sequence
+	    name = "leetluola"
+		scene = "data/scenes/leetluola.p3d_scene"
+		frames_per_second = "30"
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "1000"
+        near_plane = "1"
+        far_plane = "3000"
+        ssao_enabled = "true">
+		<camera curve="leetluola_camera_curve"/>
+    </scene_sequence>
+
+	<scene_sequence
+	    name = "leetluola_reflection"
+		scene = "data/scenes/leetluola.p3d_scene" 
+		frames_per_second = "30"
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "1000"
+        near_plane = "1"
+        far_plane = "3000"
+        ssao_enabled = "false">	
+		<camera curve="leetluola_reflected_camera_curve"/>
+    </scene_sequence>
+	
+	<scene_sequence
+	    name = "ratavah"
+		scene = "data/scenes/ratavah.p3d_scene"
+		frames_per_second = "30"
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "1000"
+        near_plane = "1"
+        far_plane = "3000"
+        ssao_enabled = "true">
+		<camera curve="ratavah_camera_curve"/>
+    </scene_sequence>
+    
+	<scene_sequence
+	    name = "ratavah_reflection"
+		scene = "data/scenes/ratavah.p3d_scene"
+		frames_per_second = "30"
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "1000"
+        near_plane = "1"
+        far_plane = "3000"
+        ssao_enabled = "false">
+		<camera curve="ratavah_reflected_camera_curve"/>
+    </scene_sequence>    
+    
+	<scene_sequence
+	    name = "spidertest"
+		scene = "data/scenes/spidertest.p3d_scene" 
+		camera = "Camera01"		
+		frames_per_second = 30 
+		start_time = "0"
+		start_frame = "30"
+		end_frame = "2400" 
+        near_plane = "2"
+        far_plane = "1500"
+        ssao_enabled = "false">	
+	</scene_sequence>	
+	
+	<scene_sequence
+	    name = "stargootte"
+		scene = "data/scenes/stargootte.p3d_scene"
+		frames_per_second = "20"
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "1000"
+        near_plane = "1"
+        far_plane = "3000"
+        ssao_enabled = "true">	
+		<camera curve="gootte_camera_curve"/>
+    </scene_sequence>
+    
+	<scene_sequence
+	    name = "stargootte_reflection"
+		scene = "data/scenes/stargootte.p3d_scene"
+		frames_per_second = "20"
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "1000"
+        near_plane = "1"
+        far_plane = "3000"
+        ssao_enabled = "false">	
+		<camera curve="gootte_reflected_camera_curve"/>
+    </scene_sequence>
+    
+	<image name = "SceneTexture1_image" path = "SceneTexture1" />
+	<image name = "SceneTexture2_image" path = "SceneTexture2" />
+	<image name = "SceneTexture3_image" path = "SceneTexture3" />
+    <image name = "ReflectionTexture_image" path = "ReflectionTexture" />
+    
+	<image name = "noise_tex" path = "data/images/noise.jpg" />
+	<image name = "WhiteImage" path = "data/images/common/white.tga" />
+	<image name = "BlackImage" path = "data/images/common/black.tga" />
+	<image name = "SuperWide" path = "data/images/2014/superwide.png" />
+	<image name = "perusvignette" path = "data/images/tmp/perusvignette.png" />
+	
+	<image name = "credits_mika" path = "data\images\2015\cre_code.png"/>	
+	<image name = "credits_kimmo" path = "data\images\2015\cre_music.png"/>	
+	<image name = "credits_timo" path = "data\images\2015\cre_graphics.png"/>	
+
+	<image name = "title1" path = "data\images\2015\dtitle_1.png"/>	
+	<image name = "title2" path = "data\images\2015\dtitle_2.png"/>	
+	<image name = "title3" path = "data\images\2015\dtitle_3.png"/>	
+	<image name = "title4" path = "data\images\2015\dtitle_4.png"/>	  
+	
+    <!--bokeh images -->
+	<image name = "bokeh_blue_lr" path = "data/images/2014/bokeh_blue_lowerright.png" />	
+	<image name = "bokeh_ora_lowleft" path = "data/images/2014/bokeh_ora_lowleft.png" />	
+	
+    <image name = "bokeh_flare1" path = "data/images/2015/flare1.png" />
+    <image name = "bokeh_flare3" path = "data/images/2015/flare3.png" />    
+    <image name = "midbokeh" path = "data/images/2015/midbokeh.png" />	
+    
+    <!-- draw bokeh images -->
+    <draw_image name = "draw_bokeh_blue_lr">
+		<input sequence = "bokeh_blue_lr"/>
+		<alpha curve = "blue_bokeh_alpha_curve"/>
+	</draw_image>	
+    <draw_image name = "draw_bokeh_ora_lowleft">
+		<input sequence = "bokeh_ora_lowleft"/>
+		<alpha v = 0.3/>
+	</draw_image>
+    
+    <draw_image name = "draw_bokeh_flare1">
+		<input sequence = "bokeh_flare1"/>
+		<alpha curve = "bokeh_flare1_alpha_curve"/>
+        <center curve = "bokeh_flare1_center_curve"/>
+        <intensity v = "1.0"/>        
+	</draw_image>	
+    <draw_image name = "draw_midbokeh">
+		<input sequence = "midbokeh"/>
+		<alpha curve = "greets2_midflare_alpha_curve"/>
+        <intensity v = "1.0"/>        
+	</draw_image>	
+
+    <draw_image name = "draw_flare3">
+		<input sequence = "bokeh_flare3"/>
+		<alpha curve = "flare3_alpha_curve"/>
+        <center curve = "flare3_center_curve"/>
+        <intensity v = "1.0"/>        
+	</draw_image>    
+    
+ 	<draw_image name = "draw_perusvignette_image"><alpha v = "0.70"/><input sequence = "perusvignette"/></draw_image>
+        	
+	<!-- draw_image name = "draw_alkuspace"><input sequence = "img_tausta"/></draw_image -->
+	<draw_image name = "fade_to_white_250ms" duration = "0.25"><alpha curve = "fade_in_curve_250ms" /><input sequence = "WhiteImage" /></draw_image>
+	<draw_image name = "fade_from_white_250ms" duration = "0.25"><alpha curve = "fade_out_curve_250ms" /><input sequence = "WhiteImage" /></draw_image>	
+	<draw_image name = "fade_to_white_1000ms" duration = "1"><alpha curve = "fade_in_curve_1000ms" /><input sequence = "WhiteImage" /></draw_image>
+	<draw_image name = "fade_to_white_2000ms" duration = "2"><alpha curve = "fade_in_curve_2000ms" /><input sequence = "WhiteImage" /></draw_image>	
+	<draw_image name = "fade_to_half_black_125ms" duration = "0.125"><alpha curve = "fade_in_to_half_black_curve_125ms" /><input sequence = "BlackImage" /></draw_image>
+	<draw_image name = "fade_to_black_1000ms" duration = "1"><alpha curve = "fade_in_curve_1000ms" /><input sequence = "BlackImage" /></draw_image>	
+	<draw_image name = "fade_to_black_2000ms" duration = "4"><alpha curve = "fade_in_curve_2000ms" /><input sequence = "BlackImage" /></draw_image>
+	<draw_image name = "fade_from_black_250ms" duration = "0.25"><alpha curve = "fade_out_curve_250ms" /><input sequence = "BlackImage" /></draw_image>
+	<draw_image name = "fade_from_black_1000ms" duration = "1"><alpha curve = "fade_out_curve_1000ms" /><input sequence = "BlackImage" /></draw_image>
+    <draw_image name = "fade_from_black_3000ms" duration = "3"><alpha curve = "fade_out_curve_3000ms" /><input sequence = "BlackImage" /></draw_image>
+	<draw_image name = "fade_from_white_1000ms" duration = "1"><alpha curve = "fade_out_curve_1000ms" /><input sequence = "WhiteImage" /></draw_image>
+	<draw_image name = "fade_from_white_2000ms" duration = "2"><alpha curve = "fade_out_curve_2000ms" /><input sequence = "WhiteImage" /></draw_image>
+	<draw_image name = "fade_from_white_3000ms" duration = "3"><alpha curve = "fade_out_curve_3000ms" /><input sequence = "WhiteImage" /></draw_image>
+	<draw_image name = "fade_from_half_black_75ms" duration = "3"><alpha curve = "fade_out_from_half_black_75ms" /><input sequence = "BlackImage" /></draw_image>
+ 
+	<draw_image name = "draw_SuperWide"><alpha curve = "superwide_alpha" /><input sequence = "SuperWide" /></draw_image>
+	
+    <draw_image name = "draw_BlackImage"><input sequence = "BlackImage" /></draw_image>
+	
+    <draw_image name = "draw_credits_mika"><alpha curve = "fade_in_out_5000ms"/><input sequence = "credits_mika"/></draw_image>
+    <draw_image name = "draw_credits_kimmo"><alpha curve = "fade_in_out_5000ms"/><input sequence = "credits_kimmo"/></draw_image>
+    <draw_image name = "draw_credits_timo"><alpha curve = "fade_in_out_5000ms"/><input sequence = "credits_timo"/></draw_image>
+
+    <draw_image name = "draw_title1"><alpha curve = "fade_in_curve_2000ms"/><input sequence = "title1"/></draw_image>
+    <draw_image name = "draw_title2"><alpha curve = "fade_in_curve_2000ms"/><input sequence = "title2"/></draw_image>
+    <draw_image name = "draw_title3"><alpha curve = "fade_in_curve_2000ms"/><input sequence = "title3"/></draw_image>	
+    <draw_image name = "draw_title4"><alpha curve = "fade_in_curve_2000ms"/><input sequence = "title4"/></draw_image>
+    
+    <!-- titlescreen -->
+    
+	<plasma>
+		<name v="image_distort_sine_titlescreen"/>
+		<material_name v="image_distort_sine_fullscreen_material_titlescreen"/>
+        <input sequence = "SceneTexture1_image"/>
+		<!--<input sequence="draw_titlescreen_to_SceneTexture"/>-->
+	</plasma>
+        
+    <!-- abstrakti -->
+	<draw_to_texture name = "draw_kotka1_to_SceneTexture"><shared_texture name = "SceneTexture1"/>
+		<input sequence = "kotka1"/>
+	</draw_to_texture> 
+	<draw_to_texture name = "draw_kotka2_to_SceneTexture"><shared_texture name = "SceneTexture2"/>
+		<input sequence = "kotka2"/>
+	</draw_to_texture> 
+		<draw_to_texture name = "draw_kotka3_to_SceneTexture"><shared_texture name = "SceneTexture1"/>
+		<input sequence = "kotka3"/>
+	</draw_to_texture> 
+	<draw_to_texture name = "draw_kotka4_to_SceneTexture"><shared_texture name = "SceneTexture2"/>
+		<input sequence = "kotka4"/>
+	</draw_to_texture> 
+		<draw_to_texture name = "draw_kotka5_to_SceneTexture"><shared_texture name = "SceneTexture1"/>
+		<input sequence = "kotka5"/>
+	</draw_to_texture> 
+	
+	<draw_to_texture name = "draw_saaret_to_SceneTexture"><shared_texture name = "SceneTexture2"/>
+		<input sequence = "saaret"/>
+	</draw_to_texture> 	
+
+	<draw_to_texture name = "draw_tauluscene_to_SceneTexture"><shared_texture name = "SceneTexture1"/>
+		<input sequence = "tauluscene"/>
+	</draw_to_texture> 	
+	
+	<draw_to_texture name = "draw_planttunnel_to_SceneTexture"><shared_texture name = "SceneTexture2"/>
+		<input sequence = "planttunnel"/>
+	</draw_to_texture> 	
+
+	<draw_to_texture name = "draw_leetluola_to_SceneTexture"><shared_texture name = "SceneTexture1"/>
+		<input sequence = "leetluola"/>
+	</draw_to_texture> 	
+	
+	<draw_to_texture name = "draw_ratavah_to_SceneTexture"><shared_texture name = "SceneTexture2"/>
+		<input sequence = "ratavah"/>
+	</draw_to_texture> 			
+	
+	<draw_to_texture name = "draw_spidertest_to_SceneTexture"><shared_texture name = "SceneTexture1"/>
+		<input sequence = "spidertest"/>
+	</draw_to_texture> 	
+	
+	<draw_to_texture name = "draw_stargootte_to_SceneTexture"><shared_texture name = "SceneTexture2"/>
+		<input sequence = "stargootte"/>
+	</draw_to_texture>
+
+	<draw_to_texture name = "draw_kotka1_reflection_to_ReflectionTexture">
+        <shared_texture name = "ReflectionTexture"/>
+		<input sequence = "kotka1_reflection"/>
+	</draw_to_texture>      
+	<draw_to_texture name = "draw_kotka2_reflection_to_ReflectionTexture">
+        <shared_texture name = "ReflectionTexture"/>
+		<input sequence = "kotka2_reflection"/>
+	</draw_to_texture>      
+	<draw_to_texture name = "draw_kotka3_reflection_to_ReflectionTexture">
+        <shared_texture name = "ReflectionTexture"/>
+		<input sequence = "kotka3_reflection"/>
+	</draw_to_texture>      
+	<draw_to_texture name = "draw_kotka4_reflection_to_ReflectionTexture">
+        <shared_texture name = "ReflectionTexture"/>
+		<input sequence = "kotka4_reflection"/>
+	</draw_to_texture>      
+	<draw_to_texture name = "draw_kotka5_reflection_to_ReflectionTexture">
+        <shared_texture name = "ReflectionTexture"/>
+		<input sequence = "kotka5_reflection"/>
+	</draw_to_texture>      
+    
+	<draw_to_texture name = "draw_tauluskene_reflection_to_ReflectionTexture">
+        <shared_texture name = "ReflectionTexture"/>
+		<input sequence = "tauluskene_reflection"/>
+	</draw_to_texture>      
+	
+	<draw_to_texture name = "draw_saaret_reflection_to_ReflectionTexture">
+        <shared_texture name = "ReflectionTexture"/>
+		<input sequence = "saaret_reflection"/>
+	</draw_to_texture>     
+    
+	<draw_to_texture name = "draw_leetluola_reflection_to_ReflectionTexture">
+        <shared_texture name = "ReflectionTexture"/>
+		<input sequence = "leetluola_reflection"/>
+	</draw_to_texture>      
+
+	<draw_to_texture name = "draw_ratavah_reflection_to_ReflectionTexture">
+        <shared_texture name = "ReflectionTexture"/>
+		<input sequence = "ratavah_reflection"/>
+	</draw_to_texture>      
+
+	<draw_to_texture name = "draw_gootte_reflection_to_ReflectionTexture">
+        <shared_texture name = "ReflectionTexture"/>
+		<input sequence = "stargootte_reflection"/>
+	</draw_to_texture> 
+    
+	<plasma>
+		<name v="image_distort_sine_abstrakti"/>
+		<material_name v="image_distort_sine_fullscreen_material_abstrakti"/>
+        <input sequence = "SceneTexture1_image"/>
+	</plasma>    
+    <!-- essokallio -->
+	<plasma>
+		<name v="esso_kallio_radial_blur"/>
+		<material_name v="radial_blur_esso_kallio_material"/>
+        <input sequence = "SceneTexture1_image"/>
+	</plasma>
+            
+	<draw_image name = "draw_SceneTexture1_image_to_screen"><input sequence = "SceneTexture1_image"/></draw_image>
+	<draw_image name = "draw_SceneTexture2_image_to_screen"><input sequence = "SceneTexture2_image"/></draw_image>
+	<draw_image name = "draw_SceneTexture3_image_to_screen"><input sequence = "SceneTexture3_image"/></draw_image> 
+	
+	<draw_image name = "draw_reflection_image">
+		<input sequence = "ReflectionTexture_image" />
+		<size v = "0.4 0.4"/>
+        <center v = "0.8 0.2"/>
+        <intensity>0.8</intensity>
+	</draw_image>	
+
+    <composition name =  "c_draw_scenes_to_SceneTextures">
+		<input sequence = "draw_kotka1_reflection_to_ReflectionTexture" time="0" duration = "4"/>
+		<input sequence = "draw_kotka2_reflection_to_ReflectionTexture" time="4" duration = "8"/>
+		<input sequence = "draw_kotka3_reflection_to_ReflectionTexture" time="12" duration = "4"/>
+		<input sequence = "draw_kotka5_reflection_to_ReflectionTexture" time="16" duration = "16"/>
+        <input sequence = "draw_saaret_reflection_to_ReflectionTexture" time="32" duration = "32"/>
+        <input sequence = "draw_tauluskene_reflection_to_ReflectionTexture" time="64" duration = "32"/>
+        <input sequence = "draw_leetluola_reflection_to_ReflectionTexture" time="128" duration = "32"/>
+        <input sequence = "draw_ratavah_reflection_to_ReflectionTexture" time="160" duration = "32"/>
+        <input sequence = "draw_gootte_reflection_to_ReflectionTexture" time="224" duration = "48"/>        
+        <!-- <input sequence = "draw_leetluola_reflection_to_ReflectionTexture" time="160" duration = "32"/> -->
+    
+		<input sequence = "draw_kotka1_to_SceneTexture" time="0" duration = "4"/>
+		<input sequence = "draw_kotka2_to_SceneTexture" time="4" duration = "8"/>
+		<input sequence = "draw_kotka3_to_SceneTexture" time="12" duration = "4"/>
+		<input sequence = "draw_kotka5_to_SceneTexture" time="16" duration = "16"/>
+		<input sequence = "draw_saaret_to_SceneTexture" time="32" duration = "32"/>		
+		<input sequence = "draw_tauluscene_to_SceneTexture" time="64" duration = "32"/>
+		<input sequence = "draw_planttunnel_to_SceneTexture" time="96" duration = "32"/>		
+		<input sequence = "draw_leetluola_to_SceneTexture" time="128" duration = "32"/>	
+		<input sequence = "draw_ratavah_to_SceneTexture" time="160" duration = "32"/>
+		<input sequence = "draw_spidertest_to_SceneTexture" time="192" duration = "32"/>				
+		<input sequence = "draw_stargootte_to_SceneTexture" time="224" duration = "48"/>
+		
+	</composition>
+    
+    <composition name =  "c_draw_SceneTextures_to_screen">
+		<input sequence= "draw_SceneTexture1_image_to_screen" time = "0" duration="4"/>
+		<input sequence= "draw_SceneTexture2_image_to_screen" time = "4" duration="8"/>
+		<input sequence= "draw_SceneTexture1_image_to_screen" time = "12" duration="4"/>
+		<input sequence= "draw_SceneTexture1_image_to_screen" time = "16" duration="16"/>				
+		<input sequence= "draw_SceneTexture2_image_to_screen" time = "32" duration="32"/>
+		<input sequence= "draw_SceneTexture1_image_to_screen" time = "64" duration="32"/>
+		<input sequence= "draw_SceneTexture2_image_to_screen" time = "96" duration="32"/>		
+		<input sequence= "draw_SceneTexture1_image_to_screen" time = "128" duration="32"/>	
+		<input sequence= "draw_SceneTexture2_image_to_screen" time = "160" duration="32"/>			
+		<input sequence= "draw_SceneTexture1_image_to_screen" time = "192" duration="32"/>		
+		<input sequence= "draw_SceneTexture2_image_to_screen" time = "224" duration="48"/>	
+	</composition>    
+    <composition name = "c_draw_bokehs">
+        <!-- Bokeh -->
+		<!-- <input sequence = "draw_bokeh_blue_lr" time = "5"/> -->
+        <!-- <input sequence = "draw_bokeh_ora_lowleft" time = "5"/> -->
+        <input sequence = "draw_bokeh_flare1" time = "32" duration="8"/>
+        <input sequence = "draw_bokeh_flare1" time = "44" duration="4"/>
+        <input sequence = "draw_bokeh_flare1" time = "48" duration="16"/> 
+        <input sequence = "draw_flare3" time = "160" duration="32"/>          
+        <input sequence = "draw_midbokeh" time = "192" duration="28"/>         
+        <input sequence = "draw_bokeh_blue_lr" time = "192" duration="6"/>
+         
+        <input sequence = "draw_bokeh_flare1" time = "240"/>          
+    </composition>
+	
+    <composition name = "c_warmup">
+        <!-- sfdsdfs -->
+		<input sequence = "stargootte" time = "0" duration="5"/>
+		<input sequence = "spidertest" time = "0" duration="5"/>
+		<input sequence = "ratavah" time = "0" duration="5"/>
+		<input sequence = "leetluola" time = "0" duration="5"/>
+		<input sequence = "tauluscene" time = "0" duration="5"/>
+		<input sequence = "planttunnel" time = "0" duration="5"/>
+		<input sequence = "saaret" time = "0" duration="5"/>
+		<input sequence = "kotka1" time = "0" duration="5"/>		
+    </composition>
+	
+	<!-- Post processing -->
+	<post_processing name = "Post_processing">
+		<clear_color v = "0 0 0"/>
+        <input sequence = "c_draw_SceneTextures_to_screen"/>
+	</post_processing>
+	
+	<!-- Depth buffer -->
+	<depth_buffer name = "Depth_test">
+        <clear_color v = "0 0 0"/>
+		<input sequence = "c_warmup" duration = "1"/>
+        <input sequence = "c_draw_scenes_to_SceneTextures"/>
+		<input sequence = "Post_processing"/>
+		<input sequence = "fade_to_white_250ms" time = "63.75"/>
+		<input sequence = "fade_from_white_250ms" time = "64"/>		
+		<input sequence = "fade_to_white_1000ms" time = "95"/>
+		<input sequence = "fade_from_white_250ms" time = "96"/>			
+		<input sequence = "fade_to_white_1000ms" time = "127"/>
+		<input sequence = "fade_from_white_1000ms" time = "128"/>	
+		<input sequence = "fade_to_black_1000ms" time = "159"/>
+		<input sequence = "fade_from_black_1000ms" time = "160"/>		
+		<input sequence = "draw_credits_mika" time = "34"/>
+		<input sequence = "draw_credits_kimmo" time = "40"/>
+		<input sequence = "draw_credits_timo" time = "46"/>
+        
+		<input sequence = "draw_title1" time = "240"/>
+		<input sequence = "draw_title2" time = "241"/>
+		<input sequence = "draw_title3" time = "242"/>		
+		<input sequence = "draw_title4" time = "243"/>		
+		<input sequence = "c_draw_bokehs"/>
+		<input sequence = "draw_perusvignette_image"/>
+	</depth_buffer>
+
+	<composition name = "main timeline">
+		<input sequence = "Audio_system"/>
+		<input sequence = "Depth_test"/>
+        <input sequence = "fade_to_black_2000ms" time = "251"/>		
+        <!--<input sequence = "draw_reflection_image"/>-->
+		<!--<input sequence = "fade_to_black_2000ms" time="232" duration = "4"/>-->
+	</composition>
+
+	<audio_system name = "Audio_system">
+		<audio_sequence name = "musa" path = "data/audio/untitled.mp3" time="0">
+            <spectrum scale = "3" min_threshold = "0.3" max_threshold = "3.0"/>
+        </audio_sequence>
+    </audio_system>
+
+	<!-- Main timeline -->
+	<timeline>
+		<input sequence = "main timeline" time="0"/>
+	</timeline>
+</sequences>

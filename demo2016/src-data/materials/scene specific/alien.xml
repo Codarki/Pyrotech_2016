@@ -1,0 +1,176 @@
+<?xml version="1.0" ?>
+
+<material
+	name = "emission_kasvit"
+	material_p3d = "kasvit"
+	>
+    <shader file = "data/shaders/effects/fresnel_view_fresnel_light.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <normal_map value = "data/images/rocks/rock2_n.jpg"/>
+            <normal_scale value = "2.00"/>
+
+            <fresnel_light_power value = "16"/>
+            <fresnel_view_power value = "1"/>
+
+            <fresnel_view_color value = "0 0.5 0.5"/>
+            <fresnel_light_coeff value = "1 1 1"/>
+
+        </parameters>
+	</shader>    
+</material>
+
+<material
+	name = "oldc"
+	material_p3d = "oldc"
+	>
+    <shader file = "data/shaders/effects/fresnel_view_fresnel_light.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <normal_map value = "data/images/rocks/rock2_n.jpg"/>
+            <normal_scale value = "2.00"/>
+
+            <fresnel_light_power value = "16"/>
+            <fresnel_view_power value = "4"/>
+
+            <fresnel_view_color value = "0 0.25 0.75"/>
+            <fresnel_light_coeff value = "1 1 1"/>
+
+        </parameters>
+	</shader>    
+</material>
+
+<material
+	name = "epicmat"
+	material_p3d = "epicmat"
+	>
+    <shader file = "data/shaders/effects/fresnel_view_fresnel_light.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <!--<normal_map value = "data/images/rocks/rock2_n.jpg"/>-->
+            <normal_scale value = "1.00"/>
+
+            <fresnel_light_power value = "16"/>
+            <fresnel_view_power value = "4"/>
+
+            <fresnel_view_color value = "0 0.25 0.75"/>
+            <fresnel_light_coeff value = "1 1 1"/>
+
+        </parameters>
+	</shader>    
+</material>
+<material
+	name = "alkulogo"
+	material_p3d = "alkulogo"
+	>
+    <shader file = "data/shaders/effects/fresnel_view_fresnel_light.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <normal_map value = "data/images/rocks/rock2_n.jpg"/>
+            <normal_scale value = "2.00"/>
+
+            <fresnel_light_power value = "15"/>
+            <fresnel_view_power value = "4"/>
+
+            <!--<fresnel_view_color value = "0 0.25 0.65"/>-->
+            <fresnel_view_color value = "0.7 0.4 0.1"/>
+            <fresnel_light_coeff value = "1.2 1.2 1.2"/>
+
+        </parameters>
+	</shader>    
+</material>
+
+<material
+	name = "laiva"
+	material_p3d = "laiva"
+	>
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <diffuse_color value = "0.5 0.5 0.5"/>
+            <specular_color value = "0.5 0.5 0.5"/>
+            <fresnel_normal_incidence value = "0.25"/>
+            <roughness value = "0.6"/>
+        </parameters>
+	</shader>    
+</material>
+
+<material
+	name = "pohja_1_baked"
+	material_p3d = "sand [pohja_1]"
+	>
+    <shader file = "data/shaders/cook_torrance_detail.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/sand/sand_c.jpg"/>
+            <specular_map value = "data/images/sand/sand_s.jpg"/>
+            <normal_map value = "data/images/sand/sand_n.jpg"/>
+            <occlusion_map value = "data/images/alien/pohja_1ambient occlusion _mr_.jpg"/>
+
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "0.5 0.5 0.5"/>
+            <specular_color value = "0.5 0.5 0.5"/>
+            <normal_scale value = "1.00"/>
+            <fresnel_normal_incidence value = "0.45"/>
+            <roughness value = "0.6"/>
+        </parameters>
+	</shader>    
+</material>
+
+<!-- Occluded blinn -->
+<!--
+<material
+	name = "pohja_1_baked"
+	shader = "data/shaders/occluded_blinn.xml"
+	material_p3d = "sand [pohja_1]"
+	>
+	<parameters>
+		<diffuse_map value = "data/images/sand/sand_c.jpg"/>
+		<specular_map value = "data/images/sand/sand_s.jpg"/>
+		<normal_map value = "data/images/sand/sand_n.jpg"/>
+		<occlusion_map value = "data/images/alien/pohja_1ambient occlusion _mr_.jpg"/>
+
+		<ambient_color value = "0.0 0.0 0.0"/>
+		<diffuse_color value = "0.5 0.5 0.5"/>
+		<specular_color value = "0.5 0.5 0.5"/>
+		<normal_scale value = "1.00"/>
+	</parameters>
+</material>
+-->
+<material
+	name = "kivi01_baked"
+	material_p3d = "rock2 [kivi01]"
+	>
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/rocks/rock2_c.jpg"/>
+            <specular_map value = "data/images/rocks/rock2_s.jpg"/>
+            <normal_map value = "data/images/rocks/rock2_n.jpg"/>
+            <occlusion_map value = "data/images/rocks/rock2_ao.jpg"/>
+            <reflection_map value = "data/images/lava/lavac.jpg"/>
+            
+            <diffuse_color value = "4 4 4"/>
+            <specular_color value = "4 4 4"/>
+            <normal_scale value = "1.00"/>
+            <reflection_coeff value = "1.0"/>
+            
+            <fresnel_normal_incidence value = "0.45"/>
+            <roughness value = "0.6"/>
+        </parameters>
+	</shader>    
+</material>
+<!--
+<material
+	name = "kivi01_baked"
+	shader = "data/shaders/cook_torrance.xml"
+	material_p3d = "rock2 [kivi01]"
+	>
+	<parameters>
+		<diffuse_map value = "data/images/alien/kivi01diffusemap.jpg"/>
+		<specular_map value = "data/images/alien/kivi01diffusemap.jpg"/>
+		<normal_map value = "data/images/alien/kivi01normalsmap.jpg"/>
+		<occlusion_map value = "data/images/alien/kivi01ambient occlusion _mr_.jpg"/>
+
+		<diffuse_color value = "4 4 4"/>
+		<specular_color value = "4 4 4"/>
+		<normal_scale value = "1.00"/>
+        
+		<fresnel_normal_incidence value = "0.45"/>
+		<roughness value = "0.6"/>
+	</parameters>
+</material>
+-->

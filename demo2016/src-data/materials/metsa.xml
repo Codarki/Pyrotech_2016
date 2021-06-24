@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+
+<material
+	name = "streak"
+	material_p3d = "streak"
+	>
+    <shader file = "data/shaders/alpha_blended_emissive.xml"> 
+        <parameters>
+            <self_illuminate_map value = "data/images/tmp/striikki.png"/>
+            <!--<self_illuminate_color value = "1 1 1"/>-->
+            <self_illuminate_color shared_value = "streak_color_curve"/>
+        </parameters>
+	</shader>
+</material>
+
+

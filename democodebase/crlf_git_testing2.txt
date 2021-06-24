@@ -1,0 +1,21 @@
+1. Create new text document in notepad++. Save. CRLF
+2. TortoiseGit Add the file. CRLF
+3. Commiting... stayed CRLF. Commiting and pushing again.
+
+4. math_utils.h CRLF
+5. Edit it in VS. CRLF
+6. Commit math_utils.h with VS. CRLF
+7. Push with VS. CRLF
+
+8. matrix.h CRLF. Edit one line in VS. CRLF
+9. commit. CRLF
+10. Git History shows every line changed. (local commit) Git Log shows 130 lines added, 128 removed. Diff shows only 2. TortoiseGitUDiff shows all lines changed.
+11. Revert the commit. Revert dialog shows 1 line to be changed. After revert, 130 changed. Still CRLF
+
+At one point, before these steps, notepad++ informed me file had changed and to reload it. It had LF endings. Then I did something and it went back to CRLF. Can't reproduce.
+
+1. Phara made edit to the file. Fetch and Pull from VS, CRLF changed to LF endings locally!!!!
+All the rest of the code base remains CRLF.
+2. Edit same file with notepad++. LF locally.
+Diff and compare shows all lines changed, when about to to commit.
+3. Change from notepad++, Edit -> EOL Conversion -> Windows format. CRLF endings locally. Diff and compare shows one line changed, when about to to commit.

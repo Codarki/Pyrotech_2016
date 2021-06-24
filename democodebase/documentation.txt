@@ -1,0 +1,296 @@
+Updated 24.07.2009
+
+
+Sections:
+1. General
+2. Sequences reference
+3. Curves reference
+
+
+---
+
+
+1. General
+
+Material defines parameters how the surface reflects light. Surface shader
+defines how material parameters are used, the shading technique. Multiple 
+material can be linked to single shader. Materials are linked to a shader by
+a filename and parameters for the shader.
+
+General steps what happens during run:
+
+1. "data/curves/curves_test.xml" is read.
+2. "data/shared_textures.xml" is read.
+3. All files in "data/materials/" is read. For each material:
+  3.1 Shader file is loaded if not loaded already, and material gets linked to a shader.
+  3.2 Material parameters are read, and matched with shader paremeters.
+  3.3 Constant values are created for each "value" attribute/child element.
+  3.4 For each "shared_value", a link to a curve or shared texture is created.
+4. "data/post_processing/parameters.xml" is read, and for all parameters:
+  4.1 All "curve" parameters are linked to a curve.
+  4.2 Rest are created as constant value.
+5. Timeline player is created and timeline is loaded.
+6. All sequences in timeline are created.
+7. All sequences are linked to their inputs.
+8. Playback begins, for each frame:
+  8.1 Find all active child sequences, for each child sequence:
+    8.1.1 Recursively go back to step 8.1
+    8.1.2 Draw current sequence.
+9. Timeline ends.
+10. Share the cash from the envelope.
+
+
+---
+
+
+2. Sequences reference
+
+All time values in every sequence is in sequence's local time.
+Local time for a sequence starts from 0 ands grows in seconds.
+
+<!--
+Composition sequence provides mechanism to compose multiple sequences under
+single config. All other sequence types inherit all configurations and
+functionality from composition sequence.
+-->
+<composition>
+  <!-- Name of this sequence, used from other sequences to link as input. -->
+  <name v = "Composition sequence example"/>
+
+  <!-- Optional start time for this sequence. Used mostly for special cases.
+  Default value is 0. -->
+  <start_time v = "0"/>
+
+  <!-- Optional duration of this sequence (and children). Default value is infinite. -->
+  <duration v = "100"/>
+
+  <!-- Optional. An input sequence (aka child sequence).
+  <input>
+    <!-- Defines the name of the child sequence -->
+    <sequence v = "test sequence 01"/>
+
+    <!-- Optional. Defines the time when this child sequence becomes active.
+    Default value is 0. -->
+    <time v = 0/>
+
+    <!-- Optional. Defines the depth of this child sequence. Depth defines the order
+    in which multiple active child sequences are drawn. Default value is 0. -->
+    <depth v = 0/>
+  </input>
+
+  <!-- Optional. Another input sequence. input sequence count for any
+  composition is unlimited. -->
+  <input sequence = "test sequence 02" time = 10/>
+</composition>
+
+
+Other sequences. Inherited configurations from above composition sequence is
+omitted here after. All the required elements from above are required for all
+sequences (name).
+
+Generally sequences do not return any values, nor they expect their children to
+return any. Special cases where sequence return a texture are "image" and
+"draw_to_texture". Special cases where sequence requires child to return texture
+is "draw_image".
+
+
+<!--
+Image sequence. Loads and returns a texture.
+-->
+<image>
+  <!-- Filepath from current working directory. -->
+  <path v = "data/images/demoname.png"/>
+/>
+
+
+<!--
+Scene sequence. Draws a scene.
+-->
+<scene_sequence>
+
+  <!-- Filepath from current working directory. -->
+  <scene v = "data/scenes/tunneli/tunneli.p3d_scene"/>
+
+  <!-- Name of the camera name. Either this one or the following must exist -->
+  <camera v = "Camera01"/>
+  <!-- Name of the curve where camera name is read from. -->
+  <camera curve = "Camera01"/>
+
+  <!-- Optional fps for scene. Default is 30. -->
+  <frames_per_second v = "30"/>
+
+  <!-- Frame number in scene where playback begins -->
+  <start_frame v = "0"/>
+  <!-- Frame number in scene where playback ends -->
+  <end_frame v = "840"/>
+</scene_sequence>
+
+
+<!--
+Post processing sequence. All the inputs will get post processed
+-->
+<post_processing name = "Post processing">
+  <!-- Color to clear the render target before rendering -->
+  <clear_color v = "0 0 0"/>
+  <!-- OR Color to be read from a curve -->
+  <clear_color curve = "clear_color_curve"/>
+</post_processing>
+
+
+<!--
+Color fade draws full screen quad with color and alpha.
+-->
+<color_fade>
+  <!-- Duration of fade in, in seconds. -->
+  <fade_in_duration v = "1"/>
+  <!-- Duration of fade out, in seconds. -->
+  <fade_out_duration v = "1"/>
+
+  <!-- Color of the fade, when opaque. Can be linked to a curve-->
+  <color v = "0 0.3 1"/>
+
+  <!-- Optional. Maximum alpha value. Clamped between 0 and 1. Default value is 1. -->
+  <max_alpha v = "0.75"/>
+
+  <!--
+  Optional. Defines how alpha fading is performed. Default value is "cos_180_curve".
+  Available values are cos_180_curve, pow_4_curve, inv_pow_4_curve and linear.
+  cos_180_curve: Fading starts slow at 0, is fastest at 0.5, and slows to the end at 1.
+  pow_4_curve: Fading starts slow at 0, and speeds up towards the end at 1.
+  inv_pow_4_curve: Fading starts fast at 0, and slows down towards the end at 1.
+  linear: Fading is constant speed from 0 to 1.
+  -->
+  <type v = "cos_180_curve"/>
+
+  <!-- Total duration in seconds. Overrides "duration" from composite sequence. -->
+  <total_duration v = "3">
+
+</color_fade>
+
+
+<!--
+Sets and clears a depth buffer for all its inputs.
+-->
+<depth_buffer>
+</depth_buffer>
+
+
+<!--
+Draws image from input sequence. All parameters can be linked to curve.
+-->
+<draw_image>
+  <!-- Optional alpha value for drawing the image. Default value is 1. -->
+  <alpha curve = "alpha_curve"/>
+
+  <!--
+  Optional intensity for color values. R, G and B are multiplied with
+  this value, so the drawn image can be post processed. Default value is 1.
+  -->
+  <intensity v = "0.5"/>
+
+  <!-- Optional center value for drawing the image. Default value is "0.5 0.5". -->
+  <center v = "0.5 0.7"/>
+
+  <!-- Optional size value for drawing the image. Default value is "1 1". -->
+  <size v = "1.2 0.9"/>
+
+</draw_image>
+
+
+<!--
+Draws input sequences to specific texture. If "shared_texture" is defined,
+then "resolution" nor "bits_per_channel" is read.
+-->
+<draw_to_texture>
+  <!-- Optional. Defines the name of shared target texture. -->
+  <shared_texture name = "my_shared_texture"/>
+
+  <!-- Defines the resolution of target texture. This element is only read if
+  "shared_texture" is omitted. -->
+  <resolution v = "512 512"/>
+
+  <!--
+  Optional. Defines the format of the texture. Possible values are 8, 16 and 32.
+  Default value is "8".
+  -->
+  <bits_per_channel v = "8"/>
+</draw_to_texture>
+
+
+--
+
+
+3. Curves reference
+
+All curves reside in hardcoded path "data/curves/curves_test.xml". Catmull Rom spline
+is a hermite curve, which goes through keys, unlike Bezier curve. Kochanek Barterls
+splines (used by 3DStudio Max) is implemented, but not exposed to user.
+
+There are few possible curves:
+
+catmull_rom - Single floating point Catmull Rom spline.
+catmull_rom2 - 2 floating point Catmull Rom spline. Useful for texcoords.
+catmull_rom3 - 3 floating point Catmull Rom spline. Useful for colors and 3d coordinates.
+step_curve - No interpolation of values is done. Only text value type is implemented.
+
+Keys are added manually with following syntax, where count of numbers in "value" depend on
+the curve type:
+<key time = 0 value = "0 0 0"/>
+
+Key time is in seconds for all sequence parameters linked to a curve.
+Key time is in frames for all scene materials linked to a curve.
+
+Random keys can be added to floating point curves, and mixed with manually added keys:
+
+<!-- Random key generator element inside catmull rom curve element -->
+<random>
+  <!--
+  Seed for random generator, this will generate exactly same keys every time.
+  Change of the seed number changes every randomized value (for this curve).
+  -->
+  <seed v = "1337"/>
+
+  <!-- Interval (either in seconds or frames) where all the keys are plotted within. -->
+  <timing start_time = 0 end_time = 10000/>
+
+  <!--
+  Indicates that interval for the random keys should be randomized too.
+  Every new key is set between "min_step" and "max_step", relative to previous key.
+  -->
+  <random_interval min_step = 5 max_step = 10/>
+
+  <!--
+  Interval for the random keys are evenly distributed.
+  Every new key is set "step" away relative to previous key.
+  Only "uniform_interval" or "random_interval" is allowed, but not both.
+  -->
+  <uniform_interval step = 20/>
+			
+  <!-- Defines how the value should be randomized. -->
+  <value>
+    <!-- Minimum value. -->
+    <min v = "0 1 -2"/>
+    <!-- Maximum value. -->
+    <max v = "2 3 0"/>
+
+    <!-- Optional. Default value is true.
+    If true, then all value elements are randomized with same value.
+    If false, then all value elements are randomized independently.
+    -->
+    <uniform v = "false"/>
+
+    <!-- Optional. Default value is false.
+    If true, then the value is added to previous value. (relative value)
+    If false, then the value is absolute value.
+    -->
+    <additive v = "true"/>
+
+    <!-- Exists only if "additive" is true. Defines the starting value for
+    random key additions -->
+    <start v = "0 0 0"/>
+  </value>
+</random>
+
+PS. The frequently occuring "v" attribute is a hack. I wont go into technical
+details.
+

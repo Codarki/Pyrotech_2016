@@ -1,0 +1,136 @@
+<?xml version="1.0" ?>
+
+<sequences>
+	<scene_sequence
+	    name = "kemia"
+		scene = "data/scenes/kemia.p3d_scene" 
+		camera = "Camera01"		
+		frames_per_second = 30 
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "2400" 
+        near_plane = "1"
+        far_plane = "800"
+        ssao_enabled = "false">	
+		</scene_sequence>
+	<scene_sequence
+	    name = "kemia2"
+		scene = "data/scenes/kemia.p3d_scene" 
+		camera = "Camera02"		
+		frames_per_second = 10 
+		start_time = "0.0"
+		start_frame = "150"
+		end_frame = "2400" 
+        near_plane = "1"
+        far_plane = "800"
+        ssao_enabled = "false">	
+		</scene_sequence>
+	<scene_sequence
+	    name = "kemia3"
+		scene = "data/scenes/kemia.p3d_scene" 
+		camera = "Camera01"		
+		frames_per_second = -15 
+		start_time = "0.0"
+		start_frame = "200"
+		end_frame = "0" 
+        near_plane = "1"
+        far_plane = "800"
+        ssao_enabled = "false">	
+		</scene_sequence>		
+	<scene_sequence
+	    name = "kemia_reflection"
+		scene = "data/scenes/kemia.p3d_scene" 
+		camera = "reflected_Camera01"
+		frames_per_second = 30 
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "2400" 
+        near_plane = "1"
+        far_plane = "800"
+        ssao_enabled = "false">	
+		</scene_sequence>      
+	<scene_sequence
+	    name = "kemia_reflection2"
+		scene = "data/scenes/kemia.p3d_scene" 
+		camera = "reflected_Camera02"
+		frames_per_second = 10 
+		start_time = "0.0"
+		start_frame = "150"
+		end_frame = "2400" 
+        near_plane = "1"
+        far_plane = "800"
+        ssao_enabled = "false">	
+		</scene_sequence>  
+	<scene_sequence
+	    name = "kemia_reflection3"
+		scene = "data/scenes/kemia.p3d_scene" 
+		camera = "reflected_Camera01"
+		frames_per_second = -15 
+		start_time = "0.0"
+		start_frame = "200"
+		end_frame = "0" 
+        near_plane = "1"
+        far_plane = "800"
+        ssao_enabled = "false">	
+		</scene_sequence>  		
+	
+	<!-- Pitää olla jotta noise toimii, ei ole päällä mutta vaaditaan tämä rivi -->
+	<image name = "noise_tex" path = "data/images/noise.jpg" />
+    <image name = "ShadowDepthMap" path = "ShadowTexture" />
+
+	<draw_to_texture name = "draw_kemia_reflection_to_ReflectionTexture">
+        <shared_texture name = "ReflectionTexture"/>
+		<input sequence = "kemia_reflection"/>
+	</draw_to_texture>    
+		<draw_to_texture name = "draw_kemia_reflection_to_ReflectionTexture2">
+        <shared_texture name = "ReflectionTexture"/>
+		<input sequence = "kemia_reflection2"/>
+	</draw_to_texture>   
+	<draw_to_texture name = "draw_kemia_reflection_to_ReflectionTexture3">
+        <shared_texture name = "ReflectionTexture"/>
+		<input sequence = "kemia_reflection3"/>
+	</draw_to_texture>   	
+
+	<draw_image name = "draw_spot_depth">
+		<input sequence = "ShadowDepthMap" />
+		<size v = "0.4 0.4"/>
+        <center v = "0.8 0.2"/>
+        <intensity>0.8</intensity>
+	</draw_image>	
+		<!-- Post processing päällä -->	
+	<!-- Tähän ei tarvitse koskea -->
+	<post_processing name = "Post processing">
+		<clear_color v = "0 0 0"/>
+        <input sequence = "draw_kemia_reflection_to_ReflectionTexture" time="0" duration="8"/>
+		<input sequence = "kemia" time="0" duration="8"/>
+        <input sequence = "draw_kemia_reflection_to_ReflectionTexture2" time="8" duration="8"/>		
+		<input sequence = "kemia2" time="8" duration="8"/>
+        <input sequence = "draw_kemia_reflection_to_ReflectionTexture3" time="16"/>		
+		<input sequence = "kemia3" time="16"/>		
+
+		
+		<!-- input sequence ="draw_alkuspace"/ -->	
+
+	</post_processing>
+	
+	<!-- Depth buffer päällä -->
+	<!-- Tähän ei tarvitse koskea -->
+	<depth_buffer name = "Depth test">
+        <clear_color v = "0 0 0"/>
+		<input sequence = "Post processing"/>
+	</depth_buffer>
+
+	<!--  Linkataan Depth test sequence -->
+	<!--  Ei tarttis koskee -->
+	<composition name = "main timeline">	
+		<input sequence = "Depth test"/>
+        <!--<input sequence = "draw_spot_depth"/> -->
+        
+	</composition>
+
+	<!-- Main timeline -->
+	<!--  Ei tarttis koskee -->		
+	<timeline>
+		<input sequence = "main timeline"/>
+	</timeline>
+</sequences>

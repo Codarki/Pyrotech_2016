@@ -1,0 +1,128 @@
+<?xml version="1.0" ?>
+<parameters>
+	<parameter
+		label = "Source map"
+		name = "child_texture"
+		type = "texture2D"
+		hlsl = "child_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+	<parameter
+		label = "Blur Scale"
+		name = "blurScale"
+		type = "float"
+		hlsl = "blurScale"
+		default_value = "-0.04">
+	</parameter>
+	<parameter
+		label = "Blur Scale Start"
+		name = "blurScaleStart"
+		type = "float"
+		hlsl = "blurScaleStart"
+		default_value = "1.0">
+	</parameter>	
+	<parameter
+		label = "Blur Focus"
+		name = "blurFocus"
+		type = "float"
+		hlsl = "blurFocus"
+		default_value = "1">
+	</parameter>
+	<parameter
+		label = "Blur Position X"
+		name = "blurPositionX"
+		type = "float"
+		hlsl = "blurPositionX"
+		default_value = "0.5">
+	</parameter>
+	<parameter
+		label = "Blur Position Y"
+		name = "blurPositionY"
+		type = "float"
+		hlsl = "blurPositionY"
+		default_value = "0.5">
+	</parameter>		
+</parameters>
+
+<sampler_states>
+	<sampler
+		name = "s0"
+		texture = "child_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+</sampler_states>
+
+<streams>
+	<stream0
+		position = 0
+		tangent = 0
+		normal = 0
+		texcoord = 0>
+	</stream0>
+</streams>
+
+<vertex_shader
+	stream = "stream0"
+	hlsl = "
+	struct input_vertex
+	{
+		float4 position : POSITION;
+		float2 texcoord : TEXCOORD0;
+	};
+
+	struct output_vertex
+	{
+		float4 position : POSITION;
+		float2 texcoord : TEXCOORD0;
+	};
+
+	void main_vs(in input_vertex input, out output_vertex output)
+	{
+		output = input;
+	}
+	">
+</vertex_shader>
+<pixel_shader
+	hlsl = "
+	float time_x;
+	float time_y;
+
+	float blurScaleStart;
+	float blurScale;
+	float blurFocus;
+	float blurPositionX;
+	float blurPositionY;
+	
+	texture2D child_texture;
+	sampler2D s0;
+
+	void main_ps(
+		float2 texcoord : TEXCOORD0,
+		out float4 color : COLOR0)
+	{
+			color = 0;
+			
+    		float2 cn_pos   = float2(blurPositionX, blurPositionY);// * float2(2*sin(time_x),1.0);
+    		float2 tx_cn    = texcoord - cn_pos;
+			
+			float dist = pow(length(tx_cn) * max(0, blurFocus), 2);
+			
+    		float numSamples = 24;
+    
+    		for(int i = 0; i < numSamples; i++)
+    		{
+				float delta = i / (numSamples - 1);
+       			float scale = blurScaleStart + dist * blurScale * delta;
+       			color += tex2D(s0, tx_cn * scale + cn_pos );
+    		}
+    		color /= numSamples;
+			
+	}
+	">
+</pixel_shader>

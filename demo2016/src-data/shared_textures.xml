@@ -1,0 +1,71 @@
+<?xml version="1.0" ?>
+
+<!--
+    Here are defined shared textures, which can be used as material parameter as well as render_to_texture input values.
+    Also MRT(Multiple Render Targets) textures are defined here.
+    
+    Possible parameters for the resolution child tag are:
+    <resolution v="1024 768"/> -> where numbers are texture dimensions
+    <resolution v="screen"/> -> where screen is current screen resolution dimension
+    <resolution v="backbuffer"/> -> where backbuffer is current backbuffer dimension, this is needed for MRT targets
+-->
+
+<shared_textures>
+    <!-- Do not delete SSAO uses this for depth -->
+	<texture name = "DepthTexture">
+		<resolution v = "backbuffer"/>
+		<bits_per_channel v = "32"/>
+	</texture>
+    <!-- Do not delete SSAO uses this for normals -->
+    <texture name = "NormalTexture">
+		<resolution v = "backbuffer"/>
+		<bits_per_channel v = "8"/>
+	</texture>
+    <!-- SSAO Buffer -->
+	<texture name = "SSAOBuffer">
+		<resolution v ="1024 1024"/>
+		<bits_per_channel v = "8"/>
+	</texture>
+    
+    <!-- Do not delete Shadowmapping uses this for depth -->
+	<texture name = "ShadowTexture">
+		<!-- <resolution v = "backbuffer"/> -->
+        <resolution v ="4096 4096"/>
+		<bits_per_channel v = "depth_32"/>
+	</texture>
+    
+    <texture name = "SceneTexture1">
+		<resolution v = "screen"/>
+		<bits_per_channel v = "16"/>
+	</texture>
+    <texture name = "SceneTexture2">
+		<resolution v = "screen"/>
+		<bits_per_channel v = "16"/>
+	</texture>
+    <texture name = "SceneTexture3">
+		<resolution v = "screen"/>
+		<bits_per_channel v = "16"/>
+	</texture>
+    
+    <texture name = "ReflectionTexture">
+		<resolution v = "screen"/>
+		<bits_per_channel v = "16"/>
+	</texture>    
+    
+    <!--
+	<texture name = "test texture">
+		<resolution v = "screen"/>
+		<bits_per_channel v = "16"/>
+	</texture>
+
+	<texture name = "light_scattering_texture">
+		<resolution v = "screen"/>
+		<bits_per_channel v = "16"/>
+	</texture>
+    
+	<texture name = "light_scattering_alpha_mask_texture">
+		<resolution v = "screen"/>
+		<bits_per_channel v = "16"/>
+	</texture>
+    -->
+</shared_textures>

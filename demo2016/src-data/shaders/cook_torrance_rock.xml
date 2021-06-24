@@ -1,0 +1,218 @@
+<?xml version="1.0" ?>
+<parameters>
+	<parameter
+		label = "Diffuse map"
+		name = "diffuse_map"
+		type = "texture2D"
+		hlsl = "diffuse_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+	<parameter
+		label = "Specular map"
+		name = "specular_map"
+		type = "texture2D"
+		hlsl = "specular_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+	<parameter
+		label = "Normal map"
+		name = "normal_map"
+		type = "texture2D"
+		hlsl = "normal_texture"
+		default_value = "data/images/common/normal.tga">
+	</parameter>
+	<parameter
+		label = "Occlusion map"
+		name = "occlusion_map"
+		type = "texture2D"
+		hlsl = "occlusion_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+	<parameter
+		label = "Emission map"
+		name = "emission_map"
+		type = "texture2D"
+		hlsl = "emission_texture"
+		default_value = "data/images/common/black.tga">
+	</parameter>
+	<parameter
+		label = "Reflection map"
+		name = "reflection_map"
+		type = "texture2D"
+		hlsl = "reflection_texture"
+		default_value = "data/images/common/black.tga">
+	</parameter>
+	<parameter
+		label = "Ambient color"
+		name = "ambient_color"
+		type = "float3"
+		hlsl = "ambient"
+		default_value = "0 0 0">
+	</parameter>
+	<parameter
+		label = "Diffuse color"
+		name = "diffuse_color"
+		type = "float3"
+		hlsl = "diffuse"
+		default_value = "1.0 1.0 1.0">
+	</parameter>
+	<parameter
+		label = "Specular color"
+		name = "specular_color"
+		type = "float3"
+		hlsl = "specular"
+		default_value = "1.0 1.0 1.0">
+	</parameter>
+	<parameter
+		label = "Roughness"
+		name = "roughness"
+		type = "float"
+		hlsl = "roughness_uniform"
+		default_value = "0.4">
+	</parameter>
+	<parameter
+		label = "Diffuse roughness"
+		name = "diffuse_roughness"
+		type = "float"
+		hlsl = "diffuse_roughness_uniform"
+		default_value = "0.3">
+	</parameter>
+	<parameter
+		label = "Fresnel reflectance as measured at normal incidence"
+		name = "fresnel_normal_incidence"
+		type = "float"
+		hlsl = "fresnel_normal_incidence"
+		default_value = "0.25">
+	</parameter>
+	<parameter
+		label = "Normal scale"
+		name = "normal_scale"
+		type = "float"
+		hlsl = "normal_scale"
+		default_value = "1.0">
+	</parameter>
+	<parameter
+		label = "Reflection coeff"
+		name = "reflection_coeff"
+		type = "float"
+		hlsl = "reflection_coeff"
+		default_value = "1.0">
+	</parameter>
+	<parameter
+		label = "Emission Coeffient"
+		name = "emission_coeff"
+		type = "float3"
+		hlsl = "emission_coeff"
+		default_value = "1 1 1">
+	</parameter>
+	<parameter
+		label = "General Texcoord Offset"
+		name = "general_texcoord_offset"
+		type = "float3"
+		hlsl = "general_texcoord_offset"
+		default_value = "0 0 0">
+	</parameter>
+	<parameter
+		label = "Color Texcoord Offset"
+		name = "color_texcoord_offset"
+		type = "float3"
+		hlsl = "color_texcoord_offset"
+		default_value = "0 0 0">
+	</parameter>
+	<parameter
+		label = "Emission Texcoord Offset"
+		name = "emission_texcoord_offset"
+		type = "float3"
+		hlsl = "emission_texcoord_offset"
+		default_value = "0 0 0">
+	</parameter>
+</parameters>
+
+<sampler_states>
+	<sampler
+		name = "diffuse_sampler"
+		texture = "diffuse_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "ANISOTROPIC"
+		mag_filter = "ANISOTROPIC"
+		mip_filter = "ANISOTROPIC"
+		>
+	</sampler>
+	<sampler
+		name = "specular_sampler"
+		texture = "specular_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "ANISOTROPIC"
+		mag_filter = "ANISOTROPIC"
+		mip_filter = "ANISOTROPIC"
+		>
+	</sampler>
+	<sampler
+		name = "normal_sampler"
+		texture = "normal_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "ANISOTROPIC"
+		mag_filter = "ANISOTROPIC"
+		mip_filter = "ANISOTROPIC"
+		>
+	</sampler>
+	<sampler
+		name = "occlusion_sampler"
+		texture = "occlusion_texture"
+		address_u = "CLAMP"
+		address_v = "CLAMP"
+		address_w = "CLAMP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+	<sampler
+		name = "emission_sampler"
+		texture = "emission_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+	<sampler
+		name = "reflection_sampler"
+		texture = "reflection_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+</sampler_states>
+
+<streams>
+	<stream0
+		position = 0
+		tangent = 0
+		normal = 0
+		texcoord = 0>
+	</stream0>
+</streams>
+
+<vertex_shader
+	stream = "stream0">
+	<include_hlsl file = "data/shaders/hlsl/common_vs.hlsl"/>
+	<include_hlsl file = "data/shaders/hlsl/tbn_vs.hlsl"/>
+</vertex_shader>
+
+<pixel_shader>
+	<include_hlsl file = "data/shaders/hlsl/common_ps.hlsl"/>
+	<include_hlsl file = "data/shaders/hlsl/cook_torrance_rock.hlsl"/>
+</pixel_shader>

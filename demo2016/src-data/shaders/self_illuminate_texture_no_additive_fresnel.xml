@@ -1,0 +1,423 @@
+<?xml version="1.0" ?>
+<parameters>
+	<parameter
+		label = "Self illuminate map"
+		name = "self_illuminate_map"
+		type = "texture2D"
+		hlsl = "self_illuminate_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+	
+	<parameter
+		label = "Self illuminate map 2"
+		name = "self_illuminate_map_2"
+		type = "texture2D"
+		hlsl = "self_illuminate_texture_2"
+		default_value = "data/images/common/black.tga">
+	</parameter>
+	<parameter
+		label = "Self illuminate map 3"
+		name = "self_illuminate_map_3"
+		type = "texture2D"
+		hlsl = "self_illuminate_texture_3"
+		default_value = "data/images/common/black.tga">
+	</parameter>	
+	
+	<parameter
+		label = "Self illuminate color"
+		name = "self_illuminate_color"
+		type = "float3"
+		hlsl = "self_illuminate_color"
+		default_value = "1.0 1.0 1.0">
+	</parameter>
+	<parameter
+		label = "Alpha Coeff"
+		name = "alpha_coeff"
+		type = "float"
+		hlsl = "alpha_coeff"
+		default_value = "1.0">
+	</parameter>
+	<parameter
+		label = "Texcoord Offset"
+		name = "texcoord_offset"
+		type = "float3"
+		hlsl = "texcoord_offset"
+		default_value = "0 0 0">
+	</parameter>
+	
+	<parameter
+		label = "Self illuminate color 2"
+		name = "self_illuminate_color_2"
+		type = "float3"
+		hlsl = "self_illuminate_color_2"
+		default_value = "1.0 1.0 1.0">
+	</parameter>
+	<parameter
+		label = "Alpha Coeff 2"
+		name = "alpha_coeff_2"
+		type = "float"
+		hlsl = "alpha_coeff_2"
+		default_value = "1.0">
+	</parameter>
+	<parameter
+		label = "Texcoord Offset 2"
+		name = "texcoord_offset_2"
+		type = "float3"
+		hlsl = "texcoord_offset_2"
+		default_value = "0 0 0">
+	</parameter>
+
+	<parameter
+		label = "Self illuminate color 3"
+		name = "self_illuminate_color_3"
+		type = "float3"
+		hlsl = "self_illuminate_color_3"
+		default_value = "1.0 1.0 1.0">
+	</parameter>
+	<parameter
+		label = "Alpha Coeff 3"
+		name = "alpha_coeff_3"
+		type = "float"
+		hlsl = "alpha_coeff_3"
+		default_value = "1.0">
+	</parameter>
+	<parameter
+		label = "Texcoord Offset 3"
+		name = "texcoord_offset_3"
+		type = "float3"
+		hlsl = "texcoord_offset_3"
+		default_value = "0 0 0">
+	</parameter>
+
+	<parameter
+		label = "Normal map"
+		name = "normal_map"
+		type = "texture2D"
+		hlsl = "normal_texture"
+		default_value = "data/images/common/normal.tga">
+	</parameter>
+
+	<!-- Scales normal Z, ie flattens normal with values > 1 -->
+	<parameter
+		label = "Normal scale"
+		name = "normal_scale"
+		type = "float"
+		hlsl = "normal_scale"
+		default_value = "1.0">
+	</parameter>
+
+	<!-- Raises light fresnel to specified power. -->
+	<parameter
+		label = "Fresnel Light Power"
+		name = "fresnel_light_power"
+		type = "float"
+		hlsl = "fresnel_light_power"
+		default_value = "16.0">
+	</parameter>
+
+	<!-- Raises view fresnel to specified power. -->
+	<parameter
+		label = "Fresnel View Power"
+		name = "fresnel_view_power"
+		type = "float"
+		hlsl = "fresnel_view_power"
+		default_value = "8.0">
+	</parameter>
+
+	<!-- Color of the view fresnel. -->
+	<parameter
+		label = "Fresnel View Color"
+		name = "fresnel_view_color"
+		type = "float3"
+		hlsl = "fresnel_view_color"
+		default_value = "1 1 1">
+	</parameter>
+	<!-- Coefficient for the light fresnel. -->
+	<parameter
+		label = "Fresnel light Coefficient"
+		name = "fresnel_light_coeff"
+		type = "float3"
+		hlsl = "fresnel_light_coeff"
+		default_value = "1 1 1">
+	</parameter>    
+</parameters>
+
+<sampler_states>
+	<sampler
+		name = "self_illuminate_sampler"
+		texture = "self_illuminate_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+	<sampler
+		name = "self_illuminate_sampler_2"
+		texture = "self_illuminate_texture_2"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+	<sampler
+		name = "self_illuminate_sampler_3"
+		texture = "self_illuminate_texture_3"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+    
+	<sampler
+		name = "normal_sampler"
+		texture = "normal_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>    
+</sampler_states>
+
+<streams>
+	<stream0
+		position = 0
+		texcoord = 0>
+	</stream0>
+</streams>
+
+<additive_blend v="false"/>
+
+<vertex_shader
+	stream = "stream0"
+	hlsl = "
+	float4x4 object_to_world;
+	float4x4 world_to_view_clip;
+    float4x4 world_to_object;
+	float3 texcoord_offset;
+	float3 texcoord_offset_2;
+	float3 texcoord_offset_3;	
+
+    // View position in world space
+    float3 view_in_world;
+    float3 light_position_in_world;
+    
+    struct vectors_in_object
+    {
+        float3 position;
+        float3 view_direction;
+        float3 light_direction;
+    };
+    
+    // Transform position from homogeneus coordinates.
+    float3 dehomo(float4 position_h)
+    {
+        return position_h.xyz / position_h.w;
+    }
+
+    // Transform position to homogeneus coordinates.
+    float4 homogeneus_position(float3 position)
+    {
+        return float4(position.xyz, 1);
+    }
+    
+    // Calculates non-homogeneus position, light and view vectors.
+    vectors_in_object calculate_vectors_in_object(
+        float4x4 world_to_object,
+        float4 position_h, float3 view_in_world, float3 light_in_world)
+    {
+        vectors_in_object result;
+
+        float3 position_in_object = dehomo(position_h);
+        float3 view_in_object = dehomo(mul(world_to_object, homogeneus_position(view_in_world)));
+        float3 light_in_object = dehomo(mul(world_to_object, homogeneus_position(light_in_world)));
+
+        //float3 view_in_object = mul(world_to_object, float4(view_in_world, 1)).xyz;
+        //float3 light_in_object = mul(world_to_object, float4(light_in_world, 1)).xyz;
+     
+        result.position = position_in_object;
+        result.view_direction = view_in_object - position_in_object;
+        result.light_direction = light_in_object - position_in_object;
+        
+        return result;
+    }
+    
+    float3x3 calculate_object_to_tangent_orthonormal(
+        float3 tangent,
+        float3 normal,
+        float handedness)
+    {
+        // Calculate tangent and bitangent.
+        float3 T = tangent;
+        float3 B = cross(normal, tangent) * handedness;
+        float3 N = normal;
+        
+        // Gram-Schmidt orthogonalize
+        T = T - dot(N, T) * N;
+        B = B - dot(N, B) * N - dot(T, B) * T;
+        
+        T = normalize(T);
+        B = normalize(B);
+        N = normalize(N);
+        
+        return float3x3(T, B, N);
+    }
+    
+	struct input_vertex
+	{
+        float4 position : POSITION;
+        float4 tangent : TANGENT;
+        float3 normal : NORMAL;
+        float2 texcoord : TEXCOORD0;
+	};
+
+	struct output_vertex
+	{
+		float4 position : POSITION;
+		float2 texcoord : TEXCOORD0;
+		float2 texcoord2 : TEXCOORD1;
+		float2 texcoord3 : TEXCOORD2;
+        float3 view_in_tangent : TEXCOORD3;
+        float3 light_in_tangent : TEXCOORD4;
+        float3 light_in_world : TEXCOORD5;        
+	};
+
+	void main_vs(in input_vertex input, out output_vertex output)
+	{
+		float4 position_in_world = mul(object_to_world, input.position);
+		output.position = mul(world_to_view_clip, position_in_world);
+		output.texcoord = input.texcoord + texcoord_offset.xy;
+		output.texcoord2 = input.texcoord + texcoord_offset_2.xy;
+		output.texcoord3 = input.texcoord + texcoord_offset_3.xy;
+    
+        vectors_in_object in_object = calculate_vectors_in_object(
+            world_to_object, input.position, view_in_world,
+            light_position_in_world);
+
+        float3x3 object_to_tangent = calculate_object_to_tangent_orthonormal(
+            input.tangent.xyz, input.normal, input.tangent.w);
+
+        output.view_in_tangent = mul(object_to_tangent, in_object.view_direction);
+        output.light_in_tangent = mul(object_to_tangent, in_object.light_direction);
+
+        // For attenuation, to avoid non-uniform scaling in light_in_tangent.
+        output.light_in_world = position_in_world - light_position_in_world;        
+	}
+	">
+</vertex_shader>
+<pixel_shader
+	hlsl = "
+	texture2D self_illuminate_texture;
+	sampler2D self_illuminate_sampler;
+	
+	texture2D self_illuminate_texture_2;
+	sampler2D self_illuminate_sampler_2;
+	
+	texture2D self_illuminate_texture_3;
+	sampler2D self_illuminate_sampler_3;
+	
+	float3 self_illuminate_color;
+	float alpha_coeff;
+	
+	float3 self_illuminate_color_2;
+	float alpha_coeff_2;
+	
+	float3 self_illuminate_color_3;
+	float alpha_coeff_3;	
+    
+    //Fresnel stuff
+    texture2D normal_texture;
+    sampler2D normal_sampler;
+
+    float3 light_color;
+    float light_range;
+    float normal_scale;
+
+    float fresnel_light_power; // = 16;
+    float fresnel_view_power; // = 8;
+
+    float3 fresnel_view_color; // = {0, 10, 20};
+    float3 fresnel_light_coeff; // = {10, 10, 10};
+    
+    float3 calculate_light(float3 unnormalized_light_direction, float3 light_color)
+    {
+        // We drop the light range, to make more physically accurate attenuation.
+        //float light_distance = length(light_in_tangent) / light_range;
+        
+        float light_distance = length(unnormalized_light_direction) / 100.0f;
+        float att = 1.0f / (light_distance * light_distance);
+        float3 I = att * light_color;
+        
+        return I;
+    }
+    
+	void main_ps(
+        out float4 color : COLOR0,
+        float2 texcoord : TEXCOORD0,
+		float2 texcoord2 : TEXCOORD1,
+		float2 texcoord3 : TEXCOORD2,
+        float3 view_in_tangent : TEXCOORD3,
+        float3 light_in_tangent : TEXCOORD4,
+        float3 light_in_world : TEXCOORD5)
+	{
+		float4 color2 = 0;
+		float4 color3 = 0;
+	
+		color.xyzw = tex2D(self_illuminate_sampler, texcoord).xyzw;
+		color2.xyzw = tex2D(self_illuminate_sampler_2, texcoord2).xyzw;
+		color3.xyzw = tex2D(self_illuminate_sampler_3, texcoord3).xyzw;
+		
+		// convert from gamma 2.2 to gamma 1.0
+		color = pow(abs(color), 2.2);
+		color2 = pow(abs(color2), 2.2);
+		color3 = pow(abs(color3), 2.2);
+	
+		color.xyz *= self_illuminate_color;
+		color *= alpha_coeff;
+		
+		color2.xyz *= self_illuminate_color_2;
+		color2 *= alpha_coeff_2;
+		
+		color3.xyz *= self_illuminate_color_3;
+		color3 *= alpha_coeff_3;
+		
+		color += color2;
+		color += color3;
+        
+        //Fresnel calculations
+        float4 fresnel_color = 0;
+        
+        float3 I = calculate_light(light_in_world, light_color);
+
+        float3 L = normalize(light_in_tangent);
+        float3 V = normalize(view_in_tangent);
+        float3 N = tex2D(normal_sampler, texcoord).xyz * 2 - 1;
+        N.z *= normal_scale;
+        N = normalize(N);
+        
+        float N_dot_V = dot(N, V);
+        float N_dot_L = dot(N, L);
+            
+        float fresnel_light = pow(1 - abs(N_dot_L), fresnel_light_power);
+        float fresnel_view = pow(1 - abs(N_dot_V), fresnel_view_power);
+            
+        fresnel_color.xyz = fresnel_view * fresnel_view_color;
+        fresnel_color.xyz += fresnel_light * I * fresnel_light_coeff;
+        
+        color += fresnel_color;
+	}
+    
+    
+	">
+</pixel_shader>

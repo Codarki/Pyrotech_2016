@@ -1,0 +1,94 @@
+<?xml version="1.0" ?>
+
+<sequences>
+
+
+	<!-- Pitää olla jotta noise toimii, ei ole päällä mutta vaaditaan tämä rivi -->
+	<image name = "noise_tex" path = "data/images/noise.jpg" />
+    
+    <!-- Kuvat -->
+    <image name = "testi_kuva" path = "data/images/lights/hud_green.jpg" />
+    <image name = "testi_kuva2" path = "data/images/lights/hud_red.jpg" />    
+    <!--<image name = "overlay_kuva" path = "data/images/2014/nuclei_solid.png" /> -->
+    <image name = "overlay_kuva" path = "data/images/pyrotech.png" />
+    
+	<!-- Scene texturet -->
+    <image name = "SceneTexture1_image" path = "SceneTexture1" />
+   
+    <!-- Kuva piirrot -->
+	<draw_image name = "draw_testi_kuva">
+		<input sequence = "testi_kuva" />
+		<size v = "0.4 0.4"/>
+        <center curve = "kuva_center_curve"/>
+        <alpha v="0.01"/>
+        <intensity v="20"/>
+        <!--<intensity v="1.0"/> -->
+        <!--<alpha curve="kuva_alpha_curve"/>-->
+        <!--<size curve="kuva_size_curve"/>-->
+        <rotation curve="kuva_rotate_curve"/>
+        
+	</draw_image>	  
+	<draw_image name = "draw_testi_kuva2">
+		<input sequence = "testi_kuva2" />
+		<size v = "0.4 0.4"/>
+        <center curve = "kuva_center_curve2"/>
+        <alpha v="0.01"/>
+        <intensity v="20"/>
+        <!--<intensity v="1.0"/> -->
+        <!--<alpha curve="kuva_alpha_curve"/>-->
+        <!--<size curve="kuva_size_curve"/>-->
+        <rotation curve="kuva_rotate_curve2"/>
+        
+	</draw_image>	     
+ 	<draw_image name = "draw_overlay_kuva">
+		<input sequence = "overlay_kuva" />
+		<size v = "1 1"/>
+        <!--<center v = "0.8 0.2"/>-->
+        <intensity v="0"/>
+        <alpha v="1"/>
+        <!--<alpha curve="kuva_alpha_curve"/>-->
+        <!--<size curve="kuva_size_curve"/>-->
+        <!--<rotation curve="kuva_rotate_curve"/>-->
+        
+	</draw_image>	  
+<!--   
+	<draw_to_texture name = "draw_testiscene_to_Scenetexture">
+        <shared_texture name = "SceneTexture1"/>
+		<input sequence = "testiscene"/>
+	</draw_to_texture>      
+    
+    <plasma>
+		<name v="light_scattering"/>
+		<material_name v="light_scattering_material"/>
+        <input sequence = "draw_testiscene_to_Scenetexture"/>
+	</plasma>    
+    -->
+		<!-- Post processing päällä -->	
+	<!-- Tähän ei tarvitse koskea -->
+	<post_processing name = "Post processing">
+		<clear_color v = "0 0 0"/>
+
+		<input sequence = "draw_testi_kuva" time="0"/>
+        <input sequence = "draw_testi_kuva2" time="0"/>        
+        <input sequence = "draw_overlay_kuva" time="0"/>
+	</post_processing>
+	
+	<!-- Depth buffer päällä -->
+	<!-- Tähän ei tarvitse koskea -->
+	<depth_buffer name = "Depth test">
+        <clear_color v = "0 0 0"/>
+		<input sequence = "Post processing"/>
+	</depth_buffer>
+
+	<!--  Linkataan Depth test sequence -->
+	<!--  Ei tarttis koskee -->
+	<composition name = "main timeline">	
+		<input sequence = "Depth test"/>
+	</composition>
+
+	<!-- Main timeline -->
+	<!--  Ei tarttis koskee -->		
+	<timeline>
+		<input sequence = "main timeline"/>
+	</timeline>
+</sequences>

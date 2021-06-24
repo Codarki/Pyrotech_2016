@@ -1,0 +1,95 @@
+<?xml version="1.0" ?>
+
+<post_processing_parameters>
+	<parameters>
+        <light_scattering>
+            <enabled curve = "light_scatter_enabled_curve"/> <!-- SHIFT-1 toggles on/off -->
+            <exposure curve = "light_scatter_exposure_curve"/> <!-- train_streak_pow_curve 0.0024 --> <!--  SHIFT-E+ SHIFT-E- -->
+            <decay curve = "light_scatter_decay_curve"/> <!-- 1.005 --> <!-- SHIFT-D+ SHIFT-D- -->
+            <density curve = "light_scatter_density_curve"/> <!-- 0.9 --> <!--  SHIFT-X+ SHIFT-X- -->
+            <weight curve = "light_scatter_weight_curve"/> <!-- 4.65 --> <!-- SHIFT-Q+ SHIFT-Q- -->
+            <lightScrPosX curve = "light_scatter_lightScrPosX_curve"/> <!-- NUM-LOCK ON, NUMPAD_4 NUMPAD_6 -->
+            <lightScrPosY curve = "light_scatter_lightScrPosY_curve"/> <!-- NUM-LOCK ON, NUMPAD_8, NUMPAD_5 -->
+        </light_scattering>
+        
+		<depth_of_field>
+			<focus curve = "DOF_focus_curve"/> <!-- 0.66 DS- DS+ , shifts focal plane between "near" and "far" planes. 0.0001(far) - 1 (near) -->
+			<range curve = "DOF_range_curve"/> <!-- 10 , DA- DA+, thickenss of focal plane -->
+            <blur_rgb_dist curve = "DOF_blur_rgb_dist_curve"/> <!-- Fakes chromatic aberration by distorting blurred rgb values. 1.0 = no distort, 3.5 = nice distort :), DQ- DQ+ -->
+            <gain curve = "DOF_gain_curve"/> <!-- Increases blurred images luminance 0.0 = whole luminance calculation is ignored and threshold parameter does not anything, DG+, DG- -->
+            <threshold curve = "DOF_threshold_curve"/> <!-- Blurred images luminance threshold, which raises highligts, DT+, DT- -->
+		</depth_of_field>
+		
+		<noise>
+            <strength curve = "noise_strength_curve"/>
+			<speed curve = "noise_speed_curve"/>
+			<frequency curve = "noise_freq_curve"/>
+		</noise>
+		        
+		<tone_mapping>
+			<adapted_luminance curve = "tone_adapt_lum_curve"/>
+			<middle_gray curve = "tone_middle_gray_curve"/> <!-- 0.18 -->
+			
+			<!-- saturation: 1 is normal, 0 is black and white. Effect will clamp the input in 0 -- 1 range. -->
+			<saturation curve= "tone_saturate_curve"/>
+            
+            <!-- White point:
+            Denotes the smallest luminance value that will be mapped to white.
+            For low-dynamic-range images, setting White to smaller values
+            yields a subtle contrast enhancement.
+            -->
+			<white_point curve = "tone_white_point_curve"/>
+			
+			<!--<color_correction curve = "color_correction_curve"/>-->
+			<!--<color_correction v = "0.439 0.259 0.078"/>-->
+			<color_correction curve = "tone_color_correction_curve"/>
+			
+			<negation_color curve = "tone_negation_color_curve"/>
+			
+            <!-- used for yuv in tonemapping -->
+			<attribute1 curve = "yuv_curve"/>
+			<attribute2 v = "1 1 1 1"/>
+			<attribute3 v = "1 1 1 1"/>
+			<attribute4 v = "1 1 1 1"/>
+			<attribute5 v = "1 1 1 1"/>
+		</tone_mapping>
+		
+		<bloom>
+			<deviation curve = "bloom_deviation_curve"/>
+			<multiplier curve = "bloom_multiplier_curve"/>
+            <horizontal_strength_texture curve = "bloom_horizontal_strength_texture_curve"/> <!-- ei toimi -->
+			<blur_strength_texture curve = "blur_strength_texture_curve"/> <!-- ei toimi .. shalama_varina_texture_curve  blur_strength_texture_curve -->
+            
+			<bright_pass>
+				<!--<adapted_luminance curve = "bright_pass_adapted_luminance"/>-->
+				<adapted_luminance curve = "bloom_adapt_lum_curve"/> <!-- bloom_adaptive_lum_curve --> <!-- 1.0 --> <!-- 0.36 --> <!-- 1.5 JL -->
+				<middle_gray curve = "bloom_middle_gray_curve"/> <!-- 0.18 -->
+				<threshold curve = "bloom_bp_threshold_curve"/> <!-- 0.02 -->
+				<!--offset v = 2.5/-->
+
+                <!--
+                Threshold in the bright pass tone mapping operator moves the whole curve
+                into the -y direction.
+                -->
+				<!--<threshold curve = "Bloom threshold curve"/>-->
+                
+                <!--
+                Increasing the value of offset makes the curve steeper, which means it is
+                more sensitive to light changes and decreasing makes it more shallow, so
+                that it is less sensitive to light changes.
+                -->
+				<!--<offset curve = "Bloom_offset_curve"/>-->
+				<offset curve = "bloom_offset_curve"/> <!-- 4 JL -->
+                
+                <!-- White point:
+                Denotes the smallest luminance value that will be mapped to white.
+                For low-dynamic-range images, setting White to smaller values
+                yields a subtle contrast enhancement.
+                -->
+                <!--<white_point curve = "bloom_white_point_curve"/>-->
+				<white_point curve ="bloom_white_point_curve" /> <!-- 0.18 --> <!-- 0.3 JL -->
+			</bright_pass>
+		</bloom>
+
+	</parameters>
+</post_processing_parameters>

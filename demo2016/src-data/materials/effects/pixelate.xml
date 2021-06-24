@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+
+<material
+	name = "pixelate_material"
+	material_p3d = "pixelate material"
+	>
+    <shader file = "data/shaders/effects/pixelate_child.xml"> 
+        <parameters>
+            <!--<negative shared_value = "value_0_1_sync_curve"/>-->
+            <block_count shared_value="pixelate_curve"/>
+        </parameters>
+	</shader>        
+</material>

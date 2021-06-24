@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+
+<sequences>
+	<scene_sequence
+	    name = "credu_pharaffin"
+		scene = "data/scenes/credu_pharaffin.p3d_scene"
+		camera = "Camera01"
+		frames_per_second = 30
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "1000"
+        near_plane = "1"
+        far_plane = "1000"
+        ssao_enabled = "false"/>
+    
+	<scene_sequence
+	    name = "kaytava"
+		scene = "data/scenes/kaytava.p3d_scene" 
+		camera = "Camera07"		
+		frames_per_second = 30
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "1050" 
+        near_plane = "1"
+        far_plane = "50000"
+        ssao_enabled = "true">					
+		</scene_sequence>        
+	<!-- Pitää olla jotta noise toimii, ei ole päällä mutta vaaditaan tämä rivi -->
+	<image name = "noise_tex" path = "data/images/noise.jpg" />
+    
+	<!-- Post processing päällä -->	
+	<!-- Tähän ei tarvitse koskea -->
+	<post_processing name = "Post processing">
+		<clear_color v = "0 0 0"/>
+		<input sequence ="kaytava"/>
+
+	</post_processing>
+	
+	<!-- Depth buffer päällä -->
+	<!-- Tähän ei tarvitse koskea -->
+	<depth_buffer name = "Depth test">
+        <clear_color v = "0 0 0"/>
+		 <input sequence = "Post processing"/>
+         <input sequence = "credu_pharaffin" time=5/>
+         <!--<input sequence = "testiscene_1"/>-->
+         
+	</depth_buffer>
+
+	<!--  Linkataan Depth test sequence -->
+	<!--  Ei tarttis koskee -->
+	<composition name = "main timeline">
+		<input sequence = "Depth test"/>
+          
+        <!--<input sequence = "draw_spot_depth"/> -->
+	</composition>
+	
+	<!--<audio_system name = "Audio system">
+		<audio_sequence name = "musa" path = "data/audio/uusimusa2011.mp3"/>
+	</audio_system>	-->
+	
+	<!-- Main timeline -->
+	<!--  Ei tarttis koskee -->		
+	<timeline>
+		<input sequence = "main timeline"/>
+	</timeline>
+</sequences>

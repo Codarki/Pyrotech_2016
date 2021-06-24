@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<parameters>
+	<parameter
+		label = "Self illuminate color"
+		name = "self_illuminate_color"
+		type = "float3"
+		hlsl = "self_illuminate_color"
+		default_value = "1.0 1.0 1.0">
+	</parameter>
+</parameters>
+
+<sampler_states>
+</sampler_states>
+
+<streams>
+	<stream0
+		position = "0">
+	</stream0>
+</streams>
+
+<additive_blend v="true"/>
+
+<vertex_shader
+	stream = "stream0"
+	hlsl = "
+	float4x4 object_to_world;
+	float4x4 world_to_view_clip;
+
+	struct input_vertex
+	{
+		float4 position : POSITION;
+	};
+
+	struct output_vertex
+	{
+		float4 position : POSITION;
+	};
+
+	void main_vs(in input_vertex input, out output_vertex output)
+	{
+        float4 position_in_world = mul(object_to_world, input.position);
+        output.position = mul(world_to_view_clip, position_in_world);
+	}
+	">
+</vertex_shader>
+
+<pixel_shader
+	hlsl = "
+	float3 self_illuminate_color;
+    	
+	void main_ps(
+        out float4 color : COLOR0)
+	{
+        color.xyz = self_illuminate_color;
+        color.w = 1;
+	}
+	">
+</pixel_shader>

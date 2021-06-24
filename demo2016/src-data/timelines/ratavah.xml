@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+
+<sequences>
+	<scene_sequence
+	    name = "ratavah"
+		scene = "data/scenes/ratavah.p3d_scene" 
+		frames_per_second = 30 
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "2000" 
+        near_plane = "10"
+        far_plane = "4000"
+        ssao_enabled = "false">	
+		<camera curve="ratavah_camera_curve"/>		
+    </scene_sequence>
+
+	<scene_sequence
+	    name = "ratavah_reflection"
+		scene = "data/scenes/ratavah.p3d_scene" 
+		frames_per_second = 30 
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "2000" 
+        near_plane = "10"
+        far_plane = "4000"
+        ssao_enabled = "false">	
+		<camera curve="ratavah_reflected_camera_curve"/>		
+    </scene_sequence>
+    
+	
+	<image name = "noise_tex" path = "data/images/noise.jpg" />
+    <image name = "ShadowDepthMap" path = "ShadowTexture" />
+
+	<draw_to_texture name = "draw_ratavah_reflection_to_ReflectionTexture">
+		<clear_color v = "0 0.1 0.0"/>
+        <shared_texture name = "ReflectionTexture"/>
+		<input sequence = "ratavah_reflection"/>
+	</draw_to_texture>
+
+	<draw_image name = "draw_spot_depth">
+		<input sequence = "ShadowDepthMap" />
+		<size v = "0.4 0.4"/>
+        <center v = "0.8 0.2"/>
+        <intensity>0.8</intensity>
+	</draw_image>	
+    
+	<post_processing name = "Post processing">
+		<clear_color v = "0 0 0"/>
+		<input sequence = "draw_ratavah_reflection_to_ReflectionTexture" time="0"/>
+		<input sequence = "ratavah" time="0"/>			
+		<!-- input sequence ="draw_alkuspace"/ -->	
+	</post_processing>
+
+	<audio_system name = "Audio_system">
+		<audio_sequence name = "musa" path = "data/audio/untitled.mp3" time="0">
+            <spectrum scale = "3" min_threshold = "0.2" max_threshold = "3.0"/>
+        </audio_sequence>
+	</audio_system>
+    
+	<depth_buffer name = "Depth test">
+        <clear_color v = "0 0 0"/>
+		<input sequence = "Post processing"/>
+	</depth_buffer>
+    
+	<composition name = "main timeline">	
+		<input sequence = "Audio_system" time="0"/>
+		<input sequence = "Depth test"/>
+        <!--<input sequence = "draw_spot_depth"/> -->
+	</composition>
+
+	<timeline>
+		<input sequence = "main timeline"/>
+	</timeline>
+</sequences>

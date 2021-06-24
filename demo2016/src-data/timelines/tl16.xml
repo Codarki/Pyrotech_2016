@@ -1,0 +1,544 @@
+<?xml version="1.0" ?>
+<sequences>
+	<scene_sequence
+	    name = "alkupallot"
+		scene = "data/scenes/alkupallot1.p3d_scene" 
+		camera = "Camera02"		
+		frames_per_second = 30 
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "2000" 
+        near_plane = "1"
+        far_plane = "1500"
+        ssao_enabled = "true">	
+    </scene_sequence>
+	
+	<scene_sequence
+	    name = "lumimaa"
+		scene = "data/scenes/lumimaa.p3d_scene" 
+		camera = "Camera01"		
+		frames_per_second = 35
+		start_time = "0.0"
+		start_frame = "150"
+		end_frame = "2000" 
+        near_plane = "1"
+        far_plane = "1500"
+        ssao_enabled = "true">	
+    </scene_sequence>
+	
+	<scene_sequence
+	    name = "tauluskene"
+		scene = "data/scenes/tauluskene.p3d_scene" 
+		camera = "Camera01"		
+		frames_per_second = 30 
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "2000" 
+        near_plane = "1"
+        far_plane = "1500"
+        ssao_enabled = "true">	
+    </scene_sequence>
+
+	<scene_sequence
+	    name = "kemia1"
+		scene = "data/scenes/kemia.p3d_scene" 
+		camera = "Camera01"		
+		frames_per_second = 30 
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "2400" 
+        near_plane = "1"
+        far_plane = "800"
+        ssao_enabled = "true">	
+		</scene_sequence>
+	<scene_sequence
+	    name = "kemia2"
+		scene = "data/scenes/kemia.p3d_scene" 
+		camera = "Camera02"		
+		frames_per_second = 10 
+		start_time = "0.0"
+		start_frame = "150"
+		end_frame = "2400" 
+        near_plane = "1"
+        far_plane = "800"
+        ssao_enabled = "true">	
+		</scene_sequence>
+	<scene_sequence
+	    name = "kemia3"
+		scene = "data/scenes/kemia.p3d_scene" 	
+		frames_per_second = -13 
+		start_time = "0.0"
+		start_frame = "300"
+		end_frame = "0" 
+        near_plane = "1"
+        far_plane = "800"
+        ssao_enabled = "true">	
+		<camera curve="kemia3_camera_curve"/>			
+		</scene_sequence>
+
+	<scene_sequence
+	    name = "lumimaa_reflcetion"
+		scene = "data/scenes/lumimaa.p3d_scene" 
+		camera = "reflected_Camera01"		
+		frames_per_second = 35 
+		start_time = "0.0"
+		start_frame = "150"
+		end_frame = "2000" 
+        near_plane = "1"
+        far_plane = "1500"
+        ssao_enabled = "false">	
+    </scene_sequence>	
+		
+	<scene_sequence
+	    name = "kemia_reflection1"
+		scene = "data/scenes/kemia.p3d_scene" 
+		camera = "reflected_Camera01"
+		frames_per_second = 30 
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "2400" 
+        near_plane = "1"
+        far_plane = "800"
+        ssao_enabled = "false">	
+		</scene_sequence>      
+	<scene_sequence
+	    name = "kemia_reflection2"
+		scene = "data/scenes/kemia.p3d_scene" 
+		camera = "reflected_Camera02"
+		frames_per_second = 10 
+		start_time = "0.0"
+		start_frame = "150"
+		end_frame = "2400" 
+        near_plane = "1"
+        far_plane = "800"
+        ssao_enabled = "false">	
+		</scene_sequence>  
+	<scene_sequence
+	    name = "kemia_reflection3"
+		scene = "data/scenes/kemia.p3d_scene" 
+		frames_per_second = -13
+		start_time = "0.0"
+		start_frame = "300"
+		end_frame = "0" 
+        near_plane = "1"
+        far_plane = "800"
+        ssao_enabled = "false">	
+		<camera curve="kemia3_reflected_camera_curve"/>			
+		</scene_sequence>  		
+	<scene_sequence
+	    name = "intro"
+		scene = "data/scenes/intro.p3d_scene" 	
+		frames_per_second = 29
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "2400" 
+        near_plane = "1"
+        far_plane = "800"
+        ssao_enabled = "true">
+		<camera curve="kotka_camera_curve"/>		
+	</scene_sequence>
+
+	<scene_sequence
+	    name = "intro_reflection"
+		scene = "data/scenes/intro.p3d_scene" 
+		frames_per_second = 29
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "2400" 
+        near_plane = "1"
+        far_plane = "800"
+        ssao_enabled = "false">	
+		<camera curve="kotka_reflected_camera_curve"/>		
+	</scene_sequence>  
+
+	<scene_sequence
+	    name = "piraatti"
+		scene = "data/scenes/piraatti.p3d_scene" 
+		camera = "Camera01"		
+		frames_per_second = 30 
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "2400" 
+        near_plane = "1"
+        far_plane = "800"
+        ssao_enabled = "true">	
+	</scene_sequence>
+	<scene_sequence
+	    name = "piraatti_reflection"
+		scene = "data/scenes/piraatti.p3d_scene" 
+		camera = "reflected_Camera01"
+		frames_per_second = 30 
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "2400" 
+        near_plane = "1"
+        far_plane = "800"
+        ssao_enabled = "false">	
+	</scene_sequence>
+	
+	<scene_sequence
+	    name = "saaret"
+		scene = "data/scenes/saaret.p3d_scene" 	
+		frames_per_second = 30 
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "2400" 
+        near_plane = "1"
+        far_plane = "1800"
+        ssao_enabled = "true">	
+		<camera curve="saaret_camera_curve"/>			
+	</scene_sequence>
+	<scene_sequence
+	    name = "saaret_reflection"
+		scene = "data/scenes/saaret.p3d_scene" 
+		frames_per_second = 30 
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "2400" 
+        near_plane = "1"
+        far_plane = "1800"
+        ssao_enabled = "false">	
+		<camera curve="saaret_reflected_camera_curve"/>			
+	</scene_sequence>
+	
+	<scene_sequence
+	    name = "heijariluola"
+		scene = "data/scenes/heijariluola.p3d_scene" 
+		camera = "Camera01"		
+		frames_per_second = 30 
+		start_time = "0.0"
+		start_frame = "60"
+		end_frame = "2000" 
+        near_plane = "10"
+        far_plane = "4000"
+        ssao_enabled = "true">	
+    </scene_sequence>
+
+	<scene_sequence
+	    name = "heijariluola2"
+		scene = "data/scenes/heijariluola.p3d_scene" 
+		camera = "Camera05"		
+		frames_per_second = 8 
+		start_time = "0.0"
+		start_frame = "60"
+		end_frame = "2000" 
+        near_plane = "10"
+        far_plane = "4000"
+        ssao_enabled = "true">	
+    </scene_sequence>
+
+	<scene_sequence
+	    name = "heijariluola3"
+		scene = "data/scenes/heijariluola.p3d_scene" 
+		camera = "Camera01"		
+		frames_per_second = 30 
+		start_time = "0.0"
+		start_frame = "300"
+		end_frame = "2000" 
+        near_plane = "10"
+        far_plane = "4000"
+        ssao_enabled = "true">	
+    </scene_sequence>	
+	
+
+	<scene_sequence
+	    name = "heijariluola_reflection"
+		scene = "data/scenes/heijariluola.p3d_scene" 
+		camera = "reflected_Camera01"
+		frames_per_second = 30 
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "2000" 
+        near_plane = "1"
+        far_plane = "2400"
+        ssao_enabled = "false">	
+    </scene_sequence>	
+     <image name = "bokeh_flare1" path = "data/images/2015/flare1.png" />
+	   <image name = "bokeh_flare3" path = "data/images/2015/flare3.png" />
+	<image name = "SceneTexture1_image" path = "SceneTexture1"/>
+	<image name = "SceneTexture2_image" path = "SceneTexture2"/>
+	<image name = "SceneTexture3_image" path = "SceneTexture3"/>
+	
+	
+	
+    <image name = "ReflectionTexture_image" path = "ReflectionTexture" />
+    
+	<image name = "noise_tex" path = "data/images/noise.jpg" />
+	<image name = "WhiteImage" path = "data/images/common/white.tga" />
+	<image name = "BlackImage" path = "data/images/common/black.tga" />
+	<image name = "SuperWide" path = "data/images/2014/superwide.png" />
+	<image name = "perusvignette" path = "data/images/tmp/perusvignette.png" />
+	
+	<image name = "credits_mika" path = "data\images\2016\hoaxi.png"/>	
+	<image name = "credits_kimmo" path = "data\images\2016\codarki.png"/>	
+	<image name = "credits_timo" path = "data\images\2016\rayjan.png"/>
+	<image name = "credits_addit" path = "data\images\2016\addit.png"/>	
+	<image name = "title" path = "data\images\2016\title.png"/>
+    
+ 	<draw_image name = "draw_perusvignette_image">
+		<!--<alpha v = "0.70"/>-->
+		<alpha curve = "vignette_alpha_curve" />
+		<input sequence = "perusvignette"/>
+	</draw_image>
+        	
+	<!-- draw_image name = "draw_alkuspace"><input sequence = "img_tausta"/></draw_image -->
+	<draw_image name = "fade_to_white_250ms" duration = "0.25"><alpha curve = "fade_in_curve_250ms" /><input sequence = "WhiteImage" /></draw_image>
+	<draw_image name = "fade_from_white_250ms" duration = "0.25"><alpha curve = "fade_out_curve_250ms" /><input sequence = "WhiteImage" /></draw_image>	
+	<draw_image name = "fade_to_white_1000ms" duration = "1"><alpha curve = "fade_in_curve_1000ms" /><input sequence = "WhiteImage" /></draw_image>
+	<draw_image name = "fade_to_white_2000ms" duration = "2"><alpha curve = "fade_in_curve_2000ms" /><input sequence = "WhiteImage" /></draw_image>	
+	<draw_image name = "fade_to_half_black_125ms" duration = "0.125"><alpha curve = "fade_in_to_half_black_curve_125ms" /><input sequence = "BlackImage" /></draw_image>
+	<draw_image name = "fade_to_black_1000ms" duration = "1"><alpha curve = "fade_in_curve_1000ms" /><input sequence = "BlackImage" /></draw_image>	
+	<draw_image name = "fade_to_black_2000ms" duration = "4"><alpha curve = "fade_in_curve_2000ms" /><input sequence = "BlackImage" /></draw_image>
+	<draw_image name = "fade_from_black_250ms" duration = "0.25"><alpha curve = "fade_out_curve_250ms" /><input sequence = "BlackImage" /></draw_image>
+	<draw_image name = "fade_from_black_1000ms" duration = "1"><alpha curve = "fade_out_curve_1000ms" /><input sequence = "BlackImage" /></draw_image>
+    <draw_image name = "fade_from_black_3000ms" duration = "3"><alpha curve = "fade_out_curve_3000ms" /><input sequence = "BlackImage" /></draw_image>
+	<draw_image name = "fade_from_white_1000ms" duration = "1"><alpha curve = "fade_out_curve_1000ms" /><input sequence = "WhiteImage" /></draw_image>
+	<draw_image name = "fade_from_white_2000ms" duration = "2"><alpha curve = "fade_out_curve_2000ms" /><input sequence = "WhiteImage" /></draw_image>
+	<draw_image name = "fade_from_white_3000ms" duration = "3"><alpha curve = "fade_out_curve_3000ms" /><input sequence = "WhiteImage" /></draw_image>
+	<draw_image name = "fade_from_half_black_75ms" duration = "3"><alpha curve = "fade_out_from_half_black_75ms" /><input sequence = "BlackImage" /></draw_image>
+ 
+	<draw_image name = "draw_SuperWide"><alpha curve = "superwide_alpha" /><input sequence = "SuperWide" /></draw_image>
+	
+    <draw_image name = "draw_BlackImage"><input sequence = "BlackImage" /></draw_image>
+	
+    <draw_image name = "draw_credits_mika"><alpha curve = "fade_in_out_5000ms"/><input sequence = "credits_mika"/></draw_image>
+    <draw_image name = "draw_credits_kimmo"><alpha curve = "fade_in_out_5000ms"/><input sequence = "credits_kimmo"/></draw_image>
+    <draw_image name = "draw_credits_timo"><alpha curve = "fade_in_out_5000ms"/><input sequence = "credits_timo"/></draw_image>
+    <draw_image name = "draw_credits_addit"><alpha curve = "fade_in_out_5000ms"/><input sequence = "credits_addit"/></draw_image>	
+    <draw_image name = "draw_title"><alpha curve = "fade_in_curve_2000ms"/><input sequence = "title"/></draw_image>	
+        
+	 <draw_image name = "draw_bokeh_flare1">
+		<input sequence = "bokeh_flare1"/>
+		<alpha curve = "bokeh_flare1_alpha_curve"/>
+        <center curve = "bokeh_flare1_center_curve"/>
+        <intensity v = "1.0"/>        
+	</draw_image>	
+
+ <draw_image name = "draw_bokeh_flare3">
+		<input sequence = "bokeh_flare3"/>
+		<alpha curve = "bokeh_flare1_alpha_curve"/>
+        <center curve = "bokeh_flare1_center_curve"/>
+        <intensity v = "1.0"/>        
+	</draw_image>			
+		
+    <!-- abstrakti -->
+	<draw_to_texture name = "draw_alkupallot_to_SceneTexture"><shared_texture name = "SceneTexture2"/>
+		<input sequence = "alkupallot"/>
+	</draw_to_texture> 	
+	<draw_to_texture name = "draw_lumimaa_to_SceneTexture"><shared_texture name = "SceneTexture2"/>
+		<input sequence = "lumimaa"/>
+	</draw_to_texture> 		
+	<draw_to_texture name = "draw_intro_to_SceneTexture"><shared_texture name = "SceneTexture1"/>
+		<input sequence = "intro"/>
+	</draw_to_texture> 
+	<draw_to_texture name = "draw_piraatti_to_SceneTexture"><shared_texture name = "SceneTexture2"/>
+		<input sequence = "piraatti"/>
+	</draw_to_texture> 
+	<draw_to_texture name = "draw_saaret_to_SceneTexture"><shared_texture name = "SceneTexture1"/>
+		<input sequence = "saaret"/>
+	</draw_to_texture> 
+	<draw_to_texture name = "draw_tauluskene_to_SceneTexture"><shared_texture name = "SceneTexture2"/>
+		<input sequence = "tauluskene"/>
+	</draw_to_texture> 	
+	<draw_to_texture name = "draw_heijariluola_to_SceneTexture"><shared_texture name = "SceneTexture1"/>
+		<input sequence = "heijariluola"/>
+	</draw_to_texture> 
+	<draw_to_texture name = "draw_heijariluola2_to_SceneTexture"><shared_texture name = "SceneTexture2"/>
+		<input sequence = "heijariluola2"/>
+	</draw_to_texture> 	
+	<draw_to_texture name = "draw_heijariluola3_to_SceneTexture"><shared_texture name = "SceneTexture1"/>
+		<input sequence = "heijariluola3"/>
+	</draw_to_texture> 		
+	<draw_to_texture name = "draw_kemia1_to_SceneTexture"><shared_texture name = "SceneTexture2"/>
+		<input sequence = "kemia1"/>
+	</draw_to_texture> 	
+	<draw_to_texture name = "draw_kemia2_to_SceneTexture"><shared_texture name = "SceneTexture1"/>
+		<input sequence = "kemia2"/>
+	</draw_to_texture> 
+		<draw_to_texture name = "draw_kemia3_to_SceneTexture"><shared_texture name = "SceneTexture2"/>
+		<input sequence = "kemia3"/>
+	</draw_to_texture> 
+	<draw_to_texture name = "draw_tauluskene_to_SceneTexture"><shared_texture name = "SceneTexture1"/>
+		<input sequence = "tauluskene"/>
+	</draw_to_texture> 	
+	
+	<draw_to_texture name = "draw_lumimaa_reflection_to_ReflectionTexture">
+        <shared_texture name = "ReflectionTexture"/>
+		<input sequence = "lumimaa_reflcetion"/>
+	</draw_to_texture>  
+	<draw_to_texture name = "draw_intro_reflection_to_ReflectionTexture">
+        <shared_texture name = "ReflectionTexture"/>
+		<input sequence = "intro_reflection"/>
+	</draw_to_texture>      
+	<draw_to_texture name = "draw_piraatti_reflection_to_ReflectionTexture">
+        <shared_texture name = "ReflectionTexture"/>
+		<input sequence = "piraatti_reflection"/>
+	</draw_to_texture>      
+	<draw_to_texture name = "draw_saaret_reflection_to_ReflectionTexture">
+        <shared_texture name = "ReflectionTexture"/>
+		<input sequence = "saaret_reflection"/>
+	</draw_to_texture>      
+	<draw_to_texture name = "draw_heijariluola_reflection_to_ReflectionTexture">
+        <shared_texture name = "ReflectionTexture"/>
+		<input sequence = "heijariluola_reflection"/>
+	</draw_to_texture>
+	<draw_to_texture name = "draw_kemia_reflection1_to_ReflectionTexture">
+        <shared_texture name = "ReflectionTexture"/>
+		<input sequence = "kemia_reflection1"/>
+	</draw_to_texture>
+	<draw_to_texture name = "draw_kemia_reflection2_to_ReflectionTexture">
+        <shared_texture name = "ReflectionTexture"/>
+		<input sequence = "kemia_reflection2"/>
+	</draw_to_texture>	
+	<draw_to_texture name = "draw_kemia_reflection3_to_ReflectionTexture">
+        <shared_texture name = "ReflectionTexture"/>
+		<input sequence = "kemia_reflection3"/>
+	</draw_to_texture>		
+	
+	<plasma>
+		<name v="displacement_plasma_SceneTexture1"/>
+		<material_name v = "displacement_material"/>
+        <input sequence = "SceneTexture1_image"/>
+	</plasma>
+	<plasma>
+		<name v="displacement_plasma_SceneTexture2"/>
+		<material_name v = "displacement_material2"/>
+        <input sequence = "SceneTexture2_image"/>
+	</plasma>
+	<plasma>
+		<name v="displacement_lumimaa_SceneTexture2"/>
+		<material_name v = "lumimaa_displacement_material"/>
+        <input sequence = "SceneTexture2_image"/>
+	</plasma>
+	<plasma>
+		<name v="displacement_piraatti_SceneTexture2"/>
+		<material_name v = "piraatti_displacement_material"/>
+        <input sequence = "SceneTexture2_image"/>
+	</plasma>
+	<plasma>
+		<name v="displacement_saaret_SceneTexture1"/>
+		<material_name v = "saaret_displacement_material"/>
+        <input sequence = "SceneTexture1_image"/>
+	</plasma>
+	
+	<draw_image name = "draw_SceneTexture1_image_to_screen"><input sequence = "SceneTexture1_image"/></draw_image>
+	<draw_image name = "draw_SceneTexture2_image_to_screen"><input sequence = "SceneTexture2_image"/></draw_image>
+	<draw_image name = "draw_SceneTexture_fade_image_to_screen"><alpha curve = "fade_in_curve_2000ms"/><input sequence = "SceneTexture1_image"/></draw_image>
+	<draw_image name = "draw_SceneTexture3_image_to_screen"><input sequence = "SceneTexture3_image"/></draw_image> 
+	<draw_image name = "draw_SceneTexture2_ignore_alpha_channel" ignore_alpha_channel = "true"><input sequence = "SceneTexture2_image"/></draw_image>
+	
+	<!--
+	<draw_image name = "draw_reflection_image">
+		<input sequence = "ReflectionTexture_image" />
+		<size v = "0.4 0.4"/>
+        <center v = "0.8 0.2"/>
+        <intensity>0.8</intensity>
+	</draw_image>
+	-->
+	
+    <composition name = "c_draw_scenes_to_SceneTextures1">
+		<input sequence = "draw_intro_reflection_to_ReflectionTexture" time="16.8" duration = "19.2"/>
+		<input sequence = "draw_intro_to_SceneTexture" time="16.8" duration = "19.2"/>
+	</composition>
+
+    <composition name = "c_draw_scenes_to_SceneTextures2">
+		<input sequence = "draw_lumimaa_reflection_to_ReflectionTexture" time="2" duration = "16.8"/>	
+		<!--<input sequence = "draw_intro_reflection_to_ReflectionTexture" time="16.8" duration = "17.2"/>-->
+        <input sequence = "draw_piraatti_reflection_to_ReflectionTexture" time="38" duration = "32"/>
+        <input sequence = "draw_saaret_reflection_to_ReflectionTexture" time="70" duration = "32"/>
+        <input sequence = "draw_heijariluola_reflection_to_ReflectionTexture" time="134" duration = "32"/> <!-- 198 -->
+        <input sequence = "draw_kemia_reflection1_to_ReflectionTexture" time="166" duration = "8"/> <!-- 198 -->
+        <input sequence = "draw_kemia_reflection2_to_ReflectionTexture" time="174" duration = "8"/> <!-- 198 -->
+		<input sequence = "draw_kemia_reflection3_to_ReflectionTexture" time="182" duration = "32"/> <!-- 198 -->
+		
+		<input sequence = "draw_lumimaa_to_SceneTexture" time="2" duration = "16.8"/>
+		<!--<input sequence = "draw_intro_to_SceneTexture" time="16.8" duration = "19.2"/>-->
+		<input sequence = "draw_piraatti_to_SceneTexture" time="38" duration = "32"/>
+
+		<input sequence = "draw_saaret_to_SceneTexture" time="70" duration = "32"/>
+		<input sequence = "draw_tauluskene_to_SceneTexture" time="102" duration = "32"/>		
+		
+		<input sequence = "draw_heijariluola_to_SceneTexture" time="134" duration = "16"/> <!-- 198 -->
+		<input sequence = "draw_heijariluola2_to_SceneTexture" time="150" duration = "8"/> <!-- 198 -->
+		<input sequence = "draw_heijariluola3_to_SceneTexture" time="158" duration = "8"/> <!-- 198 -->
+		
+		<input sequence = "draw_kemia1_to_SceneTexture" time="166" duration = "8"/> <!-- 198 -->
+		<input sequence = "draw_kemia2_to_SceneTexture" time="174" duration = "8"/> <!-- 198 -->
+		<input sequence = "draw_kemia3_to_SceneTexture" time="182" duration = "32"/> <!-- 198 -->
+	</composition>
+	    
+    <composition name =  "c_draw_SceneTextures_to_screen">
+		<input sequence= "draw_SceneTexture2_image_to_screen" time="2" duration="16.8"/>
+		<!--<input sequence= "displacement_lumimaa_SceneTexture2" time="2" duration="16.8"/>-->
+		<input sequence= "draw_SceneTexture_fade_image_to_screen" time="16.8" duration="19.2"/>
+		<!--<input sequence= "draw_SceneTexture2_image_to_screen" time="38" duration="32"/>-->
+		<input sequence= "displacement_piraatti_SceneTexture2" time="38" duration="32"/>
+		<!--<input sequence= "draw_SceneTexture1_image_to_screen" time="70" duration="32"/>-->
+		<input sequence= "displacement_saaret_SceneTexture1" time="70" duration="32"/>
+		<input sequence= "draw_SceneTexture2_ignore_alpha_channel" time="102" duration="32"/>		
+		<input sequence= "draw_SceneTexture1_image_to_screen" time="134" duration="16"/>
+		<!--<input sequence= "draw_SceneTexture2_image_to_screen" time="150" duration="8"/>-->
+		<input sequence= "displacement_plasma_SceneTexture2" time="150" duration="8"/>
+		<input sequence= "draw_SceneTexture1_image_to_screen" time="158" duration="8"/>
+		<input sequence= "draw_SceneTexture2_image_to_screen" time="166" duration="8"/>
+		<input sequence= "draw_SceneTexture1_image_to_screen" time="174" duration="8"/>
+		<input sequence= "draw_SceneTexture2_image_to_screen" time="182" duration="32"/>		
+	</composition>
+	
+    <composition name = "c_warmup">
+        <!-- sfdsdfs -->
+		<input sequence = "intro" time = "0" duration="3"/>
+		<input sequence = "piraatti" time = "0" duration="5"/>
+		<input sequence = "saaret" time = "0" duration="5"/>
+		<input sequence = "tauluskene" time = "0" duration="3"/>		
+		<input sequence = "heijariluola" time = "0" duration="5"/>		
+		<input sequence = "kemia1" time = "0" duration="5"/>
+    </composition>
+		
+	<!-- Post processing -->
+	<post_processing name = "Post_processing">
+		<clear_color v = "0 0 0"/>
+        <input sequence = "c_draw_SceneTextures_to_screen"/>
+		
+	</post_processing>
+	
+	<!-- Depth buffer -->
+	<depth_buffer name = "Depth_test">
+        <clear_color v = "0 0 0"/>
+		<input sequence = "c_warmup" duration = "1"/>
+        <input sequence = "c_draw_scenes_to_SceneTextures1"/>
+        <input sequence = "c_draw_scenes_to_SceneTextures2"/>
+		<input sequence = "Post_processing"/>
+		<!--<input sequence = "fade_to_white_250ms" time = "63.75"/>-->
+		<!--<input sequence = "draw_credits_mika" time = "34"/>-->
+		<!--<input sequence = "draw_title1" time = "240"/>-->
+		 <input sequence = "draw_bokeh_flare3" time = "134" duration="32"/>  
+		 <input sequence = "draw_bokeh_flare1" time = "174" duration="8"/>     
+		<input sequence = "draw_perusvignette_image"/>
+		<input sequence = "draw_credits_mika" time = "44"/>
+		<input sequence = "draw_credits_kimmo" time = "51"/>
+		<input sequence = "draw_credits_timo" time = "58"/>
+		<input sequence = "draw_credits_addit" time = "65"/>	
+		<input sequence = "fade_from_white_1000ms" time = "102"/>
+		<input sequence = "draw_title" time = "197" duration="7"/>						
+	</depth_buffer>
+
+	<composition name = "main timeline">
+		<input sequence = "Audio_system"/>
+		<input sequence = "Depth_test"/>
+        <input sequence = "fade_to_black_2000ms" time = "202"/>		
+        <!--<input sequence = "draw_reflection_image"/>-->
+		<!--<input sequence = "fade_to_black_2000ms" time="232" duration = "4"/>-->
+	</composition>
+
+	<audio_system name = "Audio_system">
+		<audio_sequence name = "musa" path = "data/audio/perse320.mp3" time="0">
+            <spectrum scale = "3" min_threshold = "0.3" max_threshold = "3.0"/>
+        </audio_sequence>
+    </audio_system>
+
+	<!-- Main timeline -->
+	<timeline>
+		<input sequence = "main timeline" time="0"/>
+	</timeline>
+</sequences>

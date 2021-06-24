@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+
+<material
+	name = "ssao_buffer_material"
+	material_p3d = "ssao buffer material"
+	>
+    <shader file = "data/shaders/effects/ssao_buffer_best.xml"> 
+        <parameters>
+            <depth_map shared_value = "DepthTexture"/>
+            <normal_map shared_value = "NormalTexture"/>
+            <random_normal_map value = "data/images/common/reflect2.png"/> 
+            
+            
+            <sample_radius value = "1"/>
+            <falloff value = "1"/>
+            <strength value = "5"/>        
+            <occlusion_multiplier value = "10"/>
+            
+           <!-- voimassa -->
+           <!--
+            <sample_radius value = "0.6"/>
+            <falloff value = "0.1"/>
+            <strength value = "0.9"/>        
+            <occlusion_multiplier value = "1.38"/>
+           -->
+           
+             <!--
+            <sample_radius value = "0.006"/>
+            <falloff value = "0.002"/>
+            <strength value = "0.07"/>        
+            <occlusion_multiplier value = "1.38"/>         
+            -->
+            
+
+            <occ_sample_radius value = "0.07"/> 
+            <!-- <occ_sample_radius value = "0.006"/>-->
+            <occ_scale value = "1.0"/>
+            <occ_bias value = "0.1" />
+            <occ_strength value = "5.0"/>
+
+    <!--        
+            <occ_sample_radius value = "4"/>
+            <occ_scale value = "0.1"/>
+            <occ_bias value = "0.1"/>
+            <occ_strength value = "4"/>
+            -->
+            <!--<self_occlusion value = "1.0"/>-->
+        </parameters>
+	</shader>
+</material>

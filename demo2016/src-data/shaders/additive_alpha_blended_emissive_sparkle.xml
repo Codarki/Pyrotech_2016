@@ -1,0 +1,363 @@
+<?xml version="1.0" ?>
+<!-- cook_torrance_alpha_tested_double_sided + subsurface scattering fake -->
+<parameters>
+	<parameter
+		label = "Diffuse map"
+		name = "diffuse_map"
+		type = "texture2D"
+		hlsl = "diffuse_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+	<parameter
+		label = "Specular map"
+		name = "specular_map"
+		type = "texture2D"
+		hlsl = "specular_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+	<!-- Red component is diffuse shininess, green component is specular shininess. -->
+	<parameter
+		label = "Shininess map"
+		name = "shininess_map"
+		type = "texture2D"
+		hlsl = "shininess_texture"
+		default_value = "data/images/common/black.tga">
+	</parameter>
+	<parameter
+		label = "Normal map"
+		name = "normal_map"
+		type = "texture2D"
+		hlsl = "normal_texture"
+		default_value = "data/images/common/normal.tga">
+	</parameter>
+	<parameter
+		label = "Occlusion map"
+		name = "occlusion_map"
+		type = "texture2D"
+		hlsl = "occlusion_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+	<parameter
+		label = "Emission map"
+		name = "emission_map"
+		type = "texture2D"
+		hlsl = "emission_texture"
+		default_value = "data/images/common/black.tga">
+	</parameter>
+	<parameter
+		label = "Reflection map"
+		name = "reflection_map"
+		type = "texture2D"
+		hlsl = "reflection_texture"
+		default_value = "data/images/common/black.tga">
+	</parameter>
+	<parameter
+		label = "Scatter map1"
+		name = "scatter_map1"
+		type = "texture2D"
+		hlsl = "scatter_texture1"
+		default_value = "data/images/common/black.tga">
+	</parameter>
+	<parameter
+		label = "Scatter map2"
+		name = "scatter_map2"
+		type = "texture2D"
+		hlsl = "scatter_texture2"
+		default_value = "data/images/common/black.tga">
+	</parameter>
+	<parameter
+		label = "Scatter map3"
+		name = "scatter_map3"
+		type = "texture2D"
+		hlsl = "scatter_texture3"
+		default_value = "data/images/common/black.tga">
+	</parameter>
+	<parameter
+		label = "Alpha map"
+		name = "alpha_map"
+		type = "texture2D"
+		hlsl = "alpha_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+	<parameter
+		label = "Ambient color"
+		name = "ambient_color"
+		type = "float3"
+		hlsl = "ambient"
+		default_value = "0 0 0">
+	</parameter>
+	<parameter
+		label = "Diffuse color"
+		name = "diffuse_color"
+		type = "float3"
+		hlsl = "diffuse"
+		default_value = "1.0 1.0 1.0">
+	</parameter>
+	<parameter
+		label = "Specular color"
+		name = "specular_color"
+		type = "float3"
+		hlsl = "specular"
+		default_value = "1.0 1.0 1.0">
+	</parameter>
+	<parameter
+		label = "Scattering color 1"
+		name = "scatter_color1"
+		type = "float3"
+		hlsl = "scatter_color1"
+		default_value = "1.0 1.0 1.0">
+	</parameter>
+	<parameter
+		label = "Scattering color 2"
+		name = "scatter_color2"
+		type = "float3"
+		hlsl = "scatter_color2"
+		default_value = "1.0 1.0 1.0">
+	</parameter>
+	<parameter
+		label = "Scattering color 3"
+		name = "scatter_color3"
+		type = "float3"
+		hlsl = "scatter_color3"
+		default_value = "1.0 1.0 1.0">
+	</parameter>
+	<parameter
+		label = "Roughness"
+		name = "roughness"
+		type = "float"
+		hlsl = "roughness_uniform"
+		default_value = "0.4">
+	</parameter>
+	<parameter
+		label = "Diffuse roughness"
+		name = "diffuse_roughness"
+		type = "float"
+		hlsl = "diffuse_roughness_uniform"
+		default_value = "0.3">
+	</parameter>
+	<parameter
+		label = "Diffuse and specular shininess min max"
+		name = "diffuse_specular_shininess_minmax"
+		type = "float4"
+		hlsl = "diffuse_specular_shininess_minmax_uniform"
+		default_value = "0 1 0 1">
+	</parameter>
+	<parameter
+		label = "Fresnel reflectance as measured at normal incidence"
+		name = "fresnel_normal_incidence"
+		type = "float"
+		hlsl = "fresnel_normal_incidence"
+		default_value = "0.25">
+	</parameter>
+	<parameter
+		label = "Normal scale"
+		name = "normal_scale"
+		type = "float"
+		hlsl = "normal_scale"
+		default_value = "1.0">
+	</parameter>
+	<parameter
+		label = "Reflection coeff"
+		name = "reflection_coeff"
+		type = "float"
+		hlsl = "reflection_coeff"
+		default_value = "1.0">
+	</parameter>
+	<parameter
+		label = "Emission Coeffient"
+		name = "emission_coeff"
+		type = "float3"
+		hlsl = "emission_coeff"
+		default_value = "1 1 1">
+	</parameter>
+	<parameter
+		label = "Scatter Coeffient"
+		name = "scatter_coeff"
+		type = "float"
+		hlsl = "scatter_coeff"
+		default_value = "1.0">
+	</parameter>
+	<parameter
+		label = "Distort scale coeffient"
+		name = "distort_scale_coeff"
+		type = "float3"
+		hlsl = "distort_scale_coeff"
+		default_value = "1 1 1">
+	</parameter>
+	<parameter
+		label = "Distort time coeffient"
+		name = "distort_time_coeff"
+		type = "float3"
+		hlsl = "distort_time_coeff"
+		default_value = "0.02 0.02 0.02">
+	</parameter>
+	<parameter
+		label = "General Texcoord Offset"
+		name = "general_texcoord_offset"
+		type = "float3"
+		hlsl = "general_texcoord_offset"
+		default_value = "0 0 0">
+	</parameter>
+	<parameter
+		label = "Color Texcoord Offset"
+		name = "color_texcoord_offset"
+		type = "float3"
+		hlsl = "color_texcoord_offset"
+		default_value = "0 0 0">
+	</parameter>
+	<parameter
+		label = "Emission Texcoord Offset"
+		name = "emission_texcoord_offset"
+		type = "float3"
+		hlsl = "emission_texcoord_offset"
+		default_value = "0 0 0">
+	</parameter>  
+</parameters>
+
+<sampler_states>
+	<sampler
+		name = "diffuse_sampler"
+		texture = "diffuse_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "ANISOTROPIC"
+		mag_filter = "ANISOTROPIC"
+		mip_filter = "ANISOTROPIC"
+		>
+	</sampler>
+	<sampler
+		name = "specular_sampler"
+		texture = "specular_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "ANISOTROPIC"
+		mag_filter = "ANISOTROPIC"
+		mip_filter = "ANISOTROPIC"
+		>
+	</sampler>
+	<sampler
+		name = "shininess_sampler"
+		texture = "shininess_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "ANISOTROPIC"
+		mag_filter = "ANISOTROPIC"
+		mip_filter = "ANISOTROPIC"
+		>
+	</sampler>
+	<sampler
+		name = "normal_sampler"
+		texture = "normal_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+	<sampler
+		name = "occlusion_sampler"
+		texture = "occlusion_texture"
+		address_u = "CLAMP"
+		address_v = "CLAMP"
+		address_w = "CLAMP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+	<sampler
+		name = "emission_sampler"
+		texture = "emission_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+	<sampler
+		name = "reflection_sampler"
+		texture = "reflection_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+	<sampler
+		name = "alpha_sampler"
+		texture = "alpha_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+	<sampler
+		name = "scatter_sampler1"
+		texture = "scatter_texture1"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+	<sampler
+		name = "scatter_sampler2"
+		texture = "scatter_texture2"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+	<sampler
+		name = "scatter_sampler3"
+		texture = "scatter_texture3"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+</sampler_states>
+
+<streams>
+	<stream0
+		position = 0
+		tangent = 0
+		normal = 0
+		texcoord = 0>
+	</stream0>
+</streams>
+
+<additive_blend v = "true"/>
+<is_transparent v = "true"/>
+<is_alpha_tested v = "false"/>
+
+<vertex_shader
+	stream = "stream0">
+	<include_hlsl file = "data/shaders/hlsl/common_vs.hlsl"/>
+	<include_hlsl file = "data/shaders/hlsl/tbn_vs.hlsl"/>
+</vertex_shader>
+
+<pixel_shader>
+	<include_hlsl file = "data/shaders/hlsl/common_ps.hlsl"/>
+	<include_hlsl file = "data/shaders/hlsl/sparkle.hlsl"/>
+</pixel_shader>

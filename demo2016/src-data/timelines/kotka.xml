@@ -1,0 +1,98 @@
+<?xml version="1.0" ?>
+
+<sequences>
+	<scene_sequence
+	    name = "kotka"
+		scene = "data/scenes/kotka.p3d_scene" 
+		camera = "Camera01"		
+		frames_per_second = 30 
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "2000" 
+        near_plane = "1"
+        far_plane = "1400"
+        ssao_enabled = "false">	
+    </scene_sequence>
+
+	<scene_sequence
+	    name = "kotka_reflection"
+		scene = "data/scenes/kotka.p3d_scene" 
+		camera = "reflected_Camera01"
+		frames_per_second = 30 
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "2000" 
+        near_plane = "1"
+        far_plane = "800"
+        ssao_enabled = "false">	
+    </scene_sequence>
+    
+	<image name = "noise_tex" path = "data/images/noise.jpg" />
+    <image name = "ShadowDepthMap" path = "ShadowTexture" />
+    <image name = "ReflectionTexture_image" path = "ReflectionTexture" />
+    <image name = "loadingScr_img" path = "data/images/loading_screen/load_first_frame.PNG"/>
+    
+	<draw_to_texture name = "draw_kotka_reflection_to_ReflectionTexture">
+        <shared_texture name = "ReflectionTexture"/>
+		<input sequence = "kotka_reflection"/>
+	</draw_to_texture>     
+
+	<draw_image name = "draw_spot_depth">
+		<input sequence = "ShadowDepthMap" />
+		<size v = "0.4 0.4"/>
+        <center v = "0.8 0.2"/>
+        <intensity>0.8</intensity>
+	</draw_image>	
+    
+	<draw_image name = "draw_reflection_image">
+		<input sequence = "ReflectionTexture_image" />
+		<size v = "0.4 0.4"/>
+        <center v = "0.8 0.2"/>
+        <intensity>0.8</intensity>
+	</draw_image>	
+    
+    <draw_image name = "draw_loading_screen">
+		<input sequence = "loadingScr_img" />
+	</draw_image>
+    
+	<post_processing name = "Post processing">
+		<clear_color v = "0 0 0"/>
+        <!--<input sequence = "draw_kotka_reflection_to_ReflectionTexture" time="0"/> -->
+		<input sequence = "kotka" time="0"/>	
+ 
+		<!-- input sequence ="draw_alkuspace"/ -->	
+	</post_processing>
+	
+	<depth_buffer name = "Depth test">
+        <input sequence = "c_warmup" duration="5"/>
+        <clear_color v = "0 0 0"/>
+
+ 
+		<input sequence = "Post processing"/>
+
+	</depth_buffer>
+    
+    <composition name="c_warmup">
+        <input sequence = "kotka" time="0"/>    
+    </composition>
+
+	<audio_system name = "Audio_system">
+		<audio_sequence name = "musa" path = "data/audio/untitled.mp3" time="0">
+            <spectrum scale = "3" min_threshold = "0.3" max_threshold = "3.0"/>
+        </audio_sequence>
+	</audio_system>
+    
+	<composition name = "main timeline">
+		<input sequence = "Audio_system" time="0"/>
+
+        <input sequence ="draw_loading_screen" time="0" duration="5"/>  
+		<input sequence = "Depth test"/>
+        <!--<input sequence = "draw_reflection_image"/> -->
+        <!--<input sequence = "draw_spot_depth"/> -->
+	</composition>
+
+	<timeline>
+
+		<input sequence = "main timeline"/>
+	</timeline>
+</sequences>

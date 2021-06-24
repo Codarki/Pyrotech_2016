@@ -1,0 +1,133 @@
+<asset>
+	<scene>
+		<items>
+            <item>
+                <name>reflected_Camera01</name>
+                <is_generated>true</is_generated>
+                <parent_item name="Camera01"/>
+                <transformer>
+                    <reflection>
+                        <other_item name="Camera01"/>
+                        <!-- 16.823, 236.588, 22.654 -->
+                        <reflection_plane point = "16.823 22.654 236.588" normal = "0 1 0"/>
+                    </reflection>
+                </transformer>
+                <camera>
+                    <projection_item name="Camera01"/>
+                </camera>
+            </item>
+            <item>
+                <name>reflected_Camera02</name>
+                <is_generated>true</is_generated>
+                <parent_item name="Camera02"/>
+                <transformer>
+                    <reflection>
+                        <other_item name="Camera02"/>
+                        <!-- 16.823, 236.588, 22.654 -->
+                        <reflection_plane point = "16.823 22.654 236.588" normal = "0 1 0"/>
+                    </reflection>
+                </transformer>
+                <camera>
+                    <projection_item name="Camera02"/>
+                </camera>
+            </item>
+            <item>
+                <name>reflected_Camera03</name>
+                <is_generated>true</is_generated>
+                <parent_item name="Camera03"/>
+                <transformer>
+                    <reflection>
+                        <other_item name="Camera03"/>
+                        <!-- 16.823, 236.588, 22.654 -->
+                        <reflection_plane point = "16.823 22.654 236.588" normal = "0 1 0"/>
+                    </reflection>
+                </transformer>
+                <camera>
+                    <projection_item name="Camera03"/>
+                </camera>
+            </item>  
+            <item>
+                <name>reflected_Camera04</name>
+                <is_generated>true</is_generated>
+                <parent_item name="Camera04"/>
+                <transformer>
+                    <reflection>
+                        <other_item name="Camera04"/>
+                        <!-- 16.823, 236.588, 22.654 -->
+                        <reflection_plane point = "16.823 22.654 236.588" normal = "0 1 0"/>
+                    </reflection>
+                </transformer>
+                <camera>
+                    <projection_item name="Camera04"/>
+                </camera>
+            </item>   			
+		</items>
+        
+		<lights>
+            <light>
+				<item name="Spot01"/>
+				<light_shader_instance name="saaret_frustum_light"/>
+				<near_plane>1.0</near_plane>
+				<far_plane>1000.0</far_plane>
+				<cast_shadows>true</cast_shadows>
+                <!--<shadow_bias>1.0000169</shadow_bias>-->
+                <!--<shadow_bias>0.0000169</shadow_bias>-->
+                <shadow_bias>0.0011</shadow_bias>
+			</light>
+			
+			 <light>
+				<item name="Spot02"/>
+				<light_shader_instance name="ambient_frustum_light"/>
+				<near_plane>1.0</near_plane>
+				<far_plane>1300.0</far_plane>
+				<cast_shadows>false</cast_shadows>
+                <!--<shadow_bias>1.0000169</shadow_bias>-->
+                <!--<shadow_bias>0.0000169</shadow_bias>-->
+                <shadow_bias>0.0011</shadow_bias>
+			</light>
+			
+		</lights>
+	</scene>
+	
+	<convert>
+		<scene>
+			<mesh_instances>
+				<base_mesh>
+					<file>ukslehti00.p3d_model</file>
+				</base_mesh>
+				<base_mesh>
+					<file>fern01.p3d_model</file>
+				</base_mesh>
+				<base_mesh>
+					<file>palmleaves01.p3d_model</file>
+				</base_mesh>
+				<base_mesh>
+					<file>curvepipe.p3d_model</file>
+				</base_mesh>
+				<base_mesh>
+					<file>pipe_base.p3d_model</file>
+				</base_mesh>
+				<base_mesh>
+					<file>ratavah00.p3d_model</file>
+				</base_mesh>
+				<base_mesh>
+					<file>smalltrun0.p3d_model</file>
+				</base_mesh>
+				<base_mesh>
+					<file>straws01.p3d_model</file>
+				</base_mesh>
+				<base_mesh>
+					<file>tightcurv0.p3d_model</file>
+				</base_mesh>
+				<base_mesh>
+					<file>tile01.p3d_model</file>
+				</base_mesh>
+				<base_mesh>
+					<file>valve.p3d_model</file>
+				</base_mesh>
+				
+			</mesh_instances>
+		</scene>
+	</convert>
+	
+</asset>

@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{BF805277-0284-4883-868D-8609BF6B95B9}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">build\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">build\$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">build\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">build\$(Configuration)\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(DXSDK_DIR)Include;$(IncludePath)</IncludePath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(DXSDK_DIR)Lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(DXSDK_DIR)Include;$(IncludePath)</IncludePath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(DXSDK_DIR)Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..;..\SDK\boost;../SDK;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_SCL_SECURE_NO_WARNINGS;_HAS_ITERATOR_DEBUGGING=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <StringPooling>true</StringPooling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>
+      </PrecompiledHeaderOutputFile>
+      <BrowseInformation>false</BrowseInformation>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ShowIncludes>false</ShowIncludes>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>..;..\SDK\boost;../SDK;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4290;4702;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <BrowseInformation>false</BrowseInformation>
+    </ClCompile>
+    <Lib>
+      <AdditionalOptions>/LTCG %(AdditionalOptions)</AdditionalOptions>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="animatable_value_base.h" />
+    <ClInclude Include="animatable_value_fwd.h" />
+    <ClInclude Include="animatable_value_source_fwd.h" />
+    <ClInclude Include="bounded_input_stream.h" />
+    <ClInclude Include="box_fwd.h" />
+    <ClInclude Include="composite_value_source.h" />
+    <ClInclude Include="config_node_fwd.h" />
+    <ClInclude Include="constant_value_source.h" />
+    <ClInclude Include="data_input_stream.h" />
+    <ClInclude Include="data_stream_content.h" />
+    <ClInclude Include="exceptions\context_stack.h" />
+    <ClInclude Include="externalizable.h" />
+    <CustomBuildStep Include="file_input_stream.h" />
+    <CustomBuildStep Include="file_output_stream.h" />
+    <ClInclude Include="file_openmode.h" />
+    <CustomBuildStep Include="input_stream.h" />
+    <ClInclude Include="file_type.h" />
+    <ClInclude Include="format.h" />
+    <ClInclude Include="input_file.h" />
+    <ClInclude Include="input_stream_utility.h" />
+    <ClInclude Include="internalizable.h" />
+    <ClInclude Include="math\plane.h" />
+    <ClInclude Include="native_c_file.h" />
+    <ClInclude Include="native_file_input_stream.h" />
+    <CustomBuildStep Include="output_stream.h" />
+    <ClInclude Include="output_file.h" />
+    <ClInclude Include="overridable_value_source_fwd.h" />
+    <ClInclude Include="parameter_collection_fwd.h" />
+    <ClInclude Include="parameter_node_fwd.h" />
+    <ClInclude Include="parameter_node_impl.h" />
+    <ClInclude Include="path.h" />
+    <ClInclude Include="path_fwd.h" />
+    <ClInclude Include="std\algorithm.h" />
+    <ClInclude Include="std\cassert.h" />
+    <ClInclude Include="std\memory.h" />
+    <ClInclude Include="stream_fwd.h" />
+    <ClInclude Include="string_builder.h" />
+    <ClInclude Include="string_wrapper.h" />
+    <ClInclude Include="string_wrapper_builder.h" />
+    <ClInclude Include="string_wrapper_fwd.h" />
+    <ClInclude Include="uncompressed_archive.h" />
+    <CustomBuildStep Include="defs.h" />
+    <ClInclude Include="box.h" />
+    <ClInclude Include="box_builder.h" />
+    <ClInclude Include="intersection.h" />
+    <ClInclude Include="math_utils.h" />
+    <ClInclude Include="matrix.h" />
+    <ClInclude Include="matrix_fwd.h" />
+    <ClInclude Include="matrix_operations.h" />
+    <ClInclude Include="matrix_utility.h" />
+    <ClInclude Include="oriented_box.h" />
+    <CustomBuildStep Include="vector.h" />
+    <ClInclude Include="vector_fwd.h" />
+    <ClInclude Include="vector_utility.h" />
+    <ClInclude Include="any_error.h" />
+    <ClInclude Include="basic_types.h" />
+    <CustomBuildStep Include="com_ptr.h" />
+    <CustomBuildStep Include="command_line.h" />
+    <ClInclude Include="config_node.h" />
+    <ClInclude Include="config_node_utility.h" />
+    <ClInclude Include="debug_only.h" />
+    <ClInclude Include="directory_iterator.h" />
+    <ClInclude Include="documentation.h" />
+    <ClInclude Include="global.h" />
+    <ClInclude Include="inline.h" />
+    <ClInclude Include="log.h" />
+    <ClInclude Include="none.h" />
+    <ClInclude Include="progress_report.h" />
+    <ClInclude Include="scoped_assignment.h" />
+    <ClInclude Include="singleton.h" />
+    <ClInclude Include="text_file_position.h" />
+    <CustomBuildStep Include="verbose.h" />
+    <ClInclude Include="win32.h" />
+    <ClInclude Include="detail\config_node_child_not_found.h" />
+    <ClInclude Include="detail\config_node_parse_failed.h" />
+    <ClInclude Include="boost\assert.h" />
+    <ClInclude Include="boost\auto_link.h" />
+    <ClInclude Include="boost\bind.h" />
+    <ClInclude Include="boost\cast.h" />
+    <ClInclude Include="boost\enable_shared_from_this.h" />
+    <ClInclude Include="boost\format.h" />
+    <ClInclude Include="boost\function.h" />
+    <ClInclude Include="boost\lexical_cast.h" />
+    <ClInclude Include="boost\noncopyable.h" />
+    <ClInclude Include="boost\null_deleter.h" />
+    <ClInclude Include="boost\optional.h" />
+    <ClInclude Include="boost\path.h" />
+    <ClInclude Include="boost\shared_array.h" />
+    <ClInclude Include="boost\shared_ptr.h" />
+    <ClInclude Include="boost\smart_ptr.h" />
+    <ClInclude Include="boost\filesystem\convenience.h" />
+    <ClInclude Include="boost\fstream.h" />
+    <ClInclude Include="boost\filesystem\operations.h" />
+    <ClInclude Include="boost\filesystem\path_fwd.h" />
+    <ClInclude Include="boost\format\format_fwd.h" />
+    <ClInclude Include="boost\ptr_container\ptr_vector.h" />
+    <ClInclude Include="std\iterator.h" />
+    <ClInclude Include="std\list.h" />
+    <ClInclude Include="std\map.h" />
+    <ClInclude Include="std\set.h" />
+    <ClInclude Include="std\stack.h" />
+    <ClInclude Include="std\string.h" />
+    <ClInclude Include="std\vector.h" />
+    <ClInclude Include="win32\dialog_box_error.h" />
+    <ClInclude Include="win32\dll.h" />
+    <ClInclude Include="win32\font.h" />
+    <ClInclude Include="win32\font_utility.h" />
+    <ClInclude Include="win32\message_pump.h" />
+    <ClInclude Include="win32\utility.h" />
+    <ClInclude Include="win32\win32_error.h" />
+    <ClInclude Include="win32\win32_macros.h" />
+    <ClInclude Include="win32\window.h" />
+    <ClInclude Include="win32\window_class.h" />
+    <ClInclude Include="win32\clipboard.h" />
+    <ClInclude Include="win32\clipboard_text.h" />
+    <ClInclude Include="exceptions\any_error.h" />
+    <ClInclude Include="exceptions\context.h" />
+    <ClInclude Include="exceptions\contextual_exception.h" />
+    <ClInclude Include="exceptions\file_error.h" />
+    <ClInclude Include="exceptions\path_file_context.h" />
+    <ClInclude Include="exceptions\string_context.h" />
+    <ClInclude Include="exceptions\text_file_error.h" />
+    <ClInclude Include="animatable_value.h" />
+    <ClInclude Include="animatable_value_source.h" />
+    <ClInclude Include="animatable_value_utility.h" />
+    <ClInclude Include="basic_value_source.h" />
+    <ClInclude Include="overridable_value_source.h" />
+    <ClInclude Include="parameter_collection.h" />
+    <ClInclude Include="parameter_node.h" />
+    <ClInclude Include="parameter_node_utility.h" />
+    <ClInclude Include="math\quaternion.h" />
+    <ClInclude Include="math\rounding.h" />
+    <ClInclude Include="math\step_curve.h" />
+    <ClInclude Include="math\cr_data_set.h" />
+    <ClInclude Include="math\cr_spline.h" />
+    <ClInclude Include="math\cubic_hermite_spline.h" />
+    <ClInclude Include="math\data_set.h" />
+    <ClInclude Include="math\kb_data_set.h" />
+    <ClInclude Include="math\kb_spline.h" />
+    <ClInclude Include="math\spherical_cubic_interpolation.h" />
+    <ClInclude Include="math\spline_value_source.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="data_input_stream.cpp" />
+    <ClCompile Include="data_stream_content.cpp" />
+    <ClCompile Include="exceptions\context_stack.cpp" />
+    <ClCompile Include="file_input_stream.cpp">
+      <ShowIncludes Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ShowIncludes>
+    </ClCompile>
+    <ClCompile Include="file_openmode.cpp" />
+    <ClCompile Include="file_output_stream.cpp" />
+    <ClCompile Include="format.cpp" />
+    <ClCompile Include="input_file.cpp" />
+    <ClCompile Include="input_stream.cpp" />
+    <ClCompile Include="input_stream_utility.cpp" />
+    <ClCompile Include="native_c_file.cpp" />
+    <ClCompile Include="native_file_input_stream.cpp" />
+    <ClCompile Include="output_file.cpp" />
+    <ClCompile Include="path.cpp" />
+    <ClCompile Include="string_builder.cpp" />
+    <ClCompile Include="string_wrapper.cpp" />
+    <ClCompile Include="string_wrapper_builder.cpp" />
+    <ClCompile Include="uncompressed_archive.cpp" />
+    <ClCompile Include="matrix.cpp" />
+    <ClCompile Include="vector.cpp" />
+    <ClCompile Include="vector_utility.cpp" />
+    <ClCompile Include="com_ptr.cpp" />
+    <ClCompile Include="command_line.cpp" />
+    <ClCompile Include="config_node.cpp" />
+    <ClCompile Include="config_node_utility.cpp" />
+    <ClCompile Include="directory_iterator.cpp" />
+    <ClCompile Include="log.cpp" />
+    <ClCompile Include="text_file_position.cpp" />
+    <ClCompile Include="verbose.cpp" />
+    <ClCompile Include="boost\null_deleter.cpp" />
+    <ClCompile Include="boost\filesystem\convenience.cpp" />
+    <ClCompile Include="win32\dialog_box_error.cpp" />
+    <ClCompile Include="win32\dll.cpp" />
+    <ClCompile Include="win32\font.cpp" />
+    <ClCompile Include="win32\font_utility.cpp" />
+    <ClCompile Include="win32\message_pump.cpp" />
+    <ClCompile Include="win32\utility.cpp" />
+    <ClCompile Include="win32\win32_error.cpp" />
+    <ClCompile Include="win32\window.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="win32\window_class.cpp" />
+    <ClCompile Include="win32\clipboard.cpp" />
+    <ClCompile Include="win32\clipboard_text.cpp" />
+    <ClCompile Include="exceptions\any_error.cpp" />
+    <ClCompile Include="exceptions\contextual_exception.cpp" />
+    <ClCompile Include="exceptions\file_error.cpp" />
+    <ClCompile Include="exceptions\path_file_context.cpp" />
+    <ClCompile Include="exceptions\string_context.cpp" />
+    <ClCompile Include="exceptions\text_file_error.cpp" />
+    <ClCompile Include="animatable_value.cpp" />
+    <ClCompile Include="animatable_value_utility.cpp" />
+    <ClCompile Include="parameter_collection.cpp" />
+    <ClCompile Include="parameter_node.cpp" />
+    <ClCompile Include="parameter_node_utility.cpp" />
+    <ClCompile Include="math\quaternion.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="constant_value_source.inl" />
+    <None Include="input_stream.inl" />
+    <None Include="output_stream.inl" />
+    <None Include="box.inl" />
+    <None Include="matrix.inl" />
+    <None Include="matrix_detail.inl" />
+    <None Include="matrix_operations.inl" />
+    <None Include="oriented_box.inl" />
+    <CustomBuildStep Include="vector.inl">
+      <FileType>Document</FileType>
+    </CustomBuildStep>
+    <None Include="config_node.inl" />
+    <None Include="global.inl" />
+    <None Include="animatable_value.inl" />
+    <None Include="animatable_value_source.inl" />
+    <None Include="parameter_node_utility.inl" />
+    <None Include="math\cubic_hermite_spline.inl" />
+    <None Include="math\data_set.inl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

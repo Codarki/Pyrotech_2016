@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+
+<material
+	name = "displacement_material"
+	material_p3d = "displacement material"
+	>
+    <shader file = "data/shaders/effects/displacement_child.xml"> 
+        <parameters>
+            <displacement_map value = "data/images/2016/icen.jpg"/>
+            <displacement_strength_map value = "data/images/2016/rouva.jpg"/>
+            <!--<displacement value = "0.2"/>-->
+            <displacement shared_value = "displacement_strength_curve"/>
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "displacement_material2"
+	material_p3d = "displacement material"
+	>
+    <shader file = "data/shaders/effects/displacement_child.xml"> 
+        <parameters>
+            <displacement_map value = "data/images/2016/icen.jpg"/>
+            <displacement_strength_map value = "data/images/2016/rouva.jpg"/>
+            <!--<displacement value = "0.2"/>-->
+            <displacement shared_value = "displacement_strength_curve"/>
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "lumimaa_displacement_material"
+	material_p3d = "lumimaa_displacement_material"
+	>
+    <shader file = "data/shaders/effects/displacement_child.xml"> 
+        <parameters>
+            <displacement_map value = "data/images/2016/icen.jpg"/>
+            <displacement_strength_map value = "data/images/2016/asm.jpg"/>
+            <displacement shared_value = "lumimaa_displacement_strength_curve"/>
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "piraatti_displacement_material"
+	material_p3d = "piraatti_displacement_material"
+	>
+    <shader file = "data/shaders/effects/displacement_child.xml"> 
+        <parameters>
+            <displacement_map value = "data/images/2016/icen.jpg"/>
+            <displacement_strength_map value = "data/images/2016/rouva.jpg"/>
+            <displacement shared_value = "piraatti_displacement_strength_curve"/>
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "saaret_displacement_material"
+	material_p3d = "saaret_displacement_material"
+	>
+    <shader file = "data/shaders/effects/displacement_child.xml"> 
+        <parameters>
+            <displacement_map value = "data/images/2016/icen.jpg"/>
+            <!--<displacement_strength_map value = "data/images/lights/spot_mask.png"/>-->
+            <displacement_strength_map value = "data/images/2016/rouva.jpg"/>
+            <displacement shared_value = "saaret_displacement_strength_curve"/>
+        </parameters>
+	</shader>
+</material>

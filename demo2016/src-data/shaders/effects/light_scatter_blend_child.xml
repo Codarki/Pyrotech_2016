@@ -1,0 +1,127 @@
+<?xml version="1.0" ?>
+<parameters>
+	<parameter
+		label = "Child texture"
+		name = "child_texture"
+		type = "texture2D"
+		hlsl = "child_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+
+	<parameter
+		label = "Blend map"
+		name = "blend_map"
+		type = "texture2D"
+		hlsl = "blend_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+    
+	<parameter
+		label = "Alpha mask map"
+		name = "alpha_mask_map"
+		type = "texture2D"
+		hlsl = "alpha_mask_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>    
+	
+	
+</parameters>
+
+<sampler_states>
+	<sampler
+		name = "s0"
+		texture = "child_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+	
+	<sampler
+		name = "blend_sampler"
+		texture = "blend_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+	<sampler
+		name = "alpha_mask_sampler"
+		texture = "alpha_mask_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>	    
+</sampler_states>
+
+<streams>
+	<stream0
+		position = 0
+		tangent = 0
+		normal = 0
+		texcoord = 0>
+	</stream0>
+</streams>
+
+<vertex_shader
+	stream = "stream0"
+	hlsl = "
+	struct input_vertex
+	{
+		float4 position : POSITION;
+		float2 texcoord : TEXCOORD0;
+	};
+
+	struct output_vertex
+	{
+		float4 position : POSITION;
+		float2 texcoord : TEXCOORD0;
+	};
+
+	void main_vs(in input_vertex input, out output_vertex output)
+	{
+		output = input;
+	}
+	">
+</vertex_shader>
+<pixel_shader
+	hlsl = "
+	float time_x;
+	float time_y;
+
+	texture2D child_texture;
+	sampler2D s0;
+
+	texture2D blend_texture;
+	sampler2D blend_sampler;
+    
+	texture2D alpha_mask_texture;
+	sampler2D alpha_mask_sampler;    
+	
+	void main_ps(
+		float2 texcoord : TEXCOORD0,
+		out float4 color : COLOR0)
+	{
+		color = 0;
+		float2 alpha_mask_texcoord = texcoord;
+        //alpha_mask_texcoord.x += 0.01;
+		float4 source_map_color = tex2D(blend_sampler,texcoord);
+        float4 alpha_mask_color = tex2D(alpha_mask_sampler,alpha_mask_texcoord);
+        
+        source_map_color *= alpha_mask_color;
+        
+		color = tex2D(s0,texcoord);
+		color += source_map_color;
+	}
+	">
+</pixel_shader>

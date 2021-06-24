@@ -1,0 +1,2357 @@
+<?xml version="1.0" ?>
+
+<!-- name = materiaalin nimi voi olla mika tahansa -->
+<!-- shader = mita shaderia käytettään materiaalissa. nyt laitettu cook_torrance -->
+<!-- material_p3d = materiaalin nimi 3ds maxissa -->
+
+
+<material
+	name = "kotbg"
+	material_p3d = "kotbg"
+	>
+
+    <shader file = "data/shaders/skybox.xml"> 
+        <parameters>
+            <self_illuminate_map value = "data/images/2015/kotkabg.jpg"/>
+            <self_illuminate_color value = "2 2 2"/>
+            <alpha_coeff value = "1"/>            
+        </parameters>
+	</shader>
+	
+	<shader file = "data/shaders/skybox.xml"> 
+        <parameters>
+            <self_illuminate_map value = "data/images/2015/kotkabg_bright.jpg"/>
+            <self_illuminate_color value = "5 5 5"/>
+            <alpha_coeff value = "1"/>  
+			<self_illuminate_color shared_value = "grassta_hohka_curve"/>			
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "gre1"
+	material_p3d = "gre1"
+	>
+  <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+		<self_illuminate_color value = "5 5 5"/>
+		<!--<self_illuminate_color shared_value = "credit1_rgb_curve"/>-->
+        <alpha_coeff shared_value = "greets1_alpha_curve"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "gre2"
+	material_p3d = "gre2"
+	>
+  <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+		<self_illuminate_color value = "5 5 5"/>
+        <alpha_coeff shared_value = "greets2_alpha_curve"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "gre3"
+	material_p3d = "gre3"
+	>
+  <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+		<self_illuminate_color value = "5 5 5"/>
+        <alpha_coeff shared_value = "greets3_alpha_curve"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "gre4"
+	material_p3d = "gre4"
+	>
+  <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+		<self_illuminate_color value = "5 5 5"/>
+        <alpha_coeff shared_value = "greets4_alpha_curve"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "gre5"
+	material_p3d = "gre5"
+	>
+  <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+		<self_illuminate_color value = "5 5 5"/>
+        <alpha_coeff shared_value = "greets5_alpha_curve"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "gre6"
+	material_p3d = "gre6"
+	>
+  <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+		<self_illuminate_color value = "5 5 5"/>
+        <alpha_coeff shared_value = "greets6_alpha_curve"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "gre7"
+	material_p3d = "gre7"
+	>
+  <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+		<self_illuminate_color value = "5 5 5"/>
+        <alpha_coeff shared_value = "greets7_alpha_curve"/>
+    </parameters>
+  </shader>
+</material>
+
+
+<material
+	name = "tulikarpa"
+	material_p3d = "tulikarpa"
+	>
+   <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+        <parameters>
+          <self_illuminate_map value = "data/images/2015/tulikarpa.jpg"/>
+          <self_illuminate_color value = "4 4 4"/>
+          <distort_scale_coeff value = "2 2 2"/>
+          <distort_time_coeff value = "0.02 0.02 0.02"/>
+          <distort_position_coeff value = "0.2 0.2 0.2"/>
+		</parameters>
+    </shader> 
+</material>
+
+
+<material
+	name = "spidhoto"
+	material_p3d = "spidhoto"
+	>
+   <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+        <parameters>
+          <self_illuminate_map value = "data/images/2015/spidhoto.jpg"/>
+          <self_illuminate_color value = "25 25 25"/>
+          <distort_scale_coeff value = "8 8 8"/>
+          <distort_time_coeff value = "0.1 0.05 0.03"/>
+          <distort_position_coeff value = "0.01 0.01 0.01"/>
+		</parameters>
+    </shader> 
+</material>
+
+<material
+	name = "tahdet"
+	material_p3d = "tahdet"
+	>
+   <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+        <parameters>
+          <self_illuminate_map value = "data/images/2015/tahdet.jpg"/>
+          <self_illuminate_color value = "4 4 4"/>
+		</parameters>
+    </shader> 
+</material>
+
+<material
+	name = "hudii"
+	material_p3d = "hudii"
+	>
+   <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+        <parameters>
+          <self_illuminate_map value = "data/images/2015/hud.jpg"/>
+           <self_illuminate_color value = "3 3 5"/>
+		   
+		</parameters>
+    </shader> 
+</material>
+
+<material
+	name = "pthudii"
+	material_p3d = "pthudii"
+	>
+   <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+        <parameters>
+          <self_illuminate_map value = "data/images/2015/hud_pt.jpg"/>
+          <self_illuminate_color value = "7 7 9"/>
+		   <self_illuminate_color shared_value = "grassta_hohka_curve"/>
+		</parameters>
+    </shader> 
+</material>
+
+<material
+	name = "leetline"
+	material_p3d = "leetline"
+	>
+   <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+        <parameters>
+          <self_illuminate_map value = "data/images/2015/leetlines.jpg"/>
+          <self_illuminate_color value = "6 6 6"/>
+		</parameters>
+    </shader> 
+</material>
+
+
+<material
+	name = "barkki"
+	material_p3d = "barkki"
+	>
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2015/bark.jpg"/>
+            <specular_map value = "data/images/2015/bark.jpg"/>
+            <shininess_map value = "data/images/2015/bark.jpg"/> <!-- ptkotkaspc.jpg too white -->
+            <normal_map value = "data/images/2015/barkn.jpg"/>
+            <!-- <occlusion_map value = "data/images/2014/ptkotkaocc.jpg"/ -->
+            <occlusion_map shared_value = "SSAOBuffer"/>
+            <reflection_map value = "data/images/title/gldc.jpg"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "1 1 1"/>
+            <specular_color value = "0.7 0.7 0.7"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.25"/>
+            <roughness value = "0.75"/> <!-- 0.30 -->
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.2 0 0.2"/>
+            <reflection_coeff value = "0.35"/>
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "darkbark"
+	material_p3d = "darkbark"
+	>
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2015/darkbark.jpg"/>
+            <specular_map value = "data/images/2015/darkbark.jpg"/>
+            <shininess_map value = "data/images/2015/darkbark.jpg"/> <!-- ptkotkaspc.jpg too white -->
+            <normal_map value = "data/images/2015/darkbarkn.jpg"/>
+            <!-- <occlusion_map value = "data/images/2014/ptkotkaocc.jpg"/ -->
+            <occlusion_map shared_value = "SSAOBuffer"/>
+            <reflection_map value = "data/images/title/gldc.jpg"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "1 1 1"/>
+            <specular_color value = "0.7 0.7 0.7"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.25"/>
+            <roughness value = "0.75"/> <!-- 0.30 -->
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.2 0 0.2"/>
+            <reflection_coeff value = "0.35"/>
+        </parameters>
+	</shader>
+</material>
+
+<!--
+<material
+	name = "branchit"
+	material_p3d = "branchit">
+  <shader file = "data/shaders/alpha_blended_emissive_fade_double_sided.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/branchit.png"/>
+      <self_illuminate_color value = "0.1 0.1 0.1"/>
+      <alpha_coeff value = "1"/>
+      </parameters>
+  </shader>
+</material>
+-->
+
+<!--
+<material
+	name = "fern"
+	material_p3d = "fern">
+  <shader file = "data/shaders/alpha_blended_emissive_fade_double_sided.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/fern.png"/>
+      <self_illuminate_color value = "0.1 0.1 0.1"/>
+      <alpha_coeff value = "1"/>
+      </parameters>
+  </shader>
+</material>
+-->
+
+<material
+	name = "grecodarki"
+	material_p3d = "grecodarki"
+	>
+  <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/gre_codarki.png"/>
+      <self_illuminate_color value = "1 1 1"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "grephara"
+	material_p3d = "grephara"
+	>
+  <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/gre_phara.png"/>
+      <self_illuminate_color value = "1 1 1"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "grehoaxi"
+	material_p3d = "grehoaxi"
+	>
+  <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/gre_hoaxi.png"/>
+      <self_illuminate_color value = "1 1 1"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "grerayjan"
+	material_p3d = "grerayjan"
+	>
+  <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/gre_rayjan.png"/>
+      <self_illuminate_color value = "1 1 1"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "grefreon"
+	material_p3d = "grefreon"
+	>
+  <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/gre_freon.png"/>
+      <self_illuminate_color value = "1 1 1"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "tvo"
+	material_p3d = "tvo"
+	>
+  <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/tvtest.jpg"/>
+      <self_illuminate_color shared_value = "hahmo_color_curve"/>
+      <alpha_map1 value = "data/images/tmp/hahmoalpha.png"/>
+      <alpha_map2 value = "data/images/tmp/hahmoalpha.png"/>
+      <alpha_texcoord_offset1 shared_value = "hahmoalpha_texture_uv_curve1" />
+      <alpha_texcoord_offset2 shared_value = "hahmoalpha_texture_uv_curve2" />
+      <!--<alpha_coeff shared_value = "tronman_alpha_curve"/>-->
+      <alpha_coeff value = "1"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "tvtest2"
+	material_p3d = "tvtest2"
+	>
+  <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <emission_map value = "data/images/2014/tvtest2.jpg"/>
+      <occlusion_map shared_value = "SSAOBuffer"/>
+      <!--<diffuse_map value = "data/images/10748-galvanized-metal-diffuse.jpg"/> 
+		<specular_map value = "data/images/8658-concrete-spec.jpg"/>
+		<normal_map value = "data/images/10748-galvanized-metal-normal.jpg"/> 
+				<diffuse_color value = "0.8 0.8 1"/>
+		<specular_color value = "0.8 0.8 1"/>
+		<normal_scale value = "1.50"/>
+		<fresnel_normal_incidence value = "0.8"/>
+		<roughness value = "0.2"/>
+		<diffuse_roughness value = "0.9"/>
+		<reflection_coeff value = "0.1"/>
+		-->
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "tvtest"
+	material_p3d = "tvtest"
+	>
+  <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <emission_map value = "data/images/2014/tvtest.jpg"/>
+      <occlusion_map shared_value = "SSAOBuffer"/>
+      <!--<diffuse_map value = "data/images/10748-galvanized-metal-diffuse.jpg"/> 
+		<specular_map value = "data/images/8658-concrete-spec.jpg"/>
+		<normal_map value = "data/images/10748-galvanized-metal-normal.jpg"/> 
+				<diffuse_color value = "0.8 0.8 1"/>
+		<specular_color value = "0.8 0.8 1"/>
+		<normal_scale value = "1.50"/>
+		<fresnel_normal_incidence value = "0.8"/>
+		<roughness value = "0.2"/>
+		<diffuse_roughness value = "0.9"/>
+		<reflection_coeff value = "0.1"/>
+		-->
+    </parameters>
+  </shader>
+</material>
+<material
+	name = "pharaffin"
+	material_p3d = "pharaffin"
+	>
+  <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/phara.jpg"/>
+      <self_illuminate_color value = "1 1 1"/>
+    </parameters>
+  </shader>
+</material>
+<material
+	name = "codarki"
+	material_p3d = "codarki"
+	>
+  <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/codarki.jpg"/>
+      <self_illuminate_color value = "1 1 1"/>
+    </parameters>
+  </shader>
+</material>
+<material
+	name = "rayjan"
+	material_p3d = "rayjan"
+	>
+  <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/ray.jpg"/>
+      <self_illuminate_color value = "1 1 1"/>
+    </parameters>
+  </shader>
+</material>
+<material
+	name = "hoaxi"
+	material_p3d = "hoaxi"
+	>
+  <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/hoaxi.jpg"/>
+      <self_illuminate_color value = "1 1 1"/>
+    </parameters>
+  </shader>
+</material>
+<material
+	name = "systembg"
+	material_p3d = "systembg"
+	>
+  <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/systemo.jpg"/>
+      <self_illuminate_color value = "1 1 1"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "systemo"
+	material_p3d = "systemo"
+	>
+  <shader file = "data/shaders/haamuhahmo.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/systemo_alph.jpg"/>
+      <self_illuminate_color shared_value = "hahmo_color_curve"/>
+      <alpha_map1 value = "data/images/tmp/hahmoalpha.png"/>
+      <alpha_map2 value = "data/images/tmp/hahmoalpha.png"/>
+      <alpha_texcoord_offset1 shared_value = "hahmoalpha_texture_uv_curve1" />
+      <alpha_texcoord_offset2 shared_value = "hahmoalpha_texture_uv_curve2" />
+      <!--<alpha_coeff shared_value = "tronman_alpha_curve"/>-->
+      <alpha_coeff value = "1"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "inspace"
+	material_p3d = "inspace"
+	>
+  <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/inspace.jpg"/>
+      <self_illuminate_color value = "1 1 1"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "vesitausta"
+	material_p3d = "vesitausta"
+	>
+  <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/vesitausta.jpg"/>
+      <self_illuminate_color value = "20 20 20"/>
+    </parameters>
+  </shader>
+</material>
+
+<!-- Tron tunnelin kaiteet VIHREA -->
+<material
+	name = "tronman_red"
+	material_p3d = "tronman_red"
+	>
+  <shader file = "data/shaders/haamuhahmo.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/circuit_new_bw.png"/>
+      <self_illuminate_color shared_value = "hahmo_color_curve_green"/>
+      <alpha_map1 value = "data/images/tmp/hahmoalpha.png"/>
+      <alpha_map2 value = "data/images/tmp/hahmoalpha.png"/>
+      <alpha_texcoord_offset1 shared_value = "hahmoalpha_texture_uv_curve1" />
+      <alpha_texcoord_offset2 shared_value = "hahmoalpha_texture_uv_curve2" />
+      <alpha_coeff shared_value = "tron_red_alpha"/>
+    </parameters>
+  </shader>
+</material>
+
+<!-- TronTinman punainen -->
+<material
+	name = "tronmano"
+	material_p3d = "tronmano"
+	>
+  <shader file = "data/shaders/haamuhahmo.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/circuit_tman.png"/>
+      <self_illuminate_color shared_value = "hahmo_color_curve_red"/>
+      <alpha_map1 value = "data/images/tmp/hahmoalpha_ora.png"/>
+      <alpha_map2 value = "data/images/tmp/hahmoalpha_ora.png"/>
+      <alpha_texcoord_offset1 shared_value = "hahmoalpha_texture_uv_curve1" />
+      <alpha_texcoord_offset2 shared_value = "hahmoalpha_texture_uv_curve2" />
+      <alpha_coeff shared_value = "tron_red_alpha"/>
+      <!--<alpha_coeff value = "1"/>-->
+    </parameters>
+  </shader>
+</material>
+
+<!-- Tron title, reaktori sahko etc -->
+<material
+	name = "tronman"
+	material_p3d = "tronman"
+	>
+  <shader file = "data/shaders/haamuhahmo.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/circuit_new.png"/>
+      <self_illuminate_color shared_value = "hahmo_color_curve"/>
+      <alpha_map1 value = "data/images/tmp/hahmoalpha.png"/>
+      <alpha_map2 value = "data/images/tmp/hahmoalpha.png"/>
+      <alpha_texcoord_offset1 shared_value = "hahmoalpha_texture_uv_curve1" />
+      <alpha_texcoord_offset2 shared_value = "hahmoalpha_texture_uv_curve2" />
+      <!--<alpha_coeff shared_value = "tron_alpha"/>-->
+      <alpha_coeff value = "1"/>
+    </parameters>
+  </shader>
+</material>
+
+<!-- Tron tunnelin seina -->
+<material
+	name = "tronman2"
+	material_p3d = "tronman2"
+	>
+  <shader file = "data/shaders/haamuhahmo.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/circuit_new.png"/>
+      <self_illuminate_color shared_value = "tron_color"/>
+      <alpha_map1 value = "data/images/tmp/hahmoalpha.png"/>
+      <alpha_map2 value = "data/images/tmp/hahmoalpha.png"/>
+      <alpha_texcoord_offset1 shared_value = "hahmoalpha_texture_uv_curve1" />
+      <alpha_texcoord_offset2 shared_value = "hahmoalpha_texture_uv_curve2" />
+      <alpha_coeff shared_value = "tron_alpha"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "tvedge"
+	material_p3d = "tvedge"
+	>
+  <shader file = "data/shaders/haamuhahmo.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/vesitausta.jpg"/>
+      <!-- <self_illuminate_color shared_value = "hahmo_color_curve"/> -->
+      <self_illuminate_color value = "300 300 300"/>
+      <!--<alpha_map1 value = "data/images/2014/homoalpha.png"/>-->
+       <alpha_map1 value = "data/images/2014/smoketend.png"/>      
+      <alpha_texcoord_offset1 shared_value = "tvedge_curve" />
+      <!--<alpha_coeff shared_value = "homo_alpha"/>-->
+    </parameters>
+  </shader>
+  <shader file = "data/shaders/haamuhahmo.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/vesitausta.jpg"/>
+      <!-- <self_illuminate_color shared_value = "hahmo_color_curve"/> -->
+      <self_illuminate_color value = "100 300 100"/>
+      <!--<alpha_map1 value = "data/images/2014/homoalpha.png"/>-->
+       <alpha_map1 value = "data/images/2014/smoketend2.png"/>      
+      <alpha_texcoord_offset1 shared_value = "tvedge_curve2" />
+      <!--<alpha_coeff shared_value = "homo_alpha"/>-->
+    </parameters>
+  </shader>  
+</material>
+
+
+<material
+	name = "lazor1"
+	material_p3d = "lazor1"
+	>
+  <shader file = "data/shaders/haamuhahmo.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2015/lazormatsku.png"/>
+      <!-- <self_illuminate_color shared_value = "hahmo_color_curve"/> -->
+      <self_illuminate_color value = "100 100 100"/>
+      <alpha_map1 value = "data/images/2015/lazoralpha.png"/>
+      <alpha_texcoord_offset1 shared_value = "lazor1_curve" />
+      <alpha_coeff shared_value = "audio_spectrum_segment_1"/>
+      <!--<alpha_coeff value = "-0.2"/>-->
+      <!--<alpha_coeff shared_value = "homo_alpha"/>-->
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "lazor2"
+	material_p3d = "lazor2"
+	>
+  <shader file = "data/shaders/haamuhahmo.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2015/lazormatsku2.png"/>
+      <!-- <self_illuminate_color shared_value = "hahmo_color_curve"/> -->
+      <self_illuminate_color value = "100 100 100"/>
+      <alpha_map1 value = "data/images/2015/lazoralpha.png"/>
+      <alpha_texcoord_offset1 shared_value = "lazor2_curve"/>
+      <alpha_coeff shared_value = "audio_spectrum_segment_2"/>
+      <!--<alpha_coeff value = "-0.2"/>-->
+      <!--<alpha_coeff shared_value = "homo_alpha"/>-->
+    </parameters>
+  </shader>
+</material>
+
+
+
+<material
+	name = "homomatsku"
+	material_p3d = "homomatsku"
+	>
+  <shader file = "data/shaders/haamuhahmo.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/homomatsku.png"/>
+      <!-- <self_illuminate_color shared_value = "hahmo_color_curve"/> -->
+      <self_illuminate_color value = "100 100 100"/>
+      <alpha_map1 value = "data/images/2014/homoalpha.png"/>
+      <alpha_texcoord_offset1 shared_value = "homoalpha_texture_uv_curve1" />
+      <alpha_coeff shared_value = "homo_alpha"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "homomatskuk"
+	material_p3d = "homomatskuk"
+	>
+  <shader file = "data/shaders/haamuhahmo.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/homomatsku2.png"/>
+      <!-- <self_illuminate_color shared_value = "hahmo_color_curve"/> -->
+      <self_illuminate_color value = "100 100 100"/>
+      <alpha_map1 value = "data/images/2014/homoalpha.png"/>
+      <alpha_texcoord_offset1 shared_value = "homoalpha_texture_uv_curve2" />
+      <alpha_coeff shared_value = "homo_alpha"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "homomatskuk2"
+	material_p3d = "homomatskuk2"
+	>
+  <shader file = "data/shaders/haamuhahmo.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/homomatsku2.png"/>
+      <!-- <self_illuminate_color shared_value = "hahmo_color_curve"/> -->
+      <self_illuminate_color value = "100 100 100"/>
+      <alpha_map1 value = "data/images/2014/homoalpha.png"/>
+      <alpha_texcoord_offset1 shared_value = "homoalpha_texture_uv_curve3" />
+      <alpha_coeff shared_value = "homo_alpha"/>
+    </parameters>
+  </shader>
+</material>
+
+
+<material
+	name = "homomatskun1"
+	material_p3d = "homomatskun1"
+	>
+  <shader file = "data/shaders/haamuhahmo.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/homomatsku.png"/>
+      <!-- <self_illuminate_color shared_value = "hahmo_color_curve"/> -->
+      <self_illuminate_color value = "100 100 100"/>
+      <alpha_map1 value = "data/images/2014/homoalpha.png"/>
+      <alpha_texcoord_offset1 shared_value = "homoalpha_texture_uv_curve_nopee" />
+      <alpha_coeff shared_value = "homo_alpha"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "homomatskun2"
+	material_p3d = "homomatskun2"
+	>
+  <shader file = "data/shaders/haamuhahmo.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/homomatsku2.png"/>
+      <!-- <self_illuminate_color shared_value = "hahmo_color_curve"/> -->
+      <self_illuminate_color value = "100 100 100"/>
+      <alpha_map1 value = "data/images/2014/homoalpha.png"/>
+      <alpha_texcoord_offset1 shared_value = "homoalpha_texture_uv_curve_nopee2" />
+      <alpha_coeff shared_value = "homo_alpha"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "homomatskun3"
+	material_p3d = "homomatskun3"
+	>
+  <shader file = "data/shaders/haamuhahmo.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/homomatsku.png"/>
+      <!-- <self_illuminate_color shared_value = "hahmo_color_curve"/> -->
+      <self_illuminate_color value = "100 100 100"/>
+      <alpha_map1 value = "data/images/2014/homoalpha.png"/>
+      <alpha_texcoord_offset1 shared_value = "homoalpha_texture_uv_curve_nopee3" />
+      <alpha_coeff shared_value = "homo_alpha"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "homomatskun4"
+	material_p3d = "homomatskun4"
+	>
+  <shader file = "data/shaders/haamuhahmo.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/homomatsku2.png"/>
+      <!-- <self_illuminate_color shared_value = "hahmo_color_curve"/> -->
+      <self_illuminate_color value = "100 100 100"/>
+      <alpha_map1 value = "data/images/2014/homoalpha.png"/>
+      <alpha_texcoord_offset1 shared_value = "homoalpha_texture_uv_curve_nopee4" />
+      <alpha_coeff shared_value = "homo_alpha"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "homomatsku_alkaa_myohemmin"
+	material_p3d = "homomatsku_alkaa_myohemmin"
+	>
+  <shader file = "data/shaders/haamuhahmo.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/homomatsku.png"/>
+      <!-- <self_illuminate_color shared_value = "hahmo_color_curve"/> -->
+      <self_illuminate_color value = "100 100 100"/>
+      <alpha_map1 value = "data/images/2014/homoalpha.png"/>
+      <alpha_texcoord_offset1 shared_value = "homoalpha_texture_uv_curve_2" />
+      <alpha_coeff shared_value = "homo_alpha"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "homomatsku_2"
+	material_p3d = "homomatsku_2"
+	>
+  <shader file = "data/shaders/haamuhahmo.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/homomatsku.png"/>
+      <!-- <self_illuminate_color shared_value = "hahmo_color_curve"/> -->
+      <self_illuminate_color value = "100 100 100"/>
+      <alpha_map1 value = "data/images/2014/homoalpha.png"/>
+      <alpha_texcoord_offset1 shared_value = "homoalpha_texture_uv_curve_3" />
+      <alpha_coeff shared_value = "homo_alpha2"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "part2pilvi"
+	material_p3d = "part2pilvi">
+  <shader file = "data/shaders/alpha_blended_emissive_fade.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/part2pilvi.png"/>
+      <!--<self_illuminate_color value = "3 3 3"/>-->
+      <self_illuminate_color shared_value = "pilvi_color"/>
+      <alpha_coeff value = "1"/>
+      <fade_power shared_value = "pilvi_fade_power"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "trcloud"
+	material_p3d = "trcloud">
+  <shader file = "data/shaders/alpha_blended_emissive_fade.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2015/trcloud.png"/>
+      <!--<self_illuminate_color value = "3 3 3"/>-->
+      <self_illuminate_color shared_value = "pilvi_color"/>
+      <alpha_coeff value = "1"/>
+      <fade_power shared_value = "pilvi_fade_power"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "popkorn"
+	material_p3d = "popkorn">
+  <shader file = "data/shaders/alpha_blended_emissive_fade_double_sided.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/popkorn.png"/>
+      <self_illuminate_color value = "0.7 0.7 0.7"/>
+      <alpha_coeff value = "1"/>
+      <fade_power value = "1"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "greetstextb"
+	material_p3d = "greetstextb">
+  <shader file = "data/shaders/alpha_blended_emissive_fade_double_sided.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/grei.jpg"/>
+      <self_illuminate_color value = "0.1 0.1 0.1"/>
+      <alpha_coeff value = "1"/>
+      <fade_power value = "1"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "smoketend"
+	material_p3d = "smoketend">
+  <shader file = "data/shaders/alpha_blended_emissive_fade_double_sided.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/smoketend.png"/>
+      <self_illuminate_color value = "0.4 0.4 0.42"/>
+      <alpha_coeff value = "1"/>
+      <fade_power value = "1"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "smoketendr"
+	material_p3d = "smoketendr">
+  <shader file = "data/shaders/alpha_blended_emissive_fade_double_sided.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/smoketend.png"/>
+      <self_illuminate_color value = "0.6 0.2 0.2"/>
+      <alpha_coeff value = "1"/>
+      <fade_power value = "1"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "overlayt"
+	material_p3d = "overlayt">
+  <shader file = "data/shaders/alpha_blended_emissive_fade_double_sided.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/smoketend2.png"/>
+      <self_illuminate_color value = "0.2 1.4 0.3"/>
+      <alpha_coeff value = "1"/>
+      <fade_power value = "10"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "riiimu"
+	material_p3d = "riiimu">
+  <shader file = "data/shaders/alpha_blended_emissive_fade_double_sided.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2015/riiimu.png"/>
+      <self_illuminate_color value = "1.3 1.3 1.3"/>
+      <alpha_coeff value = "0.25"/>
+      <fade_power value = "1"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "smoketendb"
+	material_p3d = "smoketendb">
+  <shader file = "data/shaders/alpha_blended_emissive_fade_double_sided.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/smoketend.png"/>
+      <self_illuminate_color value = "6 4 3"/>
+      <alpha_coeff value = "1"/>
+      <fade_power value = "1.5"/>
+	  <texcoord_offset shared_value = "liikkuva_lava_texcoord_curve" />
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "smoketendg2"
+	material_p3d = "smoketendg2">
+  <shader file = "data/shaders/alpha_blended_emissive_fade_double_sided.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/smoketend3.png"/>
+      <self_illuminate_color value = "0.2 1.6 0.3"/>
+      <alpha_coeff value = "1"/>
+      <fade_power value = "1.5"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "tahtipilvig"
+	material_p3d = "tahtipilvig">
+  <shader file = "data/shaders/alpha_blended_emissive_fade_double_sided.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/smoketend3.png"/>
+      <self_illuminate_color value = "0.1 1 0.2"/>
+      <alpha_coeff value = "1"/>
+      <fade_power value = "3"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "tahtipilvib"
+	material_p3d = "tahtipilvib">
+  <shader file = "data/shaders/alpha_blended_emissive_fade_double_sided.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/smoketend3.png"/>
+      <self_illuminate_color value = "0.2 0.8 1"/>
+      <alpha_coeff value = "1"/>
+      <fade_power value = "3"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "smoketendb"
+	material_p3d = "smoketendb">
+  <shader file = "data/shaders/alpha_blended_emissive_fade_double_sided.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/smoketend3.png"/>
+      <self_illuminate_color value = "0.4 1.6 2"/>
+      <alpha_coeff value = "1"/>
+      <fade_power value = "1"/>
+    </parameters>
+  </shader>
+</material>
+<material
+	name = "smoketendb2"
+	material_p3d = "smoketendb2">
+  <shader file = "data/shaders/alpha_blended_emissive_fade_double_sided.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/smoketend2.png"/>
+      <self_illuminate_color value = "0.4 1.6 2"/>
+      <alpha_coeff value = "1"/>
+      <fade_power value = "1"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "backdrop"
+	material_p3d = "backdrop"
+	>
+  <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/backdrop.jpg"/>
+      <self_illuminate_color value = "1 1 1"/>
+    </parameters>
+  </shader>
+</material>
+<!--
+<material
+	name = "sintaivas"
+	material_p3d = "sintaivas"
+	>
+  <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/sintaivas.jpg"/>
+      <self_illuminate_color value = "1.5 1.5 1.5"/>
+    </parameters>
+  </shader>
+</material>
+-->
+
+<material
+	name = "darksky"
+	material_p3d = "darksky"
+	>
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <emission_map value = "data/images/2015/darksky.jpg"/>
+			 <ambient_color value = "0.1 0.1 0.11"/>
+            <diffuse_color  value = "0 0 0"/>            
+            <specular_color value = "0 0 0"/>
+            <emission_coeff value = "0.3 0.3 0.3"/>
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "sintaivas"
+	material_p3d = "sintaivas"
+	>
+    <shader file = "data/shaders/skybox.xml"> 
+        <parameters>
+            <self_illuminate_map value = "data/images/2014/sintaivas.jpg"/>
+            <self_illuminate_color value = "10 10 10"/>
+            <alpha_coeff value = "1"/>            
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "luotaivas"
+	material_p3d = "luotaivas"
+	>
+    <shader file = "data/shaders/skybox.xml"> 
+        <parameters>
+            <self_illuminate_map value = "data/images/2015/luotaivas.jpg"/>
+            <self_illuminate_color value = "10 10 10"/>
+            <alpha_coeff value = "1"/>            
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "saarsky"
+	material_p3d = "saarsky"
+	>
+
+    <shader file = "data/shaders/skybox.xml"> 
+        <parameters>
+            <self_illuminate_map value = "data/images/2015/cloudsky_color.jpg"/>
+            <self_illuminate_color value = "3 3 3"/>
+            <alpha_coeff value = "1"/>            
+        </parameters>
+	</shader>
+	
+	<shader file = "data/shaders/skybox.xml"> 
+        <parameters>
+            <self_illuminate_map value = "data/images/2015/cloudsky_bright.jpg"/>
+            <self_illuminate_color value = "5 3 2"/>
+            <alpha_coeff value = "1"/>            
+        </parameters>
+	</shader>
+</material>
+
+
+
+<material
+	name = "clearsky"
+	material_p3d = "clearsky"
+	>
+
+    <shader file = "data/shaders/skybox.xml"> 
+        <parameters>
+            <self_illuminate_map value = "data/images/2016/clearsky.jpg"/>
+            <self_illuminate_color value = "3 3 3"/>
+            <alpha_coeff value = "1"/>            
+        </parameters>
+	</shader>
+	
+	<shader file = "data/shaders/skybox.xml"> 
+        <parameters>
+            <self_illuminate_map value = "data/images/2016/clearsky_bright.jpg"/>
+            <self_illuminate_color value = "4 4 5"/>
+            <alpha_coeff value = "1"/>            
+        </parameters>
+	</shader>
+</material>
+
+
+
+<material
+	name = "pilsky"
+	material_p3d = "pilsky"
+	>
+
+    <shader file = "data/shaders/skybox.xml"> 
+        <parameters>
+            <self_illuminate_map value = "data/images/2016/clearsky.jpg"/>
+            <self_illuminate_color value = "2 2 2"/>
+            <alpha_coeff value = "1"/>            
+        </parameters>
+	</shader>
+	
+	<shader file = "data/shaders/skybox.xml"> 
+        <parameters>
+            <self_illuminate_map value = "data/images/2016/clearsky_bright.jpg"/>
+            <self_illuminate_color value = "2 2 3"/>
+            <alpha_coeff value = "1"/>            
+        </parameters>
+	</shader>
+</material>
+
+
+<material
+	name = "satsky"
+	material_p3d = "satsky"
+	>
+
+    <shader file = "data/shaders/skybox.xml"> 
+        <parameters>
+            <self_illuminate_map value = "data/images/2016/satsky.jpg"/>
+            <self_illuminate_color value = "3 3 3"/>
+            <alpha_coeff value = "1"/>            
+        </parameters>
+	</shader>
+	<!--
+	<shader file = "data/shaders/skybox.xml"> 
+        <parameters>
+            <self_illuminate_map value = "data/images/2016/satsky_bright.jpg"/>
+            <self_illuminate_color value = "4 4 4"/>
+            <alpha_coeff value = "1"/>            
+        </parameters>
+	</shader> -->
+</material>
+
+<material
+	name = "satsky2"
+	material_p3d = "satsky2"
+	>
+
+    <shader file = "data/shaders/skybox.xml"> 
+        <parameters>
+            <self_illuminate_map value = "data/images/2016/satsky.jpg"/>
+            <self_illuminate_color value = "5 5 5"/>
+            <alpha_coeff value = "1"/>            
+        </parameters>
+	</shader>
+	<!--
+	<shader file = "data/shaders/skybox.xml"> 
+        <parameters>
+            <self_illuminate_map value = "data/images/2016/satsky_bright.jpg"/>
+            <self_illuminate_color value = "4 4 4"/>
+            <alpha_coeff value = "1"/>            
+        </parameters>
+	</shader> -->
+</material>
+
+
+
+<material
+	name = "moonsky"
+	material_p3d = "moonsky"
+	>
+
+    <shader file = "data/shaders/skybox.xml"> 
+        <parameters>
+            <self_illuminate_map value = "data/images/2015/moonsky_color.jpg"/>
+            <self_illuminate_color value = "3 3 3"/>
+            <alpha_coeff value = "1"/>            
+        </parameters>
+	</shader>
+	
+	<shader file = "data/shaders/skybox.xml"> 
+        <parameters>
+            <self_illuminate_map value = "data/images/2015/moonsky_shine.jpg"/>
+            <self_illuminate_color value = "2 2 2"/>
+            <alpha_coeff value = "1"/>            
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "kuutamo"
+	material_p3d = "kuutamo"
+	>
+
+    <shader file = "data/shaders/skybox.xml"> 
+        <parameters>
+            <self_illuminate_map value = "data/images/2016/kuutamo.jpg"/>
+            <self_illuminate_color value = "3 3 3"/>
+            <alpha_coeff value = "1"/>            
+        </parameters>
+	</shader>
+	
+	<shader file = "data/shaders/skybox.xml"> 
+        <parameters>
+            <self_illuminate_map value = "data/images/2016/kuutamo.jpg"/>
+            <self_illuminate_color value = "2 2 2"/>
+            <alpha_coeff value = "1"/>            
+        </parameters>
+	</shader>
+</material>
+
+
+
+<material
+	name = "taulsky"
+	material_p3d = "taulsky"
+	>
+
+    <shader file = "data/shaders/skybox.xml"> 
+        <parameters>
+            <self_illuminate_map value = "data/images/2015/taulsky.jpg"/>
+            <self_illuminate_color value = "15 15 15"/>
+            <alpha_coeff value = "1"/>            
+        </parameters>
+	</shader>
+	<!--
+	<shader file = "data/shaders/skybox.xml"> 
+        <parameters>
+            <self_illuminate_map value = "data/images/2015/taulsky_bright.jpg"/>
+            <self_illuminate_color value = "0.5 0.5 0.5"/>
+            <alpha_coeff value = "1"/>            
+        </parameters>
+	</shader>
+	-->
+</material>
+
+
+<material
+	name = "refmap1"
+	material_p3d = "refmap1">
+  <shader file = "data/shaders/self_illuminate_texture.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2015/refmap1.jpg"/>
+      <self_illuminate_color value = "20 20 20"/>
+    </parameters>
+  </shader>
+</material>
+
+
+<material
+	name = "horizon"
+	material_p3d = "horizon"
+	>
+    <shader file = "data/shaders/skybox.xml"> 
+        <parameters>
+            <self_illuminate_map value = "data/images/2015/horizon.jpg"/>
+            <self_illuminate_color value = "4 4 4"/>
+            <alpha_coeff value = "1"/>            
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "kala"
+	material_p3d = "kala"
+	>
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2015/Golden_Perch.jpg"/>
+            <specular_map value = "data/images/2015/Golden_Perch.jpg"/>            
+            <diffuse_color  value = "1 1 1"/>            
+            <specular_color value = "0.3 0.3 0.3"/>
+
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "pharaffin"
+	material_p3d = "pharaffin"
+	>
+  <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/pharaffin.png"/>
+      <self_illuminate_color value = "1 1 1"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "sahkosala"
+	material_p3d = "sahkosala"
+	>
+  <shader file = "data/shaders/haamuhahmo.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/tmp/hahmoalpha.png"/>
+      <self_illuminate_color shared_value = "hahmo_color_curve"/>
+      <alpha_map1 value = "data/images/tmp/lace.png"/>
+      <alpha_map2 value = "data/images/tmp/lace.png"/>
+      <alpha_texcoord_offset1 shared_value = "sahkosala_alpha_texture_uv_curve1" />
+      <alpha_texcoord_offset2 shared_value = "sahkosala_alpha_texture_uv_curve2" />
+      <alpha_coeff shared_value = "sahkosala_alpha_curve"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "silmat"
+	material_p3d = "silmat"
+	>
+  <shader file = "data/shaders/self_illuminate_texture.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2014/silmat.jpg"/>
+      <self_illuminate_color value = "1 1 1"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "essopilvi"
+	material_p3d = "essopilvi"
+	>
+  <shader file = "data/shaders/alpha_blended_emissive.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/tmp/essopilvi.png"/>
+      <self_illuminate_color value = "0.2 0.2 0.20"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "alpha"
+	material_p3d = "alpha"
+	>
+  <shader file = "data/shaders/alpha_blended_emissive.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/common/white.tga"/>
+      <self_illuminate_color value = "0 0 0"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "maskalpha"
+	material_p3d = "maskalpha"
+	>
+  <shader file = "data/shaders/alpha_blended_emissive.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/common/white.tga"/>
+      <self_illuminate_color value = "1 1 1"/>
+      <alpha_coeff value = "1.0"/>
+      
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "hahmo10"
+	material_p3d = "hahmo10"
+	>
+  <shader file = "data/shaders/haamuhahmo.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/tmp/hahmo10.png"/>
+      <self_illuminate_color shared_value = "hahmo_color_curve"/>
+      <alpha_map1 value = "data/images/tmp/hahmoalpha.png"/>
+      <alpha_map2 value = "data/images/tmp/hahmoalpha.png"/>
+      <alpha_texcoord_offset1 shared_value = "hahmoalpha_texture_uv_curve1" />
+      <alpha_texcoord_offset2 shared_value = "hahmoalpha_texture_uv_curve2" />
+      <alpha_coeff shared_value = "hahmo1_alpha_curve"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "hahmo9"
+	material_p3d = "hahmo9"
+	>
+  <shader file = "data/shaders/haamuhahmo.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/tmp/hahmo9.png"/>
+      <self_illuminate_color shared_value = "hahmo_color_curve"/>
+      <alpha_map1 value = "data/images/tmp/hahmoalpha.png"/>
+      <alpha_map2 value = "data/images/tmp/hahmoalpha.png"/>
+      <alpha_texcoord_offset1 shared_value = "hahmoalpha_texture_uv_curve1" />
+      <alpha_texcoord_offset2 shared_value = "hahmoalpha_texture_uv_curve2" />
+      <alpha_coeff shared_value = "hahmo2_alpha_curve"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "hahmo8"
+	material_p3d = "hahmo8"
+	>
+  <shader file = "data/shaders/haamuhahmo.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/tmp/hahmo8.png"/>
+      <self_illuminate_color shared_value = "hahmo_color_curve"/>
+      <alpha_map1 value = "data/images/tmp/hahmoalpha.png"/>
+      <alpha_map2 value = "data/images/tmp/hahmoalpha.png"/>
+      <alpha_texcoord_offset1 shared_value = "hahmoalpha_texture_uv_curve3" />
+      <alpha_texcoord_offset2 shared_value = "hahmoalpha_texture_uv_curve4" />
+      <alpha_coeff shared_value = "hahmo3_alpha_curve"/>
+    </parameters>
+  </shader>
+</material>
+
+
+<material
+	name = "hahmo7"
+	material_p3d = "hahmo7"
+	>
+  <shader file = "data/shaders/haamuhahmo.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/tmp/hahmo7.png"/>
+      <self_illuminate_color shared_value = "hahmo_color_curve"/>
+      <alpha_map1 value = "data/images/tmp/hahmoalpha.png"/>
+      <alpha_map2 value = "data/images/tmp/hahmoalpha.png"/>
+      <alpha_texcoord_offset1 shared_value = "hahmoalpha_texture_uv_curve4" />
+      <alpha_texcoord_offset2 shared_value = "hahmoalpha_texture_uv_curve2" />
+      <alpha_coeff shared_value = "hahmo1_alpha_curve"/>
+    </parameters>
+  </shader>
+</material>
+
+
+<material
+	name = "hahmo6"
+	material_p3d = "hahmo6"
+	>
+  <shader file = "data/shaders/haamuhahmo.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/tmp/hahmo6.png"/>
+      <self_illuminate_color shared_value = "hahmo_color_curve"/>
+      <alpha_map1 value = "data/images/tmp/hahmoalpha.png"/>
+      <alpha_map2 value = "data/images/tmp/hahmoalpha.png"/>
+      <alpha_texcoord_offset1 shared_value = "hahmoalpha_texture_uv_curve3" />
+      <alpha_texcoord_offset2 shared_value = "hahmoalpha_texture_uv_curve1" />
+      <alpha_coeff shared_value = "hahmo2_alpha_curve"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "hahmo5"
+	material_p3d = "hahmo5"
+	>
+  <shader file = "data/shaders/haamuhahmo.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/tmp/hahmo5.png"/>
+      <self_illuminate_color shared_value = "hahmo_color_curve"/>
+      <alpha_map1 value = "data/images/tmp/hahmoalpha.png"/>
+      <alpha_map2 value = "data/images/tmp/hahmoalpha.png"/>
+      <alpha_texcoord_offset1 shared_value = "hahmoalpha_texture_uv_curve1" />
+      <alpha_texcoord_offset2 shared_value = "hahmoalpha_texture_uv_curve4" />
+      <alpha_coeff shared_value = "hahmo3_alpha_curve"/>
+    </parameters>
+  </shader>
+</material>
+
+
+<material
+	name = "hahmo4"
+	material_p3d = "hahmo4"
+	>
+  <shader file = "data/shaders/haamuhahmo.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/tmp/hahmo4.png"/>
+      <self_illuminate_color shared_value = "hahmo_color_curve_red"/>
+      <alpha_map1 value = "data/images/tmp/hahmoalpha.png"/>
+      <alpha_map2 value = "data/images/tmp/hahmoalpha.png"/>
+      <alpha_texcoord_offset1 shared_value = "hahmoalpha_texture_uv_curve4" />
+      <alpha_texcoord_offset2 shared_value = "hahmoalpha_texture_uv_curve3" />
+      <alpha_coeff shared_value = "hahmo1_alpha_curve"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "hahmo3"
+	material_p3d = "hahmo3"
+	>
+  <shader file = "data/shaders/haamuhahmo.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/tmp/hahmo3.png"/>
+      <self_illuminate_color shared_value = "hahmo_color_curve_red"/>
+      <alpha_map1 value = "data/images/tmp/hahmoalpha.png"/>
+      <alpha_map2 value = "data/images/tmp/hahmoalpha.png"/>
+      <alpha_texcoord_offset1 shared_value = "hahmoalpha_texture_uv_curve2" />
+      <alpha_texcoord_offset2 shared_value = "hahmoalpha_texture_uv_curve1" />
+      <alpha_coeff shared_value = "hahmo2_alpha_curve"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "hahmo2"
+	material_p3d = "hahmo2"
+	>
+  <shader file = "data/shaders/haamuhahmo.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/tmp/hahmo2.png"/>
+      <self_illuminate_color shared_value = "hahmo_color_curve_red"/>
+      <alpha_map1 value = "data/images/tmp/hahmoalpha.png"/>
+      <alpha_map2 value = "data/images/tmp/hahmoalpha.png"/>
+      <alpha_texcoord_offset1 shared_value = "hahmoalpha_texture_uv_curve3" />
+      <alpha_texcoord_offset2 shared_value = "hahmoalpha_texture_uv_curve1" />
+      <alpha_coeff shared_value = "hahmo3_alpha_curve"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "hahmo1"
+	material_p3d = "hahmo1"
+	>
+  <shader file = "data/shaders/haamuhahmo.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/tmp/hahmo1.png"/>
+      <self_illuminate_color shared_value = "hahmo_color_curve_red"/>
+      <alpha_map1 value = "data/images/tmp/hahmoalpha.png"/>
+      <alpha_map2 value = "data/images/tmp/hahmoalpha.png"/>
+      <alpha_texcoord_offset1 shared_value = "hahmoalpha_texture_uv_curve2" />
+      <alpha_texcoord_offset2 shared_value = "hahmoalpha_texture_uv_curve4" />
+      <alpha_coeff shared_value = "hahmo1_alpha_curve"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "saarvesi"
+	material_p3d = "saarvesi"
+	>
+  <shader file = "data/shaders/water.xml">
+    <parameters>
+      <!--<specular_color value = "0.7 1 1.4"/>-->
+      <specular_color value = "0.2 0.5 1.4"/>
+      <surface_color value = "0 1 2"/>
+      <depth_color value = "0.0 0.5 1.5"/>
+      <speed value = "1.15 0.91 0.84"/>
+      <scale value = "0.94 0.46 1.25"/>
+      <specular_map value = "data/images/2014/waterfoam.jpg"/>
+      <normal_map value = "data/images/2014/waterfoam_NORM.jpg"/>
+      <depth_map shared_value = "DepthTexture"/>
+      <reflection_map shared_value = "ReflectionTexture"/>
+      <general_texcoord_offset shared_value = "vesi_texcoord_curve"/>
+      <fresnel_normal_incidence value = "0.25"/>
+      <specular_exponent value = "400"/>
+      <reflection_coeff value = "0.9"/> <!-- 0.95 -->
+      <visibility value = "40"/> <!-- higher is more visible -->
+    </parameters>
+  </shader>
+</material>
+
+
+<material
+	name = "pvesi"
+	material_p3d = "pvesi"
+	>
+  <shader file = "data/shaders/water.xml">
+    <parameters>
+      <!--<specular_color value = "0.7 1 1.4"/>-->
+      <specular_color value = "0.2 0.5 1.0"/>
+      <surface_color value = "0.3 0.7 1"/>
+      <depth_color value = "0.2 0.5 1.0"/>
+      <speed value = "1.15 0.91 0.84"/>
+      <scale value = "0.94 0.46 1.25"/>
+      <specular_map value = "data/images/2014/waterfoam.jpg"/>
+      <normal_map value = "data/images/2014/waterfoam_NORM.jpg"/>
+      <depth_map shared_value = "DepthTexture"/>
+      <reflection_map shared_value = "ReflectionTexture"/>
+      <general_texcoord_offset shared_value = "vesi_texcoord_curve"/>
+      <fresnel_normal_incidence value = "0.10"/>
+      <specular_exponent value = "500"/>
+      <reflection_coeff value = "0.8"/> <!-- 0.95 -->
+      <visibility value = "20"/> <!-- higher is more visible -->
+    </parameters>
+  </shader>
+</material>
+
+
+
+<material
+	name = "heijavesi"
+	material_p3d = "heijavesi"
+	>
+  <shader file = "data/shaders/water.xml">
+    <parameters>
+      <specular_color value = "5 5 5"/>
+      <surface_color value = "1 1 1"/>
+      <depth_color value = "0.0 0.125 0.5"/>
+      <speed value = "1.15 0.91 0.84"/>
+      <scale value = "0.94 0.46 1.25"/>
+      <specular_map value = "data/images/2014/waterfoam.jpg"/>
+      <normal_map value = "data/images/2014/waterfoam_NORM.jpg"/>
+      <depth_map shared_value = "DepthTexture"/>
+      <reflection_map shared_value = "ReflectionTexture"/>
+      <general_texcoord_offset shared_value = "vesi_texcoord_curve"/>
+      <fresnel_normal_incidence value = "0.2"/>
+      <specular_exponent value = "300"/>
+      <reflection_coeff value = "0.85"/> <!-- 0.95 -->
+      <visibility value = "70"/> <!-- higher is more visible -->
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "kemiawtr"
+	material_p3d = "kemiawtr"
+	>
+  <shader file = "data/shaders/water.xml">
+    <parameters>
+      <specular_color value = "5 5 5"/>
+      <surface_color value = "1 1 1"/>
+      <depth_color value = "0.0 0.125 0.5"/>
+      <speed value = "1.15 0.91 0.84"/>
+      <scale value = "0.94 0.46 1.25"/>
+      <specular_map value = "data/images/2014/waterfoam.jpg"/>
+      <normal_map value = "data/images/2014/waterfoam_NORM.jpg"/>
+      <depth_map shared_value = "DepthTexture"/>
+      <reflection_map shared_value = "ReflectionTexture"/>
+	  <fresnel_normal_incidence value = "0.3"/>
+      <specular_exponent value = "300"/>
+      <reflection_coeff value = "0.95"/>
+      <visibility value = "30"/>
+    </parameters>
+  </shader>
+</material>
+
+
+
+<material
+    name = "vesitest"
+	material_p3d = "vesitest"
+	>
+  <shader file = "data/shaders/water.xml">
+    <parameters>
+      <specular_color value = "3 3 3"/>
+      <surface_color value = "1 1 1"/>
+      <depth_color value = "0.0 0.125 0.5"/>
+      <speed value = "1.15 0.91 0.84"/>
+      <scale value = "0.94 0.46 1.25"/>
+      <specular_map value = "data/images/2014/waterfoam.jpg"/>
+      <normal_map value = "data/images/2014/waterfoam_NORM.jpg"/>
+      <depth_map shared_value = "DepthTexture"/>
+      <reflection_map shared_value = "ReflectionTexture"/>
+      <general_texcoord_offset shared_value = "vesi_texcoord_curve"/>
+      <fresnel_normal_incidence value = "0.35"/>
+      <specular_exponent value = "400"/>
+      <reflection_coeff value = "0.95"/>
+      <visibility value = "50"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "tunnvesi"
+	material_p3d = "tunnvesi"
+	>
+  <shader file = "data/shaders/water_fake.xml">
+    <parameters>
+      <diffuse_map value = "data/images/2014/sintaivas.jpg"/>
+      <specular_map value = "data/images/2014/brightmetal_spc_col.jpg"/>
+      <shininess_map value = "data/images/2014/brightmetal_spc.jpg"/>
+      <depth_map shared_value = "DepthTexture"/>
+      <!-- ptkotkaspc.jpg too white -->
+      <normal_map value = "data/images/2014/waterfoam_NORM.jpg"/>
+      <!-- <occlusion_map value = "data/images/2014/ptkotkaocc.jpg"/ -->
+      <!--<occlusion_map shared_value = "SSAOBuffer"/> -->
+     <reflection_map value = "data/images/achromatism.jpg"/>
+      <ambient_color value = "0.0 0.0 0.0"/>
+      <diffuse_color value = "0.9 0.9 0.9"/>
+      <specular_color value = "0.8 0.8 0.8"/>
+      <normal_scale value = "1.00"/>
+      <fresnel_normal_incidence value = "0.1"/>
+      <roughness value = "0.30"/>
+      <!-- 0.30 -->
+      <diffuse_roughness value = "0.3"/>
+      <diffuse_specular_shininess_minmax value = "0 0.8 0 0.8"/>
+      <reflection_coeff value = "5"/>
+      <refraction_coeff value = "1"/>
+      <general_texcoord_offset shared_value = "vesi_texcoord_curve"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "luolavesi"
+	material_p3d = "luolavesi"
+	>
+  <shader file = "data/shaders/water.xml">
+    <parameters>
+      <specular_color value = "5 5 5"/>
+      <surface_color value = "1 1 1"/>
+      <depth_color value = "0.0 0.125 0.5"/>
+      <speed value = "1.15 0.91 0.84"/>
+      <scale value = "0.94 0.46 1.25"/>
+      <specular_map value = "data/images/2014/waterfoam.jpg"/>
+      <normal_map value = "data/images/2014/waterfoam_NORM.jpg"/>
+      <depth_map shared_value = "DepthTexture"/>
+      <reflection_map shared_value = "ReflectionTexture"/>
+      <general_texcoord_offset shared_value = "vesi_texcoord_curve"/>
+      <fresnel_normal_incidence value = "0.3"/>
+      <specular_exponent value = "200"/>
+      <reflection_coeff value = "0.9"/>
+      <visibility value = "5"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "ratavesi"
+	material_p3d = "ratavesi"
+	>
+  <shader file = "data/shaders/water.xml">
+    <parameters>
+      <specular_color value = "1 1 1"/>
+      <surface_color value = "1 1 1"/>
+      <depth_color value = "0.0 0.125 0.5"/>
+      <speed value = "1.15 0.91 0.84"/>
+      <scale value = "0.94 0.46 1.25"/>
+      <specular_map value = "data/images/2014/waterfoam.jpg"/>
+      <normal_map value = "data/images/2014/waterfoam_NORM.jpg"/>
+      <depth_map shared_value = "DepthTexture"/>
+      <reflection_map shared_value = "ReflectionTexture"/>
+      <general_texcoord_offset shared_value = "vesi_texcoord_curve"/>
+      <fresnel_normal_incidence value = "0.7"/>
+      <specular_exponent value = "400"/>
+      <reflection_coeff value = "1.0"/>
+      <normal_scale value = "1.0"/>
+      <visibility value = "1.0"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "gotvesi"
+	material_p3d = "gotvesi"
+	>
+  <shader file = "data/shaders/water.xml">
+    <parameters>
+      <specular_color value = "10 10 10"/>
+      <surface_color value = "1 1 1"/>
+      <depth_color value = "0.0 0.125 0.5"/>
+      <speed value = "1.15 0.91 0.84"/>
+      <scale value = "0.94 0.46 1.25"/>
+      <specular_map value = "data/images/2014/waterfoam.jpg"/>
+      <normal_map value = "data/images/2014/waterfoam_NORM.jpg"/>
+      <depth_map shared_value = "DepthTexture"/>
+      <reflection_map shared_value = "ReflectionTexture"/>
+      <general_texcoord_offset shared_value = "vesi_texcoord_curve"/>
+      <fresnel_normal_incidence value = "0.2"/>
+      <specular_exponent value = "200"/>
+      <visibility value = "10"/>
+    </parameters>
+  </shader>
+</material>
+
+<!--
+<material
+	name = "pallivesi"
+	material_p3d = "pallivesi"
+	>
+  <shader file = "data/shaders/water_fake.xml">
+    <parameters>
+      <diffuse_color value = "0.3 0.3 0.3"/>
+      <specular_color value = "1 1 1"/>
+      <diffuse_map value = "data/images/2014/waterfoam.jpg"/>
+      <specular_map value = "data/images/2014/waterfoam.jpg"/>
+      <normal_map value = "data/images/2014/waterfoam_NORM.jpg"/>
+      <depth_map shared_value = "DepthTexture"/>
+     <reflection_map value = "data/images/achromatism.jpg"/>
+     <refraction_map value = "data/images/2015/seabed_1.jpg"/>
+     <general_texcoord_offset shared_value = "pallivesi_texcoord_curve"/>
+     <fresnel_normal_incidence value = "0.2"/>
+     <roughness value = "0.05"/>
+     <diffuse_roughness value = "0.3"/>
+      <reflection_coeff value = "2"/>
+      <refraction_coeff value = "0"/>      
+    </parameters>
+  </shader>
+</material>
+-->
+
+
+<material
+	name = "pallivesi"
+	material_p3d = "pallivesi"
+	>
+<shader file = "data/shaders/water_fake_reflection.xml">
+    <parameters>
+      <specular_color value = "1 1 1"/>
+      <surface_color value = "1 1 1"/>
+      <depth_color value = "0.0 0.125 0.5"/>
+      <speed value = "1.15 0.91 0.84"/>
+      <scale value = "0.94 0.46 1.25"/>
+	  <deep_color value = "0 0 0"/>
+      <normal_map value = "data/images/2014/waterfoam_NORM.jpg"/>
+      <depth_map shared_value = "DepthTexture"/>
+	  <reflection_map value = "data/images/2015/refmap1.jpg"/>
+      <general_texcoord_offset shared_value = "vesi_texcoord_curve"/>
+      <fresnel_normal_incidence value = "0.5"/>
+      <visibility value = "1"/>
+	  <blend_factor value = "1"/>
+	  <roughness value = "0.2"/>
+	  <reflection_coeff value = "2"/>
+    </parameters>
+  </shader>
+</material>
+
+<!--
+    <material
+    name = "vesitest"
+	material_p3d = "vesitest"
+	>
+  <shader file = "data/shaders/diffuse.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <diffuse_color value = "0.25 0.55 0.35"/>
+      <specular_color value = "0.15 0.15 0.15"/>
+      <diffuse_map value = "data/images/2014/waterfoam.jpg"/>
+      <specular_map value = "data/images/2014/waterfoam.jpg"/>
+      <normal_map value = "data/images/2014/waterfoam_NORM.jpg"/>
+   </parameters>
+  </shader>
+</material>
+-->
+<material
+	name = "vauhtiv"
+	material_p3d = "vauhtiv"
+	>
+  <shader file = "data/shaders/additive_alpha_blended_emissive.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/tmp/vauhtiviiva.png"/>
+      <self_illuminate_color value = "1 1 1.4"/>
+      <texcoord_offset shared_value = "vauhtiviiva_texcoord_offset_curve" />
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "yopilvi"
+	material_p3d = "yopilvi"
+	>
+  <shader file = "data/shaders/alpha_blended_emissive.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/tmp/yopilvi.png"/>
+      <self_illuminate_color value = "1 1 1"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "yopilvi2"
+	material_p3d = "yopilvi2"
+	>
+  <shader file = "data/shaders/alpha_blended_emissive.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/tmp/yopilvi2.png"/>
+      <self_illuminate_color value = "0.42 0.4 0.45"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "sillum"
+	material_p3d = "sillum"
+	>
+  <shader file = "data/shaders/self_illuminate_color.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_color value = "8.0 8.0 8.0"/>
+    </parameters>
+  </shader>
+</material>
+
+
+<material
+	name = "sillum3"
+	material_p3d = "sillum3"
+	>
+  <shader file = "data/shaders/self_illuminate_color.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_color value = "0.15 0.6 0.15"/>
+    </parameters>
+  </shader>
+</material>
+
+
+<material
+	name = "sillum2"
+	material_p3d = "sillum2"
+	>
+  <shader file = "data/shaders/self_illuminate_color.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_color value = "0.6 0.8 1"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "sillumy"
+	material_p3d = "sillumy"
+	>
+  <shader file = "data/shaders/self_illuminate_color.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_color value = "3 2 1.2"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "sillump"
+	material_p3d = "sillump"
+	>
+  <shader file = "data/shaders/self_illuminate_color.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_color value = "3 1.1 2"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "sillumb"
+	material_p3d = "sillumb"
+	>
+  <shader file = "data/shaders/self_illuminate_color.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_color value = "1.5 1.5 3.5"/>
+    </parameters>
+  </shader>
+</material>
+
+
+<material
+	name = "ratavalo"
+	material_p3d = "ratavalo"
+	>
+  <shader file = "data/shaders/self_illuminate_color.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_color shared_value = "streak_color_curve"/>
+	  
+    </parameters>
+  </shader>
+</material>
+
+
+<material
+	name = "cloud"
+	material_p3d = "cloud"
+	>
+  <shader file = "data/shaders/alpha_blended_emissive.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/tmp/cloud.png"/>
+      <self_illuminate_color value = "0.2 0.2 0.2"/>
+    </parameters>
+  </shader>
+</material>
+
+
+<material
+	name = "trolol"
+	material_p3d = "trolol"
+	>
+  <shader file = "data/shaders/alpha_blended_emissive.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2015/trollface.png"/>
+      <self_illuminate_color value = "2 2 2"/>
+    </parameters>
+  </shader>
+</material>
+
+
+<material
+	name = "titlesumu"
+	material_p3d = "titlesumu">
+  <shader file = "data/shaders/alpha_blended_emissive.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/tmp/sumu.png"/>
+      <self_illuminate_color value = "1.0 1.0 1.0"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "smoukki"
+	material_p3d = "smoukki">
+  <shader file = "data/shaders/alpha_blended_emissive_fade_double_sided.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2015/smoukki.png"/>
+      <self_illuminate_color value = "8.0 8.0 10.0"/>
+	  <fade_power value = "3"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "smoukki2"
+	material_p3d = "smoukki2">
+  <shader file = "data/shaders/alpha_blended_emissive_fade_double_sided.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2015/smoukki2.png"/>
+      <self_illuminate_color value = "2.0 2.0 3.0"/>
+	  <fade_power value = "22"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "rathoto"
+	material_p3d = "rathoto">
+  <shader file = "data/shaders/alpha_blended_emissive_fade_double_sided_distort.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2015/ratavah.png"/>
+      <self_illuminate_color shared_value = "rathoto_color_curve"/>	  
+	  <fade_power value = "3"/>
+      
+      <distort_scale_coeff value = "1 4 1"/>
+      <distort_time_coeff value = "0.02 0.04 0.02"/>
+      <distort_position_coeff value = "0.05 0.1 0.05"/>      
+    </parameters>
+  </shader>
+</material>
+
+
+<material
+	name = "absumu"
+	material_p3d = "absumu">
+  <shader file = "data/shaders/alpha_blended_emissive.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/tmp/sumu.png"/>
+      <self_illuminate_color value = "1.6 1 1"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "partiklet4"
+	material_p3d = "partiklet4">
+  <shader file = "data/shaders/self_illuminate_texture.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2016/partiklea.png"/>
+      <self_illuminate_color value = "9 11 15"/>
+    </parameters>
+  </shader>
+</material>
+
+
+<material
+	name = "patkipurt"
+	material_p3d = "patkipurt">
+  <shader file = "data/shaders/alpha_blended_emissive_fade.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2016/patkipurt.png"/>
+      <self_illuminate_color value = "3 3 3"/>
+		<texcoord_offset shared_value = "patkipurt_texcoord_curve"/>
+      <alpha_coeff value = "1"/>
+      <fade_power value = "2.5"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "telsu"
+	material_p3d = "telsu">
+  <shader file = "data/shaders/self_illuminate_texture_no_additive.xml">
+    <parameters>
+      <!-- <self_illuminate_map value = "data/images/loading_screen/loading_screen_old.jpg"/> -->
+      <self_illuminate_map shared_value = "telsu_map_curve"/>
+      <self_illuminate_color shared_value = "tv_hohka_curve"/>
+    </parameters>
+  </shader>
+  
+   <shader file = "data/shaders/alpha_blended_emissive.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2015/tvlines.png"/>
+	  <self_illuminate_color value = "1 1 1"/>
+    </parameters>
+  </shader>
+  
+  <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <diffuse_map value = "data/images/2015/talpha.png"/>
+            <!--<specular_map value = "data/images/2015/plastik.jpg"/> -->
+            <shininess_map value = "data/images/2015/plastik.jpg"/> <!-- ptkotkaspc.jpg too white -->
+            <!-- <normal_map value = "data/images/2014/graveln.jpg"/> -->
+            <!-- <occlusion_map value = "data/images/2014/ptkotkaocc.jpg"/ -->
+        
+            <reflection_map value = "data/images/2015/neonref.jpg"/>
+            <ambient_color value = "0.0 0.0 0.0"/>
+            <diffuse_color value = "1 1 1"/>
+            <specular_color value = "1.0 1.0 1.0"/>
+            <normal_scale value = "1.0"/>
+            <fresnel_normal_incidence value = "0.25"/>
+            <roughness value = "0.1"/> <!-- 0.30 -->
+            <diffuse_roughness value = "0.8"/>
+            <diffuse_specular_shininess_minmax value = "0 0.1 0 0.7"/>
+            <reflection_coeff value = "0.85"/>
+        </parameters>
+	</shader>
+  
+</material>
+
+<material
+	name = "partiklet3"
+	material_p3d = "partiklet3">
+  <shader file = "data/shaders/alpha_blended_emissive.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/tmp/partikkelit3.png"/>
+      <self_illuminate_color value = "-10 -10 -10"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "refmapbg"
+	material_p3d = "refmapbg">
+  <shader file = "data/shaders/self_illuminate_texture.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/ref/refmap1_bg.jpg"/>
+      <self_illuminate_color value = "2 2 2"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "gridi"
+	material_p3d = "gridi">
+  <shader file = "data/shaders/self_illuminate_texture.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/tmp/randomclouds.png"/>
+      <self_illuminate_color value = "0.0 0.5 0.2"/>
+      <texcoord_offset shared_value = "liikkuva_lava_texcoord_curve" />
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "partboxb"
+	material_p3d = "partboxb">
+  <shader file = "data/shaders/skybox.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/tmp/partikkelit_black.png"/>
+      <self_illuminate_color value = "1 1 1"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "paint"
+	material_p3d = "paint">
+  <shader file = "data/shaders/self_illuminate_texture.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/tmp/maalaukset.png"/>
+      <self_illuminate_color value = "1 1 1"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "godray"
+	material_p3d = "godray"
+	>
+  <shader file = "data/shaders/self_illuminate_fade.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/tmp/godray_2011.jpg"/>
+      <self_illuminate_color value = "17.0 17.0 17.0"/>
+      <!-- <self_illuminate_color shared_value = "godray_color_curve"/> -->
+      <alpha_coeff value = "0.2"/>
+      <!-- 0.2 -->
+      <fade_power value = "2"/>
+      <!-- 2 -->
+    </parameters>
+  </shader>
+</material>
+
+
+<material
+	name = "effu"
+	material_p3d = "effu"
+	>
+  <shader file = "data/shaders/self_illuminate_fade.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+	  <self_illuminate_map value = "data/images/2016/effu.jpg"/>
+      <self_illuminate_color value = "15.0 13.0 12.0"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "effu2"
+	material_p3d = "effu2"
+	>
+  <shader file = "data/shaders/self_illuminate_fade.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+	  <self_illuminate_map value = "data/images/2016/effu2.jpg"/>
+      <self_illuminate_color value = "15.0 13.0 12.0"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "effu3"
+	material_p3d = "effu3"
+	>
+  <shader file = "data/shaders/self_illuminate_fade.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+	  <self_illuminate_map value = "data/images/2016/effu3.jpg"/>
+      <!-- <self_illuminate_color value = "18.0 15.0 12.0"/> -->
+	  <self_illuminate_color shared_value = "effu3_color_curve"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "godray_r"
+	material_p3d = "godray_r"
+	>
+  <shader file = "data/shaders/self_illuminate_fade.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/tmp/godray_2011.jpg"/>
+      <self_illuminate_color value = "5.0 1.6 1.6"/>
+      <alpha_coeff value = "0.2"/>
+      <!-- 0.2 -->
+      <fade_power value = "2"/>
+      <!-- 2 -->
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "savu"
+	material_p3d = "savu">
+  <shader file = "data/shaders/self_illuminate_fade.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/tmp/smoke.png"/>
+      <!--<self_illuminate_map value = "data/images/common/white.tga"/>-->
+      <self_illuminate_color value = "5.5 5.5 5.5"/>
+      <alpha_coeff value = "0.5"/>
+      <fade_power value = "1"/>
+      <!--	<texcoord_offset shared_value = "tunneli texcoord 01" /> -->
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "pilvi"
+	material_p3d = "pilvi">
+  <shader file = "data/shaders/self_illuminate_fade.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/tmp/yopilvihoto2.png"/>
+      <!--<self_illuminate_map value = "data/images/common/white.tga"/>-->
+      <self_illuminate_color value = "0.6 0.6 0.6"/>
+      <alpha_coeff value = "0.5"/>
+      <fade_power value = "1"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "greetspilvi"
+	material_p3d = "greetspilvi">
+  <shader file = "data/shaders/self_illuminate_fade.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/tmp/yopilvihoto2.png"/>
+      <!--<self_illuminate_map value = "data/images/common/white.tga"/>-->
+      <self_illuminate_color value = "0.6 0.6 0.8"/>
+      <alpha_coeff value = "1"/>
+      <fade_power value = "0.5"/>
+    </parameters>
+  </shader>
+</material>
+
+
+<material
+	name = "vauhti"
+	material_p3d = "vauhti">
+  <shader file = "data/shaders/self_illuminate_texture.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/tmp/vauhtii.jpg"/>
+      <!--<self_illuminate_map value = "data/images/common/white.tga"/>-->
+      <self_illuminate_color value = "2 2 2"/>
+      <alpha_coeff value = "0.8"/>
+      <fade_power value = "10"/>
+      <texcoord_offset shared_value = "wormhole texcoord 03" />
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "flame"
+	material_p3d = "flame">
+  <shader file = "data/shaders/alpha_mapped_self_illuminate_fade.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <alpha_map value = "data/images/tmp/liekki_alpha.jpg"/>
+      <self_illuminate_map shared_value = "CloudTexture" />
+      <!--<self_illuminate_map value = "data/images/tmp/randomclouds2.jpg"/>-->
+      <!--<self_illuminate_map value = "data/images/tmp/godraytest.png"/>-->
+      <self_illuminate_color value = "2 1 0.2"/>
+      <alpha_coeff value = "0.5"/>
+      <fade_power value = "2"/>
+      <texcoord_offset shared_value = "liekki texcoord 01" />
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "alkustara"
+	material_p3d = "alkustara"
+	>
+  <shader file = "data/shaders/self_illuminate_fade.xml" preshader = "data/shaders/preshader.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/tmp/godray_2011.jpg"/>
+      <self_illuminate_color value = "15.0 15.0 15.0"/>
+      <alpha_coeff shared_value = "alkustara_alphacurve"/>
+      <fade_power value = "2"/>
+    </parameters>
+  </shader>
+</material>
+
+<material
+	name = "sumu"
+	material_p3d = "sumu"
+	>
+  <shader file = "data/shaders/alpha_blended_emissive_fade_double_sided.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2016/uussumu.png"/>
+      <!--<self_illuminate_color value = "0.35 0.7 1"/>-->
+      <self_illuminate_color value = "5 5 5"/>
+	
+    </parameters>
+  </shader>
+</material>
+
+<!--
+<material
+	name = "lantern"
+	material_p3d = "lantern"
+	>
+  <shader file = "data/shaders/alpha_blended_emissive_double_sided.xml">
+    <parameters>
+      <self_illuminate_map value = "data/images/2015/lantern.jpg"/>
+      <self_illuminate_color value = "3 3 3"/>
+    </parameters>
+  </shader>
+</material>
+-->
+
+<!-- Laita lantern välkkymään -->
+<material
+	name = "lantern" 
+	material_p3d = "lantern"
+	>
+    <shader file = "data/shaders/cook_torrance.xml" preshader = "data/shaders/preshader.xml"> 
+        <parameters>
+            <emission_map value = "data/images/2015/lantern.jpg"/>
+            <diffuse_color  value = "0 0 0"/>            
+            <specular_color value = "0 0 0"/>
+            <emission_coeff value = "5 5 5"/>
+		</parameters> 
+	</shader>
+</material>
+
+<material
+	name = "shalama"
+	material_p3d = "shalama">
+  <shader file = "data/shaders/additive_alpha_blended_emissive_double_sided.xml">
+    <parameters>
+      <self_illuminate_map shared_value = "shalama_varina_texture_curve" />
+      <self_illuminate_color value = "15 15 15"/>
+      <fade_power value = "1"/>
+    </parameters>
+  </shader>
+</material>

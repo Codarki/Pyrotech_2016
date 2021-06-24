@@ -1,0 +1,163 @@
+<?xml version="1.0" ?>
+
+<parameters>
+<!--
+	<parameter
+		label = "Diffuse map"
+		name = "diffuse_map"
+		type = "texture2D"
+		hlsl = "diffuse_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+    -->
+    <parameter
+		label = "Near Blur depth"
+		name = "near_blur_depth"
+		type = "float"
+		hlsl = "near_blur_depth"
+		default_value = "10">
+	</parameter>
+    <parameter
+		label = "Far Blur depth"
+		name = "far_blur_depth"
+		type = "float"
+		hlsl = "far_blur_depth"
+		default_value = "190">
+	</parameter>
+    <parameter
+		label = "Focal Plane depth"
+		name = "focal_plane_depth"
+		type = "float"
+		hlsl = "focal_plane_depth"
+		default_value = "100">
+	</parameter>
+    <parameter
+		label = "Cutoff value for objects behind focal plane"
+		name = "blur_cutoff"
+		type = "float"
+		hlsl = "blur_cutoff"
+		default_value = "1">
+	</parameter>     
+</parameters>
+
+<sampler_states>
+<!--
+	<sampler
+		name = "diffuse_sampler"
+		texture = "diffuse_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+   -->
+</sampler_states>
+    
+<streams>
+	<stream0
+		position = 0
+		tangent = 0
+		normal = 0
+		texcoord = 0>
+	</stream0>
+</streams>
+
+<vertex_shader
+	stream = "stream0"
+	hlsl = "
+	#pragma warning( disable : 3206 )
+	
+	float4x4 object_to_world;
+	float4x4 world_to_view_clip;
+    float4x4 world_to_view;
+    float4x4 projection;
+    
+    float4 clip_planes_in_world[4];
+    
+    float3 dehomo(float4 position_h)
+    {
+        return position_h.xyz / position_h.w;
+    }    
+    
+	struct input_vertex
+	{
+		float4 position : POSITION;
+		float4 tangent : TANGENT;
+		float3 normal : NORMAL;
+		float2 texcoord : TEXCOORD0;
+	};
+
+	struct output_vertex
+	{
+		float4 position : POSITION;
+		float3 normal_in_world : NORMAL;
+		float4 pos_to_ps : TANGENT;
+        float2 dof_depth : BINORMAL;
+        float2 near_far : TEXCOORD1;
+        float4 clip_distance : TEXCOORD2;
+	};
+
+	void main_vs(in input_vertex input, out output_vertex output)
+	{
+        output = (output_vertex)0;
+        
+        float4 position_in_world = mul(object_to_world, input.position);
+		output.position = mul(world_to_view_clip, position_in_world);
+        
+        output.clip_distance.x = dot(clip_planes_in_world[0].xyz, dehomo(position_in_world)) + clip_planes_in_world[0].w;
+        output.clip_distance.y = dot(clip_planes_in_world[1].xyz, dehomo(position_in_world)) + clip_planes_in_world[1].w;
+        output.clip_distance.z = dot(clip_planes_in_world[2].xyz, dehomo(position_in_world)) + clip_planes_in_world[2].w;
+        output.clip_distance.w = dot(clip_planes_in_world[3].xyz, dehomo(position_in_world)) + clip_planes_in_world[3].w;
+		
+        output.pos_to_ps = position_in_world;
+       
+        //Extract near far planes from projetion matrix
+        float sngA = projection[2][2];
+        float sngB = projection[2][3];
+        float near = -sngB / sngA;
+        float far  = sngB / (1.0f - sngA);
+        
+        output.dof_depth.x = output.position.z;
+        output.dof_depth.y = output.position.w;        
+        
+        output.near_far = float2(near,far);
+        
+		float3 normal_in_world = mul(object_to_world, input.normal);
+        output.normal_in_world = normal_in_world;
+        //output.normal_in_view = mul(world_to_view, normal_in_world);
+	}
+	">
+</vertex_shader>
+<pixel_shader
+	hlsl = "
+        
+	void main_ps(
+        float3 normal_in_world : NORMAL,
+        float4 pos_to_ps : TANGENT,
+        float2 dof_depth : BINORMAL,
+        float2 near_far : TEXCOORD1,
+        float4 clip_distance : TEXCOORD2,
+        out float4 depth : COLOR0,
+        out float4 normal : COLOR1)
+	{
+        clip(clip_distance);
+        
+        depth = 0;
+        normal = 0;
+        
+        //Lets write depth to COLOR1 which has D3DFMT_R32F rendertexture binded
+        //Depth will be subtracted from 1.0 to get more fine grained precision
+        
+        depth.xyz = pos_to_ps.xyz;
+        
+        depth.w = 1.0 - (dof_depth.x / dof_depth.y);
+        
+        //Lets write normal value, scaled to range 0 - 1, to COLOR1 which has rendertexture(D3DFMT_A8R8G8B8) binded
+        normal.xyz = normalize(normal_in_world.xyz * 0.5f + 0.5f);
+		normal.w = 1;
+    }
+	">
+</pixel_shader>

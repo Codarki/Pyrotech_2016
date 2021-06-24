@@ -1,0 +1,259 @@
+<?xml version="1.0" ?>
+<parameters>
+	<parameter
+		label = "Diffuse map"
+		name = "diffuse_map"
+		type = "texture2D"
+		hlsl = "diffuse_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+	<parameter
+		label = "Specular map"
+		name = "specular_map"
+		type = "texture2D"
+		hlsl = "specular_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+	<!-- Red component is diffuse shininess, green component is specular shininess. -->
+	<parameter
+		label = "Shininess map"
+		name = "shininess_map"
+		type = "texture2D"
+		hlsl = "shininess_texture"
+		default_value = "data/images/common/black.tga">
+	</parameter>    
+	<parameter
+		label = "Normal map"
+		name = "normal_map"
+		type = "texture2D"
+		hlsl = "normal_texture"
+		default_value = "data/images/common/normal.tga">
+	</parameter>
+	<parameter
+		label = "Occlusion map"
+		name = "occlusion_map"
+		type = "texture2D"
+		hlsl = "occlusion_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+	<parameter
+		label = "Emission map"
+		name = "emission_map"
+		type = "texture2D"
+		hlsl = "emission_texture"
+		default_value = "data/images/common/black.tga">
+	</parameter>
+	<parameter
+		label = "Reflection map"
+		name = "reflection_map"
+		type = "texture2D"
+		hlsl = "reflection_texture"
+		default_value = "data/images/common/black.tga">
+	</parameter>
+	<parameter
+		label = "Shadow map"
+		name = "shadow_map"
+		type = "texture2D"
+		hlsl = "shadow_texture"
+		default_value = "data/images/common/black.tga">
+	</parameter>    
+	<parameter
+		label = "Spotlight mask map"
+		name = "spotmask_map"
+		type = "texture2D"
+		hlsl = "spotmask_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>         
+	<parameter
+		label = "Occlusion map"
+		name = "occlusion_map"
+		type = "texture2D"
+		hlsl = "occlusion_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+	<parameter
+		label = "Ambient color"
+		name = "ambient_color"
+		type = "float3"
+		hlsl = "ambient"
+		default_value = "0 0 0">
+	</parameter>
+    <!-- Hemispheric ambient parameters start -->
+    <parameter
+		label = "Ambient ground color"
+		name = "ambient_ground_color"
+		type = "float3"
+		hlsl = "ambient_ground_color"
+		default_value = "0 0 0">
+	</parameter>
+    
+    <parameter
+		label = "Ambient sky color"
+		name = "ambient_sky_color"
+		type = "float3"
+		hlsl = "ambient_sky_color"
+		default_value = "0 0 0">
+	</parameter>
+
+    <parameter
+		label = "Sky to direction"
+		name = "ambient_sky_to_dir"
+		type = "float3"
+		hlsl = "ambient_sky_to_dir"
+		default_value = "0 1 0">
+	</parameter>
+
+    <parameter
+		label = "Hemishperic ambient intensity"
+		name = "ambient_intensity"
+		type = "float"
+		hlsl = "ambient_intensity"
+		default_value = "0.0">
+	</parameter>
+    <!-- Hemispheric ambient parameters end -->    
+	<parameter
+		label = "Diffuse color"
+		name = "diffuse_color"
+		type = "float3"
+		hlsl = "diffuse"
+		default_value = "1.0 1.0 1.0">
+	</parameter>
+	<parameter
+		label = "Specular color"
+		name = "specular_color"
+		type = "float3"
+		hlsl = "specular"
+		default_value = "1.0 1.0 1.0">
+	</parameter>
+	<parameter
+		label = "Roughness"
+		name = "roughness"
+		type = "float"
+		hlsl = "roughness_uniform"
+		default_value = "0.4">
+	</parameter>
+	<parameter
+		label = "Fresnel reflectance as measured at normal incidence"
+		name = "fresnel_normal_incidence"
+		type = "float"
+		hlsl = "fresnel_normal_incidence"
+		default_value = "0.25">
+	</parameter>
+	<parameter
+		label = "Normal scale"
+		name = "normal_scale"
+		type = "float"
+		hlsl = "normal_scale"
+		default_value = "1.0">
+	</parameter>
+	<parameter
+		label = "Distort position time"
+		name = "distort_time"
+		type = "float3"
+		hlsl = "distort_time_uniform"
+		default_value = "0 0 0">
+	</parameter>
+	<parameter
+		label = "Distort position frequency"
+		name = "distort_frequency"
+		type = "float3"
+		hlsl = "distort_frequency_uniform"
+		default_value = "0 0 0">
+	</parameter>
+	<parameter
+		label = "Distort position scale"
+		name = "distort_scale"
+		type = "float3"
+		hlsl = "distort_scale_uniform"
+		default_value = "0 0 0">
+	</parameter>
+</parameters>
+
+<sampler_states>
+	<sampler
+		name = "diffuse_sampler"
+		texture = "diffuse_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+	<sampler
+		name = "specular_sampler"
+		texture = "specular_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+	<sampler
+		name = "normal_sampler"
+		texture = "normal_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+	<sampler
+		name = "occlusion_sampler"
+		texture = "occlusion_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+	<sampler
+		name = "shadow_sampler"
+		texture = "shadow_texture"
+		address_u = "CLAMP"
+		address_v = "CLAMP"
+		address_w = "CLAMP"
+		min_filter = "POINT"
+		mag_filter = "POINT"
+		mip_filter = "POINT"
+		>
+	</sampler>      
+	<sampler
+		name = "spotmask_sampler"
+		texture = "spotmask_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>            
+</sampler_states>
+
+<streams>
+	<stream0
+		position = 0
+		tangent = 0
+		normal = 0
+		texcoord = 0>
+	</stream0>
+</streams>
+
+<vertex_shader
+	stream = "stream0">
+	<include_hlsl file = "data/shaders/hlsl/common_vs.hlsl"/>
+	<include_hlsl file = "data/shaders/hlsl/tbn_vs_object_distort.hlsl"/>
+</vertex_shader>
+
+<pixel_shader>
+	<include_hlsl file = "data/shaders/hlsl/common_ps.hlsl"/>
+	<include_hlsl file = "data/shaders/hlsl/cook_torrance.hlsl"/>
+</pixel_shader>

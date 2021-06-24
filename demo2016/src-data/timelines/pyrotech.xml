@@ -1,0 +1,139 @@
+<?xml version="1.0" ?>
+
+<sequences>
+	<scene_sequence
+	    name = "tauluskene"
+		scene = "data/scenes/tauluskene.p3d_scene" 
+		camera = "Camera01"		
+		frames_per_second = 30 
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "2000" 
+        near_plane = "1.2"
+        far_plane = "1500"
+        ssao_enabled = "false">	
+		</scene_sequence>
+        
+	<scene_sequence
+	    name = "leetluola"
+		scene = "data/scenes/leetluola.p3d_scene" 
+		camera = "Camera01"		
+		frames_per_second = 30 
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "2000" 
+        near_plane = "5"
+        far_plane = "1600"
+        ssao_enabled = "false">	
+		</scene_sequence>      
+
+	<scene_sequence
+	    name = "maskialpha"
+		scene = "data/scenes/maskialpha.p3d_scene" 
+		camera = "Camera01"		
+		frames_per_second = 30 
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "2000" 
+        near_plane = "5"
+        far_plane = "1600"
+        ssao_enabled = "false">	
+		</scene_sequence>            
+
+	<!-- Pitaa olla jotta noise toimii, ei ole paalla mutta vaaditaan tama rivi -->
+	<image name = "noise_tex" path = "data/images/noise.jpg" />
+    
+    <!-- Kuvat -->
+    <image name = "overlay_kuva" path = "data/images/pyrotech.png" />
+    <!--<image name = "overlay_kuva" path = "data/images/pyrotech_no_alpha.jpg" /> -->
+    <image name = "rect_alpha_kuva" path = "data/images/rect_alpha.png" />    
+    
+	<!-- Scene texturet -->
+    <image name = "SceneTexture1_image" path = "SceneTexture1" />
+    <image name = "SceneTexture2_image" path = "SceneTexture2" />    
+    
+    <draw_image name = "draw_SceneTexture1_image">
+		<input sequence = "SceneTexture1_image" />
+	</draw_image>
+    <draw_image name = "draw_SceneTexture2_image">
+		<input sequence = "SceneTexture2_image" />
+	</draw_image>    
+    <!-- Kuva piirrot -->     
+ 	<draw_image name = "draw_overlay_kuva">
+		<input sequence = "overlay_kuva" />
+		<size curve = "kuva_size_curve"/>
+        <!--<center v = "0.8 0.2"/>-->
+        <intensity v="0"/>
+        <!--<alpha v="1"/>-->
+        <!--<alpha curve="kuva_alpha_curve"/>-->
+        <!--<size curve="kuva_size_curve"/>-->
+        <!--<rotation curve="kuva_rotate_curve"/>-->
+        
+	</draw_image>
+    
+ 	<draw_image name = "draw_rect_alpha_kuva">
+		<input sequence = "rect_alpha_kuva" />
+		<!--<size curve = "kuva_size_curve2"/>-->
+        <size v="5 5"/>
+        <!--<center v = "0.8 0.2"/>-->
+        <intensity v="1"/>
+        <!--<alpha v="1"/>-->
+        <!--<alpha curve="kuva_alpha_curve"/>-->
+        <!--<size curve="kuva_size_curve"/>-->
+        <!--<rotation curve="kuva_rotate_curve"/>-->
+        
+	</draw_image>	 
+
+	<draw_to_texture name = "draw_overlay_kuva_to_Scenetexture1">
+        <shared_texture name = "SceneTexture1"/>
+		<input sequence = "maskialpha"/>
+	</draw_to_texture>
+    
+	<draw_to_texture name = "draw_scene_to_Scenetexture2">
+        <shared_texture name = "SceneTexture2"/>
+		<input sequence = "tauluskene"/>
+	</draw_to_texture>      
+    
+    <plasma>
+		<name v="draw_overlay_kuva_plasma"/>
+		<material_name v="color_mask_pyrotech_material"/>
+        <input sequence = "draw_scene_to_Scenetexture2"/>
+	</plasma>        
+		<!-- Post processing paalla -->	
+	<!-- Tahan ei tarvitse koskea -->
+	<post_processing name = "Post processing">
+		<clear_color v = "0 0 0"/>
+        <input sequence = "draw_overlay_kuva_to_Scenetexture1" time="0"/> 
+        <input sequence = "draw_overlay_kuva_plasma" time="0"/>
+        <!--<input sequence = "draw_scene_to_Scenetexture2" time="0"/>-->
+       <!-- <input sequence = "draw_overlay_kuva_to_Scenetexture1" time="0"/> -->
+       <!--
+        <input sequence = "draw_SceneTexture2_image" time="0"/>    
+        <input sequence = "draw_SceneTexture1_image" time="0"/>-->
+        
+        <!--<input sequence = "draw_overlay_kuva_to_Scenetexture1" time="0"/>-->
+        <!--<input sequence = "tauluskene" time="0"/> -->
+         <!--<input sequence = "draw_overlay_kuva" time="0"/> -->
+       <!-- <input sequence = "maskialpha" time="0"/> -->
+	</post_processing>
+	
+	<!-- Depth buffer paalla -->
+	<!-- Tahan ei tarvitse koskea -->
+	<depth_buffer name = "Depth test">
+        <clear_color v = "0 0 0"/>
+		<input sequence = "Post processing"/>
+           
+	</depth_buffer>
+
+	<!--  Linkataan Depth test sequence -->
+	<!--  Ei tarttis koskee -->
+	<composition name = "main timeline">	
+		<input sequence = "Depth test"/>
+	</composition>
+
+	<!-- Main timeline -->
+	<!--  Ei tarttis koskee -->		
+	<timeline>
+		<input sequence = "main timeline"/>
+	</timeline>
+</sequences>

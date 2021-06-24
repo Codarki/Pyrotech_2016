@@ -1,0 +1,235 @@
+<?xml version="1.0" ?>
+<parameters>
+	<parameter
+		label = "Source map"
+		name = "child_texture"
+		type = "texture2D"
+		hlsl = "child_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+	<parameter
+		label = "Depth map"
+		name = "depth_map"
+		type = "texture2D"
+		hlsl = "depth_texture"
+		default_value = "data/images/common/black.tga">
+	</parameter>
+	<parameter
+		label = "Normal map"
+		name = "normal_map"
+		type = "texture2D"
+		hlsl = "normal_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>   
+	<parameter
+		label = "Random Normals map"
+		name = "random_normal_map"
+		type = "texture2D"
+		hlsl = "random_normal_texture"
+		default_value = "data/images/common/normal.tga">
+	</parameter>
+    <parameter
+		label = "Sample sphere radius"
+		name = "sample_radius"
+		type = "float"
+		hlsl = "sample_radius"
+		default_value = "0.006">
+	</parameter>
+    <parameter
+		label = "Falloff"
+		name = "falloff"
+		type = "float"
+		hlsl = "falloff"
+		default_value = "0.000002">
+	</parameter>
+    <parameter
+		label = "Strength"
+		name = "strength"
+		type = "float"
+		hlsl = "strength"
+		default_value = "0.07">
+	</parameter>
+    <parameter
+		label = "Occlusion multiplier which multiplies final occlusion value"
+		name = "occlusion_multiplier"
+		type = "float"
+		hlsl = "occlusion_multiplier"
+		default_value = "10">
+	</parameter>     
+</parameters>
+
+<sampler_states>
+	<sampler
+		name = "s0"
+		texture = "child_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+	<sampler
+		name = "depth_sampler"
+		texture = "depth_texture"
+		address_u = "CLAMP"
+		address_v = "CLAMP"
+		address_w = "CLAMP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+	<sampler
+		name = "normal_sampler"
+		texture = "normal_texture"
+		address_u = "CLAMP"
+		address_v = "CLAMP"
+		address_w = "CLAMP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+	<sampler
+		name = "random_normal_sampler"
+		texture = "random_normal_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+
+</sampler_states>
+
+<streams>
+	<stream0
+		position = 0
+		tangent = 0
+		normal = 0
+		texcoord = 0>
+	</stream0>
+</streams>
+
+<vertex_shader
+	stream = "stream0"
+	hlsl = "
+	struct input_vertex
+	{
+		float4 position : POSITION;
+		float2 texcoord : TEXCOORD0;
+	};
+
+	struct output_vertex
+	{
+		float4 position : POSITION;
+		float2 texcoord : TEXCOORD0;
+	};
+
+	void main_vs(in input_vertex input, out output_vertex output)
+	{
+		output = input;
+        
+        //output.texcoord = (float2( input.position.x, - input.position.y ) + float2( 1.0, 1.0 ) ) * 0.5;
+	}
+	">
+</vertex_shader>
+<include_hlsl file = "data/shaders/hlsl/common_ps.hlsl"/>
+<pixel_shader
+	hlsl = "
+    
+	float time_x;
+	float time_y;
+	
+	texture2D child_texture;
+	sampler2D s0;
+    
+    texture2D depth_texture;
+	sampler2D depth_sampler;
+
+    texture2D normal_texture;
+	sampler2D normal_sampler;
+    
+    texture2D random_normal_texture;
+	sampler2D random_normal_sampler;
+    
+    //Parameters
+    float sample_radius;
+    float falloff;
+    float strength;
+    float occlusion_multiplier;
+    float offset = 18.0f;
+    
+    //Random unit vector samples from unit sphere
+    const float SAMPLES = 16;
+    const float3 sphereSamples[16] =
+    {
+     float3(0.53812504, 0.18565957, -0.43192),
+     float3(0.13790712, 0.24864247, 0.44301823),
+     float3(0.33715037, 0.56794053, -0.005789503),
+     float3(-0.6999805, -0.04511441, -0.0019965635),
+     float3(0.06896307, -0.15983082, -0.85477847),
+     float3(0.056099437, 0.006954967, -0.1843352),
+     float3(-0.014653638, 0.14027752, 0.0762037),
+     float3(0.010019933, -0.1924225, -0.034443386),
+     float3(-0.35775623, -0.5301969, -0.43581226),
+     float3(-0.3169221, 0.106360726, 0.015860917),
+     float3(0.010350345, -0.58698344, 0.0046293875),
+     float3(-0.08972908, -0.49408212, 0.3287904),
+     float3(0.7119986, -0.0154690035, -0.09183723),
+     float3(-0.053382345, 0.059675813, -0.5411899),
+     float3(0.035267662, -0.063188605, 0.54602677),
+     float3(-0.47761092, 0.2847911, -0.0271716)
+    };
+    
+    float calcOcclusion(float depthDiff, float normDiff) {
+        float equ1 = normDiff * step(falloff,depthDiff);
+        float equ2 = 1.0f - smoothstep(falloff,strength,depthDiff);
+        
+        return equ1 * equ2;
+    }
+    //noise producing function to reduce banding (got it from someone else´s shader):
+    float rand(float2 co){
+
+            return 0.5+(frac(sin(dot(co.xy ,float2(12.9898,78.233))) * 43758.5453))*0.5;
+
+    }
+	void main_ps(
+		float2 texcoord : TEXCOORD0,
+		out float4 color : COLOR0)
+	{
+            color = 0;
+            color.a = 1;
+            
+            float3 random_normal = normalize((tex2D(random_normal_sampler, texcoord * offset).xyz * 2.0f ) - 1.0f);
+            float3 normal = normalize((tex2D(normal_sampler,texcoord) * 2.0f) - 1.0f);
+            float4 fragment = tex2D(depth_sampler, texcoord);
+            float depth_value = fragment.a;
+            
+            //color.xyz = fragment.xyz * 2.0f - 1.0f;
+            
+            //return;
+            
+            float occlusion = 0.0f;
+            float3 fragCoords = depth_value*(fragment.xyz * 2.0f) - 1.0f;//float3(texcoord.xy, depth_value);
+            float calculated_radius = sample_radius / depth_value;
+            
+            for(int i=0; i < 16; i++) {
+                float3 sampleVector = calculated_radius * reflect(sphereSamples[i],random_normal);
+                float3 po = fragCoords + sign(dot(sampleVector,normal)) * sampleVector;
+                
+                float3 occNormal = normalize((tex2D(normal_sampler,po.xy) * 2.0f) - 1.0f);
+                float occDepth = tex2D(depth_sampler,po.xy).a;
+                float depthDiff = (depth_value - occDepth);
+                float normDiff = 1.0f - dot(occNormal,normal);
+                
+                occlusion +=  calcOcclusion(depthDiff, normDiff);
+            }
+            color.rgb  = 1.0f -  (occlusion  * occlusion_multiplier / 16.0f);
+	}
+	">
+</pixel_shader>

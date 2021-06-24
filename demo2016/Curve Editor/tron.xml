@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scene>
+    <timerange valid="true" start="0" end="50"/>
+    <music firstBeatOffset="0" beatsPerMinute="120"/>
+    <curves>
+        <catmull_rom name="tron_alpha">
+            <value_offset v="0"/>
+            <value_multiplier v="1"/>
+            <key time="0" value="0"/>
+            <key time="5.75" value="0.0251297"/>
+            <key time="13.9375" value="0.113519"/>
+            <key time="26" value="0.0304649"/>
+            <key time="33.4375" value="0.0297037"/>
+            <key time="35" value="0.138431"/>
+            <key time="36" value="0.858988"/>
+            <key time="37" value="0.961037"/>
+            <key time="50" value="1"/>
+        </catmull_rom>
+        <catmull_rom name="tron_color_r">
+            <value_offset v="0"/>
+            <value_multiplier v="50"/>
+            <key time="0" value="0.199723"/>
+            <key time="50" value="0.199723"/>
+        </catmull_rom>
+        <catmull_rom name="tron_color_g">
+            <value_offset v="0"/>
+            <value_multiplier v="50"/>
+            <key time="0" value="0.199723"/>
+            <key time="50" value="0.199723"/>
+        </catmull_rom>
+        <catmull_rom name="tron_color_b">
+            <value_offset v="0"/>
+            <value_multiplier v="50"/>
+            <key time="0" value="0.199723"/>
+            <key time="50" value="0.199723"/>
+        </catmull_rom>
+        <catmull_rom name="tron_red_alpha">
+            <value_offset v="0"/>
+            <value_multiplier v="1"/>
+            <key time="0" value="0"/>
+            <key time="7.68333" value="0.0238948"/>
+            <key time="17.1375" value="0.11476"/>
+            <key time="22.9333" value="0.0297946"/>
+            <key time="31.7" value="0.0186632"/>
+            <key time="35.3333" value="0.14678"/>
+            <key time="37.3875" value="0.826792"/>
+            <key time="40" value="0.94429"/>
+            <key time="42" value="0.745299"/>
+            <key time="44" value="0.940853"/>
+            <key time="46" value="0.751888"/>
+            <key time="48" value="0.942025"/>
+            <key time="50" value="1"/>
+        </catmull_rom>
+    </curves>
+</scene>
+

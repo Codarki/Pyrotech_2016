@@ -1,0 +1,38 @@
+<asset>
+	<scene>
+		<!--
+		<items>
+		</items>
+		<meshes>
+			<mesh>
+				<item name="Esimerkki01"/>
+				<cast_shadow value="true"/>
+				<receive_shadow value="true"/>
+			</mesh>
+		</meshes>
+		-->
+		<lights>
+			<light>
+				<item name="Spot01"/>
+				<light_shader_instance name="testi_frustum_light"/>
+				
+				<near_plane>1.0</near_plane>
+				<far_plane>500.0</far_plane>
+				<cast_shadows>true</cast_shadows>
+				<!-- These are used in tbn_vs.hlsl and cook_torrance.hlsl -->
+				<!-- <shadow_bias>0.00011</shadow_bias> -->
+			</light>
+		</lights>
+	</scene>
+	<!--
+	<convert>
+		<scene>
+			<mesh_instances>
+				<base_mesh>
+					<file></file>
+				</base_mesh>
+			</mesh_instances>
+		</scene>
+	</convert>
+	-->
+</asset>

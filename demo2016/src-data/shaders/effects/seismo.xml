@@ -1,0 +1,93 @@
+<?xml version="1.0" ?>
+<parameters>
+	<parameter
+		label = "Texture map"
+		name = "texture_map"
+		type = "texture2D"
+		hlsl = "texture_map"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+	<parameter
+		label = "Alpha Coeff"
+		name = "alpha_coeff"
+		type = "float"
+		hlsl = "alpha_coeff"
+		default_value = "1.0">
+	</parameter>
+</parameters>
+
+<sampler_states>
+	<sampler
+		name = "texture_sampler"
+		texture = "texture_map"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+</sampler_states>
+
+<streams>
+	<stream0
+		position = 0
+		texcoord = 0>
+	</stream0>
+</streams>
+
+<is_transparent v = "true"/>
+<additive_blend v="false"/>
+
+<vertex_shader
+	stream = "stream0"
+	hlsl = "
+	float4x4 object_to_world;
+	float4x4 world_to_view_clip;
+
+	struct input_vertex
+	{
+		float4 position : POSITION;
+		float2 texcoord : TEXCOORD0;
+	};
+
+	struct output_vertex
+	{
+		float4 position : POSITION;
+		float2 texcoord : TEXCOORD0;
+	};
+
+	void main_vs(in input_vertex input, out output_vertex output)
+	{
+		float4 position_in_world = mul(object_to_world, input.position);
+		output.position = mul(world_to_view_clip, position_in_world);
+		output.texcoord = input.texcoord ;
+		
+	}
+	">
+</vertex_shader>
+<pixel_shader
+	hlsl = "
+	texture2D texture_map;
+	sampler2D texture_sampler;
+	float alpha_coeff;
+    	
+	void main_ps(
+        out float4 color : COLOR0,
+        float2 texcoord : TEXCOORD0)
+	{
+		color =  tex2D( texture_sampler, texcoord );
+		
+		if(texcoord.x <= alpha_coeff)
+		{
+		  color.rgb *= alpha_coeff;
+		}
+		else 
+		{
+		  color.rgb = 0;
+		  color.a = 0;
+		}
+	}
+	">
+</pixel_shader>

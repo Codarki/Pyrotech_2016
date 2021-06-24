@@ -1,0 +1,59 @@
+Engine assigns automatically following constants, if found in the shader code (pixel or vertex):
+
+// Geometry related:
+
+// Object space to world space transformation matrix. (local_to_world space transformation for mesh)
+float4x4 object_to_world;
+
+// World space to object space transformation matrix. (world_to_local space transformation for mesh)
+float4x4 world_to_object;
+
+
+// Camera related:
+
+// View projection matrix.
+float4x4 projection;
+
+// World space to view-clip space transformation matrix. (world_to_view * projection)
+float4x4 world_to_view_clip;
+
+// World space to view space transformation matrix. (world_to_local space transformation for view)
+float4x4 world_to_view;
+
+// View space to world space transformation matrix. (local_to_world space transformation for view)
+float4x4 view_to_world;
+
+// View position in world space. (translation vector of view's local_to_world transformation)
+float3 view_in_world;
+
+
+// Light related:
+
+
+// Light space to world space transformation matrix. (local_to_world space transformation for light)
+float4x4 light_to_world;
+
+// World space to light space transformation matrix. (world_to_local space transformation for light)
+float4x4 world_to_light;
+
+// Light position in world space. (translation vector of light's local_to_world transformation)
+float3 light_position_in_world;
+
+// Light orientation Z-axis in world space. (Z-axis of light's local_to_world transformation)
+float3 light_direction_in_world;
+
+// Light's RGB color. Premultiplied by some factor.
+float3 light_color;
+
+// Light's far range in unknown (and variable) space.
+float light_range;
+
+// Light's hotspot in degrees.
+float light_hotspot;
+
+// Light's hotspot in degrees.
+float light_falloff;
+
+// True if light is spot.
+bool light_isspot;
+

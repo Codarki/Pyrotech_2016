@@ -1,0 +1,44 @@
+//Comment by Jari
+// modify_tonemapping.hlsl
+struct modify_input
+{
+	float time : TEXCOORD7
+};
+
+void modify_texcoord(modify_color_input input, inout float2 texcoord)
+{
+}
+
+void modify_hdr_color(modify_color_input input, inout float3 color)
+{
+	color *= sin(input.time);
+}
+
+void modify_ldr_color(modify_color_input input, inout float4 color)
+{
+}
+
+// # HARDCODED TONEMAPPING
+sampler2D source_sampler;
+
+struct modify_input;
+void modify_texcoord(modify_color_input input, inout float2 texcoord);
+void modify_hdr_color(modify_color_input input, inout float3 color);
+void modify_ldr_color(modify_color_input input, inout float4 color);
+
+void tonemapping_ps(
+	modify_input input,
+    float2 texcoord : TEXCOORD0,
+    out float4 color : COLOR0)
+{
+	modify_texcoord(input, texcoord);
+    float3 original_color = tex2D(source_sampler, texcoord).xyz;
+    
+    modify_hdr_color(input, original_color);
+    
+    // bla bla..
+    color.xyz = saturate(original_color);
+    color.w = 1;
+    
+    modify_ldr_color(input, color);
+}

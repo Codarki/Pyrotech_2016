@@ -1,0 +1,129 @@
+<?xml version="1.0" ?>
+<parameters>
+	<parameter
+		label = "Source map"
+		name = "child_texture"
+		type = "texture2D"
+		hlsl = "child_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+	<parameter
+		label = "Displacement map"
+		name = "displacement_map"
+		type = "texture2D"
+		hlsl = "displacement_texture"
+		default_value = "data/images/common/normal.tga">
+	</parameter>
+	<parameter
+		label = "Displacement strength map"
+		name = "displacement_strength_map"
+		type = "texture2D"
+		hlsl = "displacement_strength_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+	<parameter
+		label = "Displacement"
+		name = "displacement"
+		type = "float"
+		hlsl = "displacement"
+		default_value = "0.0">
+	</parameter>
+</parameters>
+
+<sampler_states>
+	<sampler
+		name = "s0"
+		texture = "child_texture"
+		address_u = "CLAMP"
+		address_v = "CLAMP"
+		address_w = "CLAMP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+	<sampler
+		name = "s1"
+		texture = "displacement_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+	<sampler
+		name = "displacement_strength_sampler"
+		texture = "displacement_strength_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+</sampler_states>
+
+<streams>
+	<stream0
+		position = 0
+		tangent = 0
+		normal = 0
+		texcoord = 0>
+	</stream0>
+</streams>
+
+<vertex_shader
+	stream = "stream0"
+	hlsl = "
+	struct input_vertex
+	{
+		float4 position : POSITION;
+		float2 texcoord : TEXCOORD0;
+	};
+
+	struct output_vertex
+	{
+		float4 position : POSITION;
+		float2 texcoord : TEXCOORD0;
+	};
+
+	void main_vs(in input_vertex input, out output_vertex output)
+	{
+		output = input;
+	}
+	">
+</vertex_shader>
+<pixel_shader
+	hlsl = "
+	float time_x;
+	float time_y;
+	float displacement;
+
+
+	texture2D child_texture;
+	sampler2D s0;
+	texture2D displacement_texture;
+	sampler2D s1;
+	texture2D displacement_strength_texture;
+	sampler2D displacement_strength_sampler;
+
+
+	void main_ps(
+		float2 texcoord : TEXCOORD0,
+		out float4 color : COLOR0)
+	{
+		float2 centered_texcoord = texcoord;
+		
+		float3 displacement_direction = normalize(tex2D(s1, centered_texcoord).xyz * 2 - 1);
+		float4 displacement_strength_texel = 1 - tex2D(displacement_strength_sampler, centered_texcoord);
+
+   		float2 disp = displacement * displacement_direction.xy;
+		disp *= displacement_strength_texel.xy;
+		
+   		color = tex2D(s0, centered_texcoord + disp);
+	}
+	">
+</pixel_shader>

@@ -1,0 +1,211 @@
+<?xml version="1.0" ?>
+<parameters>
+	<parameter
+		label = "Depth map"
+		name = "depth_map"
+		type = "texture2D"
+		hlsl = "depth_texture"
+		default_value = "data/images/common/black.tga">
+	</parameter>
+	<parameter
+		label = "Normal map"
+		name = "normal_map"
+		type = "texture2D"
+		hlsl = "normal_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>   
+	<parameter
+		label = "Random Normals map"
+		name = "random_normal_map"
+		type = "texture2D"
+		hlsl = "random_normal_texture"
+		default_value = "data/images/common/normal.tga">
+	</parameter>
+    <parameter
+		label = "Sample radius"
+		name = "occ_sample_radius"
+		type = "float"
+		hlsl = "occ_sample_radius"
+		default_value = "0.66">
+	</parameter>
+    <parameter
+		label = "Occlusion Scale"
+		name = "occ_scale"
+		type = "float"
+		hlsl = "occ_scale"
+		default_value = "0.5">
+	</parameter>
+    <parameter
+		label = "Occlusion Strength"
+		name = "occ_strength"
+		type = "float"
+		hlsl = "occ_strength"
+		default_value = "2.0">
+	</parameter>
+    <parameter
+		label = "Occlusion Bias"
+		name = "occ_bias"
+		type = "float"
+		hlsl = "occ_bias"
+		default_value = "0.1">
+	</parameter>     
+</parameters>
+
+<sampler_states>
+
+	<sampler
+		name = "depth_sampler"
+		texture = "depth_texture"
+		address_u = "CLAMP"
+		address_v = "CLAMP"
+		address_w = "CLAMP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+	<sampler
+		name = "normal_sampler"
+		texture = "normal_texture"
+		address_u = "CLAMP"
+		address_v = "CLAMP"
+		address_w = "CLAMP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+	<sampler
+		name = "random_normal_sampler"
+		texture = "random_normal_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "POINT"
+		mag_filter = "POINT"
+		mip_filter = "POINT"
+		>
+	</sampler>
+
+</sampler_states>
+
+<streams>
+	<stream0
+		position = 0
+		tangent = 0
+		normal = 0
+		texcoord = 0>
+	</stream0>
+</streams>
+
+<vertex_shader
+	stream = "stream0"
+	hlsl = "
+	struct input_vertex
+	{
+		float4 position : POSITION;
+		float2 texcoord : TEXCOORD0;
+	};
+
+	struct output_vertex
+	{
+		float4 position : POSITION;
+		float2 texcoord : TEXCOORD0;
+	};
+
+	void main_vs(in input_vertex input, out output_vertex output)
+	{
+		output = input;
+	}
+	">
+</vertex_shader>
+<pixel_shader
+	hlsl = "
+    
+	float time_x;
+	float time_y;
+    
+    texture2D depth_texture;
+	sampler2D depth_sampler;
+
+    texture2D normal_texture;
+	sampler2D normal_sampler;
+    
+    texture2D random_normal_texture;
+	sampler2D random_normal_sampler;
+    
+    //Parameters
+    float occ_sample_radius;
+    float occ_scale;
+    float occ_strength;
+    float occ_bias;
+    
+    //Random unit vector samples from unit sphere
+    const float SAMPLES = 8;
+    const float2 samples[8] =
+    {
+        float2(1,0), 
+        float2(-1,0), 
+        float2(0,1), 
+        float2(0,-1), 
+        float2(1,1), 
+        float2(1,-1), 
+        float2(-1,1), 
+        float2(-1,-1)        
+    };
+    
+    float4 getPosition(float2 uv) {
+        float4 pos = tex2D(depth_sampler,uv).xyzw;
+        pos.xyz *= 2.0f;
+        pos.xyz -= 1.0f;
+        return  pos;
+    }
+    
+    float calcOcclusion(float2 texcoord, float2 uv, float3 pos, float3 normal) {
+         //Calculate vector in 3d between the two points
+         float3 diff = getPosition(texcoord+uv) - pos;
+         const float3 v = normalize(diff);
+         
+         //Calculate the distance between the two points
+         const float d = length(diff)*occ_scale;
+         
+         //Calculate linear attenuation
+         float att = (1.0/(1.0+d));
+         
+         //Calculate final occlusion amount
+         return max(0.0,dot(normal,v)-occ_bias)*att*occ_strength;            
+    }
+    
+	void main_ps(
+		float2 texcoord : TEXCOORD0,
+		out float4 color : COLOR0)
+	{
+            color = 0;
+            color.a = 1;
+            
+            float2 random_normal = normalize(tex2D(random_normal_sampler, texcoord ).xy);
+            float3 normal = normalize(tex2D(normal_sampler,texcoord).xyz * 2.0f - 1.0f);
+            float4 position = getPosition(texcoord);
+            float depth_value = position.z;
+                        
+            float occlusion = 0.0f;
+            float calculated_radius = occ_sample_radius / depth_value;
+            
+            for(int i=0; i < 8; i++) {
+                float2 sampleVector = reflect(samples[i],random_normal) * calculated_radius;
+                //Lets rotate the vector by 45 degrees
+                float2 rotated_uv = float2(sampleVector.x * 0.707 - sampleVector.y * 0.707, sampleVector.x * 0.707 + sampleVector.y * 0.707);
+                             
+                occlusion += calcOcclusion(texcoord, sampleVector*0.25, position.xyz, normal);
+                occlusion += calcOcclusion(texcoord, rotated_uv*0.5, position.xyz, normal);
+                occlusion += calcOcclusion(texcoord, sampleVector*0.75, position.xyz, normal);
+                occlusion += calcOcclusion(texcoord, rotated_uv, position.xyz, normal);
+            }
+            occlusion /= 32;
+            float occ = (1.0f - occlusion); 
+            color.rgb = float3(occ,occ,occ);
+            
+            
+	}
+	">
+</pixel_shader>

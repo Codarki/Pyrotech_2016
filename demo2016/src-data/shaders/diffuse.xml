@@ -1,0 +1,194 @@
+<?xml version="1.0" ?>
+<parameters>
+	<parameter
+		label = "Diffuse map"
+		name = "diffuse_map"
+		type = "texture2D"
+		hlsl = "diffuse_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+	<parameter
+		label = "Specular map"
+		name = "specular_map"
+		type = "texture2D"
+		hlsl = "specular_texture"
+		default_value = "data/images/common/white.tga">
+	</parameter>
+	<parameter
+		label = "Ambient color"
+		name = "ambient_color"
+		type = "float3"
+		hlsl = "ambient"
+		default_value = "0 0 0">
+	</parameter>
+	<parameter
+		label = "Diffuse color"
+		name = "diffuse_color"
+		type = "float3"
+		hlsl = "diffuse"
+		default_value = "1.0 1.0 1.0">
+	</parameter>
+	<parameter
+		label = "Specular color"
+		name = "specular_color"
+		type = "float3"
+		hlsl = "specular"
+		default_value = "1.0 1.0 1.0">
+	</parameter>
+	<parameter
+		label = "Specular power"
+		name = "specular_power"
+		type = "float"
+		hlsl = "specular_power"
+		default_value = "10.0">
+	</parameter>
+	<parameter
+		label = "Specular strength"
+		name = "specular_strength"
+		type = "float"
+		hlsl = "specular_strength"
+		default_value = "0.25">
+	</parameter>
+	<parameter
+		label = "Normal scale"
+		name = "normal_scale"
+		type = "float"
+		hlsl = "normal_scale"
+		default_value = "1.0">
+	</parameter>    
+</parameters>
+
+<sampler_states>
+	<sampler
+		name = "diffuse_sampler"
+		texture = "diffuse_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+	<sampler
+		name = "specular_sampler"
+		texture = "specular_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+</sampler_states>
+
+<streams>
+	<stream0
+		position = 0
+		tangent = 0
+		normal = 0
+		texcoord = 0>
+	</stream0>
+</streams>
+
+<vertex_shader
+	stream = "stream0"
+	hlsl = "
+    #pragma warning( disable : 3206 )
+	float4x4 object_to_world;
+	float4x4 world_to_view_clip;
+    float3 view_in_world;
+    float3 light_position_in_world;
+
+	struct input_vertex
+	{
+		float4 position : POSITION;
+		float4 tangent : TANGENT;
+		float3 normal : NORMAL;
+		float2 texcoord : TEXCOORD0;
+	};
+
+	struct output_vertex
+	{
+		float4 position : POSITION;
+		float3 normal_in_world : NORMAL;
+		float2 texcoord : TEXCOORD0;
+		float3 view_in_world : TEXCOORD1;
+		float3 light_in_world : TEXCOORD2;
+	};
+
+	void main_vs(in input_vertex input, out output_vertex output)
+	{
+        float4 position_in_world = mul(object_to_world, input.position);
+        output.position = mul(world_to_view_clip, position_in_world);
+        /*output.normal_in_world.xyz = mul(input.normal.xyz,
+            (float3x3)object_to_world).xyz;*/
+		output.normal_in_world = mul(object_to_world,input.normal);
+        output.texcoord = input.texcoord;
+        output.view_in_world = view_in_world - position_in_world.xyz;
+        output.light_in_world = light_position_in_world - position_in_world.xyz;
+	}
+	">
+</vertex_shader>
+<pixel_shader
+	hlsl = "
+	texture2D diffuse_texture;
+	texture2D specular_texture;
+	sampler2D diffuse_sampler;
+	sampler2D specular_sampler;
+	float3 ambient;
+	float3 diffuse;
+    float3 specular;
+    float specular_power;
+    float specular_strength;
+    float3 light_color;
+    float light_range;
+    float normal_scale;
+	
+	void main_ps(
+        float3 normal_in_world : NORMAL,
+        float2 texcoord : TEXCOORD0,
+        float3 view_in_world : TEXCOORD1,
+        float3 light_in_world : TEXCOORD2,
+        out float4 color : COLOR0)
+	{
+            
+        float3 L = normalize(light_in_world);
+        float3 N = normalize(normal_in_world);
+        float3 V = normalize(view_in_world);
+        float3 R = normalize(-reflect(V, N));
+        float3 H = normalize(V + L);
+        float N_dot_L = dot(N,  L);
+        float H_dot_N = dot(H,  N);
+
+       // light_range *= 1;
+        //float light_intensity = 1.0;
+        
+        //float dist = lightDist / light_range;
+        float dist = length(light_in_world) / 110.0;
+        float att = 1.0f / (dist * dist);
+        
+        /*float constant = 1.0;
+        float linear = 0.045;
+        float quadratic = 0.0075;
+        float att = 1.0 / (constant + linear * lightDist + quadratic * lightDist * lightDist);
+        */
+        float3 I = att * light_color;// * light_intensity;
+        
+        float3 Kd = tex2D(diffuse_sampler, texcoord).xyz;
+        float3 Ks = tex2D(specular_sampler, texcoord).xyz;
+		
+		// convert from gamma 2.2 to gamma 1.0
+		Kd = pow(abs(Kd), 2.2);
+		Ks = pow(abs(Ks), 2.2);
+        
+        color.xyz = 0;
+        color.xyz += ambient * I;
+        color.xyz += Kd * saturate(N_dot_L) * diffuse * I;
+        color.xyz += Ks * saturate(pow(abs(H_dot_N), specular_power)) * specular * I * specular_strength;
+        color.w = 1;
+
+	}
+	">
+</pixel_shader>

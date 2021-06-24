@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+
+<sequences>
+	<scene_sequence
+	    name = "testiscene"
+		scene = "data/scenes/testiscene.p3d_scene" 
+		camera = "Camera02"		
+		frames_per_second = 30 
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "500" 
+        near_plane = "1"
+        far_plane = "1000"
+        ssao_enabled = "true">					
+		</scene_sequence>
+
+		<!-- Pitää olla jotta noise toimii, ei ole päällä mutta vaaditaan tämä rivi -->
+	<image name = "noise_tex" path = "data/images/noise.jpg" />
+	
+    <image name = "SceneTexture1_image" path = "SceneTexture1" />
+    <draw_image name = "draw_SceneTexture1_image_to_screen"><input sequence = "SceneTexture1_image"/></draw_image>
+    
+	<draw_to_texture name = "draw_testiscene_to_Scenetexture">
+        <shared_texture name = "SceneTexture1"/>
+		<input sequence = "testiscene"/>
+	</draw_to_texture>      
+    
+    <plasma>
+		<name v="light_scattering"/>
+		<material_name v="light_scattering_material"/>
+        <input sequence = "draw_testiscene_to_Scenetexture"/>
+	</plasma>    
+    
+		<!-- Post processing päällä -->	
+	<!-- Tähän ei tarvitse koskea -->
+	<post_processing name = "Post processing">
+		<clear_color v = "0 0 0"/>
+        <!-- <input sequence ="light_scattering"/>      -->
+    
+		<input sequence = "testiscene" time="0"/>
+		<!-- input sequence ="draw_alkuspace"/ -->	
+
+	</post_processing>
+	
+	<!-- Depth buffer päällä -->
+	<!-- Tähän ei tarvitse koskea -->
+	<depth_buffer name = "Depth test">
+        <clear_color v = "0 0 0"/>
+		<input sequence = "Post processing"/>
+	</depth_buffer>
+
+	<!--  Linkataan Depth test sequence -->
+	<!--  Ei tarttis koskee -->
+	<composition name = "main timeline">	
+		<input sequence = "Depth test"/>
+	</composition>
+
+	<!-- Main timeline -->
+	<!--  Ei tarttis koskee -->		
+	<timeline>
+		<input sequence = "main timeline"/>
+	</timeline>
+</sequences>

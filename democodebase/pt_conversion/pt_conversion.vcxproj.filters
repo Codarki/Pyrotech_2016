@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="file_3ds %28namespace%29">
+      <UniqueIdentifier>{c7e17f25-d52f-42b6-8b39-11d2fd8fddc7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="file_3ds %28namespace%29\objects">
+      <UniqueIdentifier>{8fda09c9-65fb-411b-b424-f1dc12641f5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="file_3ds %28namespace%29\keyframer">
+      <UniqueIdentifier>{2107e646-d665-4b18-a654-b728cf5ca3ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="file_3ds %28namespace%29\material">
+      <UniqueIdentifier>{9394a6fe-75f6-400c-99a7-c4b139c653f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="p3d">
+      <UniqueIdentifier>{0fecd4be-5fa3-40cd-ba4f-ebfff1ffe478}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="file_3ds\common.cpp">
+      <Filter>file_3ds %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="file_3ds\data.cpp">
+      <Filter>file_3ds %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="file_3ds\reader.cpp">
+      <Filter>file_3ds %28namespace%29</Filter>
+    </ClCompile>
+    <ClCompile Include="file_3ds\camera.cpp">
+      <Filter>file_3ds %28namespace%29\objects</Filter>
+    </ClCompile>
+    <ClCompile Include="file_3ds\light.cpp">
+      <Filter>file_3ds %28namespace%29\objects</Filter>
+    </ClCompile>
+    <ClCompile Include="file_3ds\mesh.cpp">
+      <Filter>file_3ds %28namespace%29\objects</Filter>
+    </ClCompile>
+    <ClCompile Include="file_3ds\object.cpp">
+      <Filter>file_3ds %28namespace%29\objects</Filter>
+    </ClCompile>
+    <ClCompile Include="file_3ds\key.cpp">
+      <Filter>file_3ds %28namespace%29\keyframer</Filter>
+    </ClCompile>
+    <ClCompile Include="file_3ds\keyframer.cpp">
+      <Filter>file_3ds %28namespace%29\keyframer</Filter>
+    </ClCompile>
+    <ClCompile Include="file_3ds\material.cpp">
+      <Filter>file_3ds %28namespace%29\material</Filter>
+    </ClCompile>
+    <ClCompile Include="file_3ds\material_map.cpp">
+      <Filter>file_3ds %28namespace%29\material</Filter>
+    </ClCompile>
+    <ClCompile Include="p3d\write.cpp">
+      <Filter>p3d</Filter>
+    </ClCompile>
+    <ClCompile Include="p3d\write_camera.cpp">
+      <Filter>p3d</Filter>
+    </ClCompile>
+    <ClCompile Include="p3d\write_keyframer.cpp">
+      <Filter>p3d</Filter>
+    </ClCompile>
+    <ClCompile Include="p3d\write_light.cpp">
+      <Filter>p3d</Filter>
+    </ClCompile>
+    <ClCompile Include="p3d\write_material.cpp">
+      <Filter>p3d</Filter>
+    </ClCompile>
+    <ClCompile Include="p3d\write_mesh.cpp">
+      <Filter>p3d</Filter>
+    </ClCompile>
+    <ClCompile Include="p3d\write_scene.cpp">
+      <Filter>p3d</Filter>
+    </ClCompile>
+    <ClCompile Include="conversion.cpp" />
+    <ClCompile Include="direct_copy.cpp" />
+    <ClCompile Include="process_file.cpp" />
+    <ClCompile Include="project.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="file_3ds\chunk_ids.h">
+      <Filter>file_3ds %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="file_3ds\common.h">
+      <Filter>file_3ds %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="file_3ds\data.h">
+      <Filter>file_3ds %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="file_3ds\reader.h">
+      <Filter>file_3ds %28namespace%29</Filter>
+    </ClInclude>
+    <ClInclude Include="file_3ds\camera.h">
+      <Filter>file_3ds %28namespace%29\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="file_3ds\light.h">
+      <Filter>file_3ds %28namespace%29\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="file_3ds\mesh.h">
+      <Filter>file_3ds %28namespace%29\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="file_3ds\object.h">
+      <Filter>file_3ds %28namespace%29\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="file_3ds\key.h">
+      <Filter>file_3ds %28namespace%29\keyframer</Filter>
+    </ClInclude>
+    <ClInclude Include="file_3ds\keyframer.h">
+      <Filter>file_3ds %28namespace%29\keyframer</Filter>
+    </ClInclude>
+    <ClInclude Include="file_3ds\material.h">
+      <Filter>file_3ds %28namespace%29\material</Filter>
+    </ClInclude>
+    <ClInclude Include="file_3ds\material_map.h">
+      <Filter>file_3ds %28namespace%29\material</Filter>
+    </ClInclude>
+    <ClInclude Include="p3d\write.h">
+      <Filter>p3d</Filter>
+    </ClInclude>
+    <ClInclude Include="p3d\write_camera.h">
+      <Filter>p3d</Filter>
+    </ClInclude>
+    <ClInclude Include="p3d\write_light.h">
+      <Filter>p3d</Filter>
+    </ClInclude>
+    <ClInclude Include="p3d\write_material.h">
+      <Filter>p3d</Filter>
+    </ClInclude>
+    <ClInclude Include="p3d\write_mesh.h">
+      <Filter>p3d</Filter>
+    </ClInclude>
+    <ClInclude Include="p3d\write_scene.h">
+      <Filter>p3d</Filter>
+    </ClInclude>
+    <ClInclude Include="conversion.h" />
+    <ClInclude Include="converter.h" />
+    <ClInclude Include="defs.h" />
+    <ClInclude Include="direct_copy.h" />
+    <ClInclude Include="process_file.h" />
+    <ClInclude Include="project.h" />
+    <ClInclude Include="project_description.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="file_3ds\key.inl">
+      <Filter>file_3ds %28namespace%29\keyframer</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="todo.txt" />
+  </ItemGroup>
+</Project>

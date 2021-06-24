@@ -1,0 +1,9 @@
+E:\Code\Git\democodebase\CSharpGui\CSharpGui\obj\x86\Debug\CSharpGui.Form1.resources
+E:\Code\Git\democodebase\CSharpGui\CSharpGui\obj\x86\Debug\CSharpGui.Properties.Resources.resources
+E:\Code\Git\democodebase\CSharpGui\CSharpGui\obj\x86\Debug\CSharpGui.csproj.GenerateResource.Cache
+E:\Code\Git\democodebase\CSharpGui\CSharpGui\obj\x86\Debug\CSharpGui.csprojResolveAssemblyReference.cache
+E:\Code\Git\democodebase\CSharpGui\CSharpGui\bin\Debug\antimon.exe.config
+E:\Code\Git\democodebase\CSharpGui\CSharpGui\bin\Debug\antimon.exe
+E:\Code\Git\democodebase\CSharpGui\CSharpGui\bin\Debug\antimon.pdb
+E:\Code\Git\democodebase\CSharpGui\CSharpGui\obj\x86\Debug\antimon.exe
+E:\Code\Git\democodebase\CSharpGui\CSharpGui\obj\x86\Debug\antimon.pdb

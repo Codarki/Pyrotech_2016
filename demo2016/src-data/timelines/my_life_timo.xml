@@ -1,0 +1,456 @@
+<?xml version="1.0" ?>
+
+<sequences>
+	<scene_sequence
+	    name = "titlescreen"
+		scene = "data/scenes/titlescreen.p3d_scene"
+		camera = "Camera01"
+		frames_per_second = "30"
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "720"
+        near_plane = "1"
+        far_plane = "1000"
+        ssao_enabled = "true">
+    </scene_sequence>
+
+	<scene_sequence
+	    name = "taytekaytava"
+		scene = "data/scenes/taytekaytava.p3d_scene"
+		frames_per_second = "30"
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "900"
+        near_plane = "1"
+        far_plane = "1000"
+        ssao_enabled = "true">
+		<camera curve="tayte_camera_curve"/>
+    </scene_sequence>
+	
+	<scene_sequence
+	    name = "alkuhuone"
+		scene = "data/scenes/alkuhuone.p3d_scene"
+		frames_per_second = "30"
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "1000"
+        near_plane = "1"
+        far_plane = "30000"
+        ssao_enabled = "true">	
+		<camera curve="scene1_camera_curve"/>
+    </scene_sequence>
+
+	<scene_sequence
+	    name = "kaytava"
+		scene = "data/scenes/kaytava.p3d_scene"
+		frames_per_second = "30"
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "1600"
+        near_plane = "1"
+        far_plane = "3200"
+        ssao_enabled = "true">
+		<camera curve="juoksu_camera_curve"/>
+    </scene_sequence>
+
+	<scene_sequence
+	    name = "tron"
+		scene = "data/scenes/tron.p3d_scene"
+		frames_per_second = "30"
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "1600"
+        near_plane = "1"
+        far_plane = "3200"
+        ssao_enabled = "false">	
+		<camera curve="juoksu_camera_curve"/>
+    </scene_sequence>
+
+	<scene_sequence
+	    name = "sriini"
+		scene = "data/scenes/sriini.p3d_scene"
+		frames_per_second = "30"
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "500"
+        near_plane = "1"
+        far_plane = "5000"
+        ssao_enabled = "true">
+		<camera curve="sriini_camera_curve"/>
+    </scene_sequence>		
+
+    <scene_sequence
+	    name = "juoksustoppi"
+		scene = "data/scenes/reaktori.p3d_scene"
+		camera = "Camera02"		
+		frames_per_second = "30"
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "400"
+        near_plane = "1"
+        far_plane = "5000"
+        ssao_enabled = "true">
+    </scene_sequence>	
+
+    <scene_sequence
+	    name = "reaktori"
+		scene = "data/scenes/reaktori.p3d_scene"
+		frames_per_second = "30"
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "1100"
+        near_plane = "1"
+        far_plane = "5000"
+        ssao_enabled = "true">
+		<camera curve="reaktori_camera_curve"/>
+    </scene_sequence>
+		
+	<scene_sequence
+	    name = "abstrakti"
+		scene = "data/scenes/abstrakti.p3d_scene"
+		camera = "Camera01"		
+		frames_per_second = "30"
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "1000"
+        near_plane = "1"
+        far_plane = "3000"
+        ssao_enabled = "true">					
+    </scene_sequence>
+
+	<scene_sequence
+	    name = "essokallio"
+		scene = "data/scenes/essokallio.p3d_scene"
+		frames_per_second = "30"
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "1000"
+        near_plane = "1"
+        far_plane = "10000"
+        ssao_enabled = "true">
+		<camera curve="essokallio_camera_curve"/>
+    </scene_sequence>
+    
+	<scene_sequence
+	    name = "loppu_part2"
+		scene = "data/scenes/loppu_part2.p3d_scene"
+		camera = "Camera01"		
+		frames_per_second = "30"
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "2250"
+        near_plane = "1"
+        far_plane = "30000"
+        ssao_enabled = "true">
+    </scene_sequence>
+
+	<image name = "SceneTexture1_image" path = "SceneTexture1" />
+	<image name = "SceneTexture2_image" path = "SceneTexture2" />
+	<image name = "SceneTexture3_image" path = "SceneTexture3" />    
+    
+	<image name = "noise_tex" path = "data/images/noise.jpg" />
+	<image name = "WhiteImage" path = "data/images/common/white.tga" />	
+	<image name = "BlackImage" path = "data/images/common/black.tga" />	
+	<image name = "SuperWide" path = "data/images/2014/superwide.png" />
+	<image name = "Nuclei_Solid" path = "data/images/2014/nuclei_solid.png" />
+	<image name = "perusvignette" path = "data/images/tmp/perusvignette.png" />
+ 	<draw_image name = "draw_perusvignette_image"><alpha v = "0.70"/><input sequence = "perusvignette"/></draw_image>
+    
+    <image name = "flare" path = "data/images/2014/flare.png" />
+    <draw_image name = "draw_flare">
+        <input sequence = "flare" />
+		<alpha v = "0.5"/>
+        <center v = "0.75 0.75"/>     
+    </draw_image>
+    
+	<plasma>
+		<name v="pixelate_reaktori"/>
+		<material_name v="pixelate_material"/>
+        <input sequence = "SceneTexture1_image"/>
+	</plasma>
+	
+	<!-- draw_image name = "draw_alkuspace"><input sequence = "img_tausta"/></draw_image -->
+	<draw_image name = "fade_to_white_250ms" duration = "0.25"><alpha curve = "fade_in_curve_250ms" /><input sequence = "WhiteImage" /></draw_image>
+	<draw_image name = "fade_to_white_1000ms" duration = "1"><alpha curve = "fade_in_curve_1000ms" /><input sequence = "WhiteImage" /></draw_image>
+	<draw_image name = "fade_to_white_2000ms" duration = "2"><alpha curve = "fade_in_curve_2000ms" /><input sequence = "WhiteImage" /></draw_image>	
+	<draw_image name = "fade_to_half_black_125ms" duration = "0.125"><alpha curve = "fade_in_to_half_black_curve_125ms" /><input sequence = "BlackImage" /></draw_image>
+	<draw_image name = "fade_to_black_1000ms" duration = "1"><alpha curve = "fade_in_curve_1000ms" /><input sequence = "BlackImage" /></draw_image>	
+	<draw_image name = "fade_to_black_2000ms" duration = "4"><alpha curve = "fade_in_curve_2000ms" /><input sequence = "BlackImage" /></draw_image>
+	<draw_image name = "fade_from_black_250ms" duration = "0.25"><alpha curve = "fade_out_curve_250ms" /><input sequence = "BlackImage" /></draw_image>
+	<draw_image name = "fade_from_black_1000ms" duration = "1"><alpha curve = "fade_out_curve_1000ms" /><input sequence = "BlackImage" /></draw_image>
+    <draw_image name = "fade_from_black_3000ms" duration = "3"><alpha curve = "fade_out_curve_3000ms" /><input sequence = "BlackImage" /></draw_image>
+	<draw_image name = "fade_from_white_1000ms" duration = "1"><alpha curve = "fade_out_curve_1000ms" /><input sequence = "WhiteImage" /></draw_image>
+	<draw_image name = "fade_from_white_2000ms" duration = "2"><alpha curve = "fade_out_curve_2000ms" /><input sequence = "WhiteImage" /></draw_image>
+	<draw_image name = "fade_from_white_3000ms" duration = "3"><alpha curve = "fade_out_curve_3000ms" /><input sequence = "WhiteImage" /></draw_image>
+	<draw_image name = "fade_from_half_black_75ms" duration = "3"><alpha curve = "fade_out_from_half_black_75ms" /><input sequence = "BlackImage" /></draw_image>
+ 
+	<draw_image name = "draw_SuperWide"><alpha curve = "superwide_alpha" /><input sequence = "SuperWide" /></draw_image>
+    <draw_image name = "draw_Nuclei_Solid"><alpha curve = "nuclei_solid_alpha" /><input sequence = "Nuclei_Solid" /></draw_image>
+    <draw_image name = "draw_BlackImage"><input sequence = "BlackImage" /></draw_image>
+    
+    <!-- titlescreen -->
+    
+	<plasma>
+		<name v="image_distort_sine_titlescreen"/>
+		<material_name v="image_distort_sine_fullscreen_material_titlescreen"/>
+        <input sequence = "SceneTexture1_image"/>
+		<!--<input sequence="draw_titlescreen_to_SceneTexture"/>-->
+	</plasma>
+        
+    <!--
+	<composition name =  "c_titlescreen">
+		<input sequence = "titlescreen"/>
+	</composition>
+    -->
+	<draw_to_texture name = "draw_titlescreen_to_SceneTexture"><shared_texture name = "SceneTexture1"/>
+		<input sequence = "titlescreen"/>
+	</draw_to_texture>
+    
+    <!-- taytekaytava -->
+	<draw_to_texture name = "draw_taytekaytava_to_SceneTexture"><shared_texture name = "SceneTexture1"/>
+		<input sequence = "taytekaytava"/>
+	</draw_to_texture> 
+
+    <!-- alkuhuone -->
+	<draw_to_texture name = "draw_alkuhuone_to_SceneTexture"><shared_texture name = "SceneTexture1"/>
+		<input sequence = "alkuhuone"/>
+	</draw_to_texture>
+    
+    <!-- kaytava -->
+	<draw_to_texture name = "draw_kaytava_to_SceneTexture"><shared_texture name = "SceneTexture1"/>
+		<input sequence = "kaytava"/>
+        <input sequence = "tron"/>
+	</draw_to_texture>
+    
+    <!-- tron -->
+    <!--
+	<draw_to_texture name = "draw_tron_to_SceneTexture" clear_color_enabled = "false"><shared_texture name = "SceneTexture1"/>
+		<input sequence = "c_tron"/>
+	</draw_to_texture>
+    -->
+    
+    <!-- sriini -->
+	<draw_to_texture name = "draw_sriini_to_SceneTexture"><shared_texture name = "SceneTexture1"/>
+		<input sequence = "sriini"/>
+	</draw_to_texture>
+    
+    <!-- juoksustoppi -->
+	<draw_to_texture name = "draw_juoksustoppi_to_SceneTexture"><shared_texture name = "SceneTexture1"/>
+		<input sequence = "juoksustoppi"/>
+	</draw_to_texture>    
+    
+    <!-- reaktori -->
+	<draw_to_texture name = "draw_reaktori_to_SceneTexture"><shared_texture name = "SceneTexture1"/>
+		<input sequence = "reaktori"/>
+	</draw_to_texture>    
+
+    <!-- abstrakti -->
+	<draw_to_texture name = "draw_abstrakti_to_SceneTexture"><shared_texture name = "SceneTexture1"/>
+		<input sequence = "abstrakti"/>
+	</draw_to_texture>  
+	<plasma>
+		<name v="image_distort_sine_abstrakti"/>
+		<material_name v="image_distort_sine_fullscreen_material_abstrakti"/>
+        <input sequence = "SceneTexture1_image"/>
+	</plasma>    
+    <!-- essokallio -->
+	<plasma>
+		<name v="esso_kallio_radial_blur"/>
+		<material_name v="radial_blur_esso_kallio_material"/>
+        <input sequence = "SceneTexture1_image"/>
+	</plasma>
+    
+	<draw_to_texture name = "draw_essokallio_to_SceneTexture"><shared_texture name = "SceneTexture1"/>
+		<input sequence = "essokallio"/>
+	</draw_to_texture>      
+	<image name = "ruutuhoto_esso" path = "data/images/2014/bokeh_blue_lowerright.png" />	
+	<image name = "ruutuhoto2_esso" path = "data/images/2014/bokeh_ora_lowleft.png" />
+		    
+    <draw_image name = "draw_ruutuhoto_esso">
+		<input sequence = "ruutuhoto_esso"/>
+		<alpha curve = "ruutuhoto_alpha_curve"/>
+        <center v = "0.5 0.5"/>
+	</draw_image>	
+    <draw_image name = "draw_ruutuhoto2_esso">
+		<input sequence = "ruutuhoto2_esso"/>
+		<alpha curve = "ruutuhoto_alpha_curve"/>
+        <center v = "0.5 0.5"/>        
+	</draw_image>
+    
+	<image name = "ruutuhoto_reaktori" path = "data/images/2014/bokeh_blue_upperleft.png" />	
+	<image name = "ruutuhoto2_reaktori" path = "data/images/2014/bokeh_ora_upperright.png" />
+    <draw_image name = "draw_ruutuhoto_reaktori">
+		<input sequence = "ruutuhoto_reaktori"/>
+		<alpha curve = "bogeh_alpha_curve"/>
+	</draw_image>	
+    <draw_image name = "draw_ruutuhoto2_reaktori">
+		<input sequence = "ruutuhoto2_reaktori"/>
+		<alpha curve = "bogeh_alpha_curve"/>
+	</draw_image>
+    
+    <!-- loppu_part2 -->
+    
+	<plasma>
+		<name v = "loppu_part2_radial_blur"/>
+		<material_name v = "radial_blur_material"/>
+        <input sequence = "SceneTexture1_image"/>
+		<!--<input sequence = "draw_loppu_part2_to_SceneTextur1"/>-->
+	</plasma>
+    
+	<draw_to_texture name = "draw_loppu_part2_to_SceneTexture"><shared_texture name = "SceneTexture1"/>
+		<input sequence = "loppu_part2"/>
+	</draw_to_texture>     
+    
+	<draw_image name = "draw_SceneTexture1_image_to_screen"><input sequence = "SceneTexture1_image"/></draw_image>
+	<draw_image name = "draw_SceneTexture2_image_to_screen"><input sequence = "SceneTexture2_image"/></draw_image>
+	<draw_image name = "draw_SceneTexture3_image_to_screen"><input sequence = "SceneTexture3_image"/></draw_image> 
+	
+	<composition name = "c_warmup">
+		<input sequence = "titlescreen"/>
+		<input sequence = "taytekaytava"/>
+		<input sequence = "alkuhuone"/>				
+		<input sequence = "kaytava"/>
+		<input sequence = "tron"/>
+		<input sequence = "sriini"/>
+		<input sequence = "juoksustoppi"/>
+		<input sequence = "reaktori"/>
+		<input sequence = "abstrakti"/>
+		<input sequence = "essokallio"/>
+		<input sequence = "loppu_part2"/>			
+	</composition>
+
+    <composition name =  "c_draw_scenes_to_SceneTextures">
+		<input sequence = "draw_titlescreen_to_SceneTexture" time="0"/>
+		<input sequence = "draw_taytekaytava_to_SceneTexture" time="24" duration="24"/>
+		<input sequence = "draw_alkuhuone_to_SceneTexture" time="48" duration="34"/>
+		<input sequence = "draw_kaytava_to_SceneTexture" time="82" duration="49.4"/>
+		<!--<input sequence = "draw_tron_to_SceneTexture" time="81.3" duration="48.7"/>-->
+		<input sequence = "draw_sriini_to_SceneTexture" time="130" duration="12"/>
+		<input sequence = "draw_juoksustoppi_to_SceneTexture" time="142" duration="9"/>
+		<input sequence = "draw_reaktori_to_SceneTexture" time="154" duration="33.5"/>
+		<input sequence = "draw_abstrakti_to_SceneTexture" time="187.5" duration = "16.5"/>
+		<input sequence = "draw_essokallio_to_SceneTexture" time="204" duration = "16"/>
+		<input sequence = "draw_loppu_part2_to_SceneTexture" time="220" duration = "75"/>
+		<!--input sequence = "loppuvesi" time="266" duration = "30"/> -->	
+	</composition>
+    
+    <composition name =  "c_draw_SceneTextures_to_screen">
+        <input sequence = "image_distort_sine_titlescreen" time="0"/>
+		<!--<input sequence= "draw_SceneTexture1_image_to_screen" time = "0" duration="24"/>--> <!-- titlescreen SceneTexture1 -->
+		<input sequence= "draw_SceneTexture1_image_to_screen" time="24" duration="24"/> <!-- taytekaytava SceneTexture1 -->
+		<input sequence= "draw_SceneTexture1_image_to_screen" time="48" duration="33.3"/> <!-- alkuhuone SceneTexture1 -->
+		<input sequence= "draw_SceneTexture1_image_to_screen" time="81.3" duration="48.7"/> <!-- kaytava SceneTexture1 -->
+		<!-- tron already drawn to SceneTexture. --><!--<input sequence= "draw_SceneTexture1_image_to_screen" time="81.3" duration="48.7"/>--> <!-- tron SceneTexture1 -->
+        <input sequence= "draw_SceneTexture1_image_to_screen" time="130" duration="12"/> <!-- sriini SceneTexture1 -->
+		<input sequence= "draw_SceneTexture1_image_to_screen" time="142" duration="9"/> <!-- juoksustoppi SceneTexture1 -->
+		<!--<input sequence= "draw_SceneTexture1_image_to_screen" time="154" duration="33.5"/>--> <!-- reaktori SceneTexture1 -->
+        <input sequence= "pixelate_reaktori" time="154" duration="33.5"/>
+        <input sequence= "draw_flare" time="168.4" duration="1.6"/>
+		<!--<input sequence= "draw_SceneTexture1_image_to_screen" time="187.5" duration = "16.5"/>--> <!-- abstrakti SceneTexture1 -->
+        <input sequence= "image_distort_sine_abstrakti" time="187.5" duration = "16.5"/>
+		<input sequence= "esso_kallio_radial_blur" time="204" duration = "16"/> <!-- essokallio SceneTexture1 -->
+		<!--<input sequence= "draw_SceneTexture1_image_to_screen" time="204" duration = "16"/>--> <!-- essokallio SceneTexture1 -->
+        <input sequence = "loppu_part2_radial_blur" time="220" duration = "75"/>       
+		<!--<input sequence= "draw_SceneTexture1_image_to_screen" time="220" duration = "57"/>--><!-- loppu_part2 SceneTexture1 -->		
+	</composition>    
+
+	<!-- Post processing -->
+	<post_processing name = "Post_processing">
+		<clear_color v = "0 0 0"/>
+        <input sequence = "c_draw_SceneTextures_to_screen"/>
+
+        <!--
+		<input sequence = "titlescreen" time="0"/>
+		<input sequence = "taytekaytava" time="24" duration="24"/>
+		<input sequence = "alkuhuone" time="48"/>
+		<input sequence = "kaytava" time="81.3" duration="48.7"/>
+		<input sequence = "tron" time="81.3" duration="48.7"/>
+		<input sequence = "sriini" time="130" duration="12"/>
+		<input sequence = "juoksustoppi" time="142" duration="9"/>
+		<input sequence = "reaktori" time="154" duration="33.5"/>
+        -->
+        <!--
+		<input sequence = "c_abstrakti" time="187.5" duration = "16.5"/>
+        -->
+        <!--
+		<input sequence = "essokallio" time="204" duration = "16"/>
+		<input sequence = "loppu_part2" time="220" duration = "57"/>
+        -->
+		<!--input sequence = "loppuvesi" time="266" duration = "30"/> -->	
+	</post_processing>
+	
+	<!-- Depth buffer -->
+	<depth_buffer name = "Depth_test">
+        <clear_color v = "0 0 0"/>
+        <input sequence  ="c_warmup" duration="1"/>
+
+        <input sequence = "c_draw_scenes_to_SceneTextures"/>
+
+		<input sequence = "Post_processing"/>
+		<input sequence = "draw_perusvignette_image"/>
+        
+        <input sequence = "draw_BlackImage" time = "0" duration="1"/>
+		<input sequence = "fade_from_black_3000ms" time = "1"/>
+        
+		<input sequence = "fade_to_half_black_125ms" time = "23.875"/> <!-- weeeee fading aways -->
+		<input sequence = "fade_from_half_black_75ms" time = "24.0"/>
+        
+		<input sequence = "fade_to_half_black_125ms" time = "31.875"/>
+		<input sequence = "fade_from_half_black_75ms" time = "32.0"/>
+
+		<input sequence = "fade_to_half_black_125ms" time = "47.875"/>
+		<input sequence = "fade_from_half_black_75ms" time = "48.0"/>
+
+        <!-- vituilleen
+		<input sequence = "fade_to_half_black_125ms" time = "80.875"/>
+		<input sequence = "fade_from_half_black_75ms" time = "81.0"/>
+        -->
+
+		<input sequence = "fade_to_half_black_125ms" time = "129.875"/>
+		<input sequence = "fade_from_half_black_75ms" time = "130.0"/>
+
+		<input sequence = "fade_to_half_black_125ms" time = "141.875"/>
+		<input sequence = "fade_from_half_black_75ms" time = "142.0"/>
+
+		<input sequence = "fade_to_half_black_125ms" time = "153.875"/>
+		<input sequence = "fade_from_half_black_75ms" time = "154.0"/>
+
+		<input sequence = "fade_to_half_black_125ms" time = "187.375"/>
+		<input sequence = "fade_from_half_black_75ms" time = "187.0"/>
+        
+		<input sequence = "fade_to_half_black_125ms" time = "203.875"/>
+		<input sequence = "fade_from_half_black_75ms" time = "204.0"/>
+        
+        <!-- todo 220 white fade -->
+        
+		<!--<input sequence = "draw_taytekaytava_to_SceneTexture" time="24" duration="24"/>-->
+        
+        
+		<input sequence = "fade_to_black_2000ms" time = "149"/>
+		<input sequence = "draw_SuperWide" time="267" duration="30"/>
+        <input sequence = "draw_Nuclei_Solid" time="269" duration="30"/>
+        <!-- <input sequence = "nuclei_tron_plasma" time="267" duration="30"/>       --> 
+        
+        <input sequence = "draw_ruutuhoto_reaktori" time="154" duration="33.5"/>
+        <input sequence = "draw_ruutuhoto2_reaktori" time="154" duration="33.5"/>        
+        <input sequence = "draw_ruutuhoto_esso" time="204" duration = "5"/>
+        <input sequence = "draw_ruutuhoto2_esso" time="204" duration = "5"/>	
+        
+        <input sequence = "fade_to_black_2000ms" time = "290"/>
+        <input sequence = "draw_BlackImage" time = "292"/>
+	</depth_buffer>
+
+	<composition name = "main timeline">
+		<input sequence = "Audio_system" time="0"/>
+		<input sequence = "Depth_test"/>
+	</composition>
+
+	<audio_system name = "Audio_system">
+		<audio_sequence name = "musa" path = "data/audio/Demo14_osuujauppoo.mp3" time="2"/>
+	</audio_system>
+
+	<!-- Main timeline -->
+	<timeline>
+		<input sequence = "main timeline"/>
+	</timeline>
+</sequences>

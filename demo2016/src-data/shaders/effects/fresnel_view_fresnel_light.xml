@@ -1,0 +1,103 @@
+<?xml version="1.0" ?>
+
+<!--
+
+Wacky shader, which calculates the following:
+
+When view is at 90 degree of the normal (it is facing sideways,) lighting
+with view parameters is at maximum. When light is at 90 defree of the normal,
+lighting with light parameters is at maximum.
+
+Both are raised to power to sharpen the area of lighting, and multiplied with
+user given values.
+
+-->
+
+<parameters>
+	<parameter
+		label = "Normal map"
+		name = "normal_map"
+		type = "texture2D"
+		hlsl = "normal_texture"
+		default_value = "data/images/common/normal.tga">
+	</parameter>
+
+	<!-- Scales normal Z, ie flattens normal with values > 1 -->
+	<parameter
+		label = "Normal scale"
+		name = "normal_scale"
+		type = "float"
+		hlsl = "normal_scale"
+		default_value = "1.0">
+	</parameter>
+
+	<!-- Raises light fresnel to specified power. -->
+	<parameter
+		label = "Fresnel Light Power"
+		name = "fresnel_light_power"
+		type = "float"
+		hlsl = "fresnel_light_power"
+		default_value = "16.0">
+	</parameter>
+
+	<!-- Raises view fresnel to specified power. -->
+	<parameter
+		label = "Fresnel View Power"
+		name = "fresnel_view_power"
+		type = "float"
+		hlsl = "fresnel_view_power"
+		default_value = "8.0">
+	</parameter>
+
+	<!-- Color of the view fresnel. -->
+	<parameter
+		label = "Fresnel View Color"
+		name = "fresnel_view_color"
+		type = "float3"
+		hlsl = "fresnel_view_color"
+		default_value = "1 1 1">
+	</parameter>
+	<!-- Coefficient for the light fresnel. -->
+	<parameter
+		label = "Fresnel light Coefficient"
+		name = "fresnel_light_coeff"
+		type = "float3"
+		hlsl = "fresnel_light_coeff"
+		default_value = "1 1 1">
+	</parameter>
+
+</parameters>
+
+<sampler_states>
+	<sampler
+		name = "normal_sampler"
+		texture = "normal_texture"
+		address_u = "WRAP"
+		address_v = "WRAP"
+		address_w = "WRAP"
+		min_filter = "LINEAR"
+		mag_filter = "LINEAR"
+		mip_filter = "LINEAR"
+		>
+	</sampler>
+</sampler_states>
+
+<streams>
+	<stream0
+		position = 0
+		tangent = 0
+		normal = 0
+		texcoord = 0>
+	</stream0>
+</streams>
+
+<vertex_shader
+	stream = "stream0">
+	<include_hlsl file = "data/shaders/hlsl/common_vs.hlsl"/>
+	<include_hlsl file = "data/shaders/hlsl/tbn_vs.hlsl"/>
+</vertex_shader>
+
+<pixel_shader>
+	<include_hlsl file = "data/shaders/hlsl/common_ps.hlsl"/>
+	<include_hlsl file = "data/shaders/hlsl/effects/fresnel_view_fresnel_light.hlsl"/>
+</pixel_shader>

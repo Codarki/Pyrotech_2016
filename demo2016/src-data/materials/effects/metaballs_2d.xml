@@ -1,0 +1,14 @@
+<material
+	name = "metaballs_2d_material"
+	material_p3d = "metaballs_2d"
+	>
+    <shader file = "data/shaders/effects/metaballs_2d_child.xml"> 
+        <parameters>
+            <attenuation value = "0.1 0.01 0.001"/>
+            <!-- <distance shared_value = "metaballs_2d_distance_curve_1"/> -->
+            <distance value="4.0"/>
+            <num_balls value = "50"/>
+            <color value="0.01 0.01 0.09"/>
+        </parameters>
+	</shader>    
+</material>

@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<light_shader>
+	<parameters>
+	</parameters>
+	<sampler_states>
+	</sampler_states>
+	<!-- TODO: Define required attributes from vertex shader here somehow. -->
+	<pixel_shader>
+		<include_hlsl file = "data/shaders/light/hlsl/point_light.hlsl"/>
+	</pixel_shader>	
+</light_shader>

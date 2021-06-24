@@ -1,0 +1,107 @@
+<?xml version="1.0" ?>
+
+<material
+	name = "light_scattering_material"
+	material_p3d = "light scattering material"
+	>
+    <shader file = "data/shaders/effects/light_scattering_child.xml"> 
+        <parameters>
+        <!--
+            exposure = 0.0034
+            decay = 1.0
+            density = 0.84
+            weight = 5.65
+            -->
+            <!--<source_map value = "data/images/cavemaps/refmap.jpg"/>-->
+            <!--bckimg_map value = "data/images/demoname.png"/-->
+            <exposure value = "0.001"/> <!-- train_streak_pow_curve 0.0024 -->
+            <decay value = "1.01"/> <!-- 1.005 -->
+
+            <density value = "1.0"/> <!-- 0.9 -->
+            <weight value = "1.0"/> <!-- 4.65 -->
+
+            <lightScrPosX value = "0.5"/><!--blur_x_pos_curve-->
+            <lightScrPosY value = "0.5"/>
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "light_scattering_pats_metsa_material"
+	material_p3d = "light scattering pats metsa material"
+	>
+    <shader file = "data/shaders/effects/light_scattering_child.xml"> 
+        <parameters>
+        <!--
+            exposure = 0.0034
+            decay = 1.0
+            density = 0.84
+            weight = 5.65
+            -->
+            <!--<source_map value = "data/images/cavemaps/refmap.jpg"/>-->
+            <!--bckimg_map value = "data/images/demoname.png"/-->
+            <!-- <exposure shared_value = "train_streak_pow_curve"/> --><!-- 0.0024 -->
+            <exposure value = "1.0"/> 
+            <decay value = "1"/> <!-- 1.005 -->
+
+            <density value = "0.9"/> <!-- 0.9 -->
+            <weight value = "0.0036"/> <!-- 4.65 -->
+
+            <!--<lightScrPosX shared_value = "train_streak_xpos_curve"/>-->
+            <lightScrPosX value = "0.72"/>
+            <lightScrPosY value = "0.25"/>
+        </parameters>
+	</shader>
+</material>
+<material
+	name = "light_scattering_lonkerot_material"
+	material_p3d = "light scattering lonkerot material"
+	>
+    <shader file = "data/shaders/effects/light_scattering_child.xml"> 
+        <parameters>
+        <!--
+            exposure = 0.0034
+            decay = 1.0
+            density = 0.84
+            weight = 5.65
+            -->
+            <!--<source_map value = "data/images/cavemaps/refmap.jpg"/>-->
+            <!--bckimg_map value = "data/images/demoname.png"/-->
+            <exposure shared_value = "lonkero_streak_power_curve"/> <!-- 0.0024 -->
+            <decay value = "1"/> <!-- 1.005 -->
+
+            <density value = "0.97"/> <!-- 0.9 -->
+            <weight value = "0.00046"/> <!-- 4.65 -->
+
+            <lightScrPosX shared_value = "lonkero_streak_xpos_curve"/><!--0.45-->
+            <lightScrPosY shared_value = "lonkero_streak_ypos_curve"/><!--0.25-->
+        </parameters>
+	</shader>
+</material>
+
+<material
+	name = "light_scattering_credits_material"
+	material_p3d = "light scattering credits material"
+	>
+    <shader file = "data/shaders/effects/light_scattering_child.xml"> 
+        <parameters>
+        <!--
+            exposure = 0.0034
+            decay = 1.0
+            density = 0.84
+            weight = 5.65
+            -->
+            <!--<source_map value = "data/images/cavemaps/refmap.jpg"/>-->
+            <!--bckimg_map value = "data/images/demoname.png"/-->
+            <exposure shared_value = "credits_streak_power_curve"/> <!-- 0.0024 -->
+            <!--<exposure value = "1"/>  -->
+            <decay value = "1"/> <!-- 1.005 -->
+
+            <density value = "0.97"/> <!-- 0.9 -->
+            <weight value = "0.0096"/> <!-- 4.65 -->
+
+            <lightScrPosX shared_value = "credits_streak_xpos_curve"/> <!--0.45-->
+            <lightScrPosY shared_value = "credits_streak_ypos_curve"/><!--0.25-->
+        </parameters>
+	</shader>
+</material>

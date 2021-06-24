@@ -1,0 +1,109 @@
+<?xml version="1.0" ?>
+
+<sequences>
+	<scene_sequence
+	    name = "reaktori"
+		scene = "data/scenes/reaktori.p3d_scene" 
+		frames_per_second = 30 
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "1050" 
+        near_plane = "1"
+        far_plane = "5000"
+        ssao_enabled = "true">
+		<camera curve="reaktori_camera_curve"/>
+		</scene_sequence>
+	<scene_sequence
+	    name = "kuutio_stencil"
+		scene = "data/scenes/kuutiostencil.p3d_scene" 
+        camera="Camera01"
+		frames_per_second = 30 
+		start_time = "0.0"
+		start_frame = "0"
+		end_frame = "1050" 
+        near_plane = "1"
+        far_plane = "5000"
+        ssao_enabled = "false">
+		
+		</scene_sequence>
+	
+	<!-- Pitää olla jotta noise toimii, ei ole päällä mutta vaaditaan tämä rivi -->
+	<image name = "noise_tex" path = "data/images/noise.jpg" />
+	<image name = "SceneTexture1_image" path = "SceneTexture1" />
+	<image name = "SceneTexture2_image" path = "SceneTexture2" />    
+	<image name = "ruutuhoto" path = "data/images/2014/bokeh_blue_upperleft.png" />	
+	<image name = "ruutuhoto2" path = "data/images/2014/bokeh_ora_upperright.png" />	
+    <image name = "codarki_img" path = "data/images/2014/gre_codarki.png" />
+	
+    <draw_image name = "draw_ruutuhoto">
+		<input sequence = "ruutuhoto"/>
+		<alpha curve = "bogeh_alpha_curve"/>
+	</draw_image>	
+    <draw_image name = "draw_ruutuhoto2">
+		<input sequence = "ruutuhoto2"/>
+		<alpha curve = "bogeh_alpha_curve"/>
+	</draw_image>	
+		
+	<draw_image name = "draw_codarki">
+		<input sequence = "codarki_img" />
+		<size v = "0.4 0.4"/>
+        <center v = "0.5 0.5"/>
+        <intensity>0.8</intensity>
+        <alpha>0.5</alpha>
+	</draw_image> 
+	<draw_to_texture name = "draw_codarki_to_SceneTexture2"><shared_texture name = "SceneTexture2"/>
+		<input sequence = "draw_codarki"/>
+	</draw_to_texture>      
+    <draw_image name = "draw_SceneTexture1_image_to_screen"><input sequence = "SceneTexture1_image"/></draw_image>
+    <draw_image name = "draw_SceneTexture2_image_to_screen"><input sequence = "SceneTexture2_image"/></draw_image>
+	<plasma>
+		<name v="pixelate_reaktori"/>
+		<material_name v="pixelate_material"/>
+        <input sequence = "SceneTexture1_image"/>
+	</plasma>
+	<draw_to_texture name = "draw_reaktori_to_SceneTexture"><shared_texture name = "SceneTexture1"/>
+		<input sequence = "reaktori"/>
+	</draw_to_texture>
+	<plasma>
+		<name v="pixelate_codarki"/>
+		<material_name v="pixelate_material"/>
+        <input sequence = "SceneTexture2_image"/>
+	</plasma>
+   
+		<!-- Post processing päällä -->	
+	<!-- Tähän ei tarvitse koskea -->
+	<post_processing name = "Post processing">
+		<clear_color v = "0 0 0"/>
+		<input sequence = "draw_reaktori_to_SceneTexture" time="0"/>
+        <input sequence = "pixelate_reaktori" time="0"/>
+        
+    
+    
+        <!-- <input sequence = "draw_codarki_to_SceneTexture2" time="0"/> 
+         <input sequence = "pixelate_codarki" time="0"/>    -->          
+        <!--<input sequence = "draw_SceneTexture2_image_to_screen" time="0"/>-->
+
+
+	</post_processing>
+	
+	<!-- Depth buffer päällä -->
+	<!-- Tähän ei tarvitse koskea -->
+	<depth_buffer name = "Depth test">
+        <clear_color v = "0 0 0"/>
+		<input sequence = "Post processing"/>
+		<input sequence = "draw_ruutuhoto"/>		
+		<input sequence = "draw_ruutuhoto2"/>
+		</depth_buffer>
+
+	<!--  Linkataan Depth test sequence -->
+	<!--  Ei tarttis koskee -->
+	<composition name = "main timeline">	
+		<input sequence = "Depth test"/>
+	</composition>
+
+	<!-- Main timeline -->
+	<!--  Ei tarttis koskee -->		
+	<timeline>
+		<input sequence = "main timeline"/>
+	</timeline>
+</sequences>

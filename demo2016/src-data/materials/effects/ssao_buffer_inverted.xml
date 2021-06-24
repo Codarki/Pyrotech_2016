@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+
+<material
+	name = "ssao_buffer_material_inv"
+	material_p3d = "ssao buffer material inv"
+	>
+    <shader file = "data/shaders/effects/ssao_buffer_best.xml"> 
+        <parameters>
+            <depth_map shared_value = "DepthTexture"/>
+            <normal_map shared_value = "NormalTexture"/>
+            <random_normal_map value = "data/images/common/reflect2.png"/> 
+           
+            <occ_sample_radius value = "0.2"/> 
+            <occ_scale value = "0.001"/>
+            <occ_bias value = "0.1"/>
+            <occ_strength value = "2.8"/>
+            <occ_inverted value = "1"/>
+        </parameters>
+	</shader>
+</material>

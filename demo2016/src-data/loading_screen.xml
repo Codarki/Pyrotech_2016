@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+
+<loading_screen>
+	<image v = "data/images/loading_screen/loading_screen_old.jpg"/>
+	<fade_duration v = 0.0/>
+	
+	<progress_bar>
+		<image v = "data/images/common/black.tga"/>
+		<!-- Progress bar is drawn as white growing rectangle multiplied by this
+		mask -->
+		<mask v = "data/images/loading_screen/progress_color.png"/>
+
+		<!-- Note that progress bar size is read from the texture. Therefor
+		the size will seem different in different resolutions. Bug Kimmo if this
+		is unacceptable, and should be scaled to be constant size relative to
+		screen resolution. -->
+		
+		<!-- reference space defines where center is positioned -->
+		<reference_resolution v = "1024 768"/>
+		<center v = "512 720"/>
+		
+		<!-- You can check this from VERBOSE.TXT -->
+		<total_ticks v = 5112/>
+	</progress_bar>
+</loading_screen>
